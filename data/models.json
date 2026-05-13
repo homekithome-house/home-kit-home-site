@@ -28,12 +28,12 @@
       },
       "url": "residence-essence.html",
       "photos": {
-        "cover": "images/essence-ext-bois.png",
+        "cover": "dist/images/essence-ext-bois.avif",
         "exterior": [
-          "images/essence-ext-bois.png",
-          "images/essence-ext-metal.png"
+          "dist/images/essence-ext-bois.avif",
+          "dist/images/essence-ext-metal.avif"
         ],
-        "plan": "images/essence-plan.png",
+        "plan": "dist/images/essence-plan.avif",
         "interior": []
       }
     },
@@ -65,18 +65,18 @@
       },
       "url": "residence-essence-plus.html",
       "photos": {
-        "cover": "images/essence-plus-ext-bois.png",
+        "cover": "dist/images/essence-plus-ext-bois.avif",
         "exterior": [
-          "images/essence-plus-ext-bois.png",
-          "images/essence-plus-ext-metal.png"
+          "dist/images/essence-plus-ext-bois.avif",
+          "dist/images/essence-plus-ext-metal.avif"
         ],
-        "plan": "images/essence-plus-plan.png",
+        "plan": "dist/images/essence-plus-plan.avif",
         "interior": [
-          "images/essence-plus-int-1.jpg",
-          "images/essence-plus-int-2.jpg",
-          "images/essence-plus-int-3.jpg",
-          "images/essence-plus-int-4.jpg",
-          "images/essence-plus-int-cuisine.jpg"
+          "dist/images/essence-plus-int-1.avif",
+          "dist/images/essence-plus-int-2.avif",
+          "dist/images/essence-plus-int-3.avif",
+          "dist/images/essence-plus-int-4.avif",
+          "dist/images/essence-plus-int-cuisine.avif"
         ]
       }
     },
@@ -108,22 +108,22 @@
       },
       "url": "residence-horizon.html",
       "photos": {
-        "cover": "images/horizon-ext-bois.png",
+        "cover": "dist/images/horizon-ext-bois.avif",
         "exterior": [
-          "images/horizon-ext-bois.png",
-          "images/horizon-ext-bois-alt.png",
-          "images/horizon-ext-bois-pano.png",
-          "images/horizon-ext-metal.png",
-          "images/horizon-ext-metal-alt.png",
-          "images/horizon-ext-metal-pano.png"
+          "dist/images/horizon-ext-bois.avif",
+          "dist/images/horizon-ext-bois-alt.avif",
+          "dist/images/horizon-ext-bois-pano.avif",
+          "dist/images/horizon-ext-metal.avif",
+          "dist/images/horizon-ext-metal-alt.avif",
+          "dist/images/horizon-ext-metal-pano.avif"
         ],
-        "plan": "images/horizon-plan.png",
+        "plan": "dist/images/horizon-plan.avif",
         "interior": [
-          "images/horizon-int-salon-1.jpg",
-          "images/horizon-int-salon-2.jpg",
-          "images/horizon-int-chambre-1.jpg",
-          "images/horizon-int-chambre-2.jpg",
-          "images/horizon-int-cuisine.jpg"
+          "dist/images/horizon-int-salon-1.avif",
+          "dist/images/horizon-int-salon-2.avif",
+          "dist/images/horizon-int-chambre-1.avif",
+          "dist/images/horizon-int-chambre-2.avif",
+          "dist/images/horizon-int-cuisine.avif"
         ]
       }
     },
@@ -155,22 +155,22 @@
       },
       "url": "residence-horizon-t.html",
       "photos": {
-        "cover": "images/horizon-t-ext-bois.png",
+        "cover": "dist/images/horizon-t-ext-bois.avif",
         "exterior": [
-          "images/horizon-t-ext-bois.png",
-          "images/horizon-t-ext-bois-alt.png",
-          "images/horizon-t-ext-bois-pano.png",
-          "images/horizon-t-ext-metal.png",
-          "images/horizon-t-ext-metal-alt.png",
-          "images/horizon-t-ext-metal-pano.png"
+          "dist/images/horizon-t-ext-bois.avif",
+          "dist/images/horizon-t-ext-bois-alt.avif",
+          "dist/images/horizon-t-ext-bois-pano.avif",
+          "dist/images/horizon-t-ext-metal.avif",
+          "dist/images/horizon-t-ext-metal-alt.avif",
+          "dist/images/horizon-t-ext-metal-pano.avif"
         ],
-        "plan": "images/horizon-t-plan.png",
+        "plan": "dist/images/horizon-t-plan.avif",
         "interior": [
-          "images/horizon-t-int-salon-1.jpg",
-          "images/horizon-t-int-salon-2.jpg",
-          "images/horizon-t-int-chambre.jpg",
-          "images/horizon-t-int-sdb.jpg",
-          "images/horizon-t-int-archi.jpg"
+          "dist/images/horizon-t-int-salon-1.avif",
+          "dist/images/horizon-t-int-salon-2.avif",
+          "dist/images/horizon-t-int-chambre.avif",
+          "dist/images/horizon-t-int-sdb.avif",
+          "dist/images/horizon-t-int-archi.avif"
         ]
       }
     },
@@ -202,20 +202,20 @@
       },
       "url": "residence-signature.html",
       "photos": {
-        "cover": "images/signature-ext-bois.png",
+        "cover": "dist/images/signature-ext-bois.avif",
         "exterior": [
-          "images/signature-ext-bois.png",
-          "images/signature-ext-bois-pano.png",
-          "images/signature-ext-metal.png",
-          "images/signature-ext-metal-pano.png"
+          "dist/images/signature-ext-bois.avif",
+          "dist/images/signature-ext-bois-pano.avif",
+          "dist/images/signature-ext-metal.avif",
+          "dist/images/signature-ext-metal-pano.avif"
         ],
-        "plan": "images/signature-plan.png",
+        "plan": "dist/images/signature-plan.avif",
         "interior": [
-          "images/signature-int-salon-1.jpg",
-          "images/signature-int-salon-2.jpg",
-          "images/signature-int-salon-3.jpg",
-          "images/signature-int-chambre.jpg",
-          "images/signature-int-sdb.jpg"
+          "dist/images/signature-int-salon-1.avif",
+          "dist/images/signature-int-salon-2.avif",
+          "dist/images/signature-int-salon-3.avif",
+          "dist/images/signature-int-chambre.avif",
+          "dist/images/signature-int-sdb.avif"
         ]
       }
     },
@@ -247,12 +247,12 @@
       },
       "url": "residence-signature-duo.html",
       "photos": {
-        "cover": "images/signature-duo-ext-bois.png",
+        "cover": "dist/images/signature-duo-ext-bois.avif",
         "exterior": [
-          "images/signature-duo-ext-bois.png",
-          "images/signature-duo-ext-metal.png"
+          "dist/images/signature-duo-ext-bois.avif",
+          "dist/images/signature-duo-ext-metal.avif"
         ],
-        "plan": "images/signature-duo-plan.png",
+        "plan": "dist/images/signature-duo-plan.avif",
         "interior": []
       }
     }

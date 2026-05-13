@@ -7,14 +7,14 @@
   <meta name="description" content="ESSENCE · habitat architectural compact 20 m², livré clé en main aux Antilles, en Guyane et en France. Structure acier galvanisé, vitrages panoramiques, salle d'eau intégrée."/>
   <meta property="og:title" content="ESSENCE · Habitat 20 m² · Home Kit Home"/>
   <meta property="og:description" content="Le studio architectural de 20 m², livré en un seul bloc, posé par grue, prêt à vivre."/>
-  <meta property="og:image" content="images/Habitats/Essence/Finitions/essence-zénith.png"/>
+  <meta property="og:image" content="dist/images/habitats/essence/finitions/essence-zenith.avif"/>
   <meta property="og:type" content="website"/>
   <meta property="og:locale" content="fr_FR"/>
   <link rel="icon" href="data:,"/>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/old-standard-tt-400.woff2" crossorigin/>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/old-standard-tt-400i.woff2" crossorigin/>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/jost-variable.woff2" crossorigin/>
-  <link rel="preload" as="image" type="image/avif" href="dist/images/Habitats/Essence/Finitions/essence-z%C3%A9nith.avif" fetchpriority="high"/>
+  <link rel="preload" as="image" type="image/avif" href="dist/images/habitats/essence/finitions/essence-zenith.avif" fetchpriority="high"/>
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="assets/css/animations.css" media="print" onload="this.media='all'"/>
   <noscript><link rel="stylesheet" href="assets/css/animations.css"/></noscript>
@@ -71,9 +71,9 @@
 
       <div class="mp-show__visual" id="finVisual">
         <picture>
-          <source srcset="dist/images/Habitats/Essence/Finitions/essence-z%C3%A9nith.avif" type="image/avif">
-          <source srcset="dist/images/Habitats/Essence/Finitions/essence-z%C3%A9nith.webp" type="image/webp">
-          <img id="finImg" src="images/Habitats/Essence/Finitions/essence-z%C3%A9nith.png" alt="ESSENCE · Finition Zénith" loading="eager" fetchpriority="high" decoding="async"/>
+          <source srcset="dist/images/habitats/essence/finitions/essence-zenith.avif" type="image/avif">
+          <source srcset="dist/images/habitats/essence/finitions/essence-zenith.webp" type="image/webp">
+          <img id="finImg" src="dist/images/habitats/essence/finitions/essence-zenith.avif" alt="ESSENCE · Finition Zénith" loading="eager" fetchpriority="high" decoding="async"/>
         </picture>
         <span class="mp-show__name" id="finName">Zénith</span>
       </div>
@@ -139,9 +139,9 @@
     <div class="mp-plan__grid reveal">
       <div class="mp-plan__svg">
         <picture>
-  <source srcset="dist/images/Habitats/Essence/essence-plan.avif" type="image/avif">
-  <source srcset="dist/images/Habitats/Essence/essence-plan.webp" type="image/webp">
-  <img src="images/Habitats/Essence/essence-plan.png" alt="Plan d'aménagement ESSENCE" width="1118" height="833" loading="lazy" decoding="async"/>
+  <source srcset="dist/images/habitats/essence/essence-plan.avif" type="image/avif">
+  <source srcset="dist/images/habitats/essence/essence-plan.webp" type="image/webp">
+  <img src="dist/images/habitats/essence/essence-plan.avif" alt="Plan d'aménagement ESSENCE" width="1118" height="833" loading="lazy" decoding="async"/>
 </picture>
         <svg viewBox="0 0 280 230" xmlns="http://www.w3.org/2000/svg" aria-label="Zones interactives">
           <rect class="rz is-active" data-room="vie" x="78" y="10" width="188" height="210" rx="2"/>
@@ -206,9 +206,9 @@
     </header>
     <button type="button" id="mpVisitOpen" class="mp-visit__teaser reveal" aria-label="Entrer dans la visite 360° de l'habitat ESSENCE — salle de projection plein écran">
       <picture class="mp-visit__teaser-img">
-        <source type="image/avif" srcset="dist/images/Habitats/Essence%20%2B/Int%C3%A9rieur/essence-plus-int-4.avif">
-        <source type="image/webp" srcset="dist/images/Habitats/Essence%20%2B/Int%C3%A9rieur/essence-plus-int-4.webp">
-        <img src="images/Habitats/Essence +/Intérieur/essence-plus-int-4.jpg" alt="Intérieur de l'habitat ESSENCE — espace de vie 18,80 m²" width="1600" height="900" loading="lazy" decoding="async">
+        <source type="image/avif" srcset="dist/images/habitats/essence-plus/interieur/essence-plus-int-4.avif">
+        <source type="image/webp" srcset="dist/images/habitats/essence-plus/interieur/essence-plus-int-4.webp">
+        <img src="dist/images/habitats/essence-plus/interieur/essence-plus-int-4.avif" alt="Intérieur de l'habitat ESSENCE — espace de vie 18,80 m²" width="1600" height="900" loading="lazy" decoding="async">
       </picture>
       <span class="mp-visit__teaser-badge" data-fr="Visite 360°" data-en="360° tour">Visite 360°</span>
       <span class="mp-visit__teaser-cta">
@@ -329,9 +329,9 @@ fetch('partials/footer-full.html')
   var SWATCHES = document.querySelectorAll('.mp-sw');
 
   /* Quand les rendus Pinède/Pure/Linéa seront livrés, remplacer simplement les paths img ci-dessous. */
-  var FALLBACK = 'images/Habitats/Essence/Finitions/essence-z%C3%A9nith.png';
+  var FALLBACK = 'dist/images/habitats/essence/finitions/essence-zenith.avif';
   var FINS = {
-    zenith: { img: 'images/Habitats/Essence/Finitions/essence-z%C3%A9nith.png', name: 'Zénith' },
+    zenith: { img: 'dist/images/habitats/essence/finitions/essence-zenith.avif', name: 'Zénith' },
     pinede: { img: '', name: 'Pinède' },
     pure:   { img: '', name: 'Pure' },
     linea:  { img: '', name: 'Linéa' }
@@ -402,13 +402,13 @@ fetch('partials/footer-full.html')
       labelFr: 'Chambre / Séjour', labelEn: 'Bedroom / Living',
       descFr: "Espace de vie ouvert — lit double, coin séjour, vitrages sol-plafond. Lumière naturelle traversante, climatisation gainable, domotique intégrée.",
       descEn: "Open living space — double bed, lounge area, floor-to-ceiling glazing. Cross-natural light, ducted air conditioning, integrated home automation.",
-      img: 'images/Habitats/Essence%20%2B/Int%C3%A9rieur/essence-plus-int-1.jpg'
+      img: 'dist/images/habitats/essence-plus/interieur/essence-plus-int-1.avif'
     },
     sdb: {
       labelFr: "Salle d'eau", labelEn: 'Bathroom',
       descFr: "Douche italienne, vasque sur plan, WC suspendu — séparation zone humide / zone sèche. Robinetterie laiton, mitigeur thermostatique.",
       descEn: "Walk-in shower, integrated basin, wall-hung WC — wet / dry zone separation. Brass fittings, thermostatic mixer.",
-      img: 'images/Habitats/Horizon%20T/horizon-t-int-sdb.jpg'
+      img: 'dist/images/habitats/horizon-t/horizon-t-int-sdb.avif'
     }
   };
 

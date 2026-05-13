@@ -1,0 +1,19 @@
+#!/bin/sh
+# Bloque les références à /images/ dans HTML/CSS commités.
+# Force l'usage de /dist/images/ partout.
+
+FILES=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(html|css)$')
+if [ -z "$FILES" ]; then
+  exit 0
+fi
+
+MATCHES=$(echo "$FILES" | xargs grep -lE '(src="|url\()images/' 2>/dev/null)
+if [ -n "$MATCHES" ]; then
+  echo "ERREUR : référence à /images/ détectée dans :"
+  echo "$MATCHES"
+  echo ""
+  echo "Utilise /dist/images/ partout. /images/ est la source locale, jamais servie."
+  exit 1
+fi
+
+exit 0

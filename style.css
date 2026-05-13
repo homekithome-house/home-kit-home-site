@@ -673,10 +673,10 @@ ul{list-style:none}
 }
 .home-cta__bg{
   position:absolute;inset:0;z-index:-1;
-  background-image:url('dist/images/Top Photos/Gemini_Generated_Image_ka43m7ka43m7ka43.webp');
+  background-image:url('dist/images/top-photos/gemini_generated_image_ka43m7ka43m7ka43.webp');
   background-image:image-set(
-    url('dist/images/Top Photos/Gemini_Generated_Image_ka43m7ka43m7ka43.avif') type('image/avif'),
-    url('dist/images/Top Photos/Gemini_Generated_Image_ka43m7ka43m7ka43.webp') type('image/webp')
+    url('dist/images/top-photos/gemini_generated_image_ka43m7ka43m7ka43.avif') type('image/avif'),
+    url('dist/images/top-photos/gemini_generated_image_ka43m7ka43m7ka43.webp') type('image/webp')
   );
   background-size:cover;background-position:center 60%;
   opacity:.22;
