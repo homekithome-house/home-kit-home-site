@@ -887,7 +887,50 @@ ul{list-style:none}
 }
 .method__step:nth-child(1)::before{ left:calc(12.5% - 0.75px); }
 .method__step:nth-child(2)::before{ left:calc(87.5% - 0.75px); }
-.method__step:nth-child(3)::before{ left:calc(50% - 0.75px); }
+/* Step 03 : pas de trait unique — remplacé par 3 câbles convergents
+   (voir .method__cables) qui évoquent les élingues d'une grue de pose. */
+.method__step:nth-child(3)::before{ display:none; }
+
+/* ── Step 03 — Câbles de grue (3 traits convergents) ──── */
+.method__cables{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:0; /* derrière le numéro (z-index:1) */
+}
+.method__cable{
+  position:absolute;
+  top:0;
+  left:calc(50% - 0.75px);
+  width:1.5px;
+  background:var(--copper);
+  opacity:.1;
+  transform-origin:top center;
+  transform:scaleY(0);
+  transition:opacity 1200ms cubic-bezier(.16,1,.3,1),
+             transform 1200ms cubic-bezier(.16,1,.3,1);
+}
+.method__cable--center{ height:100%; }
+.method__cable--left{
+  height:80%;
+  transform:rotate(-5deg) scaleY(0);
+  transition-delay:150ms;
+}
+.method__cable--right{
+  height:80%;
+  transform:rotate(5deg) scaleY(0);
+  transition-delay:150ms;
+}
+.method__step.is-active .method__cable{
+  opacity:.85;
+  transform:scaleY(1);
+}
+.method__step.is-active .method__cable--left{
+  transform:rotate(-5deg) scaleY(1);
+}
+.method__step.is-active .method__cable--right{
+  transform:rotate(5deg) scaleY(1);
+}
 
 /* Reveal one-shot piloté par IntersectionObserver léger.
    L'IO ajoute .is-active une seule fois quand le step entre dans le viewport.
@@ -978,10 +1021,12 @@ ul{list-style:none}
     text-align:left;
   }
   .method__body{ padding-top:.4rem; }
-  /* Trait copper — bord gauche sur mobile */
+  /* Trait copper — bord gauche sur mobile (les 3 câbles convergents sont
+     un effet desktop : pas pertinent en stack vertical compact). */
+  .method__cables{ display:none; }
   .method__step:nth-child(1)::before,
   .method__step:nth-child(2)::before,
-  .method__step:nth-child(3)::before{ left:0; }
+  .method__step:nth-child(3)::before{ display:block; left:0; }
   .method__synth-rule{ width:60%; }
 }
 @media(prefers-reduced-motion:reduce){
@@ -996,6 +1041,10 @@ ul{list-style:none}
   .method__num,
   .method__step-title,
   .method__step-desc{ opacity:1 !important; }
+  /* Step 03 — 3 câbles statiques visibles, gardent leurs angles */
+  .method__cable{ transform:scaleY(1) !important; opacity:.5 !important; transition:none !important; }
+  .method__cable--left{ transform:rotate(-5deg) scaleY(1) !important; }
+  .method__cable--right{ transform:rotate(5deg) scaleY(1) !important; }
 }
 
 /* ════════════════════════════════
