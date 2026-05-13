@@ -17,7 +17,7 @@
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
   </noscript>
-  <link rel="stylesheet" href="style.css?v=9"/>
+  <link rel="stylesheet" href="style.css?v=10"/>
   <link rel="stylesheet" href="assets/css/animations.css"/>
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
@@ -45,180 +45,84 @@
 </section>
 
 
-<!-- ── COLLECTION (showroom) ──────────────────────── -->
+<!-- ── COLLECTION — 3 blocs famille empilés ──────────────────── -->
 <section class="collection">
-  <div class="section-header reveal">
-    <h2 data-fr="Six habitats, trois familles" data-en="Six homes, three families">Six habitats, trois familles</h2>
-    <p data-fr="Chaque famille décline deux versions — du studio compact à l'habitat familial." data-en="Each family offers two versions — from the compact studio to the family home.">Chaque famille décline deux versions — du studio compact à l'habitat familial.</p>
-  </div>
 
-
-  <div class="collection-grid">
-
-    <!-- ESSENCE -->
-    <div class="collection-family reveal">
-      <div class="collection-family__hdr">
-        <span class="collection-family__lbl" data-fr="ESSENCE" data-en="ESSENCE">ESSENCE</span>
-        <span class="collection-family__desc" data-fr="Le studio compact · 20 m²" data-en="The compact studio · 20 m²">Le studio compact · 20 m²</span>
+  <!-- BLOC 1 — ESSENCE (photo gauche, texte droite) -->
+  <article class="family-block reveal">
+    <div class="family-block__inner">
+      <div class="family-block__media">
+        <picture>
+          <source srcset="dist/images/habitats/essence/unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa.avif" type="image/avif">
+          <source srcset="dist/images/habitats/essence/unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa.webp" type="image/webp">
+          <img src="dist/images/habitats/essence/unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa.avif" alt="Intérieur ESSENCE — studio HKH baigné de lumière naturelle" loading="lazy" decoding="async"/>
+        </picture>
+        <span class="family-block__caption" data-fr="Projection architecturale" data-en="Architectural rendering">Projection architecturale</span>
       </div>
-      <div class="collection-family__stage">
-        <a href="residence-essence.html" class="col-model">
-          <div class="col-model__img col-sm">
-            <picture>
-  <source srcset="dist/images/habitats/essence-plus/finitions/essence-plus-zenith.avif" type="image/avif">
-  <source srcset="dist/images/habitats/essence-plus/finitions/essence-plus-zenith.webp" type="image/webp">
-  <img src="dist/images/habitats/essence-plus/finitions/essence-plus-zenith.avif" alt="ESSENCE" width="3840" height="2160" loading="lazy" decoding="async"/>
-</picture>
-          </div>
-          <div class="col-model__fins">
-            <button class="fin-btn active" data-fin="zenith" data-img="dist/images/habitats/essence-plus/finitions/essence-plus-zenith.avif" title="Zénith"></button>
-            <button class="fin-btn" data-fin="pure" data-img="dist/images/habitats/essence-plus/finitions/essence-plus-pure.avif" title="Pure"></button>
-            <button class="fin-btn" data-fin="linea" data-img="dist/images/habitats/essence-plus/finitions/essence-plus-linea.avif" title="Linéa"></button>
-            <span class="fin-active-label">Zénith</span>
-          </div>
-          <div class="col-model__info">
-            <div class="col-model__name">ESSENCE</div>
-            <div class="col-model__sub" data-fr="Sans cuisine" data-en="Without kitchen">Sans cuisine</div>
-            <div class="col-model__price" data-model="essence" data-price-france="à partir de —" data-price-guadeloupe="à partir de —" data-price-martinique="à partir de —" data-price-saint-martin="à partir de —" data-price-guyane="à partir de —" data-fr="à partir de —" data-en="from —">à partir de —</div>
-            <span class="col-model__cta" data-fr="Découvrir →" data-en="Discover →">Découvrir →</span>
-          </div>
-        </a>
-        <a href="residence-essence-plus.html" class="col-model">
-          <div class="col-model__img col-sm">
-            <picture>
-  <source srcset="dist/images/habitats/essence-plus/finitions/essence-plus-zenith.avif" type="image/avif">
-  <source srcset="dist/images/habitats/essence-plus/finitions/essence-plus-zenith.webp" type="image/webp">
-  <img src="dist/images/habitats/essence-plus/finitions/essence-plus-zenith.avif" alt="ESSENCE+" width="3840" height="2160" loading="lazy" decoding="async"/>
-</picture>
-          </div>
-          <div class="col-model__fins">
-            <button class="fin-btn active" data-fin="zenith" data-img="dist/images/habitats/essence-plus/finitions/essence-plus-zenith.avif" title="Zénith"></button>
-            <button class="fin-btn" data-fin="pure" data-img="dist/images/habitats/essence-plus/finitions/essence-plus-pure.avif" title="Pure"></button>
-            <button class="fin-btn" data-fin="linea" data-img="dist/images/habitats/essence-plus/finitions/essence-plus-linea.avif" title="Linéa"></button>
-            <span class="fin-active-label">Zénith</span>
-          </div>
-          <div class="col-model__info">
-            <div class="col-model__name">ESSENCE +</div>
-            <div class="col-model__sub" data-fr="Avec kitchenette" data-en="With kitchenette">Avec kitchenette</div>
-            <div class="col-model__price" data-model="essence-plus" data-price-france="à partir de —" data-price-guadeloupe="à partir de —" data-price-martinique="à partir de —" data-price-saint-martin="à partir de —" data-price-guyane="à partir de —" data-fr="à partir de —" data-en="from —">à partir de —</div>
-            <span class="col-model__cta" data-fr="Découvrir →" data-en="Discover →">Découvrir →</span>
-          </div>
-        </a>
+      <div class="family-block__body">
+        <span class="family-block__eyebrow" data-fr="ESSENCE" data-en="ESSENCE">ESSENCE</span>
+        <h2 class="family-block__title" data-fr="Le studio compact" data-en="The compact studio">Le studio compact</h2>
+        <p class="family-block__meta" data-fr="20 m² · 2 personnes · toit 2 pans" data-en="20 m² · 2 people · pitched roof">20 m² · 2 personnes · toit 2 pans</p>
+        <p class="family-block__desc" data-fr="L'essentiel d'un habitat HKH, dans une empreinte minimale. Intérieur baigné de lumière naturelle, prolongé sur l'extérieur par une baie pleine hauteur." data-en="The essence of an HKH home in a minimal footprint. An interior bathed in natural light, extended outside through a full-height bay window.">L'essentiel d'un habitat HKH, dans une empreinte minimale. Intérieur baigné de lumière naturelle, prolongé sur l'extérieur par une baie pleine hauteur.</p>
+        <div class="family-block__links">
+          <a href="residence-essence.html" class="editorial__link" data-fr="ESSENCE · sans cuisine" data-en="ESSENCE · without kitchen">ESSENCE · sans cuisine</a>
+          <a href="residence-essence-plus.html" class="editorial__link" data-fr="ESSENCE+ · avec kitchenette" data-en="ESSENCE+ · with kitchenette">ESSENCE+ · avec kitchenette</a>
+        </div>
       </div>
     </div>
+  </article>
 
-    <!-- HORIZON -->
-    <div class="collection-family reveal reveal-delay-1">
-      <div class="collection-family__hdr">
-        <span class="collection-family__lbl" data-fr="HORIZON" data-en="HORIZON">HORIZON</span>
-        <span class="collection-family__desc" data-fr="L'essentiel contemporain · 36 m²" data-en="The contemporary essential · 36 m²">L'essentiel contemporain · 36 m²</span>
+  <!-- BLOC 2 — HORIZON (photo droite, texte gauche) -->
+  <article class="family-block family-block--alt reveal">
+    <div class="family-block__inner">
+      <div class="family-block__media">
+        <picture>
+          <source srcset="dist/images/habitats/horizon/gemini_generated_image_esp0jdesp0jdesp0.avif" type="image/avif">
+          <source srcset="dist/images/habitats/horizon/gemini_generated_image_esp0jdesp0jdesp0.webp" type="image/webp">
+          <img src="dist/images/habitats/horizon/gemini_generated_image_esp0jdesp0jdesp0.avif" alt="HORIZON finition Pure en contexte tropical — vue extérieure" loading="lazy" decoding="async"/>
+        </picture>
+        <span class="family-block__caption" data-fr="Projection architecturale" data-en="Architectural rendering">Projection architecturale</span>
       </div>
-      <div class="collection-family__stage">
-        <a href="residence-horizon.html" class="col-model">
-          <div class="col-model__img col-md">
-            <picture>
-  <source srcset="dist/images/habitats/horizon/finitions/horizon-zenith.avif" type="image/avif">
-  <source srcset="dist/images/habitats/horizon/finitions/horizon-zenith.webp" type="image/webp">
-  <img src="dist/images/habitats/horizon/finitions/horizon-zenith.avif" alt="HORIZON" width="3840" height="2160" loading="lazy" decoding="async"/>
-</picture>
-          </div>
-          <div class="col-model__fins">
-            <button class="fin-btn active" data-fin="zenith" data-img="dist/images/habitats/horizon/finitions/horizon-zenith.avif" title="Zénith"></button>
-            <button class="fin-btn" data-fin="pure" data-img="dist/images/habitats/horizon/finitions/horizon-pure.avif" title="Pure"></button>
-            <button class="fin-btn" data-fin="linea" data-img="dist/images/habitats/horizon/finitions/horizon-linea.avif" title="Linéa"></button>
-            <button class="fin-btn" data-fin="pano" data-img="dist/images/habitats/horizon/finitions/horizon-linea-pano.avif" title="Pano"></button>
-            <span class="fin-active-label">Zénith</span>
-          </div>
-          <div class="col-model__info">
-            <div class="col-model__name">HORIZON</div>
-            <div class="col-model__sub" data-fr="Entièrement équipé" data-en="Fully equipped">Entièrement équipé</div>
-            <div class="col-model__price" data-model="horizon" data-price-france="à partir de —" data-price-guadeloupe="à partir de —" data-price-martinique="à partir de —" data-price-saint-martin="à partir de —" data-price-guyane="à partir de —" data-fr="à partir de —" data-en="from —">à partir de —</div>
-            <span class="col-model__cta" data-fr="Découvrir →" data-en="Discover →">Découvrir →</span>
-          </div>
-        </a>
-        <a href="residence-horizon-t.html" class="col-model">
-          <div class="col-model__img col-md">
-            <picture>
-  <source srcset="dist/images/habitats/horizon-t/finitions/horizon-t-zenith.avif" type="image/avif">
-  <source srcset="dist/images/habitats/horizon-t/finitions/horizon-t-zenith.webp" type="image/webp">
-  <img src="dist/images/habitats/horizon-t/finitions/horizon-t-zenith.avif" alt="HORIZON T" width="3840" height="2160" loading="lazy" decoding="async"/>
-</picture>
-          </div>
-          <div class="col-model__fins">
-            <button class="fin-btn active" data-fin="zenith" data-img="dist/images/habitats/horizon-t/finitions/horizon-t-zenith.avif" title="Zénith"></button>
-            <button class="fin-btn" data-fin="pure" data-img="dist/images/habitats/horizon-t/finitions/horizon-t-pure.avif" title="Pure"></button>
-            <button class="fin-btn" data-fin="linea" data-img="dist/images/habitats/horizon-t/finitions/horizon-t-linea.avif" title="Linéa"></button>
-            <button class="fin-btn" data-fin="pano" data-img="dist/images/habitats/horizon-t/finitions/horizon-t-linea-pano.avif" title="Pano"></button>
-            <span class="fin-active-label">Zénith</span>
-          </div>
-          <div class="col-model__info">
-            <div class="col-model__name">HORIZON T</div>
-            <div class="col-model__sub" data-fr="Avec terrasse intégrée" data-en="With integrated terrace">Avec terrasse intégrée</div>
-            <div class="col-model__price" data-model="horizon-t" data-price-france="à partir de —" data-price-guadeloupe="à partir de —" data-price-martinique="à partir de —" data-price-saint-martin="à partir de —" data-price-guyane="à partir de —" data-fr="à partir de —" data-en="from —">à partir de —</div>
-            <span class="col-model__cta" data-fr="Découvrir →" data-en="Discover →">Découvrir →</span>
-          </div>
-        </a>
+      <div class="family-block__body">
+        <span class="family-block__eyebrow" data-fr="HORIZON" data-en="HORIZON">HORIZON</span>
+        <h2 class="family-block__title" data-fr="L'essentiel contemporain" data-en="The contemporary essential">L'essentiel contemporain</h2>
+        <p class="family-block__meta" data-fr="36 m² · 2 personnes · toit plat ou 2 pans" data-en="36 m² · 2 people · flat or pitched roof">36 m² · 2 personnes · toit plat ou 2 pans</p>
+        <p class="family-block__desc" data-fr="Volumes harmonieux, lumière naturelle. La version résidentielle ou la version terrasse, selon votre projet." data-en="Harmonious volumes, natural light. The residential version or the terrace version, depending on your project.">Volumes harmonieux, lumière naturelle. La version résidentielle ou la version terrasse, selon votre projet.</p>
+        <div class="family-block__links">
+          <a href="residence-horizon.html" class="editorial__link" data-fr="HORIZON · entièrement équipé" data-en="HORIZON · fully equipped">HORIZON · entièrement équipé</a>
+          <a href="residence-horizon-t.html" class="editorial__link" data-fr="HORIZON T · avec terrasse intégrée" data-en="HORIZON T · with integrated terrace">HORIZON T · avec terrasse intégrée</a>
+        </div>
       </div>
     </div>
+  </article>
 
-    <!-- SIGNATURE -->
-    <div class="collection-family reveal reveal-delay-2">
-      <div class="collection-family__hdr">
-        <span class="collection-family__lbl" data-fr="SIGNATURE" data-en="SIGNATURE">SIGNATURE</span>
-        <span class="collection-family__desc" data-fr="L'habitat signature · 46 m²" data-en="The signature habitat · 46 m²">L'habitat signature · 46 m²</span>
+  <!-- BLOC 3 — SIGNATURE (photo gauche, texte droite) -->
+  <article class="family-block reveal">
+    <div class="family-block__inner">
+      <div class="family-block__media">
+        <picture>
+          <source srcset="dist/images/habitats/signature/gemini_generated_image_aiows5aiows5aiow.avif" type="image/avif">
+          <source srcset="dist/images/habitats/signature/gemini_generated_image_aiows5aiows5aiow.webp" type="image/webp">
+          <img src="dist/images/habitats/signature/gemini_generated_image_aiows5aiows5aiow.avif" alt="SIGNATURE finition Pinède en contexte tropical — vue extérieure" loading="lazy" decoding="async"/>
+        </picture>
+        <span class="family-block__caption" data-fr="Projection architecturale" data-en="Architectural rendering">Projection architecturale</span>
       </div>
-      <div class="collection-family__stage">
-        <a href="residence-signature.html" class="col-model">
-          <div class="col-model__img col-lg">
-            <picture>
-  <source srcset="dist/images/habitats/signature/finitions/singnature-zenith.avif" type="image/avif">
-  <source srcset="dist/images/habitats/signature/finitions/singnature-zenith.webp" type="image/webp">
-  <img src="dist/images/habitats/signature/finitions/singnature-zenith.avif" alt="SIGNATURE" width="3840" height="2160" loading="lazy" decoding="async"/>
-</picture>
-          </div>
-          <div class="col-model__fins">
-            <button class="fin-btn active" data-fin="zenith" data-img="dist/images/habitats/signature/finitions/singnature-zenith.avif" title="Zénith"></button>
-            <button class="fin-btn" data-fin="pure" data-img="dist/images/habitats/signature/finitions/signature-pure.avif" title="Pure"></button>
-            <button class="fin-btn" data-fin="linea" data-img="dist/images/habitats/signature/finitions/signature-linea.avif" title="Linéa"></button>
-            <button class="fin-btn" data-fin="pano" data-img="dist/images/habitats/signature/finitions/signature-linea-pano.avif" title="Pano"></button>
-            <span class="fin-active-label">Zénith</span>
-          </div>
-          <div class="col-model__info">
-            <div class="col-model__name">SIGNATURE</div>
-            <div class="col-model__sub" data-fr="1 chambre · Résidentiel" data-en="1 bedroom · Residential">1 chambre · Résidentiel</div>
-            <div class="col-model__price" data-model="signature" data-price-france="à partir de —" data-price-guadeloupe="à partir de —" data-price-martinique="à partir de —" data-price-saint-martin="à partir de —" data-price-guyane="à partir de —" data-fr="à partir de —" data-en="from —">à partir de —</div>
-            <span class="col-model__cta" data-fr="Découvrir →" data-en="Discover →">Découvrir →</span>
-          </div>
-        </a>
-        <a href="residence-signature-duo.html" class="col-model">
-          <div class="col-model__img col-lg">
-            <picture>
-  <source srcset="dist/images/habitats/signature/finitions/singnature-zenith.avif" type="image/avif">
-  <source srcset="dist/images/habitats/signature/finitions/singnature-zenith.webp" type="image/webp">
-  <img src="dist/images/habitats/signature/finitions/singnature-zenith.avif" alt="SIGNATURE DUO" width="3840" height="2160" loading="lazy" decoding="async"/>
-</picture>
-          </div>
-          <div class="col-model__fins">
-            <button class="fin-btn active" data-fin="zenith" data-img="dist/images/habitats/signature/finitions/singnature-zenith.avif" title="Zénith"></button>
-            <button class="fin-btn" data-fin="pure" data-img="dist/images/habitats/signature/finitions/signature-pure.avif" title="Pure"></button>
-            <button class="fin-btn" data-fin="linea" data-img="dist/images/habitats/signature/finitions/signature-linea.avif" title="Linéa"></button>
-            <button class="fin-btn" data-fin="pano" data-img="dist/images/habitats/signature/finitions/signature-linea-pano.avif" title="Pano"></button>
-            <span class="fin-active-label">Zénith</span>
-          </div>
-          <div class="col-model__info">
-            <div class="col-model__name">SIGNATURE DUO</div>
-            <div class="col-model__sub" data-fr="2 chambres · Familial" data-en="2 bedrooms · Family">2 chambres · Familial</div>
-            <div class="col-model__price" data-model="signature-duo" data-price-france="à partir de —" data-price-guadeloupe="à partir de —" data-price-martinique="à partir de —" data-price-saint-martin="à partir de —" data-price-guyane="à partir de —" data-fr="à partir de —" data-en="from —">à partir de —</div>
-            <span class="col-model__cta" data-fr="Découvrir →" data-en="Discover →">Découvrir →</span>
-          </div>
-        </a>
+      <div class="family-block__body">
+        <span class="family-block__eyebrow" data-fr="SIGNATURE" data-en="SIGNATURE">SIGNATURE</span>
+        <h2 class="family-block__title" data-fr="L'habitat signature" data-en="The signature home">L'habitat signature</h2>
+        <p class="family-block__meta" data-fr="46 m² · jusqu'à 4 personnes · 1 ou 2 chambres" data-en="46 m² · up to 4 people · 1 or 2 bedrooms">46 m² · jusqu'à 4 personnes · 1 ou 2 chambres</p>
+        <p class="family-block__desc" data-fr="Le modèle résidentiel par excellence. Familial ou couple, résidence ou locatif premium." data-en="The residential model par excellence. Family or couple, primary residence or premium rental.">Le modèle résidentiel par excellence. Familial ou couple, résidence ou locatif premium.</p>
+        <div class="family-block__links">
+          <a href="residence-signature.html" class="editorial__link" data-fr="SIGNATURE · 1 chambre" data-en="SIGNATURE · 1 bedroom">SIGNATURE · 1 chambre</a>
+          <a href="residence-signature-duo.html" class="editorial__link" data-fr="SIGNATURE DUO · 2 chambres" data-en="SIGNATURE DUO · 2 bedrooms">SIGNATURE DUO · 2 chambres</a>
+        </div>
       </div>
     </div>
+  </article>
 
-  </div><!-- /collection-grid -->
-
-  <div class="collection-footer reveal">
-    <a href="habitats.html" class="editorial__link" data-fr="Voir tous les habitats" data-en="View all homes">Voir tous les habitats</a>
+  <div class="family-block__cta-row reveal">
+    <span class="family-block__sep" aria-hidden="true"></span>
+    <a href="habitats.html" class="editorial__link" data-fr="Voir tous les habitats" data-en="See all residences">Voir tous les habitats</a>
   </div>
 </section>
 
@@ -421,69 +325,24 @@ revealEls.forEach(el=>io.observe(el));
   });
 })();
 
-document.querySelectorAll('.col-model__fins').forEach(function(fins){
-  fins.querySelectorAll('.fin-btn').forEach(function(btn){
-    btn.addEventListener('click', function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      fins.querySelectorAll('.fin-btn').forEach(function(b){ b.classList.remove('active'); });
-      btn.classList.add('active');
-      var img = fins.closest('.col-model').querySelector('.col-model__img img');
-      img.src = btn.dataset.img;
-      var lbl = fins.querySelector('.fin-active-label');
-      if(lbl) lbl.textContent = btn.getAttribute('title');
-    });
-  });
-});
-</script>
-<script>
+/* Init territoire global pour les sections qui en dépendent (note Girardin, etc.) */
 (function(){
   var PRICES_KEY = 'hkh-territory';
   var TERRITORIES = ['france','guadeloupe','martinique','saint-martin','guyane'];
-
   function getTerritory(){
     var saved = localStorage.getItem(PRICES_KEY);
     return TERRITORIES.indexOf(saved) !== -1 ? saved : 'france';
   }
-
-  var hasInit = false;
-
-  function applyTerritoryPrices(key){
+  function setTerritory(key){
     if(TERRITORIES.indexOf(key) === -1) key = 'france';
     localStorage.setItem(PRICES_KEY, key);
     document.body.setAttribute('data-territory', key);
-
-    var prices = document.querySelectorAll('.col-model__price');
-
-    if(!hasInit){
-      prices.forEach(function(el){
-        var val = el.getAttribute('data-price-' + key);
-        if(val) el.textContent = val;
-      });
-      hasInit = true;
-      return;
-    }
-
-    prices.forEach(function(el){ el.classList.add('is-switching'); });
-    setTimeout(function(){
-      prices.forEach(function(el){
-        var val = el.getAttribute('data-price-' + key);
-        if(val) el.textContent = val;
-        el.classList.remove('is-switching');
-      });
-    }, 220);
   }
-
-  applyTerritoryPrices(getTerritory());
-
-  window.addEventListener('hkh:territory-changed', function(e){
-    applyTerritoryPrices(e.detail.territory);
-  });
-
-  window.addEventListener('hkh:prices-loaded', function(){
-    applyTerritoryPrices(getTerritory());
-  });
+  setTerritory(getTerritory());
+  window.addEventListener('hkh:territory-changed', function(e){ setTerritory(e.detail.territory); });
 })();
+</script>
+<script>
 
 /* ── Parallaxe Hero subtle ──────────────────────── */
 (function(){
