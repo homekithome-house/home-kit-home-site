@@ -126,6 +126,44 @@
   </div>
 </section>
 
+<!-- ── METHOD — TIMELINE ÉDITORIALE DARK ─────── -->
+<section class="method">
+  <div class="method__inner">
+    <span class="method__eyebrow reveal" data-fr="La méthode HKH" data-en="The HKH method">La méthode HKH</span>
+    <h2 class="method__title reveal reveal-delay-1" data-fr="Du terrain à la pose,<br>en quelques mois." data-en="From the land to the install,<br>in a few months.">Du terrain à la pose,<br>en quelques mois.</h2>
+    <p class="method__lead reveal reveal-delay-2" data-fr="Un interlocuteur unique. Trois étapes. Une livraison clé en main." data-en="A single point of contact. Three steps. Turnkey delivery.">Un interlocuteur unique. Trois étapes. Une livraison clé en main.</p>
+
+    <ol class="method__timeline">
+      <li class="method__step reveal reveal-delay-3">
+        <span class="method__num" data-n="01">01</span>
+        <div class="method__body">
+          <h3 class="method__step-title" data-fr="Cadrage" data-en="Framing">Cadrage</h3>
+          <p class="method__step-desc" data-fr="Étude de votre terrain et de votre projet. Choix du modèle, des finitions, des options. Devis et plan d'aménagement personnalisés." data-en="Survey of your land and project. Selection of the model, finishes, and options. Quote and personalised layout plan.">Étude de votre terrain et de votre projet. Choix du modèle, des finitions, des options. Devis et plan d'aménagement personnalisés.</p>
+        </div>
+      </li>
+      <li class="method__step reveal reveal-delay-4">
+        <span class="method__num" data-n="02">02</span>
+        <div class="method__body">
+          <h3 class="method__step-title" data-fr="Atelier" data-en="Workshop">Atelier</h3>
+          <p class="method__step-desc" data-fr="Fabrication en atelier selon les normes CE. Structure acier galvanisé anti-sismique, isolation multicouche, finitions intérieures. Suivi photo régulier." data-en="Workshop fabrication to CE standards. Anti-seismic galvanised steel structure, multi-layer insulation, interior finishes. Regular photo updates.">Fabrication en atelier selon les normes CE. Structure acier galvanisé anti-sismique, isolation multicouche, finitions intérieures. Suivi photo régulier.</p>
+        </div>
+      </li>
+      <li class="method__step reveal reveal-delay-5">
+        <span class="method__num" data-n="03">03</span>
+        <div class="method__body">
+          <h3 class="method__step-title" data-fr="Pose" data-en="Install">Pose</h3>
+          <p class="method__step-desc" data-fr="Livraison par grue. Pose sur pieux acier déjà installés. Raccordements et remise des clés le jour même." data-en="Crane delivery. Installation on pre-set steel piles. Hook-ups and handover on the same day.">Livraison par grue. Pose sur pieux acier déjà installés. Raccordements et remise des clés le jour même.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="method__synth reveal reveal-delay-6">
+      <span class="method__synth-rule" aria-hidden="true"></span>
+      <p class="method__synth-line" data-fr="5 à 6 mois entre la commande et la remise des clés." data-en="5 to 6 months from order to handover.">5 à 6 mois entre la commande et la remise des clés.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ── TERRAIN BANNER ────────────────────────────────── -->
 <section class="terrain-banner">
   <div class="terrain-banner__content">
@@ -372,6 +410,29 @@ revealEls.forEach(el=>io.observe(el));
       ticking = true;
     }
   }, { passive: true });
+})();
+</script>
+<script>
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  var tl = document.querySelector('.method__timeline');
+  if(tl){
+    var ioTl = new IntersectionObserver(function(ents){
+      ents.forEach(function(e){
+        if(e.isIntersecting){ tl.classList.add('is-revealed'); ioTl.unobserve(tl); }
+      });
+    },{threshold:.18});
+    ioTl.observe(tl);
+  }
+  var steps = document.querySelectorAll('.method__step');
+  if(steps.length){
+    var ioSt = new IntersectionObserver(function(ents){
+      ents.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('is-in'); ioSt.unobserve(e.target); }
+      });
+    },{threshold:.3});
+    steps.forEach(function(s){ ioSt.observe(s); });
+  }
 })();
 </script>
 </body>
