@@ -423,18 +423,18 @@ revealEls.forEach(el=>io.observe(el));
 /* ── Method scroll-driven motion (rAF universel) ────────
    Approche universelle Chrome/FF/Safari : pas de CSS @supports
    scroll-driven (interprétation native instable selon contexte).
-   Le rAF coalescé écrit transform/opacity/filter inline + --step-progress. */
+   Le rAF coalescé écrit transform inline + --step-progress.
+   IO gate : rAF uniquement quand la section est dans le viewport. */
 (function(){
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var steps = Array.prototype.slice.call(document.querySelectorAll('.method__step'));
   if(!steps.length) return;
 
-  /* Mobile — stack statique calme, pas de transform/filter inline */
+  /* Mobile — stack statique calme, pas de transform inline */
   if(window.matchMedia('(max-width: 768px)').matches){
     steps.forEach(function(s){
       s.style.setProperty('--step-focus', 1);
       s.style.transform = 'none';
-      s.style.filter    = 'none';
     });
     return;
   }
@@ -444,31 +444,57 @@ revealEls.forEach(el=>io.observe(el));
   function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
 
   var ticking = false;
+  var active  = false;
+
   function update(){
     ticking = false;
-    var vh = window.innerHeight;
+    var vh  = window.innerHeight;
     var vcY = vh / 2;
-    steps.forEach(function(step){
-      var r = step.getBoundingClientRect();
+
+    /* PASS 1 — READ all rects (1 reflow max) */
+    var rects = steps.map(function(s){ return s.getBoundingClientRect(); });
+
+    /* PASS 2 — WRITE all styles */
+    rects.forEach(function(r, i){
+      var step = steps[i];
       var stepCenterY = r.top + r.height / 2;
       /* Trait copper : progress 0→1 basé sur position viewport */
       var progress = clamp((vh - r.top) / (vh + r.height), 0, 1);
       step.style.setProperty('--step-progress', progress);
       /* Zoom progressif */
       var dist = clamp(Math.abs(stepCenterY - vcY) / (vh / 2), 0, 1);
-      var e = easeOutQuad(dist);
-      var sc  = lerp(1.05, 0.94, e);
-      var bl  = lerp(0, 0.5, dist);
+      var e    = easeOutQuad(dist);
+      var sc   = lerp(1.05, 0.94, e);
       step.style.transform = 'scale(' + sc + ')';
-      step.style.filter    = 'blur(' + bl + 'px)';
       /* Focus active step — 1 au centre, 0 aux bords */
       step.style.setProperty('--step-focus', (1 - e).toFixed(3));
     });
   }
-  window.addEventListener('scroll', function(){
-    if(!ticking){ requestAnimationFrame(update); ticking = true; }
-  }, { passive: true });
-  update();
+
+  function onScroll(){
+    if(!ticking && active){ requestAnimationFrame(update); ticking = true; }
+  }
+
+  var section = document.querySelector('.method');
+  if('IntersectionObserver' in window && section){
+    var io = new IntersectionObserver(function(ents){
+      ents.forEach(function(e){
+        active = e.isIntersecting;
+        if(active){
+          steps.forEach(function(s){ s.style.willChange = 'transform'; });
+          requestAnimationFrame(update);
+        } else {
+          steps.forEach(function(s){ s.style.willChange = 'auto'; });
+        }
+      });
+    }, { rootMargin: '50% 0px 50% 0px' });
+    io.observe(section);
+  } else {
+    /* Fallback : pas d'IO, on active toujours */
+    active = true;
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
 })();
 </script>
 </body>
