@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SIGNATURE — Home Kit Home</title>
+  <meta name="description" content="SIGNATURE — résidence d'exception de 46 m², 1 chambre, livrée clé en main. Le summum de l'habitat architectural pour les marchés tropicaux."/>
+  <meta property="og:title" content="SIGNATURE — Home Kit Home"/>
+  <meta property="og:description" content="SIGNATURE — résidence d'exception de 46 m², 1 chambre, livrée clé en main. Le summum de l'habitat architectural pour les marchés tropicaux."/>
+  <meta property="og:image" content="images/signature-ext-bois.png"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="fr_FR"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap" media="print" onload="this.media='all'"/>
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
+  </noscript>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="assets/css/product.css">
+  <link rel="stylesheet" href="assets/css/animations.css"/>
+  <style>
+    /* local — spécifique signature (nav inline, sans nav.js) */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;background:rgba(249,247,242,.97);backdrop-filter:blur(20px);border-bottom:1px solid #E5DDD0}
+    .nav__logo{display:flex;flex-direction:column;line-height:1;gap:2px}
+    .nav__logo .hkh{font-family:var(--serif);font-size:1.65rem;color:#2C2C28;letter-spacing:.06em}
+    .nav__logo .sub{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--copper)}
+    .nav__links{display:flex;align-items:center;gap:2rem}
+    .nav__links a{font-size:1rem;letter-spacing:.04em;color:#7A736A;transition:color .2s}
+    .nav__links a:hover,.nav__links a.active{color:#2C2C28}
+    .nav__links a{position:relative}
+    .nav__links a::after{content:'';position:absolute;bottom:-3px;left:0;height:1.5px;width:0;background:currentColor;transition:width .3s ease}
+    .nav__links a:hover::after,.nav__links a.active::after{width:100%}
+    .nav__right{display:flex;align-items:center;gap:1.2rem}
+    .nav__lang{display:flex;align-items:center;gap:.35rem;font-size:.7rem;color:rgba(255,255,255,.3)}
+    .lang-btn{background:none;border:none;cursor:pointer;font-size:.7rem;color:rgba(255,255,255,.4);padding:0;font-family:var(--sans);transition:color .2s}
+    .lang-btn.active,.lang-btn:hover{color:var(--copper)}
+    .nav__cta{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;background:var(--copper);color:var(--white);padding:.55rem 1.2rem;border:1px solid var(--copper);transition:background .3s,color .3s;white-space:nowrap}
+    .nav__cta:hover{background:transparent;color:var(--copper)}
+    .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+    .burger span{display:block;width:22px;height:1.5px;background:var(--white);transition:all .3s}
+    .burger.open span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
+    .burger.open span:nth-child(2){opacity:0}
+    .burger.open span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px)}
+    .mob-ov{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:300;background:#fff;flex-direction:column;overflow-y:auto}
+    .mob-ov.open{display:flex}
+    .mob-hdr{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 1.8rem;border-bottom:1px solid var(--cream-dk)}
+    .mob-hdr .hkh{font-family:var(--serif);font-size:1.2rem;color:var(--dark);letter-spacing:.06em}
+    .mob-hdr .sub{font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--copper);display:block}
+    .mob-x{background:none;border:none;font-size:1.8rem;cursor:pointer;color:var(--dark);line-height:1;padding:.2rem .4rem}
+    .mob-prod{padding:1.5rem 1.8rem}
+    .mob-prod h3{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:1rem}
+    .res-sc{display:flex;gap:.8rem;overflow-x:auto;padding-bottom:.5rem;scrollbar-width:none}
+    .res-sc::-webkit-scrollbar{display:none}
+    .rt{display:flex;flex-direction:column;align-items:center;gap:.4rem;flex-shrink:0;text-decoration:none}
+    .rt__img{width:80px;height:80px;background:var(--dark2);display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .rt__ph{font-size:.7rem;letter-spacing:.12em;color:rgba(255,255,255,.4);text-transform:uppercase;text-align:center;padding:0 4px}
+    .rt__n{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dark)}
+    .mob-nav{display:flex;flex-direction:column;padding:0 1.8rem;border-top:1px solid var(--cream-dk);margin-top:.5rem}
+    .mob-nav a{font-size:.95rem;color:var(--dark);padding:1rem 0;border-bottom:1px solid var(--cream-dk);letter-spacing:.04em}
+    .mob-nav a:last-child{border-bottom:none}
+    .mob-bot{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 1.8rem;margin-top:auto;border-top:1px solid var(--cream-dk)}
+    .mob-bot .mob-cta{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;background:var(--copper);color:#fff;padding:.65rem 1.4rem;border:1px solid var(--copper)}
+    .mob-bot .mob-lang{display:flex;align-items:center;gap:.5rem}
+    .mob-bot .lang-btn{color:var(--dark);font-size:.7rem}
+    .mob-bot .lang-btn.active{color:var(--copper)}
+    @media(max-width:768px){
+      .nav__links,.nav__right .nav__lang,.nav__right .nav__cta{display:none}
+      .burger{display:flex}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav__logo"><span class="hkh">HKH</span><span class="sub">Home Kit Home</span></a>
+  <div class="nav__links">
+    <div class="nav__has-drop">
+      <a href="habitats.html" data-fr="Nos Habitats" data-en="Our Homes">Nos Habitats</a>
+      <div class="nav__drop">
+        <div class="nav__drop-col">
+          <span class="nav__drop-family">Essence · 20 m²</span>
+          <a href="residence-essence.html">Essence</a>
+          <a href="residence-essence-plus.html">Essence +</a>
+        </div>
+        <div class="nav__drop-col">
+          <span class="nav__drop-family">Horizon · 36 m²</span>
+          <a href="residence-horizon.html">Horizon</a>
+          <a href="residence-horizon-t.html">Horizon T</a>
+        </div>
+        <div class="nav__drop-col">
+          <span class="nav__drop-family">Signature · 46 m²</span>
+          <a href="residence-signature.html">Signature</a>
+          <a href="residence-signature-duo.html">Signature Duo</a>
+        </div>
+      </div>
+    </div>
+    <a href="partenaires.html" data-fr="Partenaires" data-en="Partners">Partenaires</a>
+    <a href="projets.html" data-fr="Projets" data-en="Projects">Projets</a>
+    <a href="blog.html" data-fr="Actualités" data-en="News">Actualités</a>
+    <a href="faq.html">FAQ</a>
+        <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+  </div>
+  <div class="nav__right">
+    <div class="nav__lang">
+      <button class="lang-btn active" data-lang="fr">FR</button><span>|</span>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+    <a href="contact.html" class="nav__cta" data-fr="Demander un devis" data-en="Get a quote">Demander un devis</a>
+  </div>
+  <button class="burger" id="burger"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-ov" id="mobOv">
+  <div class="mob-hdr">
+    <div><span class="hkh">HKH</span><span class="sub">Home Kit Home</span></div>
+    <button class="mob-x" id="mobX">×</button>
+  </div>
+  <div class="mob-prod">
+    <h3 data-fr="Nos habitats" data-en="Our homes">Nos habitats</h3>
+    <div class="res-sc">
+      <a href="residence-essence.html" class="rt"><div class="rt__img"><picture>
+  <source srcset="dist/images/essence-ext-bois.avif" type="image/avif">
+  <source srcset="dist/images/essence-ext-bois.webp" type="image/webp">
+  <img src="images/essence-ext-bois.png" alt="ESSENCE" style="object-fit:contain;background:#252521;padding:4px" loading="lazy" decoding="async"/>
+</picture></div><span class="rt__n">Essence</span></a>
+      <a href="residence-essence-plus.html" class="rt"><div class="rt__img"><picture>
+  <source srcset="dist/images/essence-plus-ext-bois.avif" type="image/avif">
+  <source srcset="dist/images/essence-plus-ext-bois.webp" type="image/webp">
+  <img src="images/essence-plus-ext-bois.png" alt="ESSENCE+" style="object-fit:contain;background:#252521;padding:4px" loading="lazy" decoding="async"/>
+</picture></div><span class="rt__n">Essence +</span></a>
+      <a href="residence-horizon.html" class="rt"><div class="rt__img"><picture>
+  <source srcset="dist/images/horizon-ext-bois.avif" type="image/avif">
+  <source srcset="dist/images/horizon-ext-bois.webp" type="image/webp">
+  <img src="images/horizon-ext-bois.png" alt="HORIZON" style="object-fit:contain;background:#252521;padding:4px" loading="lazy" decoding="async"/>
+</picture></div><span class="rt__n">Horizon</span></a>
+      <a href="residence-horizon-t.html" class="rt"><div class="rt__img"><picture>
+  <source srcset="dist/images/horizon-t-ext-bois.avif" type="image/avif">
+  <source srcset="dist/images/horizon-t-ext-bois.webp" type="image/webp">
+  <img src="images/horizon-t-ext-bois.png" alt="HORIZON T" style="object-fit:contain;background:#252521;padding:4px" loading="lazy" decoding="async"/>
+</picture></div><span class="rt__n">Horizon T</span></a>
+      <a href="residence-signature.html" class="rt"><div class="rt__img"><picture>
+  <source srcset="dist/images/signature-ext-bois.avif" type="image/avif">
+  <source srcset="dist/images/signature-ext-bois.webp" type="image/webp">
+  <img src="images/signature-ext-bois.png" alt="SIGNATURE" style="object-fit:contain;background:#252521;padding:4px" loading="lazy" decoding="async"/>
+</picture></div><span class="rt__n">Signature</span></a>
+      <a href="residence-signature-duo.html" class="rt"><div class="rt__img"><picture>
+  <source srcset="dist/images/signature-duo-ext-bois.avif" type="image/avif">
+  <source srcset="dist/images/signature-duo-ext-bois.webp" type="image/webp">
+  <img src="images/signature-duo-ext-bois.png" alt="SIGNATURE DUO" style="object-fit:contain;background:#252521;padding:4px" loading="lazy" decoding="async"/>
+</picture></div><span class="rt__n">Sig. Duo</span></a>
+    </div>
+  </div>
+  <nav class="mob-nav">
+    <a href="habitats.html" data-fr="Nos Habitats" data-en="Our Homes">Nos Habitats</a>
+    <a href="partenaires.html" data-fr="Partenaires" data-en="Partners">Partenaires</a>
+    <a href="projets.html" data-fr="Projets" data-en="Projects">Projets</a>
+    <a href="visite-virtuelle.html" data-fr="Visite Virtuelle" data-en="Virtual Tour">Visite Virtuelle</a>
+    <a href="blog.html" data-fr="Actualités" data-en="News">Actualités</a>
+    <a href="faq.html">FAQ</a>
+    <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+  </nav>
+  <div class="mob-bot">
+    <div class="mob-lang">
+      <button class="lang-btn active" data-lang="fr">FR</button><span style="color:var(--mid)">|</span>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+    <a href="contact.html" class="mob-cta" data-fr="Demander un devis →" data-en="Get a quote →">Demander un devis →</a>
+  </div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="habitats.html" data-fr="← Nos Habitats" data-en="← Our Homes">← Nos Habitats</a>
+  <span>/</span>
+  <span style="color:rgba(255,255,255,.5);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase">SIGNATURE</span>
+</div>
+
+<!-- ═══ MAIN PRODUCT LAYOUT ═══ -->
+<div class="product-layout">
+
+  <!-- GAUCHE : Photos + finition (sticky) -->
+  <div class="visual-panel">
+    <div class="main-carousel">
+      <div class="car-slides" id="carSlides">
+        <div class="car-slide active" data-group="ext"><picture>
+  <source srcset="dist/images/signature-ext-bois.avif" type="image/avif">
+  <source srcset="dist/images/signature-ext-bois.webp" type="image/webp">
+  <img src="images/signature-ext-bois.png" alt="SIGNATURE — Extérieur bois"/>
+</picture></div>
+        <div class="car-slide" data-group="ext"><picture>
+  <source srcset="dist/images/signature-ext-bois-pano.avif" type="image/avif">
+  <source srcset="dist/images/signature-ext-bois-pano.webp" type="image/webp">
+  <img src="images/signature-ext-bois-pano.png" alt="SIGNATURE — Extérieur bois panoramique" loading="lazy" decoding="async"/>
+</picture></div>
+        <div class="car-slide" data-group="ext"><picture>
+  <source srcset="dist/images/signature-ext-metal.avif" type="image/avif">
+  <source srcset="dist/images/signature-ext-metal.webp" type="image/webp">
+  <img src="images/signature-ext-metal.png" alt="SIGNATURE — Extérieur métal" loading="lazy" decoding="async"/>
+</picture></div>
+        <div class="car-slide" data-group="ext"><picture>
+  <source srcset="dist/images/signature-ext-metal-pano.avif" type="image/avif">
+  <source srcset="dist/images/signature-ext-metal-pano.webp" type="image/webp">
+  <img src="images/signature-ext-metal-pano.png" alt="SIGNATURE — Extérieur métal panoramique" loading="lazy" decoding="async"/>
+</picture></div>
+        <div class="car-slide" data-group="int"><picture>
+  <source srcset="dist/images/signature-int-salon-1.avif" type="image/avif">
+  <source srcset="dist/images/signature-int-salon-1.webp" type="image/webp">
+  <img src="images/signature-int-salon-1.jpg" alt="SIGNATURE — Salon" loading="lazy" decoding="async"/>
+</picture></div>
+        <div class="car-slide" data-group="int"><picture>
+  <source srcset="dist/images/signature-int-salon-2.avif" type="image/avif">
+  <source srcset="dist/images/signature-int-salon-2.webp" type="image/webp">
+  <img src="images/signature-int-salon-2.jpg" alt="SIGNATURE — Salon 2" loading="lazy" decoding="async"/>
+</picture></div>
+        <div class="car-slide" data-group="int"><picture>
+  <source srcset="dist/images/signature-int-salon-3.avif" type="image/avif">
+  <source srcset="dist/images/signature-int-salon-3.webp" type="image/webp">
+  <img src="images/signature-int-salon-3.jpg" alt="SIGNATURE — Salon 3" loading="lazy" decoding="async"/>
+</picture></div>
+        <div class="car-slide" data-group="int"><picture>
+  <source srcset="dist/images/signature-int-chambre.avif" type="image/avif">
+  <source srcset="dist/images/signature-int-chambre.webp" type="image/webp">
+  <img src="images/signature-int-chambre.jpg" alt="SIGNATURE — Chambre" loading="lazy" decoding="async"/>
+</picture></div>
+        <div class="car-slide" data-group="int"><picture>
+  <source srcset="dist/images/signature-int-sdb.avif" type="image/avif">
+  <source srcset="dist/images/signature-int-sdb.webp" type="image/webp">
+  <img src="images/signature-int-sdb.jpg" alt="SIGNATURE — Salle d'eau" loading="lazy" decoding="async"/>
+</picture></div>
+        <div class="car-slide car-plan" data-group="plan"><picture>
+  <source srcset="dist/images/signature-plan.avif" type="image/avif">
+  <source srcset="dist/images/signature-plan.webp" type="image/webp">
+  <img src="images/signature-plan.png" alt="SIGNATURE — Plan d'aménagement" loading="lazy" decoding="async"/>
+</picture></div>
+      </div>
+      <button class="car-btn prev" id="carPrev">&#8249;</button>
+      <button class="car-btn next" id="carNext">&#8250;</button>
+      <div class="car-group-tabs">
+        <button class="cgt active" data-group="ext" data-fr="Extérieur" data-en="Exterior">Extérieur</button>
+        <button class="cgt" data-group="int" data-fr="Intérieur" data-en="Interior">Intérieur</button>
+        <button class="cgt" data-group="plan" data-fr="Plan" data-en="Floor plan">Plan</button>
+        <button class="cgt" data-group="3d" data-fr="Vue 3D" data-en="3D View">Vue 3D</button>
+      </div>
+      <canvas id="viewer3d"></canvas>
+      <div class="viewer-hint" id="viewerHint" style="display:none" data-fr="Cliquez et faites glisser pour pivoter" data-en="Click and drag to rotate">Cliquez et faites glisser pour pivoter</div>
+      <div class="car-count"><span id="carCur">1</span>/<span id="carTot">10</span></div>
+    </div>
+    <div class="car-thumbs" id="carThumbs">
+      <button class="car-thumb active" data-idx="0"><picture>
+  <source srcset="dist/images/signature-ext-bois.avif" type="image/avif">
+  <source srcset="dist/images/signature-ext-bois.webp" type="image/webp">
+  <img src="images/signature-ext-bois.png" alt="SIGNATURE — façade extérieure, finition bois" loading="lazy"/>
+</picture></button>
+      <button class="car-thumb" data-idx="1"><picture>
+  <source srcset="dist/images/signature-ext-metal.avif" type="image/avif">
+  <source srcset="dist/images/signature-ext-metal.webp" type="image/webp">
+  <img src="images/signature-ext-metal.png" alt="SIGNATURE — façade extérieure, finition métal" loading="lazy" decoding="async"/>
+</picture></button>
+      <button class="car-thumb" data-idx="2"><picture>
+  <source srcset="dist/images/signature-int-salon-1.avif" type="image/avif">
+  <source srcset="dist/images/signature-int-salon-1.webp" type="image/webp">
+  <img src="images/signature-int-salon-1.jpg" alt="SIGNATURE — espace salon intérieur" loading="lazy" decoding="async"/>
+</picture></button>
+      <button class="car-thumb" data-idx="3"><picture>
+  <source srcset="dist/images/signature-int-chambre.avif" type="image/avif">
+  <source srcset="dist/images/signature-int-chambre.webp" type="image/webp">
+  <img src="images/signature-int-chambre.jpg" alt="SIGNATURE — chambre intérieure" loading="lazy" decoding="async"/>
+</picture></button>
+    </div>
+    <div class="fin-panel">
+      <span class="fin-panel__title" data-fr="Finition extérieure" data-en="Exterior finish">Finition extérieure</span>
+      <div class="fin-swatches">
+        <div class="fin-item active" data-fin="pinede" onclick="selectFin(this,'pinede')">
+          <div class="fin-swatch fin-pinede active"><div class="fin-swatch-fallback"></div></div>
+          <div class="fin-name">Pinède</div>
+        </div>
+        <div class="fin-item" data-fin="pure" onclick="selectFin(this,'pure')">
+          <div class="fin-swatch fin-pure"><div class="fin-swatch-fallback"></div></div>
+          <div class="fin-name">Pure</div>
+        </div>
+        <div class="fin-item" data-fin="linea" onclick="selectFin(this,'linea')">
+          <div class="fin-swatch fin-linea"><div class="fin-swatch-fallback"></div></div>
+          <div class="fin-name">Linéa</div>
+        </div>
+        <div class="fin-item" data-fin="pano" onclick="selectFin(this,'pano')">
+          <div class="fin-swatch fin-pano"><div class="fin-swatch-fallback"></div></div>
+          <div class="fin-name">Pano</div>
+        </div>
+      </div>
+      <div id="finDesc" class="fin-desc">Bardage bois foncé, teinte naturelle profonde — s'intègre harmonieusement dans les environnements boisés et tropicaux.</div>
+    </div>
+  </div>
+
+  <!-- DROITE : Config scrollable -->
+  <div class="config-panel">
+
+    <div class="config-family" data-fr="Famille SIGNATURE" data-en="SIGNATURE Family">Famille SIGNATURE</div>
+    <h1 class="config-name">SIGNATURE</h1>
+    <div class="config-tagline" data-fr="La résidence d'exception · 1 chambre · 46 m²" data-en="The exceptional residence · 1 bedroom · 46 m²">La résidence d'exception · 1 chambre · 46 m²</div>
+
+    <!-- Prix geo-IP -->
+    <div class="price-block" id="priceBlock">
+      <div class="price-loading" data-fr="Chargement du tarif…" data-en="Loading price…">Chargement du tarif…</div>
+    </div><!-- FINITIONS EXTÉRIEURES -->
+    <div>
+      <span class="config-section-title" data-fr="Finition extérieure" data-en="Exterior finish">Finition extérieure</span>
+      <div class="fin-swatches">
+        <div class="fin-item active" data-fin="pinede" onclick="selectFin(this,'pinede')">
+          <div class="fin-swatch fin-pinede active"><div class="fin-swatch-fallback"></div></div>
+          <div class="fin-name">Pinède</div>
+        </div>
+        <div class="fin-item" data-fin="pure" onclick="selectFin(this,'pure')">
+          <div class="fin-swatch fin-pure"><div class="fin-swatch-fallback"></div></div>
+          <div class="fin-name">Pure</div>
+        </div>
+        <div class="fin-item" data-fin="linea" onclick="selectFin(this,'linea')">
+          <div class="fin-swatch fin-linea"><div class="fin-swatch-fallback"></div></div>
+          <div class="fin-name">Linéa</div>
+        </div>
+        <div class="fin-item" data-fin="pano" onclick="selectFin(this,'pano')">
+          <div class="fin-swatch fin-pano"><div class="fin-swatch-fallback"></div></div>
+          <div class="fin-name">Pano</div>
+        </div>
+      </div>
+      <div id="finDesc" style="margin-top:.8rem;font-size:.75rem;color:rgba(255,255,255,.35);line-height:1.5">
+        Bardage bois foncé, teinte naturelle profonde — s'intègre harmonieusement dans les environnements boisés et tropicaux.
+      </div>
+    </div>
+
+    <!-- SPECS -->
+    <div>
+      <span class="config-section-title" data-fr="Caractéristiques" data-en="Specifications">Caractéristiques</span>
+      <div class="config-specs">
+        <div class="cspec"><div class="cspec__val">46 m²</div><div class="cspec__lbl">Surface</div></div>
+        <div class="cspec"><div class="cspec__val">11,5×4 m</div><div class="cspec__lbl">Dimensions</div></div>
+        <div class="cspec"><div class="cspec__val">10,5 T</div><div class="cspec__lbl">Masse</div></div>
+        <div class="cspec"><div class="cspec__val">2,9–3,3 m</div><div class="cspec__lbl">Hauteur</div></div>
+        <div class="cspec"><div class="cspec__val">1</div><div class="cspec__lbl">Chambre</div></div>
+        <div class="cspec"><div class="cspec__val">CE</div><div class="cspec__lbl">Certification</div></div>
+      </div>
+    </div>
+
+    <!-- DESCRIPTION -->
+    <p class="config-desc" data-fr="Notre résidence phare. Vitrages panoramiques 180° à 360°, domotique intégrée, salle d'eau de standing, cuisine équipée. La référence pour les projets résidentiels et les investisseurs exigeants." data-en="Our flagship residence. 180°–360° panoramic glazing, integrated home automation, high-standard bathroom, equipped kitchen. The reference for residential projects and demanding investors.">Notre résidence phare. Vitrages panoramiques 180° à 360°, domotique intégrée, salle d'eau de standing, cuisine équipée. La référence pour les projets résidentiels et les investisseurs exigeants.</p>
+
+    <!-- OPTIONS INCLUSES -->
+    <div>
+      <span class="config-section-title" data-fr="Options incluses" data-en="Included options">Options incluses</span>
+      <div class="config-options">
+        <span class="copt" data-fr="Structure acier galvanisé à chaud anti-sismique" data-en="Anti-seismic hot-dip galvanised steel structure">Structure acier galvanisé à chaud anti-sismique</span>
+        <span class="copt" data-fr="Isolation thermique & acoustique multicouche" data-en="Multilayer thermal & acoustic insulation">Isolation thermique & acoustique multicouche</span>
+        <span class="copt" data-fr="Vitrages panoramiques sol-plafond 180°–360°" data-en="Floor-to-ceiling panoramic glazing 180°–360°">Vitrages panoramiques sol-plafond 180°–360°</span>
+        <span class="copt" data-fr="Domotique intégrée — éclairage & rideaux motorisés" data-en="Integrated home automation — lighting & motorised blinds">Domotique intégrée — éclairage & rideaux motorisés</span>
+        <span class="copt" data-fr="Porte d'entrée coupe-feu avec contrôle d'accès intelligent" data-en="Fire door with smart access control">Porte coupe-feu avec contrôle d'accès intelligent</span>
+        <span class="copt" data-fr="Climatisation gainable + ventilation double flux" data-en="Ducted AC + dual-flow ventilation">Climatisation gainable + ventilation double flux</span>
+        <span class="copt" data-fr="Cuisine équipée — meubles, hotte, plaques, évier" data-en="Equipped kitchen — cabinets, hood, hob, sink">Cuisine équipée — meubles, hotte, plaques, évier</span>
+        <span class="copt" data-fr="Salle d'eau complète équipements premium" data-en="Full bathroom with premium fittings">Salle d'eau complète équipements premium</span>
+        <span class="copt" data-fr="Sol stratifié finition premium" data-en="Premium laminate flooring">Sol stratifié finition premium</span>
+        <span class="copt" data-fr="Câblage Ethernet Cat 6A + réseau PPR" data-en="Ethernet Cat 6A cabling + PPR plumbing">Câblage Ethernet Cat 6A + réseau PPR</span>
+        <span class="copt" data-fr="Chauffe-eau électrique à accumulation 60 L" data-en="60 L electric storage water heater">Chauffe-eau électrique 60 L</span>
+        <span class="copt" data-fr="Protection incendie intégrée" data-en="Integrated fire protection">Protection incendie intégrée</span>
+      </div>
+    </div>
+
+    <!-- CTAS -->
+    <div class="config-ctas">
+      <a href="contact.html?model=signature" class="btn-primary" data-fr="Demander un devis" data-en="Send request">Demander un devis</a>
+      <a href="#plan" class="btn-secondary" data-fr="Voir le plan d'aménagement" data-en="View floor plan">Voir le plan d'aménagement</a>
+      <a href="#" class="btn-sheet" data-fr="Télécharger la fiche produit (PDF)" data-en="Download product sheet (PDF)">Télécharger la fiche produit (PDF)</a>
+    </div>
+
+  
+    <!-- Plan d'aménagement (PNG) -->
+    <div class="plan-section" id="planSection" style="display:none">
+      <picture>
+  <source srcset="dist/images/signature-plan.avif" type="image/avif">
+  <source srcset="dist/images/signature-plan.webp" type="image/webp">
+  <img src="images/signature-plan.png" alt="Plan d'aménagement SIGNATURE" loading="lazy" decoding="async"/>
+</picture>
+    </div>
+  </div><!-- /config-panel -->
+
+</div><!-- /product-layout -->
+
+<!-- ═══ GALLERY ═══ -->
+<div class="gallery-section">
+  <div class="gallery-section__header">
+    <h2 data-fr="Galerie" data-en="Gallery">Galerie</h2>
+    <p data-fr="Remplacez ces espaces par vos photos et visuels SketchUp/fal.ai" data-en="Replace these spaces with your photos and SketchUp/fal.ai visuals">Remplacez ces espaces par vos photos et visuels SketchUp/fal.ai</p>
+  </div>
+  <div class="gallery-grid">
+    <!-- Remplacez chaque gcell-ph par <img src="photos/..." alt="..."/> dans un .gcell -->
+    <div class="gcell tall"><div class="gcell-ph tall" data-fr="Façade extérieure" data-en="Exterior facade">Façade extérieure</div></div>
+    <div class="gcell"><div class="gcell-ph" data-fr="Séjour" data-en="Living room">Séjour</div></div>
+    <div class="gcell"><div class="gcell-ph" data-fr="Vue panoramique" data-en="Panoramic view">Vue panoramique</div></div>
+    <div class="gcell wide"><div class="gcell-ph" data-fr="Terrasse & extérieur" data-en="Terrace & exterior">Terrasse & extérieur</div></div>
+    <div class="gcell"><div class="gcell-ph" data-fr="Chambre" data-en="Bedroom">Chambre</div></div>
+    <div class="gcell"><div class="gcell-ph" data-fr="Cuisine" data-en="Kitchen">Cuisine</div></div>
+    <div class="gcell"><div class="gcell-ph" data-fr="Salle d'eau" data-en="Bathroom">Salle d'eau</div></div>
+    <div class="gcell"><div class="gcell-ph" data-fr="Vue de nuit" data-en="Night view">Vue de nuit</div></div>
+    <div class="gcell"><div class="gcell-ph" data-fr="Détail menuiserie" data-en="Joinery detail">Détail menuiserie</div></div>
+  </div>
+</div>
+
+<!-- ═══ PLAN INTERACTIF ═══ -->
+<div class="interactive-plan" id="plan">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="ip-header">
+      <span class="ip-label" data-fr="Plan d'aménagement" data-en="Floor plan">Plan d'aménagement</span>
+      <h2 class="ip-title" data-fr="Explorez chaque espace" data-en="Explore each space">Explorez chaque espace</h2>
+      <p class="ip-hint" data-fr="Cliquez sur une pièce pour la découvrir en photo." data-en="Click on a room to discover it in photo.">Cliquez sur une pièce pour la découvrir en photo.</p>
+    </div>
+    <div class="interactive-plan__inner">
+      <div class="plan-wrap" id="planWrap">
+        <svg viewBox="0 0 500 260" xmlns="http://www.w3.org/2000/svg">
+          <!-- Background -->
+          <rect x="0" y="0" width="500" height="260" fill="#F9F7F2"/>
+          <!-- Outer walls -->
+          <rect x="25" y="25" width="450" height="210" fill="none" stroke="#1A1A18" stroke-width="4"/>
+          <!-- Room zones -->
+          <rect class="room-zone" id="rz-chambre" x="27" y="27" width="130" height="206"
+            data-name="Chambre"
+            data-desc="Chambre avec lit double, rangements intégrés sur mesure. Accès direct à la salle d'eau. Vitrages sol-plafond avec vue sur l'environnement."
+            data-img=""/>
+          <rect class="room-zone" id="rz-cuisine" x="159" y="27" width="110" height="120"
+            data-name="Cuisine"
+            data-desc="Cuisine entièrement équipée : meubles intégrés, plaques vitrocéramiques, évier, hotte. Plan de travail finition minérale premium."
+            data-img=""/>
+          <rect class="room-zone" id="rz-sdb" x="159" y="149" width="110" height="84"
+            data-name="Salle d'eau"
+            data-desc="Salle d'eau premium : douche, WC, vasque, robinetterie de marque, sèche-serviettes design. Séparation zones sèches/humides."
+            data-img=""/>
+          <rect class="room-zone" id="rz-sejour" x="271" y="27" width="202" height="206"
+            data-name="Séjour"
+            data-desc="Grand séjour baigné de lumière naturelle. Baies vitrées panoramiques 360°. Éclairage LED ambiance sur rails motorisés. Espace ouvert modulable."
+            data-img=""/>
+          <!-- Wall hatching -->
+          <rect x="25" y="25" width="450" height="4" fill="#1A1A18" opacity=".15"/>
+          <!-- Labels -->
+          <text class="room-lbl" x="92" y="132">CHAMBRE</text>
+          <text class="room-lbl" x="214" y="92">CUISINE</text>
+          <text class="room-lbl" x="214" y="197">SALLE D'EAU</text>
+          <text class="room-lbl" x="372" y="132">SÉJOUR</text>
+          <!-- Hotspots -->
+          <circle class="room-dot" cx="92" cy="118" r="5" onclick="activateRoom('rz-chambre')"/>
+          <circle class="room-dot" cx="214" cy="80" r="5" onclick="activateRoom('rz-cuisine')"/>
+          <circle class="room-dot" cx="214" cy="183" r="5" onclick="activateRoom('rz-sdb')"/>
+          <circle class="room-dot" cx="372" cy="118" r="5" onclick="activateRoom('rz-sejour')"/>
+          <!-- Dimensions -->
+          <line x1="25" y1="248" x2="475" y2="248" stroke="#1A1A18" stroke-width=".5" opacity=".3"/>
+          <text x="250" y="258" fill="#1A1A18" opacity=".3" font-family="Jost,sans-serif" font-size="7" text-anchor="middle">11,5 m</text>
+          <line x1="8" y1="25" x2="8" y2="235" stroke="#1A1A18" stroke-width=".5" opacity=".3"/>
+          <text x="-115" y="11" fill="#1A1A18" opacity=".3" font-family="Jost,sans-serif" font-size="7" transform="rotate(-90)" text-anchor="middle">4 m</text>
+        </svg>
+      </div>
+
+      <div class="room-preview" id="roomPreview">
+        <div class="rp-img-wrap">
+          <div class="rp-placeholder-msg" id="rpPlaceholder" data-fr="← Cliquez sur une pièce du plan" data-en="← Click on a room in the floor plan">← Cliquez sur une pièce du plan</div>
+          <img id="rpImg" src="" alt="" style="display:none;width:100%;height:100%;object-fit:cover"/>
+        </div>
+        <div class="rp-body">
+          <div class="rp-name" id="rpName" data-fr="Sélectionnez une pièce" data-en="Select a room">Sélectionnez une pièce</div>
+          <div class="rp-desc" id="rpDesc" data-fr="Cliquez sur n'importe quel espace du plan." data-en="Click on any space in the floor plan.">Cliquez sur n'importe quel espace du plan.</div>
+        </div>
+        <div class="rp-hint-footer" data-fr="Photos à remplacer par vos visuels réels" data-en="Photos to be replaced with your actual visuals">Photos à remplacer par vos visuels réels</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TÉMOIGNAGES -->
+<div class="testimonials">
+  <span class="t-label" data-fr="Témoignages clients" data-en="Client testimonials">Témoignages clients</span>
+  <h2 class="t-h2" data-fr="Ce que disent nos clients" data-en="What our clients say">Ce que disent nos clients</h2>
+  <div class="t-track">
+    <div class="t-item active">
+      <blockquote data-fr="« La qualité de finition est vraiment hors du commun. Nos hôtes sont systématiquement surpris par le niveau de détail et de confort. La résidence SIGNATURE a transformé notre projet. »" data-en="«The finish quality is truly exceptional. Our guests are consistently surprised by the level of detail and comfort. The SIGNATURE residence transformed our project.»">« La qualité de finition est vraiment hors du commun. Nos hôtes sont systématiquement surpris par le niveau de détail et de confort. La résidence SIGNATURE a transformé notre projet. »</blockquote>
+      <cite>— Marc-Antoine D., <span data-fr="directeur d'écolodge, Guadeloupe" data-en="eco-lodge director, Guadeloupe">directeur d'écolodge, Guadeloupe</span></cite>
+    </div>
+    <div class="t-item">
+      <blockquote data-fr="« Livrée en avance sur le calendrier, installée en quelques jours. L'équipe HKH a géré toute la logistique. Un vrai clé en main. »" data-en="«Delivered ahead of schedule, installed in a few days. The HKH team managed all the logistics. Truly turnkey.»">« Livrée en avance sur le calendrier, installée en quelques jours. L'équipe HKH a géré toute la logistique. Un vrai clé en main. »</blockquote>
+      <cite>— Jean-Philippe M., <span data-fr="investisseur, Saint-Martin" data-en="investor, Saint-Martin">investisseur, Saint-Martin</span></cite>
+    </div>
+  </div>
+  <div class="t-dots">
+    <button class="t-dot active" data-i="0"></button>
+    <button class="t-dot" data-i="1"></button>
+  </div>
+</div>
+
+<!-- NEXT MODELS -->
+<div class="next-model">
+  <a href="residence-signature-duo.html" class="next-block">
+    <div class="next-block__ph" style="background-image:url(images/signature-duo-ext-bois.png);background-size:contain;background-repeat:no-repeat;background-position:center"></div>
+    <div class="next-block__ov"></div>
+    <div class="next-block__body">
+      <span class="next-block__label" data-fr="Résidence suivante" data-en="Next residence">Résidence suivante</span>
+      <div class="next-block__name">SIGNATURE DUO</div>
+      <span class="next-block__arrow">→</span>
+    </div>
+  </a>
+  <a href="residence-horizon-t.html" class="next-block">
+    <div class="next-block__ph" style="background-image:url(images/horizon-t-ext-bois.png);background-size:contain;background-repeat:no-repeat;background-position:center"></div>
+    <div class="next-block__ov"></div>
+    <div class="next-block__body">
+      <span class="next-block__label" data-fr="Voir aussi" data-en="See also">Voir aussi</span>
+      <div class="next-block__name">HORIZON T</div>
+      <span class="next-block__arrow">→</span>
+    </div>
+  </a>
+</div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+fetch('partials/footer-simple.html')
+  .then(function(r){ if(!r.ok) throw new Error(); return r.text(); })
+  .then(function(h){
+    document.getElementById('footer-placeholder').innerHTML=h;
+    if(window.applyLang)window.applyLang(localStorage.getItem('hkh-lang')||'fr');
+  })
+  .catch(function(){
+    document.getElementById('footer-placeholder').innerHTML=
+      '<footer style="padding:2rem;text-align:center;font-size:.8rem;color:#6B6660">© Home Kit Home — contact@home-kit-home.com</footer>';
+  });
+</script>
+
+<script>
+window.PLAN_DATA = {
+  model:  'signature',
+  prices: { GP: 82900, MQ: 84900, GF: 84900, MF: 88900, BL: 94900, FR: 78900 }
+};
+</script>
+<script src="assets/js/interactive-plan.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script>
+/* ── Mobile nav ── */
+(function() {
+  const burger = document.getElementById('burger');
+  const mobOv  = document.getElementById('mobOv');
+  const mobX   = document.getElementById('mobX');
+  if (!burger || !mobOv) return;
+  burger.addEventListener('click', () => { burger.classList.toggle('open'); mobOv.classList.add('open'); });
+  if (mobX) mobX.addEventListener('click', () => { burger.classList.remove('open'); mobOv.classList.remove('open'); });
+  mobOv.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { burger.classList.remove('open'); mobOv.classList.remove('open'); }));
+})();
+</script>
+</body>
+</html>

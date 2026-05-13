@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Partenaires & Investisseurs — Home Kit Home</title>
+<meta name="description" content="Devenez partenaire Home Kit Home — agences immobilières, promoteurs, investisseurs. Transformez vos mandats fonciers en projets d'habitats architecturaux."/>
+<meta property="og:title" content="Partenaires & Investisseurs — Home Kit Home"/>
+<meta property="og:description" content="Devenez partenaire Home Kit Home — agences immobilières, promoteurs, investisseurs. Transformez vos mandats fonciers en projets d'habitats architecturaux."/>
+<meta property="og:image" content="images/Habitats/Horizon T/unwatermarked_Gemini_Generated_Image_pd7jvtpd7jvtpd7j.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="fr_FR"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/></noscript>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="assets/css/animations.css"/>
+<style>
+/* ── LE CERCLE — PARTENAIRES (refonte v2) ────────────── */
+
+/* MASTHEAD — allégé, pas de bandeau meta */
+.crc-mast{
+  background:var(--paper);
+  padding:calc(var(--nav-h) + 5rem) 2.5rem 3rem;
+  position:relative;
+}
+.crc-mast__inner{
+  max-width:1240px;margin:0 auto;
+  display:grid;grid-template-columns:1.3fr 1fr;
+  gap:5rem;align-items:end;
+}
+.crc-mast__eyebrow{
+  display:flex;align-items:center;gap:.9rem;
+  font-family:var(--sans);font-size:.66rem;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--copper);font-weight:400;
+  margin-bottom:2rem;position:relative;padding-left:3.4rem;
+}
+.crc-mast__eyebrow::before{
+  content:'';position:absolute;left:0;top:50%;
+  width:2.6rem;height:1px;background:var(--copper);
+}
+.crc-mast__eyebrow em{
+  font-family:var(--serif);font-style:italic;font-size:.82rem;
+  letter-spacing:0;text-transform:none;color:var(--dark);font-weight:400;
+}
+.crc-mast__eyebrow .dot{
+  width:5px;height:5px;border-radius:50%;background:var(--copper);
+  display:inline-block;
+}
+.crc-mast__title{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(3rem,6.6vw,5.2rem);
+  color:var(--dark);line-height:.98;letter-spacing:-.025em;
+  margin:0;max-width:14ch;
+}
+.crc-mast__title em{font-style:italic;color:var(--copper);font-weight:400}
+.crc-mast__sub{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(1.05rem,1.5vw,1.25rem);
+  color:var(--mid);line-height:1.55;
+  max-width:36ch;margin:0 0 2.2rem;
+  letter-spacing:-.005em;
+}
+.crc-mast__anchors{
+  grid-column:1/-1;margin-top:2.4rem;
+  padding-top:1.8rem;border-top:1px solid rgba(44,44,40,.1);
+  display:flex;gap:2.5rem;flex-wrap:wrap;
+  align-items:center;
+}
+.crc-mast__anchors a{
+  font-family:var(--sans);font-size:.7rem;letter-spacing:.2em;font-weight:400;
+  text-transform:uppercase;text-decoration:none;color:var(--dark);
+  display:inline-flex;align-items:center;gap:1rem;
+  transition:color .3s ease;
+}
+.crc-mast__anchors a::after{
+  content:'→';color:var(--copper);
+  transition:transform .3s cubic-bezier(.16,1,.3,1);
+}
+.crc-mast__anchors a:hover{color:var(--copper)}
+.crc-mast__anchors a:hover::after{transform:translateX(.4rem)}
+
+@keyframes crcFadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.crc-mast--enter .crc-mast__eyebrow{animation:crcFadeUp .7s ease-out both}
+.crc-mast--enter .crc-mast__title  {animation:crcFadeUp .7s ease-out both;animation-delay:90ms}
+.crc-mast--enter .crc-mast__sub    {animation:crcFadeUp .7s ease-out both;animation-delay:180ms}
+.crc-mast--enter .crc-mast__anchors{animation:crcFadeUp .7s ease-out both;animation-delay:260ms}
+
+@media(max-width:900px){
+  .crc-mast{padding:calc(var(--nav-h) + 2.8rem) 1.5rem 3rem}
+  .crc-mast__inner{grid-template-columns:1fr;gap:2.5rem}
+  .crc-mast__anchors{gap:1.4rem}
+}
+
+/* PHOTO STRIP (conservé) */
+.photo-strip{overflow:hidden;height:420px;position:relative}
+.photo-strip__inner{
+  display:flex;gap:3px;height:100%;
+  animation:stripScroll 32s linear infinite;
+  width:max-content;
+}
+.photo-strip__inner:hover{animation-play-state:paused}
+.photo-strip__item{
+  flex-shrink:0;height:100%;overflow:hidden;
+  background:var(--dark2);
+}
+.photo-strip__item img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .8s ease;display:block;
+}
+.photo-strip__item:hover img{transform:scale(1.04)}
+@keyframes stripScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:768px){.photo-strip{height:280px}}
+
+/* ── FONDATION (manifeste + socle fusionnés, dark) ──── */
+.crc-fond{
+  background:var(--dark);
+  padding:6.5rem 2.5rem;
+  position:relative;overflow:hidden;
+}
+.crc-fond::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 55% at 12% 30%, rgba(184,115,51,.08) 0%, transparent 65%);
+  pointer-events:none;
+}
+.crc-fond__inner{
+  max-width:1240px;margin:0 auto;position:relative;z-index:1;
+  display:grid;grid-template-columns:1fr 1.1fr;
+  gap:5rem;align-items:center;
+}
+.crc-fond__quote-block{display:flex;flex-direction:column;gap:1.4rem}
+.crc-fond__kicker{
+  font-family:var(--sans);font-size:.64rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--copper);font-weight:400;
+  padding-top:1.2rem;border-top:1px solid rgba(184,115,51,.45);
+  display:inline-block;align-self:flex-start;
+}
+.crc-fond__kicker em{
+  font-family:var(--serif);font-style:italic;font-size:.82rem;
+  letter-spacing:0;text-transform:none;color:rgba(255,255,255,.75);
+  margin-left:.6rem;
+}
+.crc-fond__quote{
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(1.7rem,2.8vw,2.4rem);
+  color:var(--white);line-height:1.3;letter-spacing:-.015em;
+  margin:0;font-weight:400;
+}
+.crc-fond__quote em{color:var(--copper);font-style:italic}
+.crc-fond__lead{
+  font-family:var(--sans);font-weight:300;font-size:.94rem;
+  color:rgba(255,255,255,.62);line-height:1.85;margin:0;max-width:42ch;
+}
+
+/* Stat-strip horizontale (4 chiffres) */
+.crc-fond__stats{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:0;border-top:1px solid rgba(255,255,255,.15);
+  border-left:1px solid rgba(255,255,255,.15);
+}
+.crc-fond__stat{
+  padding:2rem 1.8rem;
+  border-right:1px solid rgba(255,255,255,.15);
+  border-bottom:1px solid rgba(255,255,255,.15);
+  display:flex;flex-direction:column;gap:.6rem;
+  position:relative;
+  transition:background .4s ease;
+}
+.crc-fond__stat:hover{background:rgba(184,115,51,.06)}
+.crc-fond__stat-n{
+  font-family:var(--serif);font-style:italic;font-size:.85rem;
+  color:var(--copper);letter-spacing:-.01em;
+}
+.crc-fond__stat-val{
+  font-family:var(--serif);font-size:clamp(2.4rem,4vw,3.2rem);
+  color:var(--white);line-height:1;letter-spacing:-.03em;font-weight:400;
+}
+.crc-fond__stat-lbl{
+  font-family:var(--sans);font-weight:300;font-size:.82rem;
+  color:rgba(255,255,255,.58);line-height:1.55;
+}
+.crc-fond__stat-lbl em{
+  font-family:var(--serif);font-style:italic;color:rgba(255,255,255,.9);
+  font-size:.9rem;font-weight:400;
+}
+
+/* ── SECTION HEADER (I-V) ───────────── */
+.crc-hdr{
+  display:grid;grid-template-columns:1fr 1.3fr;gap:4rem;align-items:end;
+  margin-bottom:4rem;
+}
+.crc-hdr__tag{display:flex;flex-direction:column;gap:1rem}
+.crc-hdr__num{
+  font-family:var(--serif);font-style:italic;font-size:clamp(3rem,5vw,4.4rem);
+  color:var(--copper);line-height:.9;letter-spacing:-.03em;font-weight:400;opacity:.85;
+}
+.crc-hdr__kicker{
+  font-family:var(--sans);font-size:.64rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--copper);font-weight:400;
+  padding-top:1.1rem;border-top:1px solid rgba(184,115,51,.4);
+  align-self:flex-start;
+}
+.crc-hdr__kicker em{
+  font-family:var(--serif);font-style:italic;font-size:.8rem;
+  letter-spacing:0;text-transform:none;color:var(--dark);margin-left:.6rem;font-weight:400;
+}
+.crc-hdr h2{
+  font-family:var(--serif);font-size:clamp(2rem,3.6vw,3.2rem);font-weight:400;
+  color:var(--dark);line-height:1.05;letter-spacing:-.025em;margin:0;max-width:18ch;
+}
+.crc-hdr h2 em{font-style:italic;color:var(--copper);font-weight:400}
+.crc-hdr p{
+  font-family:var(--serif);font-style:italic;font-size:1.05rem;
+  color:var(--mid);line-height:1.55;max-width:44ch;margin:1rem 0 0;letter-spacing:-.005em;
+}
+.crc-hdr--light h2{color:var(--white)}
+.crc-hdr--light p{color:rgba(255,255,255,.65)}
+.crc-hdr--light .crc-hdr__kicker{border-color:rgba(184,115,51,.55)}
+.crc-hdr--light .crc-hdr__kicker em{color:rgba(255,255,255,.75)}
+
+/* ── II. AGENCES — split image + liste ──────────────── */
+.crc-agences{padding:7rem 2.5rem;background:var(--paper)}
+.crc-agences__inner{max-width:1240px;margin:0 auto}
+.crc-agences__body{
+  display:grid;grid-template-columns:1fr 1.3fr;gap:4.5rem;align-items:start;
+  margin-top:1.5rem;
+}
+.crc-agences__visual-wrap{position:sticky;top:6rem;display:flex;flex-direction:column;gap:.9rem}
+.crc-agences__visual{
+  aspect-ratio:3/4;overflow:hidden;background:var(--dark2);
+  position:relative;
+}
+.crc-agences__visual img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform 1.1s cubic-bezier(.2,.8,.2,1);
+}
+.crc-agences__visual:hover img{transform:scale(1.03)}
+.crc-agences__visual-cap{
+  font-family:var(--serif);font-style:italic;font-size:.82rem;
+  color:var(--mid);letter-spacing:.01em;line-height:1.5;
+  padding-left:.1rem;
+}
+
+/* Liste numérotée (partagée agences + invest) */
+.crc-list{
+  list-style:none;padding:0;margin:0;
+  border-top:1px solid rgba(44,44,40,.12);
+}
+.crc-list > li{
+  display:grid;grid-template-columns:58px 1fr;gap:2rem;align-items:baseline;
+  padding:2rem 0;border-bottom:1px solid rgba(44,44,40,.12);
+  transition:padding-left .45s cubic-bezier(.16,1,.3,1);
+}
+.crc-list > li:hover{padding-left:.9rem}
+.crc-list__n{
+  font-family:var(--serif);font-style:italic;font-size:1.4rem;
+  color:var(--copper);line-height:1;letter-spacing:-.02em;
+}
+.crc-list__body h3{
+  font-family:var(--serif);font-size:1.25rem;font-weight:400;
+  color:var(--dark);margin:0 0 .6rem;line-height:1.25;letter-spacing:-.01em;
+}
+.crc-list__body h3 em{font-style:italic;color:var(--copper);font-weight:400}
+.crc-list__body p{
+  font-family:var(--sans);font-weight:300;font-size:.92rem;
+  color:var(--mid);line-height:1.8;margin:0;max-width:56ch;
+}
+.crc-agences__cta{margin-top:2.5rem;display:inline-block}
+
+/* ── Full-bleed photo transition (entre Agences et Invest) ── */
+.crc-bleed{
+  width:100%;height:62vh;min-height:400px;max-height:640px;
+  overflow:hidden;position:relative;background:var(--dark);
+}
+.crc-bleed img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  object-position:center 55%;
+}
+.crc-bleed__cap{
+  position:absolute;right:2.5rem;bottom:1.6rem;
+  font-family:var(--serif);font-style:italic;font-size:.82rem;
+  color:rgba(249,247,242,.82);letter-spacing:.02em;
+  text-shadow:0 1px 12px rgba(0,0,0,.55);
+}
+
+/* ── III. INVESTISSEURS — refonte rentabilité ─────── */
+.crc-invest{
+  padding:7rem 2.5rem;background:var(--dark);
+  position:relative;overflow:hidden;
+}
+.crc-invest::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 55% at 85% 40%, rgba(184,115,51,.05) 0%, transparent 65%);
+  pointer-events:none;
+}
+.crc-invest__inner{max-width:1240px;margin:0 auto;position:relative;z-index:1}
+
+/* 3 chiffres hero — nouveau */
+.crc-hero-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0;margin:2rem 0 4rem;
+  border-top:1px solid rgba(255,255,255,.18);
+  border-bottom:1px solid rgba(255,255,255,.18);
+}
+.crc-hero-stat{
+  padding:2.8rem 2rem;
+  border-right:1px solid rgba(255,255,255,.12);
+  display:flex;flex-direction:column;gap:.7rem;
+  position:relative;
+}
+.crc-hero-stat:last-child{border-right:none}
+.crc-hero-stat__lbl{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(255,255,255,.45);font-weight:400;
+}
+.crc-hero-stat__val{
+  font-family:var(--serif);font-size:clamp(2.6rem,5vw,3.8rem);
+  color:var(--white);line-height:1;letter-spacing:-.03em;font-weight:400;
+}
+.crc-hero-stat__val em{font-style:italic;color:var(--copper);font-weight:400}
+.crc-hero-stat__sub{
+  font-family:var(--serif);font-style:italic;font-size:.95rem;
+  color:rgba(255,255,255,.6);line-height:1.5;margin:0;
+}
+
+/* Accordéon détail simulation */
+.crc-sim-details{
+  margin:0 0 4rem;
+  border-top:1px solid rgba(255,255,255,.12);
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.crc-sim-details[open]{background:rgba(255,255,255,.02)}
+.crc-sim-details > summary{
+  list-style:none;cursor:pointer;
+  padding:1.6rem 2rem;
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--sans);font-size:.72rem;letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(255,255,255,.7);font-weight:400;
+  transition:color .3s ease;
+}
+.crc-sim-details > summary::-webkit-details-marker{display:none}
+.crc-sim-details > summary::after{
+  content:'+';font-family:var(--serif);font-size:1.4rem;
+  color:var(--copper);line-height:1;
+  transition:transform .35s cubic-bezier(.16,1,.3,1);
+}
+.crc-sim-details[open] > summary::after{content:'−'}
+.crc-sim-details > summary:hover{color:var(--white)}
+.crc-sim-details__body{
+  padding:0 2rem 2.2rem;
+  display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;
+}
+.crc-sim-details__rows{
+  display:flex;flex-direction:column;
+}
+.crc-sim-details__row{
+  display:grid;grid-template-columns:1fr auto;gap:1rem;
+  padding:1rem 0;border-top:1px solid rgba(255,255,255,.08);
+}
+.crc-sim-details__row:first-child{border-top:none;padding-top:0}
+.crc-sim-details__row-lbl{
+  font-family:var(--sans);font-size:.88rem;font-weight:300;
+  color:rgba(255,255,255,.62);line-height:1.4;
+}
+.crc-sim-details__row-val{
+  font-family:var(--serif);font-style:italic;font-size:1.05rem;
+  color:var(--copper-lt);letter-spacing:-.005em;font-weight:400;
+}
+.crc-sim-details__side{
+  display:flex;flex-direction:column;gap:1.2rem;
+  padding:.6rem 0 0;
+}
+.crc-sim-details__note{
+  font-family:var(--sans);font-size:.74rem;font-weight:300;
+  color:rgba(255,255,255,.42);line-height:1.7;margin:0;
+}
+.crc-sim-details .editorial__link{
+  color:rgba(255,255,255,.85);
+  transition:color .3s ease;
+}
+.crc-sim-details .editorial__link:hover{
+  color:var(--white);
+}
+
+/* Liste des 4 points en grille 2×2 (au lieu de 4 rows empilés) */
+.crc-invest__grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border-top:1px solid rgba(255,255,255,.15);
+  border-left:1px solid rgba(255,255,255,.15);
+}
+.crc-invest__cell{
+  padding:2.2rem 2rem;
+  border-right:1px solid rgba(255,255,255,.15);
+  border-bottom:1px solid rgba(255,255,255,.15);
+  display:flex;flex-direction:column;gap:.8rem;
+  transition:background .4s ease;
+}
+.crc-invest__cell:hover{background:rgba(184,115,51,.05)}
+.crc-invest__cell-n{
+  font-family:var(--serif);font-style:italic;font-size:1rem;
+  color:var(--copper);letter-spacing:-.01em;
+}
+.crc-invest__cell h3{
+  font-family:var(--serif);font-size:1.2rem;font-weight:400;
+  color:var(--white);margin:0;line-height:1.3;letter-spacing:-.01em;
+}
+.crc-invest__cell h3 em{font-style:italic;color:var(--copper);font-weight:400}
+.crc-invest__cell p{
+  font-family:var(--sans);font-weight:300;font-size:.88rem;
+  color:rgba(255,255,255,.6);line-height:1.75;margin:0;
+}
+
+.crc-invest__cta{margin-top:3rem;display:inline-block}
+
+/* ── IV. COLOPHON — grille 2×2 avec mini-photo ────── */
+.crc-colophon{padding:7rem 2.5rem;background:var(--cream)}
+.crc-colophon__inner{max-width:1240px;margin:0 auto}
+.crc-colophon__grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:3rem 2.5rem;
+  margin-top:2rem;
+}
+.crc-pillar{display:flex;flex-direction:column;gap:1.4rem}
+.crc-pillar__visual{
+  width:100%;aspect-ratio:5/3;overflow:hidden;
+  background:var(--dark2);position:relative;
+}
+.crc-pillar__visual img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform 1.1s cubic-bezier(.2,.8,.2,1);
+}
+.crc-pillar:hover .crc-pillar__visual img{transform:scale(1.04)}
+.crc-pillar__roman{
+  font-family:var(--serif);font-style:italic;font-size:1.1rem;
+  color:var(--copper);letter-spacing:-.01em;line-height:1;
+  display:inline-block;margin-right:.9rem;vertical-align:baseline;
+}
+.crc-pillar__body{display:flex;flex-direction:column;gap:.7rem;padding:0}
+.crc-pillar h3{
+  font-family:var(--serif);font-size:1.25rem;font-weight:400;
+  color:var(--dark);margin:0;line-height:1.25;letter-spacing:-.01em;
+}
+.crc-pillar h3 em{font-style:italic;color:var(--copper);font-weight:400}
+.crc-pillar p{
+  font-family:var(--sans);font-weight:300;font-size:.9rem;
+  color:var(--mid);line-height:1.8;margin:0;
+}
+.crc-pillar__tags{
+  font-family:var(--serif);font-style:italic;font-size:.84rem;
+  color:var(--copper);letter-spacing:-.005em;margin-top:.2rem;
+}
+
+/* ── V. VOIX (témoignages) ──────────────────────── */
+.crc-voix{padding:7rem 2.5rem;background:var(--paper)}
+.crc-voix__inner{max-width:1240px;margin:0 auto}
+.crc-voix__body{
+  display:grid;grid-template-columns:1fr 1fr;gap:5rem;
+  margin-top:1rem;padding-top:3.5rem;
+  border-top:1px solid rgba(44,44,40,.12);
+}
+.crc-letter{display:flex;flex-direction:column;gap:1.8rem}
+.crc-letter__kicker{
+  font-family:var(--sans);font-size:.62rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--copper);font-weight:400;
+  display:flex;align-items:center;gap:.9rem;
+}
+.crc-letter__kicker em{
+  font-family:var(--serif);font-style:italic;font-size:.82rem;
+  letter-spacing:0;text-transform:none;color:var(--dark);font-weight:400;
+}
+.crc-letter__n{
+  font-family:var(--serif);font-style:italic;font-size:.9rem;
+  color:var(--copper);font-weight:400;
+  padding:.35rem .7rem;border:1px solid rgba(184,115,51,.4);border-radius:2rem;
+  letter-spacing:.02em;
+}
+.crc-letter blockquote{
+  font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,1.5vw,1.4rem);
+  color:var(--dark);line-height:1.55;margin:0;letter-spacing:-.01em;
+  font-weight:400;
+}
+.crc-letter blockquote::before{content:'« ';color:var(--copper);margin-right:.05em}
+.crc-letter blockquote::after{content:' »';color:var(--copper);margin-left:.05em}
+.crc-letter__sig{
+  display:flex;flex-direction:column;gap:.4rem;
+  padding-top:1.5rem;position:relative;
+}
+.crc-letter__sig::before{
+  content:'';position:absolute;top:0;left:0;width:2.8rem;height:1px;background:var(--copper);
+}
+.crc-letter__name{
+  font-family:var(--serif);font-size:1.05rem;color:var(--dark);
+  letter-spacing:-.005em;font-weight:400;
+}
+.crc-letter__role{
+  font-family:var(--serif);font-style:italic;font-size:.92rem;
+  color:var(--mid);line-height:1.5;font-weight:400;
+}
+
+/* ── CTA FINAL — avec photo BG ──────────────────── */
+.p-cta{
+  padding:7rem 2.5rem;position:relative;overflow:hidden;
+  background:var(--dark);
+  isolation:isolate;
+}
+.p-cta__bg{
+  position:absolute;inset:0;z-index:-1;
+  background-image:url('images/Top Photos/Gemini_Generated_Image_ka43m7ka43m7ka43.png');
+  background-size:cover;background-position:center 60%;
+  opacity:.22;
+  filter:grayscale(.15);
+}
+.p-cta__bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to right, rgba(20,20,18,.88) 0%, rgba(20,20,18,.72) 60%, rgba(20,20,18,.55) 100%);
+}
+.p-cta__inner{
+  max-width:1200px;margin:0 auto;position:relative;z-index:1;
+  display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:start;
+}
+.p-cta__side{display:flex;flex-direction:column;gap:1.2rem;padding-top:.5rem}
+.p-cta__eyebrow{
+  font-family:var(--sans);font-size:.64rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--copper);font-weight:400;
+  padding-top:1.2rem;border-top:1px solid rgba(184,115,51,.4);
+  display:inline-block;align-self:flex-start;
+}
+.p-cta__eyebrow em{
+  font-family:var(--serif);font-style:italic;font-size:.8rem;
+  letter-spacing:0;text-transform:none;color:rgba(255,255,255,.7);
+  margin-left:.6rem;
+}
+.p-cta h2{
+  font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.4rem);
+  color:var(--white);font-weight:400;letter-spacing:-.025em;
+  line-height:1.05;margin:0;max-width:14ch;
+}
+.p-cta h2 em{font-style:italic;color:var(--copper);font-weight:400}
+.p-cta__lead{
+  font-family:var(--serif);font-style:italic;font-size:1.05rem;
+  color:rgba(255,255,255,.7);line-height:1.6;max-width:36ch;
+  margin:.6rem 0 0;
+}
+.p-cta__blocks{
+  display:flex;flex-direction:column;gap:0;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+.p-cta-block{
+  text-decoration:none;display:grid;
+  grid-template-columns:60px 1fr auto;gap:1.5rem;align-items:center;
+  padding:2.4rem 0;border-bottom:1px solid rgba(255,255,255,.12);
+  transition:padding-left .4s cubic-bezier(.16,1,.3,1);
+}
+.p-cta-block:hover{padding-left:1rem}
+.p-cta-block__n{
+  font-family:var(--serif);font-style:italic;font-size:1.6rem;
+  color:var(--copper);line-height:1;letter-spacing:-.02em;
+}
+.p-cta-block__body{display:flex;flex-direction:column;gap:.45rem}
+.p-cta-block__label{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.22em;font-weight:400;
+  text-transform:uppercase;color:rgba(255,255,255,.5);
+}
+.p-cta-block__title{
+  font-family:var(--serif);font-size:1.3rem;color:var(--white);font-weight:400;
+  letter-spacing:-.01em;line-height:1.25;
+}
+.p-cta-block__title em{font-style:italic;color:var(--copper);font-weight:400}
+.p-cta-block__arrow{
+  font-family:var(--sans);font-size:.66rem;letter-spacing:.22em;font-weight:400;
+  text-transform:uppercase;color:rgba(255,255,255,.6);
+  display:inline-flex;align-items:center;gap:1rem;
+  transition:color .3s ease;
+}
+.p-cta-block__arrow::after{
+  content:'→';color:var(--copper);
+  transition:transform .3s cubic-bezier(.16,1,.3,1);
+}
+.p-cta-block:hover .p-cta-block__arrow{color:var(--white)}
+.p-cta-block:hover .p-cta-block__arrow::after{transform:translateX(.5rem)}
+
+/* ── RESPONSIVE ────────────────────────────────── */
+@media(max-width:1100px){
+  .crc-hdr{grid-template-columns:1fr;gap:2rem}
+  .crc-fond__inner{grid-template-columns:1fr;gap:3rem}
+  .crc-agences__body{grid-template-columns:1fr;gap:3rem}
+  .crc-agences__visual-wrap{position:static;top:auto;max-width:640px}
+  .crc-agences__visual{aspect-ratio:16/10}
+  .crc-invest__grid{grid-template-columns:1fr}
+  .crc-sim-details__body{grid-template-columns:1fr;gap:1.6rem}
+  .crc-colophon__grid{grid-template-columns:1fr;gap:2.5rem}
+  .crc-voix__body{grid-template-columns:1fr;gap:3rem}
+  .p-cta__inner{grid-template-columns:1fr;gap:3rem}
+}
+@media(max-width:768px){
+  .crc-fond{padding:4.5rem 1.5rem}
+  .crc-fond__stats{grid-template-columns:1fr}
+  .crc-agences,.crc-invest,.crc-colophon,.crc-voix,.p-cta{padding:5rem 1.5rem}
+  .crc-list > li{grid-template-columns:44px 1fr;gap:1.2rem}
+  .crc-hero-stats{grid-template-columns:1fr}
+  .crc-hero-stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.12)}
+  .crc-hero-stat:last-child{border-bottom:none}
+  .crc-bleed{height:45vh;min-height:280px}
+  .p-cta-block{grid-template-columns:44px 1fr;gap:1rem}
+  .p-cta-block__arrow{grid-column:2;margin-top:.4rem}
+  .crc-sim-details > summary{padding-left:0;padding-right:0}
+  .crc-sim-details__body{padding-left:0;padding-right:0}
+}
+</style>
+</head>
+<body>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/nav.js"></script>
+
+<!-- ── MASTHEAD — LE CERCLE ────────────────────────── -->
+<header class="crc-mast crc-mast--enter">
+  <div class="crc-mast__inner">
+    <div class="crc-mast__left">
+      <div class="crc-mast__eyebrow">
+        <span data-fr="Le Cercle HKH" data-en="The HKH Circle">Le Cercle HKH</span>
+        <span class="dot" aria-hidden="true"></span>
+        <em data-fr="Agences · Investisseurs" data-en="Agencies · Investors">Agences · Investisseurs</em>
+      </div>
+      <h1 class="crc-mast__title" data-fr="Le cercle des <em>partenaires</em>." data-en="The circle of <em>partners</em>.">Le cercle des <em>partenaires</em>.</h1>
+    </div>
+    <div class="crc-mast__right">
+      <p class="crc-mast__sub" data-fr="Pour les agences qui enrichissent leurs mandats et les investisseurs qui cherchent un actif locatif architectural — en Caraïbes et ailleurs." data-en="For agencies enriching their mandates and investors seeking an architectural rental asset — in the Caribbean and beyond.">Pour les agences qui enrichissent leurs mandats et les investisseurs qui cherchent un actif locatif architectural — en Caraïbes et ailleurs.</p>
+    </div>
+    <div class="crc-mast__anchors">
+      <a href="#fondation" data-fr="I · Fondation" data-en="I · Foundation">I · Fondation</a>
+      <a href="#agences" data-fr="II · Agences" data-en="II · Agencies">II · Agences</a>
+      <a href="#investisseurs" data-fr="III · Investisseurs" data-en="III · Investors">III · Investisseurs</a>
+      <a href="#colophon" data-fr="IV · Signatures" data-en="IV · Signatures">IV · Signatures</a>
+      <a href="#temoignages" data-fr="V · Témoignages" data-en="V · Testimonials">V · Témoignages</a>
+    </div>
+  </div>
+</header>
+
+<!-- ── PHOTO STRIP ────────────────────────────────── -->
+<div class="photo-strip">
+  <div class="photo-strip__inner">
+    <div class="photo-strip__item" style="width:560px"><picture>
+  <source srcset="dist/images/Top Photos/Gemini_Generated_Image_ka43m7ka43m7ka43.avif" type="image/avif">
+  <source srcset="dist/images/Top Photos/Gemini_Generated_Image_ka43m7ka43m7ka43.webp" type="image/webp">
+  <img src="images/Top Photos/Gemini_Generated_Image_ka43m7ka43m7ka43.png" alt="Résidence HKH" loading="eager"/>
+</picture></div>
+    <div class="photo-strip__item" style="width:420px"><picture>
+  <source srcset="dist/images/Top Photos/Gemini_Generated_Image_pl2jkqpl2jkqpl2j.avif" type="image/avif">
+  <source srcset="dist/images/Top Photos/Gemini_Generated_Image_pl2jkqpl2jkqpl2j.webp" type="image/webp">
+  <img src="images/Top Photos/Gemini_Generated_Image_pl2jkqpl2jkqpl2j.png" alt="Résidence HKH" loading="eager"/>
+</picture></div>
+    <div class="photo-strip__item" style="width:500px"><picture>
+  <source srcset="dist/images/Top Photos/unwatermarked_Gemini_Generated_Image_pd7jvtpd7jvtpd7j.avif" type="image/avif">
+  <source srcset="dist/images/Top Photos/unwatermarked_Gemini_Generated_Image_pd7jvtpd7jvtpd7j.webp" type="image/webp">
+  <img src="images/Top Photos/unwatermarked_Gemini_Generated_Image_pd7jvtpd7jvtpd7j.png" alt="Résidence HKH" loading="lazy"/>
+</picture></div>
+    <div class="photo-strip__item" style="width:460px"><picture>
+  <source srcset="dist/images/Top Photos/unwatermarked_Gemini_Generated_Image_l47eskl47eskl47e.avif" type="image/avif">
+  <source srcset="dist/images/Top Photos/unwatermarked_Gemini_Generated_Image_l47eskl47eskl47e.webp" type="image/webp">
+  <img src="images/Top Photos/unwatermarked_Gemini_Generated_Image_l47eskl47eskl47e.png" alt="Résidence HKH" loading="lazy"/>
+</picture></div>
+    <div class="photo-strip__item" style="width:520px"><picture>
+  <source srcset="dist/images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0001.avif" type="image/avif">
+  <source srcset="dist/images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0001.webp" type="image/webp">
+  <img src="images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0001.png" alt="Résidence HKH" loading="lazy"/>
+</picture></div>
+    <div class="photo-strip__item" style="width:440px"><picture>
+  <source srcset="dist/images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0002.avif" type="image/avif">
+  <source srcset="dist/images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0002.webp" type="image/webp">
+  <img src="images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0002.png" alt="Résidence HKH" loading="lazy"/>
+</picture></div>
+    <div class="photo-strip__item" style="width:560px"><picture>
+  <source srcset="dist/images/Top Photos/Gemini_Generated_Image_ka43m7ka43m7ka43.avif" type="image/avif">
+  <source srcset="dist/images/Top Photos/Gemini_Generated_Image_ka43m7ka43m7ka43.webp" type="image/webp">
+  <img src="images/Top Photos/Gemini_Generated_Image_ka43m7ka43m7ka43.png" alt="Résidence HKH" loading="lazy"/>
+</picture></div>
+    <div class="photo-strip__item" style="width:420px"><picture>
+  <source srcset="dist/images/Top Photos/Gemini_Generated_Image_pl2jkqpl2jkqpl2j.avif" type="image/avif">
+  <source srcset="dist/images/Top Photos/Gemini_Generated_Image_pl2jkqpl2jkqpl2j.webp" type="image/webp">
+  <img src="images/Top Photos/Gemini_Generated_Image_pl2jkqpl2jkqpl2j.png" alt="Résidence HKH" loading="lazy"/>
+</picture></div>
+    <div class="photo-strip__item" style="width:500px"><picture>
+  <source srcset="dist/images/Top Photos/unwatermarked_Gemini_Generated_Image_pd7jvtpd7jvtpd7j.avif" type="image/avif">
+  <source srcset="dist/images/Top Photos/unwatermarked_Gemini_Generated_Image_pd7jvtpd7jvtpd7j.webp" type="image/webp">
+  <img src="images/Top Photos/unwatermarked_Gemini_Generated_Image_pd7jvtpd7jvtpd7j.png" alt="Résidence HKH" loading="lazy"/>
+</picture></div>
+    <div class="photo-strip__item" style="width:460px"><picture>
+  <source srcset="dist/images/Top Photos/unwatermarked_Gemini_Generated_Image_l47eskl47eskl47e.avif" type="image/avif">
+  <source srcset="dist/images/Top Photos/unwatermarked_Gemini_Generated_Image_l47eskl47eskl47e.webp" type="image/webp">
+  <img src="images/Top Photos/unwatermarked_Gemini_Generated_Image_l47eskl47eskl47e.png" alt="Résidence HKH" loading="lazy"/>
+</picture></div>
+    <div class="photo-strip__item" style="width:520px"><picture>
+  <source srcset="dist/images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0001.avif" type="image/avif">
+  <source srcset="dist/images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0001.webp" type="image/webp">
+  <img src="images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0001.png" alt="Résidence HKH" loading="lazy"/>
+</picture></div>
+    <div class="photo-strip__item" style="width:440px"><picture>
+  <source srcset="dist/images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0002.avif" type="image/avif">
+  <source srcset="dist/images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0002.webp" type="image/webp">
+  <img src="images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0002.png" alt="Résidence HKH" loading="lazy"/>
+</picture></div>
+  </div>
+</div>
+
+<!-- ── FONDATION — quote + 4 chiffres (fusion manifeste + socle) ── -->
+<section class="crc-fond" id="fondation">
+  <div class="crc-fond__inner">
+    <div class="crc-fond__quote-block reveal">
+      <span class="crc-fond__kicker">
+        <span data-fr="Fondation" data-en="Foundation">Fondation</span>
+        <em data-fr="Ce sur quoi tout repose" data-en="What everything rests on">Ce sur quoi tout repose</em>
+      </span>
+      <p class="crc-fond__quote" data-fr="Un terrain nu génère des questions.<br>Un habitat HKH génère une <em>décision</em>." data-en="Bare land raises questions.<br>An HKH habitat generates a <em>decision</em>.">Un terrain nu génère des questions.<br>Un habitat HKH génère une <em>décision</em>.</p>
+      <p class="crc-fond__lead" data-fr="Des faits vérifiables — pas des promesses. C'est ce que vous pourrez transmettre à vos clients dès la première conversation." data-en="Verifiable facts — not promises. This is what you can pass on to your clients from the very first conversation.">Des faits vérifiables — pas des promesses. C'est ce que vous pourrez transmettre à vos clients dès la première conversation.</p>
+    </div>
+    <div class="crc-fond__stats reveal">
+      <div class="crc-fond__stat">
+        <span class="crc-fond__stat-n">№ 01</span>
+        <span class="crc-fond__stat-val">CE</span>
+        <span class="crc-fond__stat-lbl" data-fr="<em>Normes européennes certifiées.</em> Acier galvanisé à chaud, catalogue intégral." data-en="<em>European certified standards.</em> Hot-dip galvanised steel, full catalogue."><em>Normes européennes certifiées.</em> Acier galvanisé à chaud, catalogue intégral.</span>
+      </div>
+      <div class="crc-fond__stat">
+        <span class="crc-fond__stat-n">№ 02</span>
+        <span class="crc-fond__stat-val">6</span>
+        <span class="crc-fond__stat-lbl" data-fr="<em>Habitats architecturaux.</em> Trois familles — ESSENCE, HORIZON, SIGNATURE." data-en="<em>Architectural habitats.</em> Three families — ESSENCE, HORIZON, SIGNATURE."><em>Habitats architecturaux.</em> Trois familles — ESSENCE, HORIZON, SIGNATURE.</span>
+      </div>
+      <div class="crc-fond__stat">
+        <span class="crc-fond__stat-n">№ 03</span>
+        <span class="crc-fond__stat-val">39 %</span>
+        <span class="crc-fond__stat-lbl" data-fr="<em>Défiscalisation Girardin.</em> Jusqu'à 39 % de réduction d'impôt en Outre-mer." data-en="<em>Girardin tax relief.</em> Up to 39% income tax reduction in the French overseas."><em>Défiscalisation Girardin.</em> Jusqu'à 39 % de réduction d'impôt en Outre-mer.</span>
+      </div>
+      <div class="crc-fond__stat">
+        <span class="crc-fond__stat-n">№ 04</span>
+        <span class="crc-fond__stat-val">100 %</span>
+        <span class="crc-fond__stat-lbl" data-fr="<em>Clé en main contractualisé.</em> Calendrier figé dès la commande." data-en="<em>Turnkey contractualised.</em> Schedule fixed at order."><em>Clé en main contractualisé.</em> Calendrier figé dès la commande.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── II. POUR LES AGENCES — split image + liste ──────── -->
+<section class="crc-agences" id="agences">
+  <div class="crc-agences__inner">
+    <header class="crc-hdr reveal">
+      <div class="crc-hdr__tag">
+        <span class="crc-hdr__num">I.</span>
+        <span class="crc-hdr__kicker">
+          <span data-fr="Pour les agences" data-en="For agencies">Pour les agences</span>
+          <em data-fr="Vendre plus qu'un terrain" data-en="Sell more than land">Vendre plus qu'un terrain</em>
+        </span>
+      </div>
+      <div>
+        <h2 data-fr="Vous vendez le foncier.<br>Nous y ajoutons <em>l'architecture</em>." data-en="You sell the land.<br>We add <em>the architecture</em>.">Vous vendez le foncier.<br>Nous y ajoutons <em>l'architecture</em>.</h2>
+        <p data-fr="Vos clients n'achètent plus une parcelle à imaginer — ils achètent un projet complet, livrable, chiffré dès la première visite." data-en="Your clients no longer buy a plot to imagine — they buy a complete project, deliverable, priced from the first visit.">Vos clients n'achètent plus une parcelle à imaginer — ils achètent un projet complet, livrable, chiffré dès la première visite.</p>
+      </div>
+    </header>
+    <div class="crc-agences__body reveal">
+      <div class="crc-agences__visual-wrap">
+        <div class="crc-agences__visual">
+          <picture>
+  <source srcset="dist/images/Top Photos/Gemini_Generated_Image_pl2jkqpl2jkqpl2j.avif" type="image/avif">
+  <source srcset="dist/images/Top Photos/Gemini_Generated_Image_pl2jkqpl2jkqpl2j.webp" type="image/webp">
+  <img src="images/Top Photos/Gemini_Generated_Image_pl2jkqpl2jkqpl2j.png" alt="Habitat architectural HKH implanté sur terrain" loading="lazy"/>
+</picture>
+        </div>
+        <span class="crc-agences__visual-cap" data-fr="Rendu d'implantation · HORIZON T" data-en="Site rendering · HORIZON T">Rendu d'implantation · HORIZON T</span>
+      </div>
+      <div>
+        <ol class="crc-list">
+          <li>
+            <span class="crc-list__n">№ 01</span>
+            <div class="crc-list__body">
+              <h3 data-fr="Identification du <em>terrain</em>" data-en="<em>Land</em> identification">Identification du <em>terrain</em></h3>
+              <p data-fr="Partagez votre mandat. Nous évaluons la faisabilité et proposons l'habitat adapté au site et à la réglementation locale." data-en="Share your mandate. We assess feasibility and propose the habitat suited to the site and local regulations.">Partagez votre mandat. Nous évaluons la faisabilité et proposons l'habitat adapté au site et à la réglementation locale.</p>
+            </div>
+          </li>
+          <li>
+            <span class="crc-list__n">№ 02</span>
+            <div class="crc-list__body">
+              <h3 data-fr="Proposition <em>visuelle 3D</em>" data-en="<em>3D visual</em> proposal">Proposition <em>visuelle 3D</em></h3>
+              <p data-fr="Nous fournissons des visuels architecturaux de l'habitat intégré à votre terrain. Vos clients se projettent immédiatement." data-en="We provide architectural visuals of the habitat integrated into your land. Your clients project themselves immediately.">Nous fournissons des visuels architecturaux de l'habitat intégré à votre terrain. Vos clients se projettent immédiatement.</p>
+            </div>
+          </li>
+          <li>
+            <span class="crc-list__n">№ 03</span>
+            <div class="crc-list__body">
+              <h3 data-fr="Budget <em>global structuré</em>" data-en="<em>Structured global</em> budget">Budget <em>global structuré</em></h3>
+              <p data-fr="Terrain + habitat présentés avec un budget complet dès la première visite. Zéro incertitude pour l'acquéreur." data-en="Land + habitat presented with a full budget from the first visit. Zero uncertainty for the buyer.">Terrain + habitat présentés avec un budget complet dès la première visite. Zéro incertitude pour l'acquéreur.</p>
+            </div>
+          </li>
+          <li>
+            <span class="crc-list__n">№ 04</span>
+            <div class="crc-list__body">
+              <h3 data-fr="Rémunération <em>partenaire</em>" data-en="<em>Partner</em> remuneration">Rémunération <em>partenaire</em></h3>
+              <p data-fr="Cadre de commission défini, transparent et contractualisé. Votre apport d'affaires, notre engagement de livraison." data-en="Defined, transparent and contractualised commission framework. Your business referral, our delivery commitment.">Cadre de commission défini, transparent et contractualisé. Votre apport d'affaires, notre engagement de livraison.</p>
+            </div>
+          </li>
+        </ol>
+        <a href="contact.html?type=agence" class="editorial__link crc-agences__cta" data-fr="Devenir agence partenaire" data-en="Become a partner agency">Devenir agence partenaire</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FULL-BLEED — transition vers investisseurs ──────── -->
+<div class="crc-bleed reveal">
+  <picture>
+  <source srcset="dist/images/Top Photos/unwatermarked_Gemini_Generated_Image_l47eskl47eskl47e.avif" type="image/avif">
+  <source srcset="dist/images/Top Photos/unwatermarked_Gemini_Generated_Image_l47eskl47eskl47e.webp" type="image/webp">
+  <img src="images/Top Photos/unwatermarked_Gemini_Generated_Image_l47eskl47eskl47e.png" alt="Habitat HKH architectural premium" loading="lazy"/>
+</picture>
+  <span class="crc-bleed__cap" data-fr="Caraïbes · Investissement locatif" data-en="Caribbean · Rental investment">Caraïbes · Investissement locatif</span>
+</div>
+
+<!-- ── III. POUR LES INVESTISSEURS — rentabilité allégée ── -->
+<section class="crc-invest" id="investisseurs">
+  <div class="crc-invest__inner">
+    <header class="crc-hdr crc-hdr--light reveal">
+      <div class="crc-hdr__tag">
+        <span class="crc-hdr__num">II.</span>
+        <span class="crc-hdr__kicker">
+          <span data-fr="Pour les investisseurs" data-en="For investors">Pour les investisseurs</span>
+          <em data-fr="Actif locatif architectural" data-en="Architectural rental asset">Actif locatif architectural</em>
+        </span>
+      </div>
+      <div>
+        <h2 data-fr="Un actif qui se <em>finance</em>, se défiscalise et se loue." data-en="An asset that <em>finances</em> itself, reduces tax, and rents out.">Un actif qui se <em>finance</em>, se défiscalise et se loue.</h2>
+        <p data-fr="Trois chiffres-clés avant de parler du reste. La simulation détaillée est accessible en un clic." data-en="Three key figures before anything else. The detailed simulation is one click away.">Trois chiffres-clés avant de parler du reste. La simulation détaillée est accessible en un clic.</p>
+      </div>
+    </header>
+
+    <!-- 3 chiffres hero -->
+    <div class="crc-hero-stats reveal">
+      <div class="crc-hero-stat">
+        <span class="crc-hero-stat__lbl" data-fr="Tarif nuitée estimé" data-en="Estimated nightly rate">Tarif nuitée estimé</span>
+        <span class="crc-hero-stat__val">180<em>–</em>250 <em>€</em></span>
+        <p class="crc-hero-stat__sub" data-fr="Par habitat, marché caraïbe premium." data-en="Per habitat, Caribbean premium market.">Par habitat, marché caraïbe premium.</p>
+      </div>
+      <div class="crc-hero-stat">
+        <span class="crc-hero-stat__lbl" data-fr="Taux d'occupation" data-en="Occupancy rate">Taux d'occupation</span>
+        <span class="crc-hero-stat__val">70<em>–</em>80 <em>%</em></span>
+        <p class="crc-hero-stat__sub" data-fr="Sur habitats de standing en Caraïbes." data-en="On premium habitats in the Caribbean.">Sur habitats de standing en Caraïbes.</p>
+      </div>
+      <div class="crc-hero-stat">
+        <span class="crc-hero-stat__lbl" data-fr="Réduction d'impôt" data-en="Tax reduction">Réduction d'impôt</span>
+        <span class="crc-hero-stat__val">30<em>–</em>39 <em>%</em></span>
+        <p class="crc-hero-stat__sub" data-fr="Dispositif Girardin Outre-mer." data-en="Girardin scheme, French overseas.">Dispositif Girardin Outre-mer.</p>
+      </div>
+    </div>
+
+    <!-- Accordéon détail simulation -->
+    <details class="crc-sim-details reveal">
+      <summary data-fr="Voir la simulation détaillée" data-en="View detailed simulation">Voir la simulation détaillée</summary>
+      <div class="crc-sim-details__body">
+        <div class="crc-sim-details__rows">
+          <div class="crc-sim-details__row">
+            <span class="crc-sim-details__row-lbl" data-fr="Projet de référence" data-en="Reference project">Projet de référence</span>
+            <span class="crc-sim-details__row-val" data-fr="4 unités HORIZON T" data-en="4 HORIZON T units">4 unités HORIZON T</span>
+          </div>
+          <div class="crc-sim-details__row">
+            <span class="crc-sim-details__row-lbl" data-fr="Livraison estimée" data-en="Estimated delivery">Livraison estimée</span>
+            <span class="crc-sim-details__row-val" data-fr="4–6 mois" data-en="4–6 months">4–6 mois</span>
+          </div>
+          <div class="crc-sim-details__row">
+            <span class="crc-sim-details__row-lbl" data-fr="Avantage vs habitat standard (5 ans)" data-en="Advantage vs standard habitat (5 years)">Avantage vs habitat standard (5 ans)</span>
+            <span class="crc-sim-details__row-val">+30–40 %</span>
+          </div>
+          <div class="crc-sim-details__row">
+            <span class="crc-sim-details__row-lbl" data-fr="Territoires éligibles Girardin" data-en="Girardin-eligible territories">Territoires éligibles Girardin</span>
+            <span class="crc-sim-details__row-val" data-fr="Antilles · Guyane · St-Martin" data-en="Antilles · Guiana · St-Martin">Antilles · Guyane · St-Martin</span>
+          </div>
+        </div>
+        <div class="crc-sim-details__side">
+          <p class="crc-sim-details__note" data-fr="Estimations indicatives basées sur retours terrain en Caraïbes. Hors foncier, terrassement et logistique. Défiscalisation soumise aux conditions légales en vigueur." data-en="Indicative estimates based on field feedback in the Caribbean. Excludes land, groundworks and logistics. Tax relief subject to current legal conditions.">Estimations indicatives basées sur retours terrain en Caraïbes. Hors foncier, terrassement et logistique. Défiscalisation soumise aux conditions légales en vigueur.</p>
+          <a href="contact.html?type=investisseur" class="editorial__link" data-fr="Demander une simulation personnalisée" data-en="Request a personalised simulation">Demander une simulation personnalisée</a>
+        </div>
+      </div>
+    </details>
+
+    <!-- 4 piliers en grille 2×2 -->
+    <div class="crc-invest__grid reveal">
+      <div class="crc-invest__cell">
+        <span class="crc-invest__cell-n">№ 01</span>
+        <h3 data-fr="Défiscalisation Girardin — <em>30 à 39 %</em>" data-en="Girardin tax relief — <em>30 to 39%</em>">Défiscalisation Girardin — <em>30 à 39 %</em></h3>
+        <p data-fr="Guadeloupe, Martinique, Guyane et Saint-Martin — réduction d'impôt directe selon le dispositif choisi." data-en="Guadeloupe, Martinique, Guiana and Saint-Martin — direct tax reduction depending on the chosen scheme.">Guadeloupe, Martinique, Guyane et Saint-Martin — réduction d'impôt directe selon le dispositif choisi.</p>
+      </div>
+      <div class="crc-invest__cell">
+        <span class="crc-invest__cell-n">№ 02</span>
+        <h3 data-fr="Rentabilité <em>locative premium</em>" data-en="<em>Premium rental</em> yield">Rentabilité <em>locative premium</em></h3>
+        <p data-fr="L'élégance architecturale justifie des tarifs nuitée supérieurs à la moyenne du marché sur les projets premium." data-en="Architectural elegance justifies nightly rates above market average on premium projects.">L'élégance architecturale justifie des tarifs nuitée supérieurs à la moyenne du marché sur les projets premium.</p>
+      </div>
+      <div class="crc-invest__cell">
+        <span class="crc-invest__cell-n">№ 03</span>
+        <h3 data-fr="Livraison <em>clé en main</em>" data-en="<em>Turnkey</em> delivery">Livraison <em>clé en main</em></h3>
+        <p data-fr="Aucun chantier à gérer. Posé sur pieux par grue, livré équipé et prêt à louer. Calendrier figé dès la commande." data-en="No construction site to manage. Set on piles by crane, delivered equipped and ready to rent. Schedule fixed from order.">Aucun chantier à gérer. Posé sur pieux par grue, livré équipé et prêt à louer. Calendrier figé dès la commande.</p>
+      </div>
+      <div class="crc-invest__cell">
+        <span class="crc-invest__cell-n">№ 04</span>
+        <h3 data-fr="Normes CE & <em>certification sismique</em>" data-en="CE standards & <em>seismic certification</em>">Normes CE & <em>certification sismique</em></h3>
+        <p data-fr="Structure acier galvanisé à chaud, anti-sismique, résistance ouragan en cours Bureau Veritas. Un actif solide." data-en="Hot-dip galvanised steel structure, anti-seismic, hurricane resistance under Bureau Veritas certification. A solid asset.">Structure acier galvanisé à chaud, anti-sismique, résistance ouragan en cours Bureau Veritas. Un actif solide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── IV. COLOPHON — grille 2×2 avec mini-photo ──────── -->
+<section class="crc-colophon" id="colophon">
+  <div class="crc-colophon__inner">
+    <header class="crc-hdr reveal">
+      <div class="crc-hdr__tag">
+        <span class="crc-hdr__num">III.</span>
+        <span class="crc-hdr__kicker">
+          <span data-fr="Signatures" data-en="Signatures">Signatures</span>
+          <em data-fr="Ce qui signe un habitat HKH" data-en="What signs an HKH habitat">Ce qui signe un habitat HKH</em>
+        </span>
+      </div>
+      <div>
+        <h2 data-fr="Quatre <em>signatures</em>, indissociables." data-en="Four <em>signatures</em>, inseparable.">Quatre <em>signatures</em>, indissociables.</h2>
+        <p data-fr="Ce qui distingue nos habitats — pas des options, des principes sur lesquels nous ne transigeons pas." data-en="What sets our habitats apart — not options, principles we do not compromise on.">Ce qui distingue nos habitats — pas des options, des principes sur lesquels nous ne transigeons pas.</p>
+      </div>
+    </header>
+    <div class="crc-colophon__grid reveal">
+      <article class="crc-pillar">
+        <div class="crc-pillar__visual">
+          <picture>
+  <source srcset="dist/images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0001.avif" type="image/avif">
+  <source srcset="dist/images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0001.webp" type="image/webp">
+  <img src="images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0001.png" alt="Structure acier HKH" loading="lazy"/>
+</picture>
+        </div>
+        <div class="crc-pillar__body">
+          <h3><span class="crc-pillar__roman">I.</span><span data-fr="Fiabilité <em>structurelle</em>" data-en="<em>Structural</em> reliability">Fiabilité <em>structurelle</em></span></h3>
+          <p data-fr="Normes CE européennes sur l'ensemble du catalogue. Structure acier galvanisé à chaud anti-sismique. Livraison sur tous les territoires français et internationaux, logistique incluse." data-en="European CE standards across the catalogue. Anti-seismic hot-dip galvanised steel structure. Delivery to all French and international territories, logistics included.">Normes CE européennes sur l'ensemble du catalogue. Structure acier galvanisé à chaud anti-sismique. Livraison sur tous les territoires français et internationaux, logistique incluse.</p>
+          <span class="crc-pillar__tags">CE · Anti-sismique · Bureau Veritas</span>
+        </div>
+      </article>
+      <article class="crc-pillar">
+        <div class="crc-pillar__visual">
+          <picture>
+  <source srcset="dist/images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0002.avif" type="image/avif">
+  <source srcset="dist/images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0002.webp" type="image/webp">
+  <img src="images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0002.png" alt="Intérieur architectural HKH" loading="lazy"/>
+</picture>
+        </div>
+        <div class="crc-pillar__body">
+          <h3><span class="crc-pillar__roman">II.</span><span data-fr="Excellence <em>architecturale</em>" data-en="<em>Architectural</em> excellence">Excellence <em>architecturale</em></span></h3>
+          <p data-fr="Vitrages panoramiques sol-plafond 180° à 360°. Domotique intégrée. Cinq finitions extérieures et trois ambiances intérieures. Équipements sanitaires et cuisine de marques premium." data-en="Floor-to-ceiling panoramic glazing 180° to 360°. Integrated home automation. Five exterior finishes and three interior ambiances. Premium brand bathroom and kitchen fittings.">Vitrages panoramiques sol-plafond 180° à 360°. Domotique intégrée. Cinq finitions extérieures et trois ambiances intérieures. Équipements sanitaires et cuisine de marques premium.</p>
+          <span class="crc-pillar__tags">Panoramique · Domotique · Personnalisable</span>
+        </div>
+      </article>
+      <article class="crc-pillar">
+        <div class="crc-pillar__visual">
+          <picture>
+  <source srcset="dist/images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0003.avif" type="image/avif">
+  <source srcset="dist/images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0003.webp" type="image/webp">
+  <img src="images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0003.png" alt="Livraison grue HKH" loading="lazy"/>
+</picture>
+        </div>
+        <div class="crc-pillar__body">
+          <h3><span class="crc-pillar__roman">III.</span><span data-fr="Rapidité <em>d'exécution</em>" data-en="<em>Execution</em> speed">Rapidité <em>d'exécution</em></span></h3>
+          <p data-fr="Posé sur pieux par grue — aucun chantier traditionnel. L'habitat est livré en monobloc, équipé, prêt à vivre. Calendrier contractualisé dès la commande." data-en="Set on piles by crane — no traditional construction site. The habitat is delivered in one block, equipped, ready to live in. Schedule contractualised from order.">Posé sur pieux par grue — aucun chantier traditionnel. L'habitat est livré en monobloc, équipé, prêt à vivre. Calendrier contractualisé dès la commande.</p>
+          <span class="crc-pillar__tags">4–6 mois · Clé en main · Zéro chantier</span>
+        </div>
+      </article>
+      <article class="crc-pillar">
+        <div class="crc-pillar__visual">
+          <picture>
+  <source srcset="dist/images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0008.avif" type="image/avif">
+  <source srcset="dist/images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0008.webp" type="image/webp">
+  <img src="images/Top Photos/freepik_genere-cet-photo-en-8k-dslr_0008.png" alt="Accompagnement HKH" loading="lazy"/>
+</picture>
+        </div>
+        <div class="crc-pillar__body">
+          <h3><span class="crc-pillar__roman">IV.</span><span data-fr="Accompagnement <em>dédié</em>" data-en="<em>Dedicated</em> support">Accompagnement <em>dédié</em></span></h3>
+          <p data-fr="Visuels 3D pour vos présentations clients, études de faisabilité terrain, cadre de commission transparent. Nous travaillons avec vous, pas à côté de vous." data-en="3D visuals for your client presentations, land feasibility studies, transparent commission framework. We work with you, not alongside you.">Visuels 3D pour vos présentations clients, études de faisabilité terrain, cadre de commission transparent. Nous travaillons avec vous, pas à côté de vous.</p>
+          <span class="crc-pillar__tags">Visuels · Faisabilité · Commission transparente</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ── V. LES VOIX ───────────────────────────────── -->
+<section class="crc-voix" id="temoignages">
+  <div class="crc-voix__inner">
+    <header class="crc-hdr reveal">
+      <div class="crc-hdr__tag">
+        <span class="crc-hdr__num">IV.</span>
+        <span class="crc-hdr__kicker">
+          <span data-fr="Les voix" data-en="The voices">Les voix</span>
+          <em data-fr="Ceux qui travaillent déjà avec nous" data-en="Those already working with us">Ceux qui travaillent déjà avec nous</em>
+        </span>
+      </div>
+      <div>
+        <h2 data-fr="Deux <em>partenaires</em>, deux lectures du même produit." data-en="Two <em>partners</em>, two readings of the same product.">Deux <em>partenaires</em>, deux lectures du même produit.</h2>
+        <p data-fr="Des agences et conseils en investissement qui ont analysé le concept avant de l'inscrire à leur portefeuille." data-en="Agencies and investment advisors who assessed the concept before adding it to their portfolio.">Des agences et conseils en investissement qui ont analysé le concept avant de l'inscrire à leur portefeuille.</p>
+      </div>
+    </header>
+    <div class="crc-voix__body">
+      <article class="crc-letter reveal">
+        <div class="crc-letter__kicker">
+          <span class="crc-letter__n">Lettre Nº 01</span>
+          <em data-fr="Agence immobilière" data-en="Real estate agency">Agence immobilière</em>
+        </div>
+        <blockquote data-fr="Le concept Home Kit Home répond exactement à ce que nos clients antillais recherchent depuis des années : un habitat architectural livré vite, sans les aléas d'un chantier traditionnel. C'est un produit que nous sommes fiers de présenter à notre portefeuille." data-en="The Home Kit Home concept answers exactly what our Caribbean clients have been looking for for years: an architectural habitat delivered quickly, without the pitfalls of traditional construction. It is a product we are proud to present to our portfolio.">Le concept Home Kit Home répond exactement à ce que nos clients antillais recherchent depuis des années : un habitat architectural livré vite, sans les aléas d'un chantier traditionnel. C'est un produit que nous sommes fiers de présenter à notre portefeuille.</blockquote>
+        <div class="crc-letter__sig">
+          <span class="crc-letter__name">Jay Family Properties</span>
+          <span class="crc-letter__role" data-fr="Agence immobilière · Antilles françaises" data-en="Real estate agency · French Antilles">Agence immobilière · Antilles françaises</span>
+        </div>
+      </article>
+      <article class="crc-letter reveal">
+        <div class="crc-letter__kicker">
+          <span class="crc-letter__n">Lettre Nº 02</span>
+          <em data-fr="Conseil en investissement" data-en="Investment advisory">Conseil en investissement</em>
+        </div>
+        <blockquote data-fr="Nous avons analysé beaucoup de concepts dans l'immobilier Antilles-Guyane. Home Kit Home est le seul à combiner qualité architecturale réelle, livraison clé en main et dispositif Girardin pleinement intégré. C'est précisément ce que nos investisseurs attendent." data-en="We have analysed many real estate concepts across the French Antilles and Guiana. Home Kit Home is the only one combining genuine architectural quality, full turnkey delivery and an integrated Girardin scheme. That is precisely what our investors expect.">Nous avons analysé beaucoup de concepts dans l'immobilier Antilles-Guyane. Home Kit Home est le seul à combiner qualité architecturale réelle, livraison clé en main et dispositif Girardin pleinement intégré. C'est précisément ce que nos investisseurs attendent.</blockquote>
+        <div class="crc-letter__sig">
+          <span class="crc-letter__name">Charlemagne Investissement</span>
+          <span class="crc-letter__role" data-fr="Conseil en investissement immobilier" data-en="Real estate investment advisory">Conseil en investissement immobilier</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA FINAL — avec photo BG ────────────────────── -->
+<div class="p-cta">
+  <div class="p-cta__bg" aria-hidden="true"></div>
+  <div class="p-cta__inner">
+    <div class="p-cta__side">
+      <span class="p-cta__eyebrow">
+        <span data-fr="Entrer dans le Cercle" data-en="Enter the Circle">Entrer dans le Cercle</span>
+        <em data-fr="Deux chemins" data-en="Two paths">Deux chemins</em>
+      </span>
+      <h2 data-fr="Agence, investisseur — <em>choisissez</em>&nbsp;votre entrée." data-en="Agency, investor — <em>choose</em>&nbsp;your entry.">Agence, investisseur — <em>choisissez</em>&nbsp;votre entrée.</h2>
+      <p class="p-cta__lead" data-fr="Prenons le temps d'un échange pour voir ce que nous pouvons construire ensemble." data-en="Let's take the time for a conversation to see what we can build together.">Prenons le temps d'un échange pour voir ce que nous pouvons construire ensemble.</p>
+    </div>
+    <div class="p-cta__blocks">
+      <a href="contact.html?type=agence" class="p-cta-block">
+        <span class="p-cta-block__n">№ 01</span>
+        <span class="p-cta-block__body">
+          <span class="p-cta-block__label" data-fr="Agences immobilières" data-en="Real estate agencies">Agences immobilières</span>
+          <span class="p-cta-block__title" data-fr="Devenir <em>agence partenaire</em>" data-en="Become a <em>partner agency</em>">Devenir <em>agence partenaire</em></span>
+        </span>
+        <span class="p-cta-block__arrow" data-fr="Prendre contact" data-en="Get in touch">Prendre contact</span>
+      </a>
+      <a href="contact.html?type=investisseur" class="p-cta-block">
+        <span class="p-cta-block__n">№ 02</span>
+        <span class="p-cta-block__body">
+          <span class="p-cta-block__label" data-fr="Investisseurs" data-en="Investors">Investisseurs</span>
+          <span class="p-cta-block__title" data-fr="Demander une <em>simulation</em>" data-en="Request a <em>simulation</em>">Demander une <em>simulation</em></span>
+        </span>
+        <span class="p-cta-block__arrow" data-fr="Prendre contact" data-en="Get in touch">Prendre contact</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+const revealEls=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:.1});
+revealEls.forEach(el=>io.observe(el));
+</script>
+<script>
+fetch('partials/footer-simple.html')
+  .then(function(r){ if(!r.ok) throw new Error(); return r.text(); })
+  .then(function(h){
+    document.getElementById('footer-placeholder').innerHTML=h;
+    if(window.applyLang)window.applyLang(localStorage.getItem('hkh-lang')||'fr');
+  })
+  .catch(function(){
+    document.getElementById('footer-placeholder').innerHTML=
+      '<footer style="padding:2rem;text-align:center;font-size:.8rem;color:#6B6660">© Home Kit Home — contact@home-kit-home.com</footer>';
+  });
+</script>
+
+</body>
+</html>

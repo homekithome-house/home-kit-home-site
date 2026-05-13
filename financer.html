@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Financer · Home Kit Home</title>
+  <meta name="description" content="Comment financer un habitat HKH : achat direct ou crédit immobilier mensuel via Charlemagne Investissement. France métropole et outre-mer."/>
+  <meta property="og:title" content="Financer · Home Kit Home"/>
+  <meta property="og:description" content="Deux chemins pour acquérir un habitat HKH : achat direct ou financement mensuel via Charlemagne Investissement. Étude personnalisée."/>
+  <meta property="og:image" content="images/Top Photos/Gemini_Generated_Image_ka43m7ka43m7ka43.png"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="fr_FR"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap" media="print" onload="this.media='all'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/></noscript>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="assets/css/animations.css"/>
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/nav.js" defer></script>
+  <style>
+    /* ═══════════════════════════════════════════════════════
+       FINANCER — page éditoriale-commerciale (mécanique d'achat)
+       Namespaced .fin-* — réutilisable
+       ═══════════════════════════════════════════════════════ */
+
+    /* ── Masthead ─────────────────────────────────────────── */
+    .fin-mast{padding:calc(var(--nav-h) + 4.5rem) 2.5rem 3.5rem;background:var(--paper);position:relative;overflow:hidden}
+    .fin-mast__inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:5rem;align-items:end;position:relative;z-index:2}
+    .fin-mast__eyebrow{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--copper);margin-bottom:1.8rem}
+    .fin-mast__eyebrow::before{content:'';width:36px;height:1px;background:var(--copper)}
+    .fin-mast__eyebrow .dot{color:rgba(184,115,51,.5);font-size:.5rem}
+    .fin-mast__eyebrow .tag{color:var(--mid);font-family:var(--serif);font-style:italic;letter-spacing:.04em;text-transform:none;font-size:.85rem}
+    .fin-mast h1{font-family:var(--serif);font-weight:400;font-size:clamp(3rem,7vw,5.6rem);color:var(--dark);line-height:.96;letter-spacing:-.03em;margin:0 0 1.6rem}
+    .fin-mast h1 .ln{display:block;white-space:nowrap}
+    .fin-mast h1 em{font-style:italic;color:var(--copper);display:block;white-space:nowrap}
+    .fin-mast__lead{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.05rem,1.5vw,1.22rem);color:var(--mid);line-height:1.7;max-width:48ch;margin:0}
+    .fin-mast__meta{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 2rem;padding:1.4rem 0 0;border-top:1px solid var(--cream-dk);margin:0}
+    .fin-mast__meta dt{font-family:var(--sans);font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mid);margin-bottom:.4rem;font-weight:400}
+    .fin-mast__meta dd{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--dark);margin:0}
+    .fin-mast__numeral{position:absolute;z-index:1;pointer-events:none;right:2.5rem;bottom:-2.6rem;font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(9rem,16vw,15rem);line-height:.82;color:var(--copper);opacity:.1;letter-spacing:-.055em}
+    @media(max-width:900px){
+      .fin-mast__inner{grid-template-columns:1fr;gap:2.5rem;align-items:start}
+      .fin-mast__numeral{font-size:clamp(7rem,13vw,10rem);right:1.5rem;bottom:-1.5rem}
+    }
+    @media(max-width:600px){.fin-mast{padding:calc(var(--nav-h) + 2.5rem) 1.5rem 2.5rem}}
+
+    /* ── Deux chemins — empilés ───────────────────────────── */
+    .fin-paths{padding:7rem 2.5rem 3rem;background:var(--paper)}
+    .fin-paths__inner{max-width:1240px;margin:0 auto}
+    .fin-paths__head{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:end;margin-bottom:5rem}
+    .fin-paths__col-text{display:flex;flex-direction:column;gap:.8rem}
+    .fin-paths__lbl{font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--copper);border-top:1px solid rgba(184,115,51,.3);padding-top:1.1rem;align-self:flex-start;margin:0}
+    .fin-paths__head h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,4.4vw,3.6rem);color:var(--dark);line-height:1.04;letter-spacing:-.025em;margin:0}
+    .fin-paths__head h2 em{font-style:italic;color:var(--copper)}
+    .fin-paths__sub{font-family:var(--serif);font-style:italic;font-size:clamp(1rem,1.4vw,1.15rem);color:var(--mid);line-height:1.65;max-width:42ch;margin:0;padding-bottom:.4rem}
+
+    .fin-path{display:grid;grid-template-columns:1fr 2fr;gap:5rem;padding:4.5rem 0;border-top:1px solid var(--cream-dk);scroll-margin-top:calc(var(--nav-h) + 1rem)}
+    .fin-path:last-child{border-bottom:1px solid var(--cream-dk)}
+    .fin-path__num{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(5rem,10vw,9rem);line-height:.85;color:var(--copper);opacity:.18;letter-spacing:-.06em;margin:0;align-self:start}
+    .fin-path__body{display:flex;flex-direction:column;gap:1.6rem;max-width:60ch}
+    .fin-path__tag{font-family:var(--sans);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--copper);font-weight:400;align-self:flex-start;padding:.4rem .8rem;border:1px solid rgba(184,115,51,.3);border-radius:2px}
+    .fin-path__name{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--dark);line-height:1.08;letter-spacing:-.018em;margin:0}
+    .fin-path__name em{font-style:italic;color:var(--copper)}
+    .fin-path__desc{font-family:var(--sans);font-weight:300;font-size:1rem;color:var(--mid);line-height:1.75;margin:0}
+    .fin-path__meta{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem 2rem;padding:1.4rem 0 .2rem;border-top:1px solid var(--cream-dk);margin:.4rem 0 0}
+    .fin-path__meta dt{font-family:var(--sans);font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mid);margin-bottom:.35rem;font-weight:400}
+    .fin-path__meta dd{font-family:var(--serif);font-style:italic;font-size:.95rem;color:var(--dark);margin:0;line-height:1.4}
+    .fin-path__cta{font-family:var(--sans);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dark);text-decoration:none;display:inline-flex;align-items:center;gap:1.2rem;align-self:flex-start;margin-top:.8rem;transition:gap .25s ease}
+    .fin-path__cta::after{content:'→';color:var(--copper);transition:transform .3s ease}
+    .fin-path__cta:hover{gap:1.6rem}
+    .fin-path__cta:hover::after{transform:translateX(.4rem)}
+    @media(max-width:900px){
+      .fin-paths__head{grid-template-columns:1fr;gap:1.4rem;margin-bottom:3rem}
+      .fin-path{grid-template-columns:1fr;gap:2rem;padding:3.5rem 0}
+      .fin-path__num{font-size:clamp(4rem,8vw,5rem)}
+    }
+    @media(max-width:600px){
+      .fin-paths{padding:5rem 1.5rem 2rem}
+      .fin-path__meta{grid-template-columns:1fr;gap:1.2rem}
+    }
+
+    /* ── Méthode (4 étapes) ───────────────────────────────── */
+    .fin-method{padding:7rem 2.5rem;background:var(--dark);color:var(--paper);position:relative}
+    .fin-method__inner{max-width:1240px;margin:0 auto}
+    .fin-method__head{display:flex;flex-direction:column;gap:.8rem;margin-bottom:4.5rem;max-width:780px}
+    .fin-method__lbl{font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--copper);border-top:1px solid rgba(184,115,51,.45);padding-top:1.1rem;align-self:flex-start;margin:0}
+    .fin-method__head h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,4vw,3.2rem);color:var(--paper);line-height:1.04;letter-spacing:-.025em;margin:0}
+    .fin-method__head h2 em{font-style:italic;color:var(--copper)}
+    .fin-method__steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(255,255,255,.1)}
+    .fin-step{padding:2.6rem 2rem 2.2rem;border-right:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:1rem;counter-increment:step}
+    .fin-step:last-child{border-right:none}
+    .fin-step__n{font-family:var(--serif);font-style:italic;font-weight:400;font-size:3.4rem;color:rgba(184,115,51,.55);line-height:.85;letter-spacing:-.04em;margin:0 0 .4rem}
+    .fin-step__n::before{content:counter(step,decimal-leading-zero)}
+    .fin-step__name{font-family:var(--serif);font-weight:400;font-size:1.35rem;color:var(--paper);letter-spacing:-.012em;line-height:1.2;margin:0}
+    .fin-step__dur{font-family:var(--sans);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--copper);font-weight:400;margin:0}
+    .fin-step__desc{font-family:var(--sans);font-weight:300;font-size:.9rem;color:rgba(249,247,242,.65);line-height:1.7;margin:0}
+    .fin-method__steps{counter-reset:step}
+    @media(max-width:900px){
+      .fin-method__steps{grid-template-columns:1fr 1fr}
+      .fin-step:nth-child(2){border-right:none}
+      .fin-step:nth-child(1),.fin-step:nth-child(2){border-bottom:1px solid rgba(255,255,255,.1)}
+    }
+    @media(max-width:600px){
+      .fin-method{padding:5rem 1.5rem}
+      .fin-method__steps{grid-template-columns:1fr}
+      .fin-step{border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}
+      .fin-step:last-child{border-bottom:none}
+    }
+
+    /* ── Le partenaire (éditorial 1/1.4) ──────────────────── */
+    .fin-partners{padding:7rem 2.5rem;background:var(--paper)}
+    .fin-partners__inner{max-width:1240px;margin:0 auto}
+    .fin-partners__head{display:flex;flex-direction:column;gap:.8rem;margin-bottom:3.5rem;max-width:780px}
+    .fin-partners__lbl{font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--copper);border-top:1px solid rgba(184,115,51,.3);padding-top:1.1rem;align-self:flex-start;margin:0}
+    .fin-partners__head h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,3.6vw,2.8rem);color:var(--dark);line-height:1.06;letter-spacing:-.022em;margin:0}
+    .fin-partners__head h2 em{font-style:italic;color:var(--copper)}
+    .fin-partners__head p{font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--mid);line-height:1.7;max-width:56ch;margin:0}
+    .fin-partners__editorial{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start;padding-top:1rem}
+    .fin-partners__visual{position:relative;background:var(--cream);aspect-ratio:4/5;overflow:hidden}
+    .fin-partners__visual picture,.fin-partners__visual img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+    .fin-partners__cap{display:flex;align-items:baseline;gap:.7rem;font-family:var(--serif);font-style:italic;font-size:.85rem;color:var(--mid);opacity:.78;padding:1rem 0 0;letter-spacing:.005em;line-height:1.5}
+    .fin-partners__cap::before{content:'';width:1.4rem;height:1px;background:var(--copper);flex-shrink:0;transform:translateY(-.3rem)}
+    .fin-partners__body{display:flex;flex-direction:column;gap:1.8rem;padding-top:.5rem}
+    .fin-partners__num{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(3.5rem,6vw,5rem);color:var(--copper);line-height:.9;letter-spacing:-.04em;opacity:.85;margin:0}
+    .fin-partners__role{font-family:var(--sans);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--copper);font-weight:400;margin:0}
+    .fin-partners__name{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,3vw,2.5rem);color:var(--dark);letter-spacing:-.018em;line-height:1.1;margin:0}
+    .fin-partners__desc{font-family:var(--sans);font-weight:300;font-size:1rem;color:var(--mid);line-height:1.75;margin:0;max-width:56ch}
+    .fin-partners__sig{font-family:var(--serif);font-style:italic;font-size:.9rem;color:var(--copper);opacity:.65;padding-top:1rem;border-top:1px solid var(--cream-dk);letter-spacing:0}
+    @media(max-width:900px){
+      .fin-partners__editorial{grid-template-columns:1fr;gap:2.5rem}
+    }
+    @media(max-width:600px){.fin-partners{padding:5rem 1.5rem}}
+
+    /* ── Pont vers Investir ───────────────────────────────── */
+    .fin-bridge{padding:5.5rem 2.5rem;background:var(--cream)}
+    .fin-bridge__inner{max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:1.4rem;align-items:flex-start}
+    .fin-bridge__lbl{font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--copper);border-top:1px solid rgba(184,115,51,.3);padding-top:1.1rem;margin:0}
+    .fin-bridge h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem,2.6vw,2.3rem);color:var(--dark);line-height:1.15;letter-spacing:-.02em;margin:0;max-width:30ch}
+    .fin-bridge h3 em{font-style:italic;color:var(--copper)}
+    .fin-bridge__keywords{font-family:var(--serif);font-style:italic;font-size:.95rem;color:var(--copper);opacity:.6;letter-spacing:.01em;line-height:1.6;margin:0}
+    .fin-bridge__link{font-family:var(--sans);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dark);text-decoration:none;display:inline-flex;align-items:center;gap:1.2rem;margin-top:.6rem;transition:gap .25s ease}
+    .fin-bridge__link::after{content:'→';color:var(--copper);transition:transform .3s ease}
+    .fin-bridge__link:hover{gap:1.6rem}
+    .fin-bridge__link:hover::after{transform:translateX(.4rem)}
+    @media(max-width:600px){.fin-bridge{padding:4rem 1.5rem}}
+  </style>
+</head>
+<body>
+
+<!-- ═══ MASTHEAD ─────────────────────────────────────── -->
+<header class="fin-mast">
+  <div class="fin-mast__inner">
+    <div class="fin-mast__col">
+      <div class="fin-mast__eyebrow">
+        <span data-fr="Le Manuel · Financer" data-en="The Manual · Finance">Le Manuel · Financer</span>
+        <span class="dot">●</span>
+        <span class="tag" data-fr="Étude personnalisée" data-en="Personalised study">Étude personnalisée</span>
+      </div>
+      <h1 data-fr="<span class='ln'>Deux chemins.</span><em>Une seule maison.</em>" data-en="<span class='ln'>Two paths.</span><em>One home.</em>"><span class="ln">Deux chemins.</span><em>Une seule maison.</em></h1>
+      <p class="fin-mast__lead" data-fr="Selon votre profil, l'achat HKH se construit autour de l'achat direct ou du financement mensuel. Voici comment ces deux chemins s'articulent, sans nous éloigner de l'essentiel : une résidence architecturale, livrée prête à vivre." data-en="Depending on your profile, your HKH purchase is built around direct purchase or monthly financing. Here is how these two paths fit together, without straying from the essentials: an architectural home, delivered ready to live in.">Selon votre profil, l'achat HKH se construit autour de l'achat direct ou du financement mensuel. Voici comment ces deux chemins s'articulent, sans nous éloigner de l'essentiel : une résidence architecturale, livrée prête à vivre.</p>
+    </div>
+    <dl class="fin-mast__meta">
+      <div><dt data-fr="Approche" data-en="Approach">Approche</dt><dd data-fr="Étude par projet" data-en="Project by project">Étude par projet</dd></div>
+      <div><dt data-fr="Délai" data-en="Lead time">Délai</dt><dd data-fr="≤ 20 sem post-commande" data-en="≤ 20 weeks post-order">≤ 20 sem post-commande</dd></div>
+      <div><dt data-fr="Territoire" data-en="Territory">Territoire</dt><dd data-fr="France & Outre-mer" data-en="France & Overseas">France & Outre-mer</dd></div>
+      <div><dt data-fr="Format" data-en="Format">Format</dt><dd data-fr="Clé en main" data-en="Turnkey">Clé en main</dd></div>
+    </dl>
+  </div>
+  <span class="fin-mast__numeral" aria-hidden="true">02</span>
+</header>
+
+<!-- ═══ DEUX CHEMINS ─────────────────────────────────── -->
+<section class="fin-paths">
+  <div class="fin-paths__inner">
+    <header class="fin-paths__head reveal">
+      <div class="fin-paths__col-text">
+        <span class="fin-paths__lbl" data-fr="Deux chemins" data-en="Two paths">Deux chemins</span>
+        <h2 data-fr="À chaque profil,<br><em>sa porte d'entrée</em>." data-en="Each profile<br>has <em>its own entry</em>.">À chaque profil,<br><em>sa porte d'entrée</em>.</h2>
+      </div>
+      <p class="fin-paths__sub" data-fr="Selon que vous arrivez avec un capital ou une capacité d'emprunt, le parcours change — la qualité de l'habitat livré, jamais." data-en="Whether you arrive with capital or borrowing capacity, the path changes — the quality of the home delivered, never does.">Selon que vous arrivez avec un capital ou une capacité d'emprunt, le parcours change — la qualité de l'habitat livré, jamais.</p>
+    </header>
+
+    <article class="fin-path reveal" id="direct">
+      <span class="fin-path__num">№ 01</span>
+      <div class="fin-path__body">
+        <span class="fin-path__tag" data-fr="Tous profils" data-en="All profiles">Tous profils</span>
+        <h3 class="fin-path__name" data-fr="Achat <em>direct</em>." data-en="Direct <em>purchase</em>.">Achat <em>direct</em>.</h3>
+        <p class="fin-path__desc" data-fr="Acquisition au comptant, livré clé en main. Le parcours le plus simple : vous validez le devis, l'habitat est fabriqué, transporté, posé par grue, raccordé. Du virement initial à la pose, tout passe par un seul interlocuteur." data-en="Cash purchase, delivered turnkey. The simplest path: you validate the quote, the home is manufactured, shipped, crane-installed and connected. From the initial transfer to handover, everything goes through a single contact.">Acquisition au comptant, livré clé en main. Le parcours le plus simple : vous validez le devis, l'habitat est fabriqué, transporté, posé par grue, raccordé. Du virement initial à la pose, tout passe par un seul interlocuteur.</p>
+        <dl class="fin-path__meta">
+          <div><dt data-fr="Pour qui" data-en="For whom">Pour qui</dt><dd data-fr="Capital disponible · résidence ou locatif" data-en="Available capital · residence or rental">Capital disponible · résidence ou locatif</dd></div>
+          <div><dt data-fr="Délai type" data-en="Typical lead time">Délai type</dt><dd data-fr="≈ 6 mois du devis à la pose" data-en="≈ 6 months from quote to install">≈ 6 mois du devis à la pose</dd></div>
+        </dl>
+        <a href="contact.html?intent=direct" class="fin-path__cta" data-fr="Démarrer un dossier achat direct" data-en="Start a direct purchase file">Démarrer un dossier achat direct</a>
+      </div>
+    </article>
+
+    <article class="fin-path reveal" id="mensuel">
+      <span class="fin-path__num">№ 02</span>
+      <div class="fin-path__body">
+        <span class="fin-path__tag" data-fr="Sans cash disponible" data-en="Without immediate cash">Sans cash disponible</span>
+        <h3 class="fin-path__name" data-fr="Financement <em>mensuel</em>." data-en="Monthly <em>financing</em>.">Financement <em>mensuel</em>.</h3>
+        <p class="fin-path__desc" data-fr="Mensualités sur la durée d'un crédit immobilier classique, structurées avec notre partenaire Charlemagne Investissement. L'habitat HKH devient accessible sans capital de départ massif, avec une mécanique financière éprouvée et un dossier monté par des spécialistes du crédit immobilier." data-en="Monthly instalments over a standard mortgage timeframe, structured with our partner Charlemagne Investissement. HKH ownership becomes reachable without massive upfront capital, with a proven financial mechanism and a file built by mortgage specialists.">Mensualités sur la durée d'un crédit immobilier classique, structurées avec notre partenaire Charlemagne Investissement. L'habitat HKH devient accessible sans capital de départ massif, avec une mécanique financière éprouvée et un dossier monté par des spécialistes du crédit immobilier.</p>
+        <dl class="fin-path__meta">
+          <div><dt data-fr="Pour qui" data-en="For whom">Pour qui</dt><dd data-fr="Capacité d'emprunt · revenus stables" data-en="Borrowing capacity · stable income">Capacité d'emprunt · revenus stables</dd></div>
+          <div><dt data-fr="Partenaire" data-en="Partner">Partenaire</dt><dd>Charlemagne Investissement</dd></div>
+        </dl>
+        <a href="contact.html?intent=mensuel" class="fin-path__cta" data-fr="Étudier un financement mensuel" data-en="Explore monthly financing">Étudier un financement mensuel</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ═══ MÉTHODE (4 ÉTAPES) ───────────────────────────── -->
+<section class="fin-method">
+  <div class="fin-method__inner">
+    <header class="fin-method__head reveal">
+      <span class="fin-method__lbl" data-fr="Notre méthode" data-en="Our method">Notre méthode</span>
+      <h2 data-fr="Du cadrage<br>à la <em>livraison</em>." data-en="From framing<br>to <em>delivery</em>.">Du cadrage<br>à la <em>livraison</em>.</h2>
+    </header>
+    <div class="fin-method__steps">
+      <article class="fin-step reveal">
+        <span class="fin-step__n" aria-hidden="true"></span>
+        <h3 class="fin-step__name" data-fr="Cadrage" data-en="Framing">Cadrage</h3>
+        <span class="fin-step__dur" data-fr="Premier échange · sans engagement" data-en="First conversation · no commitment">Premier échange · sans engagement</span>
+        <p class="fin-step__desc" data-fr="Nous écoutons votre projet, votre territoire, votre profil financier. Nous identifions sans détour si HKH est pertinent pour vous, ou non." data-en="We listen to your project, territory and financial profile. We identify, without detours, whether HKH fits your situation, or not.">Nous écoutons votre projet, votre territoire, votre profil financier. Nous identifions sans détour si HKH est pertinent pour vous, ou non.</p>
+      </article>
+      <article class="fin-step reveal reveal-delay-1">
+        <span class="fin-step__n" aria-hidden="true"></span>
+        <h3 class="fin-step__name" data-fr="Étude" data-en="Study">Étude</h3>
+        <span class="fin-step__dur" data-fr="1 à 2 semaines" data-en="1 to 2 weeks">1 à 2 semaines</span>
+        <p class="fin-step__desc" data-fr="Étude de site, simulation financière. Aucun chiffre n'est avancé tant qu'il n'est pas étayé par votre dossier réel." data-en="Site study, financial simulation. No figure is put forward until it is backed by your actual file.">Étude de site, simulation financière. Aucun chiffre n'est avancé tant qu'il n'est pas étayé par votre dossier réel.</p>
+      </article>
+      <article class="fin-step reveal reveal-delay-2">
+        <span class="fin-step__n" aria-hidden="true"></span>
+        <h3 class="fin-step__name" data-fr="Structuration" data-en="Structuring">Structuration</h3>
+        <span class="fin-step__dur" data-fr="Validation du chemin" data-en="Path validation">Validation du chemin</span>
+        <p class="fin-step__desc" data-fr="Choix entre achat direct ou financement mensuel, instruction du dossier bancaire si applicable, signature des engagements." data-en="Choice between direct purchase or monthly financing, bank file processing if applicable, signing of commitments.">Choix entre achat direct ou financement mensuel, instruction du dossier bancaire si applicable, signature des engagements.</p>
+      </article>
+      <article class="fin-step reveal reveal-delay-3">
+        <span class="fin-step__n" aria-hidden="true"></span>
+        <h3 class="fin-step__name" data-fr="Livraison" data-en="Delivery">Livraison</h3>
+        <span class="fin-step__dur" data-fr="≤ 20 semaines de la commande à la pose" data-en="≤ 20 weeks from order to install">≤ 20 semaines de la commande à la pose</span>
+        <p class="fin-step__desc" data-fr="Fabrication CE, transport intégral, pose par grue, raccordements, mise en service. Au terme : un habitat prêt à vivre." data-en="CE manufacturing, full transport, crane installation, connections, commissioning. The result: a home ready to live in.">Fabrication CE, transport intégral, pose par grue, raccordements, mise en service. Au terme : un habitat prêt à vivre.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LE PARTENAIRE ────────────────────────────────── -->
+<section class="fin-partners">
+  <div class="fin-partners__inner">
+    <header class="fin-partners__head reveal">
+      <span class="fin-partners__lbl" data-fr="Avec qui on travaille" data-en="Who we work with">Avec qui on travaille</span>
+      <h2 data-fr="Un partenaire.<br><em>Un seul interlocuteur.</em>" data-en="One partner.<br><em>One single contact.</em>">Un partenaire.<br><em>Un seul interlocuteur.</em></h2>
+      <p data-fr="Nous orchestrons l'ensemble du parcours pour vous. Aucun va-et-vient à organiser, aucun arbitrage à porter seul." data-en="We orchestrate the entire path for you. No back-and-forth to coordinate, no arbitration to carry alone.">Nous orchestrons l'ensemble du parcours pour vous. Aucun va-et-vient à organiser, aucun arbitrage à porter seul.</p>
+    </header>
+
+    <div class="fin-partners__editorial reveal">
+      <div class="fin-partners__visual">
+        <picture>
+          <source srcset="dist/images/Top%20Photos/freepik_genere-cet-photo-en-8k-dslr_0001.avif" type="image/avif">
+          <source srcset="dist/images/Top%20Photos/freepik_genere-cet-photo-en-8k-dslr_0001.webp" type="image/webp">
+          <img src="images/Top%20Photos/freepik_genere-cet-photo-en-8k-dslr_0001.png" alt="Habitat HKH posé sur site — vue architecturale" width="1200" height="1500" loading="lazy" decoding="async">
+        </picture>
+        <span class="fin-partners__cap" data-fr="Un habitat posé, raccordé, prêt à recevoir ses occupants." data-en="A home installed, connected, ready to welcome its occupants.">Un habitat posé, raccordé, prêt à recevoir ses occupants.</span>
+      </div>
+      <div class="fin-partners__body">
+        <span class="fin-partners__num">№ 01</span>
+        <span class="fin-partners__role" data-fr="Conseil en investissement immobilier" data-en="Real-estate investment advisory">Conseil en investissement immobilier</span>
+        <h3 class="fin-partners__name">Charlemagne Investissement</h3>
+        <p class="fin-partners__desc" data-fr="Notre partenaire pour le financement mensuel. Spécialiste du crédit immobilier, il monte les dossiers bancaires et accompagne les acquéreurs sur la durée du projet, en France métropole comme outre-mer." data-en="Our partner for monthly financing. A property lending specialist who builds the bank files and supports buyers throughout the project lifecycle, in mainland France as in overseas territories.">Notre partenaire pour le financement mensuel. Spécialiste du crédit immobilier, il monte les dossiers bancaires et accompagne les acquéreurs sur la durée du projet, en France métropole comme outre-mer.</p>
+        <span class="fin-partners__sig" data-fr="Partenaire crédit · France métropole & outre-mer" data-en="Credit partner · Mainland France & overseas">Partenaire crédit · France métropole & outre-mer</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PONT VERS INVESTIR ───────────────────────────── -->
+<section class="fin-bridge">
+  <div class="fin-bridge__inner">
+    <span class="fin-bridge__lbl" data-fr="Vous investissez en locatif outre-mer ?" data-en="Investing in overseas rental?">Vous investissez en locatif outre-mer ?</span>
+    <h3 data-fr="Voir aussi le Manuel <em>Investissement</em>." data-en="See also the <em>Investment</em> Manual.">Voir aussi le Manuel <em>Investissement</em>.</h3>
+    <span class="fin-bridge__keywords" data-fr="Girardin · FEDER · 244 quater W · Outre-mer" data-en="Girardin · FEDER · 244 quater W · Overseas">Girardin · FEDER · 244 quater W · Outre-mer</span>
+    <a href="investir.html" class="fin-bridge__link" data-fr="Découvrir les dispositifs fiscaux outre-mer" data-en="Discover the overseas tax schemes">Découvrir les dispositifs fiscaux outre-mer</a>
+  </div>
+</section>
+
+<!-- ═══ CTA FINAL DARK + 2 CHEMINS ───────────────────── -->
+<div class="home-cta">
+  <div class="home-cta__bg" aria-hidden="true"></div>
+  <div class="home-cta__inner">
+    <div class="home-cta__side">
+      <span class="home-cta__eyebrow reveal" data-fr="Allons plus loin" data-en="Let's go further">Allons plus loin</span>
+      <h2 class="reveal reveal-delay-1" data-fr="Une étude par projet,<br><em>jamais l'inverse</em>." data-en="One study per project,<br><em>never the other way</em>.">Une étude par projet,<br><em>jamais l'inverse</em>.</h2>
+      <p class="home-cta__lead reveal reveal-delay-2" data-fr="Aucune simulation générique ne remplace un audit personnalisé. Donnez-nous un cadre — projet, profil, territoire — nous construisons l'étude correspondante." data-en="No generic simulation replaces a personal audit. Give us a frame — project, profile, territory — we build the corresponding study.">Aucune simulation générique ne remplace un audit personnalisé. Donnez-nous un cadre — projet, profil, territoire — nous construisons l'étude correspondante.</p>
+    </div>
+    <div class="home-cta__blocks">
+      <a href="contact.html?intent=financement" class="home-cta-block reveal reveal-delay-2">
+        <span class="home-cta-block__n">№ 01</span>
+        <span class="home-cta-block__body">
+          <span class="home-cta-block__label" data-fr="Démarrer mon dossier" data-en="Start my file">Démarrer mon dossier</span>
+          <span class="home-cta-block__title" data-fr="Demander <em>une étude</em>" data-en="Request <em>a study</em>">Demander <em>une étude</em></span>
+        </span>
+        <span class="home-cta-block__arrow" data-fr="Prendre contact" data-en="Get in touch">Prendre contact</span>
+      </a>
+      <a href="habitats.html" class="home-cta-block reveal reveal-delay-3">
+        <span class="home-cta-block__n">№ 02</span>
+        <span class="home-cta-block__body">
+          <span class="home-cta-block__label" data-fr="Voir la gamme" data-en="See the range">Voir la gamme</span>
+          <span class="home-cta-block__title" data-fr="Découvrir <em>les habitats</em>" data-en="Discover <em>the homes</em>">Découvrir <em>les habitats</em></span>
+        </span>
+        <span class="home-cta-block__arrow" data-fr="Voir la gamme" data-en="See the range">Voir la gamme</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ───────────────────────────────────────── -->
+<div id="footer-placeholder"></div>
+<script>
+fetch('partials/footer-full.html')
+  .then(function(r){ if(!r.ok) throw new Error(); return r.text(); })
+  .then(function(h){
+    document.getElementById('footer-placeholder').innerHTML=h;
+    if(window.applyLang)window.applyLang(localStorage.getItem('hkh-lang')||'fr');
+  })
+  .catch(function(){
+    document.getElementById('footer-placeholder').innerHTML=
+      '<footer style="padding:2rem;text-align:center;font-size:.8rem;color:#6B6660">© Home Kit Home · contact@home-kit-home.com</footer>';
+  });
+</script>
+
+<script>
+/* ── Reveal on scroll ── */
+(function(){
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+})();
+</script>
+
+</body>
+</html>

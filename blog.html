@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Le Journal — Home Kit Home</title>
+<meta name="description" content="Le Journal HKH — architecture tropicale, investissement immobilier, livraisons clé en main. Notes, dossiers et reportages depuis les Antilles, la Guyane et la Caraïbe."/>
+<meta property="og:title" content="Le Journal — Home Kit Home"/>
+<meta property="og:description" content="Architecture tropicale, investissement immobilier, livraisons clé en main."/>
+<meta property="og:image" content="images/landing-top-slide-img-1.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="fr_FR"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap" media="print" onload="this.media='all'"/>
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
+</noscript>
+
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="assets/css/animations.css"/>
+<style>
+/* ════════════════════════════════════════════════════════
+   LE JOURNAL HKH — Layout magazine éditorial
+   ════════════════════════════════════════════════════════ */
+
+/* ── Masthead ─────────────────────────────────────── */
+.jrn-mast{
+  background:var(--paper);max-width:1340px;margin:0 auto;
+  padding:calc(var(--nav-h) + 3rem) 2.5rem 2.4rem
+}
+.jrn-mast__rule{
+  display:grid;grid-template-columns:auto 1fr auto;gap:2rem;align-items:center;
+  font-family:var(--sans);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--mid);padding-bottom:1.2rem;border-bottom:1px solid var(--dark)
+}
+.jrn-mast__rule::before,.jrn-mast__rule::after{display:none}
+.jrn-mast__edition{color:var(--copper)}
+.jrn-mast__divider{width:100%;height:1px;background:linear-gradient(to right,transparent,var(--cream-dk) 20%,var(--cream-dk) 80%,transparent)}
+.jrn-mast__date{font-family:var(--serif);font-style:italic;letter-spacing:.04em;text-transform:none;font-size:.78rem;color:var(--mid)}
+.jrn-mast__title{
+  font-family:var(--serif);font-weight:400;font-style:italic;
+  font-size:clamp(4rem,11vw,8.5rem);
+  color:var(--dark);line-height:.92;letter-spacing:-.045em;
+  margin:2.4rem 0 1.2rem;padding-bottom:.6rem;
+  border-bottom:1px solid var(--dark)
+}
+.jrn-mast__title em{font-style:normal;color:var(--copper);font-feature-settings:"liga"}
+.jrn-mast__sub{
+  display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:end;
+  padding-top:.4rem
+}
+.jrn-mast__sub p{
+  font-family:var(--serif);font-size:1.05rem;font-style:italic;color:var(--mid);
+  line-height:1.55;max-width:640px;margin:0
+}
+.jrn-mast__toc{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--mid);display:flex;gap:1.4rem;flex-wrap:wrap;justify-content:flex-end
+}
+.jrn-mast__toc a{color:var(--mid);text-decoration:none;transition:color .2s}
+.jrn-mast__toc a:hover{color:var(--copper)}
+
+/* ── Article phare (couverture) ────────────────────── */
+.jrn-cover{
+  background:var(--paper);max-width:1340px;margin:0 auto;
+  padding:3rem 2.5rem 1.8rem
+}
+.jrn-cover__inner{
+  display:grid;grid-template-columns:45fr 55fr;gap:0;
+  background:var(--cream);align-items:stretch;
+  min-height:640px;
+  position:relative;overflow:hidden
+}
+/* Folio typographique en tête */
+.jrn-cover__folio{
+  position:absolute;top:1.6rem;left:2.5rem;right:2.5rem;z-index:3;
+  display:flex;align-items:center;gap:1rem;
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--mid);pointer-events:none
+}
+.jrn-cover__folio span{display:inline-flex;align-items:center;gap:1rem}
+.jrn-cover__folio span::after{
+  content:'';width:.25rem;height:.25rem;border-radius:50%;
+  background:var(--copper);display:inline-block;opacity:.7
+}
+.jrn-cover__folio span:last-child::after{display:none}
+.jrn-cover__folio-rule{
+  flex:1;height:1px;background:linear-gradient(to right,rgba(184,115,51,.25),rgba(44,44,40,.04))
+}
+/* Chiffre monumental en italic serif, ancré à la gouttière et débordant bas */
+.jrn-cover__numeral{
+  position:absolute;z-index:1;pointer-events:none;
+  left:calc(45% - 1.2rem);bottom:-2.8rem;
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(10rem,18vw,18rem);line-height:.82;
+  color:var(--copper);opacity:.13;letter-spacing:-.055em
+}
+.jrn-cover__visual{
+  display:flex;flex-direction:column;height:100%;
+  padding:4.2rem 2.5rem 2rem;
+  position:relative;z-index:2
+}
+.jrn-cover__img{overflow:hidden;min-height:400px;background:#1A1A16;flex:1 1 auto;position:relative}
+.jrn-cover__img::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(44,44,40,.08)
+}
+.jrn-cover__img img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.jrn-cover:hover .jrn-cover__img img{transform:scale(1.025)}
+.jrn-cover__caption{
+  font-family:var(--serif);font-style:italic;font-size:.78rem;
+  color:var(--mid);letter-spacing:.015em;
+  padding:1rem 0 0;opacity:.78;flex-shrink:0;
+  display:flex;align-items:baseline;gap:.7rem
+}
+.jrn-cover__caption::before{
+  content:'';width:1.4rem;height:1px;background:var(--copper);
+  flex-shrink:0;transform:translateY(-.25rem)
+}
+.jrn-cover__body{padding:4.2rem 3.4rem 2.8rem;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.jrn-cover__head{
+  display:none
+}
+.jrn-cover__kicker{
+  font-family:var(--serif);font-style:italic;font-size:.85rem;
+  text-transform:none;letter-spacing:.02em;color:var(--mid);
+  margin-bottom:.9rem
+}
+.jrn-cover__title{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(2.1rem,3.8vw,3.4rem);
+  color:var(--dark);line-height:1.06;letter-spacing:-.025em;
+  margin:0 0 1.4rem
+}
+.jrn-cover__lead{
+  font-family:var(--serif);font-size:1.02rem;color:var(--dark);
+  line-height:1.7;margin:0 0 1.8rem;font-weight:400
+}
+.jrn-cover__lead::first-letter{
+  font-family:var(--serif);font-size:3.4em;float:left;line-height:.9;
+  margin:.05em .12em -.05em 0;color:var(--copper);font-weight:400
+}
+.jrn-cover__byline{
+  display:flex;align-items:center;gap:1.4rem;margin-top:2.2rem;padding-top:1.6rem;
+  border-top:1px solid var(--cream-dk);
+  font-family:var(--sans);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mid)
+}
+.jrn-cover__byline strong{color:var(--dark);font-weight:400}
+.jrn-cover__cta{color:var(--copper);margin-left:auto;font-family:var(--serif);font-style:italic;font-size:.85rem;letter-spacing:0;text-transform:none;display:inline-flex;align-items:center;gap:.55rem}
+.jrn-cover__cta::after{content:'→';transition:transform .35s cubic-bezier(.16,1,.3,1);display:inline-block}
+.jrn-cover:hover .jrn-cover__cta::after{transform:translateX(.3rem)}
+
+/* ── Sommaire (rubriques) ──────────────────────────── */
+.jrn-rubriques{
+  max-width:1340px;margin:0 auto;padding:0 2.5rem 2.5rem;
+  background:var(--paper)
+}
+.jrn-rubriques__bar{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:0;
+  padding:1.4rem 0;border-top:1px solid var(--dark);border-bottom:1px solid var(--cream-dk)
+}
+.jrn-rubriques__lbl{
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--mid);margin-right:2rem;padding-right:2rem;border-right:1px solid var(--cream-dk)
+}
+.jrn-chip{
+  background:none;border:none;cursor:pointer;
+  font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--mid);
+  padding:.2rem 1.2rem;letter-spacing:.005em;
+  position:relative;transition:color .25s
+}
+.jrn-chip:not(:last-child)::after{
+  content:'·';position:absolute;right:-.15rem;top:50%;transform:translateY(-50%);
+  color:var(--cream-dk);font-style:normal
+}
+.jrn-chip:hover{color:var(--dark)}
+.jrn-chip.active{color:var(--copper)}
+.jrn-chip.active::before{
+  content:'';position:absolute;bottom:-.15rem;left:1.2rem;right:1.2rem;
+  height:1px;background:var(--copper)
+}
+
+/* ── Grille d'articles (magazine spread) ─────────── */
+.jrn-feed{
+  max-width:1340px;margin:0 auto;padding:1rem 2.5rem 6rem;
+  background:var(--paper)
+}
+.jrn-feed__grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  column-gap:5rem;row-gap:3.5rem;align-items:start
+}
+.jrn-art{
+  display:flex;flex-direction:column;
+  padding:0 0 2.8rem;border-bottom:1px solid var(--cream-dk);
+  text-decoration:none;color:inherit;
+  transition:opacity .25s
+}
+.jrn-art:hover{opacity:.82}
+
+/* Thumbnail image */
+.jrn-art__thumb{
+  aspect-ratio:3/2;overflow:hidden;background:var(--cream);
+  margin-bottom:1.4rem;flex-shrink:0;
+}
+.jrn-art__thumb img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .85s cubic-bezier(.16,1,.3,1)
+}
+.jrn-art:hover .jrn-art__thumb img{transform:scale(1.04)}
+
+/* Placeholder brouillon */
+.jrn-art__thumb--empty{
+  background:var(--cream);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.jrn-art__thumb--empty::after{
+  content:attr(data-num);
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(6rem,9vw,9rem);
+  color:var(--copper);opacity:.07;
+  line-height:1;pointer-events:none;
+  position:absolute;
+}
+
+/* Meta ligne: numéro · rubrique · date */
+.jrn-art__meta{
+  display:flex;align-items:baseline;gap:.65rem;
+  margin-bottom:.75rem;flex-wrap:wrap;
+}
+.jrn-art__num{
+  font-family:var(--serif);font-style:italic;font-size:1rem;
+  color:var(--copper);line-height:1;
+}
+.jrn-art__sep{
+  color:var(--cream-dk);font-size:.75rem;font-style:normal;
+  font-family:var(--sans);
+}
+.jrn-art__rubrique{
+  font-family:var(--serif);font-style:italic;font-size:.85rem;color:var(--mid);
+}
+.jrn-art__date{
+  font-family:var(--sans);font-size:.56rem;letter-spacing:.18em;
+  text-transform:uppercase;color:rgba(122,115,106,.5);margin-left:auto;
+}
+
+.jrn-art__title{
+  font-family:var(--serif);font-weight:400;font-size:1.35rem;
+  color:var(--dark);line-height:1.2;letter-spacing:-.01em;
+  margin:0 0 .75rem
+}
+.jrn-art:hover .jrn-art__title{color:var(--copper)}
+.jrn-art__excerpt{
+  font-family:var(--sans);font-weight:300;font-size:.87rem;
+  color:var(--mid);line-height:1.78;margin:0 0 1.2rem
+}
+.jrn-art__foot{
+  display:flex;align-items:center;gap:1rem;
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--mid);margin-top:auto;
+}
+.jrn-art__foot::before{content:'';width:24px;height:1px;background:var(--copper);flex-shrink:0}
+
+/* ── Encart abonnement (en colonne magazine) ─────── */
+.jrn-subscribe{
+  background:var(--dark);max-width:calc(1340px - 5rem);margin:0 auto 4rem;
+  padding:5rem 4rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:end;
+  position:relative;overflow:hidden
+}
+.jrn-subscribe::before{
+  content:'№';position:absolute;top:-.5rem;right:1.5rem;
+  font-family:var(--serif);font-size:18rem;font-weight:400;
+  color:rgba(184,115,51,.06);line-height:1;letter-spacing:-.05em;pointer-events:none
+}
+.jrn-subscribe__lbl{
+  font-family:var(--sans);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--copper);margin-bottom:1.2rem;display:inline-block
+}
+.jrn-subscribe h2{
+  font-family:var(--serif);font-weight:400;font-size:clamp(2rem,3.2vw,2.8rem);
+  color:var(--paper);line-height:1.05;letter-spacing:-.02em;margin:0
+}
+.jrn-subscribe h2 em{font-style:italic;color:var(--copper)}
+.jrn-subscribe__form{display:flex;flex-direction:column;gap:1.4rem}
+.jrn-subscribe__form p{
+  font-family:var(--serif);font-style:italic;font-size:.95rem;
+  color:rgba(249,247,242,.7);line-height:1.55;margin:0
+}
+.jrn-subscribe__field{
+  display:flex;border-bottom:1px solid rgba(249,247,242,.25);
+  padding-bottom:.4rem
+}
+.jrn-subscribe__field input{
+  flex:1;background:transparent;border:none;color:var(--paper);
+  font-family:var(--sans);font-size:.95rem;font-weight:300;
+  padding:.6rem 0;outline:none
+}
+.jrn-subscribe__field input::placeholder{color:rgba(249,247,242,.35)}
+.jrn-subscribe__field button{
+  background:transparent;border:none;cursor:pointer;
+  font-family:var(--sans);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--copper);padding:.6rem 0 .6rem 1.5rem;
+  display:inline-flex;align-items:center;gap:.8rem
+}
+.jrn-subscribe__field button::after{content:'→';transition:transform .3s}
+.jrn-subscribe__field button:hover::after{transform:translateX(.3rem)}
+
+/* ── Transition entre covers de catégorie ───────── */
+.jrn-cover__inner{transition:opacity .45s cubic-bezier(.16,1,.3,1)}
+.jrn-cover__inner.is-switching{opacity:0}
+
+/* ── Pagination éditoriale (registre de journal) ── */
+.jrn-cover-nav{
+  max-width:1340px;margin:0 auto;padding:.2rem 2.5rem 2rem;
+  display:flex;justify-content:space-between;align-items:center;gap:2rem;
+  background:var(--paper)
+}
+.jrn-cover-nav__segs{
+  display:flex;gap:8px;align-items:center
+}
+.jrn-cover-seg{
+  background:none;border:none;cursor:pointer;padding:14px 0;
+  display:flex;align-items:center
+}
+.jrn-cover-seg__line{
+  display:block;width:60px;height:2px;background:var(--cream-dk);
+  opacity:.55;
+  transition:background .4s cubic-bezier(.16,1,.3,1),opacity .3s ease
+}
+.jrn-cover-seg:hover .jrn-cover-seg__line{background:rgba(184,115,51,.5);opacity:.9}
+.jrn-cover-seg.is-active .jrn-cover-seg__line{
+  background:var(--copper);opacity:1
+}
+.jrn-cover-nav__idx{
+  font-family:var(--serif);font-style:italic;font-size:.92rem;
+  color:var(--mid);letter-spacing:.01em;white-space:nowrap;
+  display:flex;align-items:center;gap:.9rem
+}
+.jrn-cover-nav__idx em{font-style:italic;color:var(--copper);font-weight:400}
+.jrn-cover-nav__idx .jrn-cover-nav__cat{
+  color:var(--dark);font-size:.88rem;
+  padding-left:.9rem;border-left:1px solid var(--cream-dk)
+}
+@media(max-width:768px){
+  .jrn-cover-nav{flex-direction:column;align-items:flex-start;gap:1rem;padding:.2rem 1.5rem 2rem}
+  .jrn-cover-seg__line{width:42px}
+}
+
+/* ── Reveal helpers ──────────────────────────────── */
+.jrn-mast__title,.jrn-mast__sub p,.jrn-mast__toc{opacity:0;transform:translateY(14px);transition:opacity .9s ease-out,transform .9s ease-out}
+.jrn-mast.is-loaded .jrn-mast__title{opacity:1;transform:none;transition-delay:.1s}
+.jrn-mast.is-loaded .jrn-mast__sub p{opacity:1;transform:none;transition-delay:.25s}
+.jrn-mast.is-loaded .jrn-mast__toc{opacity:1;transform:none;transition-delay:.35s}
+
+/* ── Responsive ──────────────────────────────────── */
+@media(max-width:1000px){
+  .jrn-cover__inner{grid-template-columns:1fr}
+  .jrn-cover__inner::before{top:1.2rem;left:1.8rem}
+  .jrn-cover__visual{min-height:340px;padding:2.4rem 2rem 1.6rem}
+  .jrn-cover__body{padding:2.6rem 2rem}
+  .jrn-feed__grid{grid-template-columns:1fr;column-gap:0}
+  .jrn-mast__sub{grid-template-columns:1fr}
+  .jrn-mast__toc{justify-content:flex-start;margin-top:1.4rem}
+  .jrn-subscribe{grid-template-columns:1fr;gap:2.4rem;padding:3.5rem 2rem}
+}
+@media(max-width:600px){
+  .jrn-mast{padding:calc(var(--nav-h) + 2rem) 1.5rem 2rem}
+  .jrn-mast__rule{grid-template-columns:1fr;gap:.6rem;text-align:center}
+  .jrn-mast__rule .jrn-mast__divider{display:none}
+  .jrn-cover{padding:2rem 1.5rem 3rem}
+  .jrn-cover__body{padding:2rem 1.4rem}
+  .jrn-rubriques{padding:0 1.5rem 2rem}
+  .jrn-rubriques__bar{padding:1rem 0;gap:.4rem 0}
+  .jrn-rubriques__lbl{margin-right:0;padding-right:0;border-right:none;width:100%;margin-bottom:.6rem}
+  .jrn-feed{padding:.5rem 1.5rem 4rem}
+  .jrn-art{padding:0 0 2.2rem}
+  .jrn-art__thumb{margin-bottom:1rem}
+  .jrn-subscribe{margin:0 0 3rem}
+}
+</style>
+</head>
+<body>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/nav.js"></script>
+
+<!-- ═════════ MASTHEAD ═════════ -->
+<header class="jrn-mast" id="masthead">
+  <div class="jrn-mast__rule">
+    <span class="jrn-mast__edition" data-fr="Édition Nº 04" data-en="Issue Nº 04">Édition Nº 04</span>
+    <span class="jrn-mast__divider"></span>
+    <span class="jrn-mast__date" id="masthDate">Avril 2026</span>
+  </div>
+
+  <h1 class="jrn-mast__title">Le <em>Journal</em></h1>
+
+  <div class="jrn-mast__sub">
+    <p data-fr="Notes éditoriales, dossiers et reportages depuis les Antilles, la Guyane et la Caraïbe — sur l'architecture tropicale, l'investissement immobilier et l'art de livrer une résidence clé en main." data-en="Editorial notes, in-depth pieces and field reports from the French Antilles, Guiana and the Caribbean — on tropical architecture, real estate investment, and the craft of turnkey delivery.">Notes éditoriales, dossiers et reportages depuis les Antilles, la Guyane et la Caraïbe — sur l'architecture tropicale, l'investissement immobilier et l'art de livrer une résidence clé en main.</p>
+    <nav class="jrn-mast__toc">
+      <a href="#cover" data-fr="À la une" data-en="Featured">À la une</a>
+      <a href="#feed" data-fr="Sommaire" data-en="Index">Sommaire</a>
+      <a href="#abonner" data-fr="S'abonner" data-en="Subscribe">S'abonner</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═════════ COUVERTURE ═════════ -->
+<a href="blog-jay-family-saint-francois.html" class="jrn-cover" id="cover" style="text-decoration:none;display:block">
+  <div class="jrn-cover__inner">
+    <div class="jrn-cover__folio" aria-hidden="true">
+      <span data-fr="Le Journal" data-en="The Journal">Le Journal</span>
+      <span data-fr="Couverture" data-en="Cover">Couverture</span>
+      <span data-fr="Partenariat" data-en="Partnership">Partenariat</span>
+      <span class="jrn-cover__folio-rule"></span>
+      <span>Avril 2026</span>
+    </div>
+    <span class="jrn-cover__numeral" aria-hidden="true">01</span>
+    <div class="jrn-cover__visual">
+      <div class="jrn-cover__img">
+        <picture>
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/3.avif" type="image/avif">
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/3.webp" type="image/webp">
+  <img src="images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/3.png" alt="Village de standing — Saint-François, Guadeloupe"/>
+</picture>
+      </div>
+      <span class="jrn-cover__caption" data-fr="Saint-François, Guadeloupe · Vue du projet en cours d'étude" data-en="Saint-François, Guadeloupe · View of the project under study">Saint-François, Guadeloupe · Vue du projet en cours d'étude</span>
+    </div>
+    <article class="jrn-cover__body">
+      <div class="jrn-cover__head">
+        <span data-fr="Couverture" data-en="Cover">Couverture</span>
+        <span style="color:var(--mid);letter-spacing:.18em" data-fr="Partenariat" data-en="Partnership">Partenariat</span>
+      </div>
+      <span class="jrn-cover__kicker">Reportage · Jay Family Properties × HKH</span>
+      <h2 class="jrn-cover__title" data-fr="Six habitats sur 2 000 m² : la naissance d'un village de standing." data-en="Six residences on 2,000 m²: the making of a boutique village.">Six habitats sur 2 000 m² : la naissance d'un village de standing.</h2>
+      <p class="jrn-cover__lead" data-fr="L'idée tient en quelques mots : transformer un terrain plat de Saint-François en un ensemble résidentiel d'exception, sans chantier traditionnel, sans mois d'attente, sans compromis sur la matière. Voici comment Home Kit Home et Jay Family Properties ont conçu ce projet à six résidences avec piscines privées." data-en="The idea is simple: transform a flat plot in Saint-François into an exceptional residential ensemble — without a traditional construction site, without months of waiting, without compromise on materials. Here is how Home Kit Home and Jay Family Properties designed this six-residence project with private pools.">L'idée tient en quelques mots : transformer un terrain plat de Saint-François en un ensemble résidentiel d'exception, sans chantier traditionnel, sans mois d'attente, sans compromis sur la matière. Voici comment Home Kit Home et Jay Family Properties ont conçu ce projet à six résidences avec piscines privées.</p>
+      <div class="jrn-cover__byline">
+        <span data-fr="Par" data-en="By">Par</span>
+        <strong>Benjamin Dupouy</strong>
+        <span class="jrn-cover__cta" data-fr="Lire la couverture" data-en="Read the cover">Lire la couverture</span>
+      </div>
+    </article>
+  </div>
+</a>
+
+<!-- ═════════ PAGINATION ÉDITORIALE ═════════ -->
+<nav class="jrn-cover-nav" aria-label="Couvertures par rubrique">
+  <div class="jrn-cover-nav__segs" id="coverSegs">
+    <button class="jrn-cover-seg is-active" data-filter="tous" aria-label="Couverture — Tout"><span class="jrn-cover-seg__line"></span></button>
+    <button class="jrn-cover-seg" data-filter="architecture" aria-label="Couverture — Architecture"><span class="jrn-cover-seg__line"></span></button>
+    <button class="jrn-cover-seg" data-filter="investissement" aria-label="Couverture — Investissement"><span class="jrn-cover-seg__line"></span></button>
+    <button class="jrn-cover-seg" data-filter="partenariats" aria-label="Couverture — Partenariats"><span class="jrn-cover-seg__line"></span></button>
+    <button class="jrn-cover-seg" data-filter="technique" aria-label="Couverture — Technique"><span class="jrn-cover-seg__line"></span></button>
+    <button class="jrn-cover-seg" data-filter="logistique" aria-label="Couverture — Logistique"><span class="jrn-cover-seg__line"></span></button>
+  </div>
+  <div class="jrn-cover-nav__idx" aria-live="polite">
+    <span>№&nbsp;<em id="coverIdxNum">01</em>&nbsp;/&nbsp;06</span>
+    <span class="jrn-cover-nav__cat" id="coverIdxCat" data-fr="Couverture" data-en="Cover">Couverture</span>
+  </div>
+</nav>
+
+<!-- ═════════ RUBRIQUES ═════════ -->
+<nav class="jrn-rubriques">
+  <div class="jrn-rubriques__bar">
+    <span class="jrn-rubriques__lbl" data-fr="Rubriques" data-en="Sections">Rubriques</span>
+    <button class="jrn-chip active" data-filter="tous" data-fr="Tout" data-en="All">Tout</button>
+    <button class="jrn-chip" data-filter="architecture" data-fr="Architecture" data-en="Architecture">Architecture</button>
+    <button class="jrn-chip" data-filter="investissement" data-fr="Investissement" data-en="Investment">Investissement</button>
+    <button class="jrn-chip" data-filter="partenariats" data-fr="Partenariats" data-en="Partnerships">Partenariats</button>
+    <button class="jrn-chip" data-filter="technique" data-fr="Technique" data-en="Technical">Technique</button>
+    <button class="jrn-chip" data-filter="logistique" data-fr="Logistique" data-en="Logistics">Logistique</button>
+  </div>
+</nav>
+
+<!-- ═════════ SOMMAIRE / FEED ═════════ -->
+<section class="jrn-feed" id="feed">
+  <div class="jrn-feed__grid">
+
+    <a href="#" class="jrn-art" data-category="architecture">
+      <div class="jrn-art__thumb">
+        <picture>
+  <source srcset="dist/images/Habitats/Horizon%20T/unwatermarked_Gemini_Generated_Image_pd7jvtpd7jvtpd7j.avif" type="image/avif">
+  <source srcset="dist/images/Habitats/Horizon%20T/unwatermarked_Gemini_Generated_Image_pd7jvtpd7jvtpd7j.webp" type="image/webp">
+  <img src="images/Habitats/Horizon%20T/unwatermarked_Gemini_Generated_Image_pd7jvtpd7jvtpd7j.png" alt="Architecture tropicale — Horizon T HKH"/>
+</picture>
+      </div>
+      <div class="jrn-art__meta">
+        <span class="jrn-art__num">02</span>
+        <span class="jrn-art__sep">·</span>
+        <span class="jrn-art__rubrique">Architecture</span>
+        <span class="jrn-art__sep">·</span>
+        <span class="jrn-art__date">Mars 26</span>
+      </div>
+      <h3 class="jrn-art__title" data-fr="Construire en zone tropicale — contraintes climatiques et réponses architecturales." data-en="Building in tropical zones — climatic constraints and architectural responses.">Construire en zone tropicale — contraintes climatiques et réponses architecturales.</h3>
+      <p class="jrn-art__excerpt" data-fr="Humidité, cyclones, sismicité. Trois contraintes, trois réponses techniques. Pourquoi l'acier galvanisé sur pieux est devenu la norme silencieuse des Antilles." data-en="Humidity, cyclones, seismicity. Three constraints, three technical responses. Why pile-mounted galvanised steel has become the quiet standard of the Caribbean.">Humidité, cyclones, sismicité. Trois contraintes, trois réponses techniques. Pourquoi l'acier galvanisé sur pieux est devenu la norme silencieuse des Antilles.</p>
+      <div class="jrn-art__foot"><span data-fr="Lecture · 4 min" data-en="Reading · 4 min">Lecture · 4 min</span></div>
+    </a>
+
+    <a href="#" class="jrn-art" data-category="investissement">
+      <div class="jrn-art__thumb">
+        <picture>
+  <source srcset="dist/images/Habitats/Signature/Gemini_Generated_Image_aiows5aiows5aiow.avif" type="image/avif">
+  <source srcset="dist/images/Habitats/Signature/Gemini_Generated_Image_aiows5aiows5aiow.webp" type="image/webp">
+  <img src="images/Habitats/Signature/Gemini_Generated_Image_aiows5aiows5aiow.png" alt="Résidence Signature — investissement locatif Antilles" loading="lazy"/>
+</picture>
+      </div>
+      <div class="jrn-art__meta">
+        <span class="jrn-art__num">03</span>
+        <span class="jrn-art__sep">·</span>
+        <span class="jrn-art__rubrique">Investissement</span>
+        <span class="jrn-art__sep">·</span>
+        <span class="jrn-art__date">Février 26</span>
+      </div>
+      <h3 class="jrn-art__title" data-fr="Pourquoi les résidences architecturales premium génèrent un ROI supérieur en Caraïbe." data-en="Why premium architectural residences generate superior ROI in the Caribbean.">Pourquoi les résidences architecturales premium génèrent un ROI supérieur en Caraïbe.</h3>
+      <p class="jrn-art__excerpt" data-fr="Loi Girardin, nuitées à 190 €, taux d'occupation soutenu en haute saison — anatomie d'un investissement patrimonial qui ne ressemble à aucun autre." data-en="Girardin tax law, €190 nightly rates, sustained high-season occupancy — anatomy of a real estate investment unlike any other.">Loi Girardin, nuitées à 190 €, taux d'occupation soutenu en haute saison — anatomie d'un investissement patrimonial qui ne ressemble à aucun autre.</p>
+      <div class="jrn-art__foot"><span data-fr="Lecture · 6 min" data-en="Reading · 6 min">Lecture · 6 min</span></div>
+    </a>
+
+    <a href="blog-jay-family-saint-francois.html" class="jrn-art" data-category="partenariats">
+      <div class="jrn-art__thumb">
+        <picture>
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/1.avif" type="image/avif">
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/1.webp" type="image/webp">
+  <img src="images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/1.png" alt="Jay Family Properties × HKH — Saint-François" loading="lazy"/>
+</picture>
+      </div>
+      <div class="jrn-art__meta">
+        <span class="jrn-art__num">04</span>
+        <span class="jrn-art__sep">·</span>
+        <span class="jrn-art__rubrique">Partenariats</span>
+        <span class="jrn-art__sep">·</span>
+        <span class="jrn-art__date">Janvier 26</span>
+      </div>
+      <h3 class="jrn-art__title" data-fr="HKH × Jay Family Properties — anatomie d'une collaboration premium." data-en="HKH × Jay Family Properties — anatomy of a premium collaboration.">HKH × Jay Family Properties — anatomie d'une collaboration premium.</h3>
+      <p class="jrn-art__excerpt" data-fr="Comment deux acteurs spécialistes du haut de gamme ont structuré leur partenariat sur le terrain de Saint-François. Méthode, dossier, rendus, rémunération." data-en="How two premium specialists structured their partnership on the Saint-François plot. Method, case file, renderings, commercial terms.">Comment deux acteurs spécialistes du haut de gamme ont structuré leur partenariat sur le terrain de Saint-François. Méthode, dossier, rendus, rémunération.</p>
+      <div class="jrn-art__foot"><span data-fr="Lecture · 5 min" data-en="Reading · 5 min">Lecture · 5 min</span></div>
+    </a>
+
+    <a href="#" class="jrn-art" data-category="technique">
+      <div class="jrn-art__thumb">
+        <picture>
+  <source srcset="dist/images/Habitats/Essence/unwatermarked_Gemini_Generated_Image_8xoavn8xoavn8xoa.avif" type="image/avif">
+  <source srcset="dist/images/Habitats/Essence/unwatermarked_Gemini_Generated_Image_8xoavn8xoavn8xoa.webp" type="image/webp">
+  <img src="images/Habitats/Essence/unwatermarked_Gemini_Generated_Image_8xoavn8xoavn8xoa.png" alt="Structure acier galvanisé — résidence ESSENCE HKH" loading="lazy"/>
+</picture>
+      </div>
+      <div class="jrn-art__meta">
+        <span class="jrn-art__num">05</span>
+        <span class="jrn-art__sep">·</span>
+        <span class="jrn-art__rubrique">Technique</span>
+        <span class="jrn-art__sep">·</span>
+        <span class="jrn-art__date">Décembre 25</span>
+      </div>
+      <h3 class="jrn-art__title" data-fr="Acier galvanisé anti-sismique : la matière qui fait tenir l'invisible." data-en="Anti-seismic galvanised steel: the material that holds the invisible together.">Acier galvanisé anti-sismique : la matière qui fait tenir l'invisible.</h3>
+      <p class="jrn-art__excerpt" data-fr="Pourquoi la structure acier galvanisé s'impose en zone sismique et cyclonique — et ce que cela change pour la longévité d'une résidence en Antilles." data-en="Why galvanised steel structure prevails in seismic and cyclonic zones — and what it changes for the longevity of a Caribbean residence.">Pourquoi la structure acier galvanisé s'impose en zone sismique et cyclonique — et ce que cela change pour la longévité d'une résidence en Antilles.</p>
+      <div class="jrn-art__foot"><span data-fr="Lecture · 5 min" data-en="Reading · 5 min">Lecture · 5 min</span></div>
+    </a>
+
+    <a href="#" class="jrn-art" data-category="logistique">
+      <div class="jrn-art__thumb">
+        <picture>
+  <source srcset="dist/images/blog/Petit%20bourg%20-%2050k%20-%20778%20m2/15.avif" type="image/avif">
+  <source srcset="dist/images/blog/Petit%20bourg%20-%2050k%20-%20778%20m2/15.webp" type="image/webp">
+  <img src="images/blog/Petit%20bourg%20-%2050k%20-%20778%20m2/15.jpeg" alt="Livraison et logistique — projet Petit-Bourg" loading="lazy"/>
+</picture>
+      </div>
+      <div class="jrn-art__meta">
+        <span class="jrn-art__num">06</span>
+        <span class="jrn-art__sep">·</span>
+        <span class="jrn-art__rubrique">Logistique</span>
+        <span class="jrn-art__sep">·</span>
+        <span class="jrn-art__date">Octobre 25</span>
+      </div>
+      <h3 class="jrn-art__title" data-fr="Livrer en Guyane : itinéraire d'une résidence, de l'usine à la grue." data-en="Delivering in Guiana: itinerary of a residence, from factory to crane.">Livrer en Guyane : itinéraire d'une résidence, de l'usine à la grue.</h3>
+      <p class="jrn-art__excerpt" data-fr="Fabrication en Chine, transport maritime, dédouanement, pose par grue : la chaîne logistique qui permet une livraison clé en main en quelques semaines, sans chantier ni intervenants multiples." data-en="Manufacturing in China, sea freight, customs clearance, crane installation: the logistics chain enabling turnkey delivery in weeks, with no construction site or multiple contractors.">Fabrication en Chine, transport maritime, dédouanement, pose par grue : la chaîne logistique qui permet une livraison clé en main en quelques semaines, sans chantier ni intervenants multiples.</p>
+      <div class="jrn-art__foot"><span data-fr="Lecture · 4 min" data-en="Reading · 4 min">Lecture · 4 min</span></div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ═════════ ABONNEMENT ═════════ -->
+<section class="jrn-subscribe" id="abonner">
+  <div>
+    <span class="jrn-subscribe__lbl" data-fr="Abonnement" data-en="Subscription">Abonnement</span>
+    <h2 data-fr="Recevez chaque édition <em>du Journal</em> — directement.">Recevez chaque édition <em>du Journal</em> — directement.</h2>
+  </div>
+  <form class="jrn-subscribe__form" onsubmit="return false;">
+    <p data-fr="Une édition par mois. Architecture, dossiers de partenariat, retours de chantier — sans bruit." data-en="One edition per month. Architecture, partnership case files, on-site reports — no noise.">Une édition par mois. Architecture, dossiers de partenariat, retours de chantier — sans bruit.</p>
+    <div class="jrn-subscribe__field">
+      <input type="email" placeholder="votre@email.com" data-placeholder-en="your@email.com"/>
+      <button type="submit" data-fr="Recevoir" data-en="Subscribe">Recevoir</button>
+    </div>
+  </form>
+</section>
+
+
+<div id="footer-placeholder"></div>
+<script>
+fetch('partials/footer-simple.html')
+  .then(function(r){ if(!r.ok) throw new Error(); return r.text(); })
+  .then(function(h){
+    document.getElementById('footer-placeholder').innerHTML=h;
+    if(window.applyLang)window.applyLang(localStorage.getItem('hkh-lang')||'fr');
+  })
+  .catch(function(){
+    document.getElementById('footer-placeholder').innerHTML=
+      '<footer style="padding:2rem;text-align:center;font-size:.8rem;color:#6B6660">© Home Kit Home — contact@home-kit-home.com</footer>';
+  });
+</script>
+
+<script>
+/* Date dynamique du masthead */
+(function(){
+  const months_fr=['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+  const months_en=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const d=new Date();
+  const el=document.getElementById('masthDate');
+  el.dataset.fr=months_fr[d.getMonth()]+' '+d.getFullYear();
+  el.dataset.en=months_en[d.getMonth()]+' '+d.getFullYear();
+  el.textContent=el.dataset.fr;
+})();
+
+/* Reveal masthead */
+requestAnimationFrame(()=>document.getElementById('masthead').classList.add('is-loaded'));
+
+/* Première de couverture par catégorie */
+const COVERS = {
+  tous: {
+    numeral:'01', href:'blog-jay-family-saint-francois.html',
+    img:'images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/3.png',
+    altFr:'Village de standing — Saint-François, Guadeloupe',
+    altEn:'Luxury residential village — Saint-François',
+    folio:[{fr:'Couverture',en:'Cover'},{fr:'Partenariat',en:'Partnership'}],
+    captionFr:'Saint-François, Guadeloupe · Vue du projet en cours d’étude',
+    captionEn:'Saint-François, Guadeloupe · View of the project under study',
+    kickerFr:'Reportage · Jay Family Properties × HKH',
+    kickerEn:'Field report · Jay Family Properties × HKH',
+    titleFr:'Six habitats sur 2 000 m² : la naissance d’un village de standing.',
+    titleEn:'Six residences on 2,000 m²: the making of a boutique village.',
+    leadFr:'L’idée tient en quelques mots : transformer un terrain plat de Saint-François en un ensemble résidentiel d’exception, sans chantier traditionnel, sans mois d’attente, sans compromis sur la matière. Voici comment Home Kit Home et Jay Family Properties ont conçu ce projet à six résidences avec piscines privées.',
+    leadEn:'The idea is simple: transform a flat plot in Saint-François into an exceptional residential ensemble — without a traditional construction site, without months of waiting, without compromise on materials. Here is how Home Kit Home and Jay Family Properties designed this six-residence project with private pools.'
+  },
+  architecture: {
+    numeral:'02', href:'#',
+    img:'images/Habitats/Horizon%20T/unwatermarked_Gemini_Generated_Image_pd7jvtpd7jvtpd7j.png',
+    altFr:'Architecture tropicale — Horizon T HKH', altEn:'Tropical architecture — Horizon T HKH',
+    folio:[{fr:'Architecture',en:'Architecture'},{fr:'Dossier',en:'Essay'}],
+    captionFr:'Horizon T · Implantation Guadeloupe', captionEn:'Horizon T · Guadeloupe siting',
+    kickerFr:'Dossier · Bâtir sous le tropique', kickerEn:'Essay · Building in the tropics',
+    titleFr:'Construire en zone tropicale — contraintes climatiques et réponses architecturales.',
+    titleEn:'Building in tropical zones — climatic constraints and architectural responses.',
+    leadFr:'Humidité, cyclones, sismicité. Trois contraintes, trois réponses techniques. Pourquoi l’acier galvanisé sur pieux est devenu la norme silencieuse des Antilles — et comment chaque détail constructif répond à une particularité de l’arc antillais.',
+    leadEn:'Humidity, cyclones, seismicity. Three constraints, three technical responses. Why pile-mounted galvanised steel has become the quiet standard of the Caribbean — and how each construction detail answers a specific trait of the Antillean arc.'
+  },
+  investissement: {
+    numeral:'03', href:'#',
+    img:'images/Habitats/Signature/Gemini_Generated_Image_aiows5aiows5aiow.png',
+    altFr:'Résidence Signature — investissement locatif Antilles',
+    altEn:'Signature residence — Caribbean rental investment',
+    folio:[{fr:'Investissement',en:'Investment'},{fr:'Dossier',en:'Essay'}],
+    captionFr:'Signature · Résidence locative premium',
+    captionEn:'Signature · Premium rental residence',
+    kickerFr:'Dossier · Rendement patrimonial', kickerEn:'Essay · Patrimonial yield',
+    titleFr:'Pourquoi les résidences architecturales premium génèrent un ROI supérieur en Caraïbe.',
+    titleEn:'Why premium architectural residences generate superior ROI in the Caribbean.',
+    leadFr:'Loi Girardin, nuitées à 190 €, taux d’occupation soutenu en haute saison — anatomie d’un investissement patrimonial qui ne ressemble à aucun autre. La défiscalisation n’est qu’un levier ; la vraie matière se joue sur la durée du placement.',
+    leadEn:'Girardin tax law, €190 nightly rates, sustained high-season occupancy — anatomy of a real estate investment unlike any other. Tax relief is only one lever; the real substance lies in the long horizon of the asset.'
+  },
+  partenariats: {
+    numeral:'04', href:'blog-jay-family-saint-francois.html',
+    img:'images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/1.png',
+    altFr:'Jay Family Properties × HKH — Saint-François',
+    altEn:'Jay Family Properties × HKH — Saint-François',
+    folio:[{fr:'Partenariats',en:'Partnerships'},{fr:'Reportage',en:'Field report'}],
+    captionFr:'Saint-François · Vue initiale du terrain',
+    captionEn:'Saint-François · Initial view of the plot',
+    kickerFr:'Reportage · Anatomie d’une collaboration', kickerEn:'Field report · Anatomy of a collaboration',
+    titleFr:'HKH × Jay Family Properties — anatomie d’une collaboration premium.',
+    titleEn:'HKH × Jay Family Properties — anatomy of a premium collaboration.',
+    leadFr:'Comment deux acteurs spécialistes du haut de gamme ont structuré leur partenariat sur le terrain de Saint-François. Méthode, dossier, rendus, rémunération — la mécanique complète d’un accord qui a débloqué un projet à six résidences.',
+    leadEn:'How two premium specialists structured their partnership on the Saint-François plot. Method, case file, renderings, commercial terms — the full mechanics of an agreement that unlocked a six-residence project.'
+  },
+  technique: {
+    numeral:'05', href:'#',
+    img:'images/Habitats/Essence/unwatermarked_Gemini_Generated_Image_8xoavn8xoavn8xoa.png',
+    altFr:'Structure acier galvanisé — résidence ESSENCE HKH',
+    altEn:'Galvanised steel structure — ESSENCE residence HKH',
+    folio:[{fr:'Technique',en:'Technical'},{fr:'Dossier',en:'Essay'}],
+    captionFr:'ESSENCE · Structure acier galvanisé',
+    captionEn:'ESSENCE · Galvanised steel structure',
+    kickerFr:'Dossier · Matériaux structurels', kickerEn:'Essay · Structural materials',
+    titleFr:'Acier galvanisé anti-sismique : la matière qui fait tenir l’invisible.',
+    titleEn:'Anti-seismic galvanised steel: the material that holds the invisible together.',
+    leadFr:'Pourquoi la structure acier galvanisé s’impose en zone sismique et cyclonique — et ce que cela change pour la longévité d’une résidence en Antilles. Un regard technique sur la matière qui signe la durabilité sans s’afficher.',
+    leadEn:'Why galvanised steel structure prevails in seismic and cyclonic zones — and what it changes for the longevity of a Caribbean residence. A technical look at the material that quietly defines durability.'
+  },
+  logistique: {
+    numeral:'06', href:'#',
+    img:'images/blog/Petit%20bourg%20-%2050k%20-%20778%20m2/15.jpeg',
+    altFr:'Livraison et logistique — projet Petit-Bourg',
+    altEn:'Delivery and logistics — Petit-Bourg project',
+    folio:[{fr:'Logistique',en:'Logistics'},{fr:'Reportage',en:'Field report'}],
+    captionFr:'Petit-Bourg · Pose par grue', captionEn:'Petit-Bourg · Crane installation',
+    kickerFr:'Reportage · Chaîne d’acheminement', kickerEn:'Field report · Supply chain',
+    titleFr:'Livrer en Guyane : itinéraire d’une résidence, de l’usine à la grue.',
+    titleEn:'Delivering in Guiana: itinerary of a residence, from factory to crane.',
+    leadFr:'Fabrication en Chine, transport maritime, dédouanement, pose par grue : la chaîne logistique qui permet une livraison clé en main en quelques semaines, sans chantier ni intervenants multiples.',
+    leadEn:'Manufacturing in China, sea freight, customs clearance, crane installation: the logistics chain enabling turnkey delivery in weeks, with no construction site or multiple contractors.'
+  }
+};
+
+const COVER_ORDER = ['tous','architecture','investissement','partenariats','technique','logistique'];
+const COVER_LABELS = {
+  tous:{fr:'Couverture',en:'Cover'},
+  architecture:{fr:'Architecture',en:'Architecture'},
+  investissement:{fr:'Investissement',en:'Investment'},
+  partenariats:{fr:'Partenariats',en:'Partnerships'},
+  technique:{fr:'Technique',en:'Technical'},
+  logistique:{fr:'Logistique',en:'Logistics'}
+};
+
+function applyCover(cat){
+  const data = COVERS[cat] || COVERS.tous;
+  const cover = document.getElementById('cover');
+  const inner = cover.querySelector('.jrn-cover__inner');
+  inner.classList.add('is-switching');
+  setTimeout(()=>{
+    cover.setAttribute('href', data.href);
+    cover.querySelector('.jrn-cover__numeral').textContent = data.numeral;
+    const folio = cover.querySelector('.jrn-cover__folio');
+    folio.innerHTML = '';
+    const journal = document.createElement('span');
+    journal.setAttribute('data-fr','Le Journal'); journal.setAttribute('data-en','The Journal');
+    journal.textContent = 'Le Journal'; folio.appendChild(journal);
+    data.folio.forEach(seg => {
+      const s = document.createElement('span');
+      s.setAttribute('data-fr', seg.fr); s.setAttribute('data-en', seg.en);
+      s.textContent = seg.fr; folio.appendChild(s);
+    });
+    const rule = document.createElement('span');
+    rule.className = 'jrn-cover__folio-rule'; folio.appendChild(rule);
+    const date = document.createElement('span');
+    date.textContent = 'Avril 2026'; folio.appendChild(date);
+    const img = cover.querySelector('.jrn-cover__img img');
+    img.src = data.img;
+    img.setAttribute('data-fr', data.altFr); img.setAttribute('data-en', data.altEn);
+    img.alt = data.altFr;
+    const cap = cover.querySelector('.jrn-cover__caption');
+    cap.setAttribute('data-fr', data.captionFr); cap.setAttribute('data-en', data.captionEn);
+    const kicker = cover.querySelector('.jrn-cover__kicker');
+    kicker.setAttribute('data-fr', data.kickerFr); kicker.setAttribute('data-en', data.kickerEn);
+    const title = cover.querySelector('.jrn-cover__title');
+    title.setAttribute('data-fr', data.titleFr); title.setAttribute('data-en', data.titleEn);
+    const lead = cover.querySelector('.jrn-cover__lead');
+    lead.setAttribute('data-fr', data.leadFr); lead.setAttribute('data-en', data.leadEn);
+    const lang = localStorage.getItem('hkh-lang') || 'fr';
+    if (window.applyLang) window.applyLang(lang);
+    else {
+      kicker.textContent = data['kicker'+(lang==='en'?'En':'Fr')];
+      title.textContent  = data['title' +(lang==='en'?'En':'Fr')];
+      lead.textContent   = data['lead'  +(lang==='en'?'En':'Fr')];
+      cap.textContent    = data['caption'+(lang==='en'?'En':'Fr')];
+    }
+    inner.classList.remove('is-switching');
+  }, 280);
+}
+
+/* Filtres rubriques + bascule couverture + pagination */
+(function(){
+  const chips=document.querySelectorAll('.jrn-chip');
+  const arts=document.querySelectorAll('.jrn-art');
+  const segs=document.querySelectorAll('.jrn-cover-seg');
+  const idxNum=document.getElementById('coverIdxNum');
+  const idxCat=document.getElementById('coverIdxCat');
+
+  function setCategory(cat){
+    chips.forEach(x=>x.classList.toggle('active', x.dataset.filter===cat));
+    segs.forEach(s=>{
+      const isA = s.dataset.filter===cat;
+      s.classList.toggle('is-active', isA);
+      const line = s.querySelector('.jrn-cover-seg__line');
+      line.style.background = isA ? 'var(--copper)' : 'var(--cream-dk)';
+      line.style.opacity = isA ? '1' : '.55';
+    });
+    arts.forEach(a=>{a.style.display=(cat==='tous'||a.dataset.category===cat)?'':'none'});
+    const i = COVER_ORDER.indexOf(cat);
+    idxNum.textContent = String(i+1).padStart(2,'0');
+    const label = COVER_LABELS[cat] || COVER_LABELS.tous;
+    idxCat.setAttribute('data-fr', label.fr);
+    idxCat.setAttribute('data-en', label.en);
+    applyCover(cat);
+  }
+
+  chips.forEach(c=>c.addEventListener('click',()=>setCategory(c.dataset.filter)));
+  segs.forEach(s=>s.addEventListener('click',()=>setCategory(s.dataset.filter)));
+  // Sync initial inline styles (évite un bug de style invalidation Chrome observé)
+  segs.forEach(s=>{
+    const isA = s.classList.contains('is-active');
+    const line = s.querySelector('.jrn-cover-seg__line');
+    line.style.background = isA ? 'var(--copper)' : 'var(--cream-dk)';
+    line.style.opacity = isA ? '1' : '.55';
+  });
+
+  // Deep-link via hash : blog.html#architecture, #investissement, etc.
+  function applyHash(){
+    var raw = (window.location.hash || '').replace('#','').toLowerCase();
+    if(!raw) return;
+    if(COVER_ORDER.indexOf(raw)>=0) setCategory(raw);
+  }
+  applyHash();
+  window.addEventListener('hashchange', applyHash);
+})();
+</script>
+
+</body>
+</html>

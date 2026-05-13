@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Le Manuel — Home Kit Home</title>
+<meta name="description" content="Le Manuel HKH — toutes les réponses sur nos habitats architecturaux : fondations, permis, défiscalisation Girardin, livraison clé en main en zones tropicales."/>
+<meta property="og:title" content="Le Manuel — Home Kit Home"/>
+<meta property="og:description" content="Le Manuel HKH — toutes les réponses sur nos habitats architecturaux."/>
+<meta property="og:image" content="images/landing-top-slide-img-1.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="fr_FR"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap" media="print" onload="this.media='all'"/>
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
+</noscript>
+
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="assets/css/animations.css"/>
+<style>
+/* ═══════════════════════════════════════════════
+   LE MANUEL HKH — refonte magazine éditoriale
+   ═══════════════════════════════════════════════ */
+
+/* ── Masthead (replace .ph-hero for this page) ── */
+.man-mast{
+  padding:calc(var(--nav-h) + 4.5rem) 2.5rem 3.5rem;
+  background:var(--paper);
+  position:relative;overflow:hidden;
+}
+.man-mast__inner{
+  max-width:1240px;margin:0 auto;
+  display:grid;grid-template-columns:1.3fr 1fr;gap:5rem;align-items:end;
+}
+.man-mast__eyebrow{
+  display:flex;align-items:center;gap:1.2rem;
+  font-family:var(--sans);font-size:.68rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--copper);
+  margin-bottom:2rem;
+}
+.man-mast__eyebrow::before{
+  content:'';width:36px;height:1px;background:var(--copper);
+}
+.man-mast__eyebrow .sep{color:rgba(184,115,51,.4);font-size:.5rem}
+.man-mast__eyebrow .edition{color:var(--mid);letter-spacing:.2em}
+
+.man-mast h1{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(3.4rem,7.5vw,6rem);
+  color:var(--dark);line-height:.98;letter-spacing:-.025em;
+  margin:0 0 1.6rem;max-width:920px;
+}
+.man-mast h1 em{
+  font-style:italic;color:var(--copper);font-weight:400;
+}
+.man-mast__sub{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(1.05rem,1.6vw,1.25rem);
+  color:var(--mid);line-height:1.6;max-width:620px;
+  margin:0;
+}
+.man-mast__meta{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 2rem;
+  padding:1.4rem 0 0;border-top:1px solid var(--cream-dk);
+}
+.man-mast__meta dt{
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--mid);margin-bottom:.4rem;font-weight:400;
+}
+.man-mast__meta dd{
+  font-family:var(--serif);font-style:italic;font-size:1rem;
+  color:var(--dark);margin:0;
+}
+.man-mast__numeral{
+  position:absolute;z-index:1;pointer-events:none;
+  right:2.5rem;bottom:-2.6rem;
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(9rem,16vw,15rem);line-height:.82;
+  color:var(--copper);opacity:.1;letter-spacing:-.055em;
+}
+
+/* ── Layout principal ─────────────────────── */
+.man-layout{
+  max-width:1200px;margin:0 auto;
+  padding:5rem 2.5rem 6rem;
+  display:grid;grid-template-columns:260px 1fr;gap:6rem;
+  background:var(--white);
+}
+
+/* ── Rail éditorial gauche ────────────────── */
+.man-rail{
+  position:sticky;top:calc(var(--nav-h) + 3rem);
+  align-self:start;
+}
+.man-rail__label{
+  font-family:var(--sans);font-size:.62rem;
+  letter-spacing:.24em;text-transform:uppercase;
+  color:var(--mid);font-weight:400;
+  padding-bottom:1rem;margin-bottom:1.3rem;
+  border-bottom:1px solid var(--cream-dk);
+  display:block;
+}
+.man-rail ol{list-style:none;margin:0;padding:0;counter-reset:rail}
+.man-rail li{counter-increment:rail;padding:.85rem 0}
+.man-rail a{
+  display:grid;grid-template-columns:32px 1fr;gap:.8rem;
+  text-decoration:none;align-items:baseline;
+  transition:color .25s ease;
+}
+.man-rail a::before{
+  content:counter(rail,upper-roman) ".";
+  font-family:var(--serif);font-style:italic;
+  color:var(--copper);font-size:.85rem;opacity:.55;
+  min-width:1.6rem;display:inline-block;
+}
+.man-rail a span{
+  font-family:var(--serif);font-style:italic;
+  font-size:1.02rem;color:var(--mid);
+  transition:color .25s ease;
+}
+.man-rail a:hover span,
+.man-rail a.is-active span{color:var(--dark)}
+.man-rail a:hover::before,
+.man-rail a.is-active::before{opacity:1}
+
+/* ── Content ──────────────────────────────── */
+.man-content{min-width:0}
+
+.man-cat{
+  margin-bottom:5rem;
+  scroll-margin-top:calc(var(--nav-h) + 2rem);
+}
+.man-cat__head{
+  display:grid;grid-template-columns:auto 1fr;gap:1.8rem;
+  align-items:baseline;
+  margin-bottom:2.5rem;
+  padding-bottom:1.8rem;
+  border-bottom:1px solid var(--cream-dk);
+}
+.man-cat__num{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:2.4rem;color:var(--copper);
+  line-height:1;letter-spacing:-.02em;
+}
+.man-cat__title-group{display:flex;flex-direction:column;gap:.35rem}
+.man-cat__kicker{
+  font-family:var(--sans);font-size:.6rem;
+  letter-spacing:.24em;text-transform:uppercase;
+  color:var(--mid);font-weight:400;
+}
+.man-cat__title{
+  font-family:var(--serif);font-size:clamp(1.7rem,2.6vw,2.2rem);
+  font-weight:400;color:var(--dark);
+  line-height:1.1;letter-spacing:-.015em;margin:0;
+}
+
+/* ── Questions ─────────────────────────────── */
+.man-q{
+  display:grid;grid-template-columns:44px 1fr auto;gap:1.2rem;
+  align-items:baseline;
+  width:100%;background:none;border:none;cursor:pointer;
+  padding:1.6rem 0;text-align:left;
+  border-bottom:1px solid var(--cream-dk);
+  transition:background .3s ease;
+}
+.man-q:hover{background:rgba(184,115,51,.02)}
+.man-item:last-child .man-q{border-bottom:none}
+.man-item.open .man-q{border-bottom-color:transparent}
+
+.man-q__num{
+  font-family:var(--serif);font-style:italic;
+  font-size:.85rem;color:var(--copper);opacity:.6;
+  line-height:1.3;
+}
+.man-q__text{
+  font-family:var(--serif);font-weight:400;
+  font-size:1.05rem;line-height:1.4;
+  color:var(--dark);letter-spacing:-.005em;
+}
+.man-item.open .man-q__text{color:var(--copper)}
+.man-q__sign{
+  font-family:var(--serif);font-weight:400;
+  font-size:1.4rem;color:var(--copper);
+  line-height:1;
+  transition:transform .35s cubic-bezier(.16,1,.3,1);
+}
+.man-item.open .man-q__sign{transform:rotate(45deg)}
+
+.man-a{
+  display:grid;grid-template-rows:0fr;
+  transition:grid-template-rows .45s cubic-bezier(.16,1,.3,1);
+}
+.man-item.open .man-a{grid-template-rows:1fr}
+.man-a__inner{
+  overflow:hidden;
+  border-bottom:1px solid var(--cream-dk);
+}
+.man-item:last-child .man-a__inner{border-bottom:none}
+.man-a p{
+  font-family:var(--sans);font-weight:300;
+  font-size:.94rem;line-height:1.85;color:var(--mid);
+  padding:.4rem 0 2rem 56px;
+  max-width:62ch;
+}
+
+/* ── Annexe — encart dark magazine (pattern jrn-subscribe) ── */
+.man-cta{
+  background:var(--dark);max-width:1200px;margin:5rem auto 4rem;
+  padding:5rem 4rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:end;
+  position:relative;overflow:hidden;
+}
+.man-cta::before{
+  content:'№';position:absolute;top:-.5rem;right:1.5rem;
+  font-family:var(--serif);font-size:18rem;font-weight:400;
+  color:rgba(184,115,51,.06);line-height:1;letter-spacing:-.05em;pointer-events:none;
+}
+.man-cta__lbl{
+  font-family:var(--sans);font-size:.62rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--copper);display:inline-block;
+  border-top:1px solid rgba(184,115,51,.4);
+  padding-top:1.1rem;margin-bottom:1.3rem;
+}
+.man-cta h3{
+  font-family:var(--serif);font-weight:400;font-size:clamp(2rem,3.2vw,2.8rem);
+  color:var(--paper);line-height:1.05;letter-spacing:-.02em;margin:0;
+  max-width:14ch;
+}
+.man-cta__right{display:flex;flex-direction:column;gap:1.4rem;align-items:flex-start}
+.man-cta p{
+  font-family:var(--serif);font-style:italic;font-size:.95rem;
+  color:rgba(249,247,242,.7);line-height:1.55;margin:0;max-width:38ch;
+}
+.man-cta__link{
+  font-family:var(--sans);font-size:.7rem;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--paper);text-decoration:none;font-weight:400;
+  display:inline-flex;align-items:center;gap:1rem;
+  padding-top:1.2rem;border-top:1px solid rgba(249,247,242,.25);
+}
+.man-cta__link::after{content:'→';color:var(--copper);transition:transform .3s ease}
+.man-cta__link:hover::after{transform:translateX(.4rem)}
+
+/* ── Responsive ───────────────────────────── */
+@media(max-width:960px){
+  .man-layout{grid-template-columns:1fr;gap:3rem;padding:4rem 1.5rem 5rem}
+  .man-rail{position:static;
+    padding-bottom:2rem;border-bottom:1px solid var(--cream-dk);
+  }
+  .man-rail ol{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+}
+@media(max-width:900px){
+  .man-mast{padding:calc(var(--nav-h) + 2.5rem) 1.5rem 2.5rem}
+  .man-mast__inner{grid-template-columns:1fr;gap:2.5rem;align-items:start}
+  .man-mast__numeral{font-size:clamp(7rem,13vw,10rem);right:1.5rem;bottom:-1.5rem}
+}
+@media(max-width:640px){
+  .man-mast{padding:calc(var(--nav-h) + 2.5rem) 1.5rem 2.5rem}
+  .man-rail ol{grid-template-columns:1fr}
+  .man-cat__head{grid-template-columns:1fr;gap:.8rem}
+  .man-cat__num{font-size:1.8rem}
+  .man-q{grid-template-columns:32px 1fr auto;gap:.9rem;padding:1.3rem 0}
+  .man-q__text{font-size:.98rem}
+  .man-a p{padding-left:41px;font-size:.9rem}
+  .man-cta{padding:3.5rem 1.8rem;margin:3rem auto 3rem;grid-template-columns:1fr;gap:2rem}
+  .man-cta::before{font-size:11rem;right:.8rem;top:0}
+  .man-cta h3{font-size:clamp(1.6rem,5vw,2rem);max-width:none}
+  .man-cta p{max-width:none}
+}
+
+/* ── Reveal (tab-safe) ───────────────────── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease-out,transform .7s ease-out}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/nav.js"></script>
+
+<!-- ═══ MASTHEAD ═══════════════════════════════ -->
+<header class="man-mast">
+  <div class="man-mast__inner">
+    <div>
+      <div class="man-mast__eyebrow">
+        <span data-fr="Le Manuel" data-en="The Manual">Le Manuel</span>
+        <span class="sep">●</span>
+        <span class="edition" data-fr="Guide de la maison" data-en="House guide">Guide de la maison</span>
+      </div>
+      <h1 data-fr="Toutes les <em>réponses</em>,<br>consignées ici." data-en="Every <em>answer</em>,<br>set down here.">Toutes les <em>réponses</em>,<br>consignées ici.</h1>
+      <p class="man-mast__sub" data-fr="Le manuel de la maison — consultable par rubriques, lisible d'une traite. Écrit depuis le terrain, pas depuis un glossaire." data-en="The house manual — browsable by section, readable in one sitting. Written from the field, not from a glossary.">Le manuel de la maison — consultable par rubriques, lisible d'une traite. Écrit depuis le terrain, pas depuis un glossaire.</p>
+    </div>
+    <dl class="man-mast__meta">
+      <div><dt data-fr="Rubriques" data-en="Sections">Rubriques</dt><dd>05</dd></div>
+      <div><dt data-fr="Entrées" data-en="Entries">Entrées</dt><dd>16</dd></div>
+      <div><dt data-fr="Lecture" data-en="Reading">Lecture</dt><dd data-fr="≈ 12 min" data-en="≈ 12 min">≈ 12 min</dd></div>
+      <div><dt data-fr="Mise à jour" data-en="Updated">Mise à jour</dt><dd data-fr="Avril 2026" data-en="April 2026">Avril 2026</dd></div>
+    </dl>
+  </div>
+  <span class="man-mast__numeral" aria-hidden="true">05</span>
+</header>
+
+<!-- ═══ LAYOUT ═══════════════════════════════ -->
+<div class="man-layout">
+
+  <!-- ── Rail éditorial ─────────────────── -->
+  <aside class="man-rail">
+    <span class="man-rail__label" data-fr="Sommaire" data-en="Contents">Sommaire</span>
+    <ol>
+      <li><a href="#cat-general" data-fr="Général" data-en="General"><span>Général</span></a></li>
+      <li><a href="#cat-technique" data-fr="Technique" data-en="Technical"><span>Technique</span></a></li>
+      <li><a href="#cat-investissement" data-fr="Investissement" data-en="Investment"><span>Investissement</span></a></li>
+      <li><a href="#cat-partenariat" data-fr="Partenariat" data-en="Partnership"><span>Partenariat</span></a></li>
+      <li><a href="#cat-process" data-fr="Notre process" data-en="Our process"><span>Notre process</span></a></li>
+    </ol>
+  </aside>
+
+  <!-- ── Contenu ─────────────────────────── -->
+  <main class="man-content">
+
+    <!-- ── I. Général ──────────────────── -->
+    <section class="man-cat reveal" id="cat-general">
+      <header class="man-cat__head">
+        <span class="man-cat__num">I.</span>
+        <div class="man-cat__title-group">
+          <span class="man-cat__kicker" data-fr="Rubrique 01" data-en="Section 01">Rubrique 01</span>
+          <h2 class="man-cat__title" data-fr="Général" data-en="General">Général</h2>
+        </div>
+      </header>
+
+      <div class="man-item">
+        <button class="man-q" onclick="toggleMan(this)">
+          <span class="man-q__num">01</span>
+          <span class="man-q__text" data-fr="Livrez-vous en dehors des Antilles françaises ?" data-en="Do you deliver outside the French Antilles?">Livrez-vous en dehors des Antilles françaises ?</span>
+          <span class="man-q__sign">+</span>
+        </button>
+        <div class="man-a"><div class="man-a__inner">
+          <p data-fr="Oui. Nous livrons sur l'ensemble des Antilles françaises (Guadeloupe, Martinique, Saint-Martin, Saint-Barthélemy), en Guyane, dans la Caraïbe et à l'international. Chaque projet fait l'objet d'un devis logistique spécifique selon la destination." data-en="Yes. We deliver across all French Antilles (Guadeloupe, Martinique, Saint-Martin, Saint-Barthélemy), in Guiana, throughout the Caribbean and internationally. Each project receives a specific logistics quote based on the destination.">Oui. Nous livrons sur l'ensemble des Antilles françaises (Guadeloupe, Martinique, Saint-Martin, Saint-Barthélemy), en Guyane, dans la Caraïbe et à l'international. Chaque projet fait l'objet d'un devis logistique spécifique selon la destination.</p>
+        </div></div>
+      </div>
+
+      <div class="man-item">
+        <button class="man-q" onclick="toggleMan(this)">
+          <span class="man-q__num">02</span>
+          <span class="man-q__text" data-fr="Ai-je besoin d'un permis de construire ?" data-en="Do I need a building permit?">Ai-je besoin d'un permis de construire ?</span>
+          <span class="man-q__sign">+</span>
+        </button>
+        <div class="man-a"><div class="man-a__inner">
+          <p data-fr="Cela dépend du territoire et de la surface de l'habitat. Nos habitats ESSENCE (20 m²) peuvent être éligibles à une déclaration préalable selon les réglementations locales. HKH gère l'ensemble des démarches administratives en partenariat avec des agences locales spécialisées — étude de faisabilité, constitution du dossier, suivi jusqu'à obtention." data-en="This depends on the territory and surface area. Our ESSENCE residences (20 m²) may be eligible for prior declaration under local regulations. HKH manages all administrative procedures with specialised local agencies — feasibility study, file compilation, follow-up until approval.">Cela dépend du territoire et de la surface de l'habitat. Nos habitats ESSENCE (20 m²) peuvent être éligibles à une déclaration préalable selon les réglementations locales. HKH gère l'ensemble des démarches administratives en partenariat avec des agences locales spécialisées — étude de faisabilité, constitution du dossier, suivi jusqu'à obtention.</p>
+        </div></div>
+      </div>
+
+      <div class="man-item">
+        <button class="man-q" onclick="toggleMan(this)">
+          <span class="man-q__num">03</span>
+          <span class="man-q__text" data-fr="Quelle est la durée de livraison ?" data-en="What is the delivery timeframe?">Quelle est la durée de livraison ?</span>
+          <span class="man-q__sign">+</span>
+        </button>
+        <div class="man-a"><div class="man-a__inner">
+          <p data-fr="De la validation de la commande à la livraison sur site, comptez en moyenne 12 à 20 semaines selon le modèle, les options choisies et la destination. Nous établissons un calendrier précis et contractualisé à la signature." data-en="From order confirmation to on-site delivery, allow an average of 12 to 20 weeks depending on model, options and destination. A precise, contractualised schedule is established upon signing.">De la validation de la commande à la livraison sur site, comptez en moyenne 12 à 20 semaines selon le modèle, les options choisies et la destination. Nous établissons un calendrier précis et contractualisé à la signature.</p>
+        </div></div>
+      </div>
+
+      <div class="man-item">
+        <button class="man-q" onclick="toggleMan(this)">
+          <span class="man-q__num">04</span>
+          <span class="man-q__text" data-fr="Quelle est la durée de vie d'un habitat HKH ?" data-en="What is the lifespan of an HKH habitat?">Quelle est la durée de vie d'un habitat HKH ?</span>
+          <span class="man-q__sign">+</span>
+        </button>
+        <div class="man-a"><div class="man-a__inner">
+          <p data-fr="Notre ossature acier galvanisé à chaud est conçue pour une durée de vie de 50 ans et plus. L'ensemble des matériaux est sélectionné pour sa résistance à long terme en milieu tropical : humidité, sel marin, vents cycloniques." data-en="Our hot-dip galvanised steel frame is designed for a lifespan of 50 years and more. All materials are selected for long-term resistance in tropical environments: humidity, sea salt, cyclonic winds.">Notre ossature acier galvanisé à chaud est conçue pour une durée de vie de 50 ans et plus. L'ensemble des matériaux est sélectionné pour sa résistance à long terme en milieu tropical : humidité, sel marin, vents cycloniques.</p>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- ── II. Technique ──────────────── -->
+    <section class="man-cat reveal" id="cat-technique">
+      <header class="man-cat__head">
+        <span class="man-cat__num">II.</span>
+        <div class="man-cat__title-group">
+          <span class="man-cat__kicker" data-fr="Rubrique 02" data-en="Section 02">Rubrique 02</span>
+          <h2 class="man-cat__title" data-fr="Technique" data-en="Technical">Technique</h2>
+        </div>
+      </header>
+
+      <div class="man-item">
+        <button class="man-q" onclick="toggleMan(this)">
+          <span class="man-q__num">01</span>
+          <span class="man-q__text" data-fr="Comment préparer la fondation ?" data-en="How should I prepare the foundation?">Comment préparer la fondation ?</span>
+          <span class="man-q__sign">+</span>
+        </button>
+        <div class="man-a"><div class="man-a__inner">
+          <p data-fr="Nos habitats reposent sur des plots béton ou des longrines selon la configuration du terrain. Nous fournissons les plans de fondation adaptés à votre sol et accompagnons la réalisation avec des entreprises locales agréées. Comptez généralement 3 à 5 jours pour la préparation d'un plot simple." data-en="Our residences rest on concrete pads or beams depending on terrain configuration. We provide foundation plans adapted to your soil and oversee implementation with approved local companies. Generally allow 3 to 5 days for simple pad preparation.">Nos habitats reposent sur des plots béton ou des longrines selon la configuration du terrain. Nous fournissons les plans de fondation adaptés à votre sol et accompagnons la réalisation avec des entreprises locales agréées. Comptez généralement 3 à 5 jours pour la préparation d'un plot simple.</p>
+        </div></div>
+      </div>
+
+      <div class="man-item">
+        <button class="man-q" onclick="toggleMan(this)">
+          <span class="man-q__num">02</span>
+          <span class="man-q__text" data-fr="Quels raccordements faut-il prévoir ?" data-en="What connections need to be prepared?">Quels raccordements faut-il prévoir ?</span>
+          <span class="man-q__sign">+</span>
+        </button>
+        <div class="man-a"><div class="man-a__inner">
+          <p data-fr="Les habitats HKH sont livrés prêts à être raccordés : eau froide/chaude (PPR), électricité (tableau pré-câblé), réseau data (Cat 6A). Vous devez disposer d'un accès réseau électrique 220V monophasé ou triphasé selon la configuration. Nous vous indiquons précisément les besoins dans notre dossier technique." data-en="HKH residences are delivered ready to be connected: cold/hot water (PPR), electricity (pre-wired panel), data network (Cat 6A). You must have access to a single-phase or three-phase 220V electrical network depending on configuration. We specify the requirements precisely in our technical file.">Les habitats HKH sont livrés prêts à être raccordés : eau froide/chaude (PPR), électricité (tableau pré-câblé), réseau data (Cat 6A). Vous devez disposer d'un accès réseau électrique 220V monophasé ou triphasé selon la configuration. Nous vous indiquons précisément les besoins dans notre dossier technique.</p>
+        </div></div>
+      </div>
+
+      <div class="man-item">
+        <button class="man-q" onclick="toggleMan(this)">
+          <span class="man-q__num">03</span>
+          <span class="man-q__text" data-fr="Puis-je personnaliser la finition après livraison ?" data-en="Can I customise the finish after delivery?">Puis-je personnaliser la finition après livraison ?</span>
+          <span class="man-q__sign">+</span>
+        </button>
+        <div class="man-a"><div class="man-a__inner">
+          <p data-fr="Oui, en partie. Les ambiances intérieures (sols, panneaux muraux, mobilier) peuvent être modifiées après livraison. Les finitions extérieures (bardage, menuiserie) sont appliquées en usine et non modifiables sur site sans intervention spécialisée." data-en="Yes, in part. Interior ambiances (floors, wall panels, furniture) can be modified after delivery. Exterior finishes (cladding, joinery) are applied in the factory and cannot be modified on site without specialist intervention.">Oui, en partie. Les ambiances intérieures (sols, panneaux muraux, mobilier) peuvent être modifiées après livraison. Les finitions extérieures (bardage, menuiserie) sont appliquées en usine et non modifiables sur site sans intervention spécialisée.</p>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- ── III. Investissement ────────── -->
+    <section class="man-cat reveal" id="cat-investissement">
+      <header class="man-cat__head">
+        <span class="man-cat__num">III.</span>
+        <div class="man-cat__title-group">
+          <span class="man-cat__kicker" data-fr="Rubrique 03" data-en="Section 03">Rubrique 03</span>
+          <h2 class="man-cat__title" data-fr="Investissement" data-en="Investment">Investissement</h2>
+        </div>
+      </header>
+
+      <div class="man-item">
+        <button class="man-q" onclick="toggleMan(this)">
+          <span class="man-q__num">01</span>
+          <span class="man-q__text" data-fr="Proposez-vous un financement ?" data-en="Do you offer financing?">Proposez-vous un financement ?</span>
+          <span class="man-q__sign">+</span>
+        </button>
+        <div class="man-a"><div class="man-a__inner">
+          <p data-fr="Nous ne proposons pas de financement direct, mais nous travaillons avec des partenaires bancaires familiers des projets immobiliers en Caraïbe. Nous pouvons vous orienter selon votre territoire et votre situation. Des dispositifs de défiscalisation peuvent également s'appliquer (loi Pinel Outre-mer, Girardin, etc.)." data-en="We do not offer direct financing, but we work with banking partners familiar with Caribbean real estate projects. We can refer you based on your territory and situation. Tax reduction schemes may also apply (Pinel Overseas, Girardin, etc.).">Nous ne proposons pas de financement direct, mais nous travaillons avec des partenaires bancaires familiers des projets immobiliers en Caraïbe. Nous pouvons vous orienter selon votre territoire et votre situation. Des dispositifs de défiscalisation peuvent également s'appliquer (loi Pinel Outre-mer, Girardin, etc.).</p>
+        </div></div>
+      </div>
+
+      <div class="man-item">
+        <button class="man-q" onclick="toggleMan(this)">
+          <span class="man-q__num">02</span>
+          <span class="man-q__text" data-fr="Puis-je utiliser un habitat HKH toute l'année ?" data-en="Can I use an HKH residence all year round?">Puis-je utiliser un habitat HKH toute l'année ?</span>
+          <span class="man-q__sign">+</span>
+        </button>
+        <div class="man-a"><div class="man-a__inner">
+          <p data-fr="Absolument. Nos habitats sont conçus pour un usage résidentiel permanent. Isolation multicouche, climatisation gainable, ventilation double flux et protection incendie intégrée — conformes aux standards d'un usage quotidien continu." data-en="Absolutely. Our residences are designed for permanent residential use. Multilayer insulation, ducted air conditioning, dual-flow ventilation and integrated fire protection — compliant with the standards of continuous daily use.">Absolument. Nos habitats sont conçus pour un usage résidentiel permanent. Isolation multicouche, climatisation gainable, ventilation double flux et protection incendie intégrée — conformes aux standards d'un usage quotidien continu.</p>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- ── IV. Partenariat ────────────── -->
+    <section class="man-cat reveal" id="cat-partenariat">
+      <header class="man-cat__head">
+        <span class="man-cat__num">IV.</span>
+        <div class="man-cat__title-group">
+          <span class="man-cat__kicker" data-fr="Rubrique 04" data-en="Section 04">Rubrique 04</span>
+          <h2 class="man-cat__title" data-fr="Partenariat" data-en="Partnership">Partenariat</h2>
+        </div>
+      </header>
+
+      <div class="man-item">
+        <button class="man-q" onclick="toggleMan(this)">
+          <span class="man-q__num">01</span>
+          <span class="man-q__text" data-fr="Comment fonctionne le partenariat avec une agence immobilière ?" data-en="How does the real estate agency partnership work?">Comment fonctionne le partenariat avec une agence immobilière ?</span>
+          <span class="man-q__sign">+</span>
+        </button>
+        <div class="man-a"><div class="man-a__inner">
+          <p data-fr="Nous analysons ensemble les terrains de votre portefeuille, réalisons des études de faisabilité et des propositions visuelles 3D. En cas de vente combinée terrain + habitat, vous bénéficiez d'un cadre de commission défini contractuellement. Contactez-nous pour une présentation détaillée." data-en="We analyse together the land in your portfolio, carry out feasibility studies and 3D visual proposals. In case of a combined land + residence sale, you benefit from a contractually defined commission framework. Contact us for a detailed presentation.">Nous analysons ensemble les terrains de votre portefeuille, réalisons des études de faisabilité et des propositions visuelles 3D. En cas de vente combinée terrain + habitat, vous bénéficiez d'un cadre de commission défini contractuellement. Contactez-nous pour une présentation détaillée.</p>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- ── V. Notre process ────────────── -->
+    <section class="man-cat reveal" id="cat-process">
+      <header class="man-cat__head">
+        <span class="man-cat__num">V.</span>
+        <div class="man-cat__title-group">
+          <span class="man-cat__kicker" data-fr="Rubrique 05" data-en="Section 05">Rubrique 05</span>
+          <h2 class="man-cat__title" data-fr="Notre process" data-en="Our process">Notre process</h2>
+        </div>
+      </header>
+
+      <div class="man-item">
+        <button class="man-q" onclick="toggleMan(this)">
+          <span class="man-q__num">01</span>
+          <span class="man-q__text" data-fr="Comment se passe la recherche de terrain ?" data-en="How does the land search work?">Comment se passe la recherche de terrain ?</span>
+          <span class="man-q__sign">+</span>
+        </button>
+        <div class="man-a"><div class="man-a__inner">
+          <p data-fr="Nous travaillons avec un réseau d'agences immobilières partenaires en Guadeloupe, Martinique, Guyane, Saint-Martin et Saint-Barthélemy. Si vous n'avez pas encore de terrain, nous analysons votre projet (budget, zone, usage prévu) et sollicitons nos partenaires pour identifier les parcelles viabilisées correspondantes. Chaque terrain retenu fait l'objet d'une étude de faisabilité préalable." data-en="We work with a network of partner real estate agencies in Guadeloupe, Martinique, Guiana, Saint-Martin and Saint-Barthélemy. If you don't yet have land, we analyse your project and contact our partners to identify suitable serviced plots. Each selected plot undergoes a preliminary feasibility study.">Nous travaillons avec un réseau d'agences immobilières partenaires en Guadeloupe, Martinique, Guyane, Saint-Martin et Saint-Barthélemy. Si vous n'avez pas encore de terrain, nous analysons votre projet (budget, zone, usage prévu) et sollicitons nos partenaires pour identifier les parcelles viabilisées correspondantes. Chaque terrain retenu fait l'objet d'une étude de faisabilité préalable.</p>
+        </div></div>
+      </div>
+
+      <div class="man-item">
+        <button class="man-q" onclick="toggleMan(this)">
+          <span class="man-q__num">02</span>
+          <span class="man-q__text" data-fr="Qui gère les permis de construire et les fondations ?" data-en="Who handles building permits and foundations?">Qui gère les permis de construire et les fondations ?</span>
+          <span class="man-q__sign">+</span>
+        </button>
+        <div class="man-a"><div class="man-a__inner">
+          <p data-fr="HKH gère l'intégralité des démarches administratives : dépôt du permis ou déclaration préalable selon la surface, coordination avec les services d'urbanisme locaux, suivi jusqu'à obtention. Pour les fondations, nous fournissons les plans adaptés à votre sol (plots béton ou longrines) et coordonnons l'entreprise locale agréée. Comptez 3 à 5 jours de chantier pour les fondations." data-en="HKH manages all administrative procedures: filing the permit or prior declaration, coordination with local planning services, follow-up until approval. For foundations, we provide plans adapted to your soil (concrete pads or beams) and coordinate the approved local company. Allow 3 to 5 working days for foundations.">HKH gère l'intégralité des démarches administratives : dépôt du permis ou déclaration préalable selon la surface, coordination avec les services d'urbanisme locaux, suivi jusqu'à obtention. Pour les fondations, nous fournissons les plans adaptés à votre sol (plots béton ou longrines) et coordonnons l'entreprise locale agréée. Comptez 3 à 5 jours de chantier pour les fondations.</p>
+        </div></div>
+      </div>
+
+      <div class="man-item">
+        <button class="man-q" onclick="toggleMan(this)">
+          <span class="man-q__num">03</span>
+          <span class="man-q__text" data-fr="En quoi consiste l'étude de projet ?" data-en="What does the project study involve?">En quoi consiste l'étude de projet ?</span>
+          <span class="man-q__sign">+</span>
+        </button>
+        <div class="man-a"><div class="man-a__inner">
+          <p data-fr="Analyse de votre parcelle (orientation, pente, accès), identification des contraintes réglementaires (PLU, zone sismique, risque cyclonique), recommandation du modèle HKH le mieux adapté. Nous produisons un plan d'implantation 3D, un devis complet et un calendrier prévisionnel. Cette étude est fournie gratuitement dans le cadre d'un projet sérieux." data-en="Analysis of your plot (orientation, slope, access), identification of regulatory constraints (PLU, seismic zone, cyclonic risk), recommendation of the most suitable HKH model. We produce a 3D implementation plan, a full quote and a projected timeline. This study is provided free of charge as part of a serious project.">Analyse de votre parcelle (orientation, pente, accès), identification des contraintes réglementaires (PLU, zone sismique, risque cyclonique), recommandation du modèle HKH le mieux adapté. Nous produisons un plan d'implantation 3D, un devis complet et un calendrier prévisionnel. Cette étude est fournie gratuitement dans le cadre d'un projet sérieux.</p>
+        </div></div>
+      </div>
+
+      <div class="man-item">
+        <button class="man-q" onclick="toggleMan(this)">
+          <span class="man-q__num">04</span>
+          <span class="man-q__text" data-fr="Quelles sont les options de personnalisation ?" data-en="What personalisation options are available?">Quelles sont les options de personnalisation ?</span>
+          <span class="man-q__sign">+</span>
+        </button>
+        <div class="man-a"><div class="man-a__inner">
+          <p data-fr="Chaque habitat est configurable selon trois dimensions : le modèle (ESSENCE, HORIZON, SIGNATURE), la finition extérieure (Zénith, Pure, Linéa, Pano selon le modèle) et l'ambiance intérieure (sols, panneaux muraux, mobilier). Les options sont sélectionnées lors d'une session de configuration dédiée, et chaque choix est contractualisé avant fabrication." data-en="Each habitat is configurable along three dimensions: model (ESSENCE, HORIZON, SIGNATURE), exterior finish (Zénith, Pure, Linéa, Pano) and interior ambiance (floors, wall panels, furniture). Options are selected during a dedicated configuration session, and each choice is contractualised before manufacturing.">Chaque habitat est configurable selon trois dimensions : le modèle (ESSENCE, HORIZON, SIGNATURE), la finition extérieure (Zénith, Pure, Linéa, Pano selon le modèle) et l'ambiance intérieure (sols, panneaux muraux, mobilier). Les options sont sélectionnées lors d'une session de configuration dédiée, et chaque choix est contractualisé avant fabrication.</p>
+        </div></div>
+      </div>
+
+      <div class="man-item">
+        <button class="man-q" onclick="toggleMan(this)">
+          <span class="man-q__num">05</span>
+          <span class="man-q__text" data-fr="Comment se déroule la fabrication et la logistique ?" data-en="How does manufacturing and logistics work?">Comment se déroule la fabrication et la logistique ?</span>
+          <span class="man-q__sign">+</span>
+        </button>
+        <div class="man-a"><div class="man-a__inner">
+          <p data-fr="La fabrication a lieu en Chine selon les normes CE, avec contrôle qualité à chaque étape. L'habitat est livré en monobloc sur un conteneur dédié. HKH gère intégralement le transport maritime, les formalités douanières et la coordination avec le port de destination. Délai moyen : 12 à 20 semaines selon la destination." data-en="Manufacturing takes place in China to CE standards, with quality control at each stage. The habitat is delivered as a single unit on a dedicated container. HKH fully manages maritime transport, customs formalities and coordination with the destination port. Average time: 12 to 20 weeks depending on destination.">La fabrication a lieu en Chine selon les normes CE, avec contrôle qualité à chaque étape. L'habitat est livré en monobloc sur un conteneur dédié. HKH gère intégralement le transport maritime, les formalités douanières et la coordination avec le port de destination. Délai moyen : 12 à 20 semaines selon la destination.</p>
+        </div></div>
+      </div>
+
+      <div class="man-item">
+        <button class="man-q" onclick="toggleMan(this)">
+          <span class="man-q__num">06</span>
+          <span class="man-q__text" data-fr="Comment se passe l'installation et la remise des clés ?" data-en="How does installation and key handover work?">Comment se passe l'installation et la remise des clés ?</span>
+          <span class="man-q__sign">+</span>
+        </button>
+        <div class="man-a"><div class="man-a__inner">
+          <p data-fr="L'habitat est posé par grue sur les fondations en quelques heures. Nos techniciens procèdent ensuite aux branchements (eau, électricité, data), à la mise en service de la domotique et aux vérifications finales. La remise des clés intervient généralement le jour même ou le lendemain de la pose. Un procès-verbal de réception est signé à cette occasion." data-en="The habitat is crane-installed on the foundations in a matter of hours. Our technicians then carry out connections (water, electricity, data), commissioning of home automation and final checks. Key handover generally takes place on the day of installation or the following day. A reception report is signed at this point.">L'habitat est posé par grue sur les fondations en quelques heures. Nos techniciens procèdent ensuite aux branchements (eau, électricité, data), à la mise en service de la domotique et aux vérifications finales. La remise des clés intervient généralement le jour même ou le lendemain de la pose. Un procès-verbal de réception est signé à cette occasion.</p>
+        </div></div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ═══ ANNEXE — encart dark magazine (pattern jrn-subscribe) ═══ -->
+<section class="man-cta reveal">
+  <div>
+    <span class="man-cta__lbl" data-fr="Poursuivre" data-en="Continue">Poursuivre</span>
+    <h3 data-fr="Une question qui n'est pas dans le manuel ?" data-en="A question that's not in the manual?">Une question qui n'est pas dans le manuel ?</h3>
+  </div>
+  <div class="man-cta__right">
+    <p data-fr="Chaque projet a ses particularités. Nous répondons personnellement sous 24 heures ouvrées, en français ou en anglais." data-en="Every project has its particularities. We respond personally within 24 working hours, in French or English.">Chaque projet a ses particularités. Nous répondons personnellement sous 24 heures ouvrées, en français ou en anglais.</p>
+    <a href="contact.html" class="man-cta__link" data-fr="Poser ma question" data-en="Ask my question">Poser ma question</a>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script>
+fetch('partials/footer-simple.html')
+  .then(function(r){ if(!r.ok) throw new Error(); return r.text(); })
+  .then(function(h){
+    document.getElementById('footer-placeholder').innerHTML=h;
+    if(window.applyLang)window.applyLang(localStorage.getItem('hkh-lang')||'fr');
+  })
+  .catch(function(){
+    document.getElementById('footer-placeholder').innerHTML=
+      '<footer style="padding:2rem;text-align:center;font-size:.8rem;color:#6B6660">© Home Kit Home — contact@home-kit-home.com</footer>';
+  });
+</script>
+
+<script>
+/* ── Accordion ─────────────────── */
+function toggleMan(btn){
+  const item=btn.parentElement;
+  item.classList.toggle('open');
+}
+
+/* ── Rail active state on scroll ─ */
+(function(){
+  const rails=document.querySelectorAll('.man-rail a');
+  const cats=document.querySelectorAll('.man-cat');
+  if(!cats.length) return;
+  const obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        const id=e.target.id;
+        rails.forEach(function(a){
+          a.classList.toggle('is-active',a.getAttribute('href')==='#'+id);
+        });
+      }
+    });
+  },{rootMargin:'-30% 0px -60% 0px'});
+  cats.forEach(function(c){obs.observe(c)});
+})();
+
+/* ── Reveal (tab-safe failsafe 2s) ── */
+(function(){
+  const els=document.querySelectorAll('.reveal');
+  if(!els.length) return;
+  const io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){io.observe(el)});
+  setTimeout(function(){els.forEach(function(el){el.classList.add('is-visible')});},2000);
+})();
+</script>
+
+</body>
+</html>

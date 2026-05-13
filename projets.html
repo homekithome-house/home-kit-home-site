@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Projets en cours — Home Kit Home</title>
+<meta name="description" content="Projets Home Kit Home en cours — collaborations, propositions architecturales et terrains identifiés aux Antilles françaises, en Guyane et en Caraïbe."/>
+<meta property="og:title" content="Projets en cours — Home Kit Home"/>
+<meta property="og:description" content="Projets Home Kit Home en cours — collaborations, propositions architecturales et terrains identifiés aux Antilles françaises, en Guyane et en Caraïbe."/>
+<meta property="og:image" content="images/landing-top-slide-img-1.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="fr_FR"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap" media="print" onload="this.media='all'"/>
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
+</noscript>
+
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="assets/css/animations.css"/>
+<style>
+/* ── Masthead "Le Cahier" ────────────────────────── */
+.proj-mast{
+  padding:calc(var(--nav-h) + 4.5rem) 2.5rem 3.5rem;
+  background:var(--paper);
+  position:relative;overflow:hidden;
+}
+.proj-mast__inner{
+  max-width:1240px;margin:0 auto;
+  display:grid;grid-template-columns:1.3fr 1fr;gap:5rem;align-items:end;
+}
+.proj-mast__eyebrow{
+  display:flex;align-items:center;gap:1rem;flex-wrap:wrap;
+  font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--copper);margin-bottom:1.8rem;
+}
+.proj-mast__eyebrow::before{content:'';width:36px;height:1px;background:var(--copper)}
+.proj-mast__eyebrow .dot{color:rgba(184,115,51,.5);font-size:.5rem}
+.proj-mast__eyebrow .tag{
+  color:var(--mid);font-family:var(--serif);font-style:italic;
+  letter-spacing:.04em;text-transform:none;font-size:.85rem;
+}
+.proj-mast h1{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(3rem,6.6vw,5.2rem);
+  color:var(--dark);line-height:.98;letter-spacing:-.025em;
+  margin:0 0 1.4rem;
+}
+.proj-mast h1 em{font-style:italic;color:var(--copper)}
+.proj-mast__sub{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(1.02rem,1.5vw,1.2rem);
+  color:var(--mid);line-height:1.7;max-width:46ch;margin:0;
+}
+.proj-mast__meta{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 2rem;
+  padding:1.4rem 0 0;border-top:1px solid var(--cream-dk);
+}
+.proj-mast__meta dt{
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--mid);margin-bottom:.4rem;font-weight:400;
+}
+.proj-mast__meta dd{
+  font-family:var(--serif);font-style:italic;font-size:1rem;
+  color:var(--dark);margin:0;
+}
+.proj-mast__numeral{
+  position:absolute;z-index:1;pointer-events:none;
+  right:2.5rem;bottom:-2.6rem;
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(9rem,16vw,15rem);line-height:.82;
+  color:var(--copper);opacity:.1;letter-spacing:-.055em;
+}
+@media(max-width:900px){
+  .proj-mast__inner{grid-template-columns:1fr;gap:2.5rem;align-items:start}
+  .proj-mast__numeral{font-size:clamp(7rem,13vw,10rem);right:1.5rem;bottom:-1.5rem}
+}
+@media(max-width:600px){
+  .proj-mast{padding:calc(var(--nav-h) + 2.5rem) 1.5rem 2.5rem}
+}
+
+/* ── Intro éditoriale ─────────────────────────────── */
+.proj-intro{background:var(--white);padding:6rem 2.5rem 4rem}
+.proj-intro__inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:40% 1fr;gap:6rem;align-items:start}
+.proj-intro__lbl{font-family:var(--sans);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--copper);display:inline-block;border-top:1px solid rgba(184,115,51,.3);padding-top:1.1rem;margin-bottom:0}
+.proj-intro h2{font-family:var(--serif);font-size:clamp(1.9rem,3.2vw,2.8rem);font-weight:400;color:var(--dark);letter-spacing:-.02em;line-height:1.1;margin:0}
+.proj-intro p{font-family:var(--sans);font-weight:300;font-size:.95rem;color:var(--mid);line-height:1.85;margin:0 0 1rem;max-width:580px}
+.proj-intro p:last-child{margin-bottom:0}
+
+/* ── Featured project (refonte éditoriale) ────────── */
+.feat-project{background:var(--paper);padding:4rem 2.5rem 1.8rem;position:relative;display:block}
+.feat-project__inner{
+  max-width:1340px;margin:0 auto;
+  display:grid;grid-template-columns:48fr 52fr;gap:0;
+  background:var(--cream);align-items:stretch;
+  min-height:640px;position:relative;overflow:hidden;
+  transition:opacity .45s cubic-bezier(.16,1,.3,1)
+}
+.feat-project__inner.is-switching{opacity:0}
+
+/* Folio typographique en tête */
+.feat-project__folio{
+  position:absolute;top:1.6rem;left:2.5rem;right:2.5rem;z-index:3;
+  display:flex;align-items:center;gap:1rem;
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--mid);pointer-events:none
+}
+.feat-project__folio span{display:inline-flex;align-items:center;gap:1rem}
+.feat-project__folio span::after{
+  content:'';width:.25rem;height:.25rem;border-radius:50%;
+  background:var(--copper);display:inline-block;opacity:.7
+}
+.feat-project__folio span:last-child::after{display:none}
+.feat-project__folio-rule{
+  flex:1;height:1px;background:linear-gradient(to right,rgba(184,115,51,.25),rgba(44,44,40,.04))
+}
+
+/* Numéro monumental — cette fois placé à droite (variation vs blog) */
+.feat-project__numeral{
+  position:absolute;z-index:1;pointer-events:none;
+  right:calc(52% - 1.2rem);bottom:-2.8rem;
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(10rem,18vw,18rem);line-height:.82;
+  color:var(--copper);opacity:.13;letter-spacing:-.055em
+}
+
+/* Visual — passe-partout cream */
+.feat-project__visual{
+  position:relative;z-index:2;
+  padding:4.2rem 2.5rem 2rem;
+  display:flex;flex-direction:column;height:100%
+}
+.feat-project__img{
+  position:relative;overflow:hidden;min-height:400px;background:#1A1A16;flex:1 1 auto
+}
+.feat-project__img img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.feat-project:hover .feat-project__img img{transform:scale(1.025)}
+.feat-project__img::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(44,44,40,.08)
+}
+.feat-project__caption{
+  font-family:var(--serif);font-style:italic;font-size:.78rem;
+  color:var(--mid);letter-spacing:.015em;
+  padding:1rem 0 0;opacity:.78;flex-shrink:0;
+  display:flex;align-items:baseline;gap:.7rem
+}
+.feat-project__caption::before{
+  content:'';width:1.4rem;height:1px;background:var(--copper);
+  flex-shrink:0;transform:translateY(-.25rem)
+}
+
+/* Body — padding aligné avec visual, justify-center */
+.feat-project__body{
+  padding:4.2rem 3.4rem 2.8rem;z-index:2;
+  display:flex;flex-direction:column;justify-content:center;position:relative
+}
+.feat-project__lbl{
+  font-family:var(--sans);font-size:.65rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--copper);margin-bottom:1rem;
+  display:inline-block;align-self:flex-start
+}
+.feat-project__partner{
+  font-family:var(--serif);font-style:italic;font-size:.92rem;
+  color:var(--mid);margin-bottom:1rem;letter-spacing:.01em
+}
+.feat-project__title{
+  font-family:var(--serif);font-size:clamp(1.9rem,3vw,2.6rem);
+  font-weight:400;color:var(--dark);line-height:1.08;letter-spacing:-.02em;
+  margin:0 0 1.4rem
+}
+.feat-project__desc{
+  font-family:var(--sans);font-weight:300;font-size:.93rem;
+  color:var(--mid);line-height:1.78;margin:0 0 2rem;max-width:460px
+}
+.feat-project__specs{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 2.4rem;
+  margin:0 0 2rem;padding:1.6rem 0;
+  border-top:1px solid rgba(44,44,40,.08);border-bottom:1px solid rgba(44,44,40,.08)
+}
+.feat-project__spec{position:relative}
+.feat-project__spec dt{
+  font-family:var(--sans);font-size:.55rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--copper);margin-bottom:.4rem;opacity:.85
+}
+.feat-project__spec dd{
+  font-family:var(--serif);font-size:1.1rem;color:var(--dark);margin:0;
+  letter-spacing:-.005em
+}
+.feat-project__link{align-self:flex-start}
+
+/* Pagination par pays */
+.feat-project-nav{
+  max-width:1340px;margin:0 auto;padding:.2rem 2.5rem 6rem;
+  display:flex;justify-content:space-between;align-items:center;gap:2rem;
+  background:var(--paper)
+}
+.feat-project-nav__segs{display:flex;gap:8px;align-items:center}
+.feat-project-seg{
+  background:none;border:none;cursor:pointer;padding:14px 0;
+  display:flex;align-items:center
+}
+.feat-project-seg__line{
+  display:block;width:60px;height:2px;background:var(--cream-dk);opacity:.55;
+  transition:background .4s cubic-bezier(.16,1,.3,1),opacity .3s ease
+}
+.feat-project-seg:hover .feat-project-seg__line{background:rgba(184,115,51,.5);opacity:.9}
+.feat-project-seg.is-active .feat-project-seg__line{background:var(--copper);opacity:1}
+.feat-project-nav__idx{
+  font-family:var(--serif);font-style:italic;font-size:.92rem;
+  color:var(--mid);letter-spacing:.01em;white-space:nowrap;
+  display:flex;align-items:center;gap:.9rem
+}
+.feat-project-nav__idx em{font-style:italic;color:var(--copper);font-weight:400}
+.feat-project-nav__idx .feat-project-nav__cat{
+  color:var(--dark);font-size:.88rem;
+  padding-left:.9rem;border-left:1px solid var(--cream-dk)
+}
+@media(max-width:768px){
+  .feat-project-nav{flex-direction:column;align-items:flex-start;gap:1rem;padding:.2rem 1.5rem 4rem}
+  .feat-project-seg__line{width:42px}
+}
+
+/* ── Index typographique ──────────────────────────── */
+.proj-index{background:var(--white);padding:6rem 2.5rem 7rem}
+.proj-index__inner{max-width:1200px;margin:0 auto}
+.proj-index__head{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;margin-bottom:3.5rem;padding-bottom:1.6rem;border-bottom:1px solid var(--cream-dk)}
+.proj-index__head-lbl{font-family:var(--sans);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--copper);display:inline-block;border-top:1px solid rgba(184,115,51,.3);padding-top:1.1rem;margin-bottom:.9rem}
+.proj-index__head h2{font-family:var(--serif);font-size:clamp(1.7rem,2.6vw,2.2rem);font-weight:400;letter-spacing:-.015em;color:var(--dark);margin:0}
+.proj-index__count{font-family:var(--serif);font-style:italic;font-size:.92rem;color:var(--mid);white-space:nowrap}
+
+.proj-row{display:grid;grid-template-columns:60px 1.1fr 1.2fr 1fr auto;gap:2rem;align-items:baseline;padding:1.8rem 0;border-bottom:1px solid var(--cream-dk);transition:padding-left .35s cubic-bezier(.2,.8,.2,1),color .35s ease;position:relative}
+.proj-row:last-child{border-bottom:none}
+.proj-row:hover{padding-left:1.2rem;background:linear-gradient(to right,rgba(184,115,51,.025),transparent 60%)}
+.proj-row__num{font-family:var(--serif);font-size:1.6rem;color:rgba(44,44,40,.25);letter-spacing:-.02em;line-height:1;font-feature-settings:"lnum"}
+.proj-row:hover .proj-row__num{color:var(--copper)}
+.proj-row__place{font-family:var(--serif);font-size:1.35rem;font-weight:400;color:var(--dark);line-height:1.2;letter-spacing:-.015em;margin:0}
+.proj-row__place small{display:block;font-family:var(--sans);font-style:normal;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);margin-top:.4rem;font-weight:400}
+.proj-row__phare{
+  display:flex;align-items:center;gap:.55rem;
+  font-family:var(--sans);font-size:.54rem;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--copper);font-weight:400;
+  margin-bottom:.6rem;line-height:1
+}
+.proj-row__phare::before{
+  content:'';width:.35rem;height:.35rem;background:var(--copper);
+  border-radius:50%;display:inline-block;animation:pharePulse 2.4s ease-in-out infinite
+}
+@keyframes pharePulse{0%,100%{box-shadow:0 0 0 0 rgba(184,115,51,.4)}50%{box-shadow:0 0 0 4px rgba(184,115,51,0)}}
+.proj-row:hover .proj-row__num{color:var(--copper)}
+.proj-row.is-phare .proj-row__num{color:var(--copper);opacity:.5}
+.proj-row__partner{font-family:var(--sans);font-size:.82rem;color:var(--mid);line-height:1.65}
+.proj-row__partner b{display:block;font-weight:400;color:var(--dark);margin-bottom:.2rem;font-family:var(--serif);font-style:italic;font-size:.95rem}
+.proj-row__model{font-family:var(--sans);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--copper);line-height:1.55}
+.proj-row__status{font-family:var(--sans);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);white-space:nowrap;display:flex;align-items:center;gap:.55rem}
+.proj-row__status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--mid);flex-shrink:0}
+.proj-row__status--active::before{background:var(--copper);animation:statusPulse 2.4s ease-in-out infinite}
+.proj-row__status--active{color:var(--copper)}
+@keyframes statusPulse{0%,100%{box-shadow:0 0 0 0 rgba(184,115,51,.4)}50%{box-shadow:0 0 0 5px rgba(184,115,51,0)}}
+
+/* Vignette accordion */
+.proj-row {
+  grid-template-columns: 60px 1.1fr 1.2fr 1fr auto 80px;
+}
+.proj-row__thumb {
+  width: 80px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 1px;
+  flex-shrink: 0;
+  transition: height .45s cubic-bezier(.16,1,.3,1), width .45s cubic-bezier(.16,1,.3,1);
+  align-self: center;
+}
+.proj-row__thumb img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform .6s cubic-bezier(.16,1,.3,1);
+}
+.proj-row:hover .proj-row__thumb {
+  height: 110px;
+  width: 110px;
+}
+.proj-row:hover .proj-row__thumb img {
+  transform: scale(1.04);
+}
+
+/* Filtres territoire */
+.proj-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--cream-dk);
+  margin-bottom: 0;
+}
+.proj-filter__lbl {
+  font-family: var(--sans);
+  font-size: .58rem;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-right: 2rem;
+  padding-right: 2rem;
+  border-right: 1px solid var(--cream-dk);
+}
+.proj-chip {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: .95rem;
+  color: var(--mid);
+  padding: .2rem 1.1rem;
+  letter-spacing: .005em;
+  position: relative;
+  transition: color .25s;
+}
+.proj-chip:not(:last-child)::after {
+  content: '·';
+  position: absolute;
+  right: -.15rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--cream-dk);
+  font-style: normal;
+}
+.proj-chip:hover { color: var(--dark); }
+.proj-chip.active { color: var(--copper); }
+.proj-chip.active::before {
+  content: '';
+  position: absolute;
+  bottom: -.1rem;
+  left: 1.1rem;
+  right: 1.1rem;
+  height: 1px;
+  background: var(--copper);
+}
+.proj-chip--soon {
+  opacity: .32;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* ── CTA FINAL — avec photo BG ──────────────────── */
+.proj-cta{
+  padding:7rem 2.5rem;position:relative;overflow:hidden;
+  background:var(--dark);
+  isolation:isolate;
+}
+.proj-cta__bg{
+  position:absolute;inset:0;z-index:-1;
+  background-image:url('images/Top Photos/Gemini_Generated_Image_ka43m7ka43m7ka43.png');
+  background-size:cover;background-position:center 60%;
+  opacity:.22;
+  filter:grayscale(.15);
+}
+.proj-cta__bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to right, rgba(20,20,18,.88) 0%, rgba(20,20,18,.72) 60%, rgba(20,20,18,.55) 100%);
+}
+.proj-cta__inner{
+  max-width:1200px;margin:0 auto;position:relative;z-index:1;
+  display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:start;
+}
+.proj-cta__side{display:flex;flex-direction:column;gap:1.2rem;padding-top:.5rem}
+.proj-cta__eyebrow{
+  font-family:var(--sans);font-size:.64rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--copper);font-weight:400;
+  padding-top:1.2rem;border-top:1px solid rgba(184,115,51,.4);
+  display:inline-block;align-self:flex-start;
+}
+.proj-cta__eyebrow em{
+  font-family:var(--serif);font-style:italic;font-size:.8rem;
+  letter-spacing:0;text-transform:none;color:rgba(255,255,255,.7);
+  margin-left:.6rem;
+}
+.proj-cta h2{
+  font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.4rem);
+  color:var(--white);font-weight:400;letter-spacing:-.025em;
+  line-height:1.05;margin:0;max-width:14ch;
+}
+.proj-cta h2 em{font-style:italic;color:var(--copper);font-weight:400}
+.proj-cta__lead{
+  font-family:var(--serif);font-style:italic;font-size:1.05rem;
+  color:rgba(255,255,255,.7);line-height:1.6;max-width:36ch;
+  margin:.6rem 0 0;
+}
+.proj-cta__blocks{
+  display:flex;flex-direction:column;gap:0;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+.proj-cta-block{
+  text-decoration:none;display:grid;
+  grid-template-columns:60px 1fr auto;gap:1.5rem;align-items:center;
+  padding:2.4rem 0;border-bottom:1px solid rgba(255,255,255,.12);
+  transition:padding-left .4s cubic-bezier(.16,1,.3,1);
+}
+.proj-cta-block:hover{padding-left:1rem}
+.proj-cta-block__n{
+  font-family:var(--serif);font-style:italic;font-size:1.6rem;
+  color:var(--copper);line-height:1;letter-spacing:-.02em;
+}
+.proj-cta-block__body{display:flex;flex-direction:column;gap:.45rem}
+.proj-cta-block__label{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.22em;font-weight:400;
+  text-transform:uppercase;color:rgba(255,255,255,.5);
+}
+.proj-cta-block__title{
+  font-family:var(--serif);font-size:1.3rem;color:var(--white);font-weight:400;
+  letter-spacing:-.01em;line-height:1.25;
+}
+.proj-cta-block__title em{font-style:italic;color:var(--copper);font-weight:400}
+.proj-cta-block__arrow{
+  font-family:var(--sans);font-size:.66rem;letter-spacing:.22em;font-weight:400;
+  text-transform:uppercase;color:rgba(255,255,255,.6);
+  display:inline-flex;align-items:center;gap:1rem;
+  transition:color .3s ease;
+}
+.proj-cta-block__arrow::after{
+  content:'→';color:var(--copper);
+  transition:transform .3s cubic-bezier(.16,1,.3,1);
+}
+.proj-cta-block:hover .proj-cta-block__arrow{color:var(--white)}
+.proj-cta-block:hover .proj-cta-block__arrow::after{transform:translateX(.5rem)}
+
+/* ── Responsive ───────────────────────────────────── */
+@media(max-width:900px){
+  .proj-intro__inner{grid-template-columns:1fr;gap:2rem}
+  .feat-project__inner{grid-template-columns:1fr;min-height:auto}
+  .feat-project__visual{padding:3rem 2rem 1.6rem}
+  .feat-project__folio{left:2rem;right:2rem}
+  .feat-project__numeral{right:1rem;bottom:-2rem;font-size:clamp(7rem,14vw,11rem)}
+  .feat-project__body{padding:2.5rem 2rem}
+  .proj-row{grid-template-columns:40px 1fr;gap:.8rem 1.2rem;padding:1.5rem 0}
+  .proj-row__partner,.proj-row__model,.proj-row__status{grid-column:2}
+  .proj-row__num{grid-row:span 4}
+  .proj-row__thumb{display:none}
+  .proj-cta__inner{grid-template-columns:1fr;gap:2rem}
+}
+@media(max-width:1100px){
+  .proj-cta__inner{grid-template-columns:1fr;gap:3rem}
+}
+@media(max-width:600px){
+  .proj-intro{padding:4rem 1.5rem 3rem}
+  .feat-project{padding:3rem 1.5rem 1.6rem}
+  .proj-index{padding:4rem 1.5rem 5rem}
+  .proj-cta{padding:4rem 1.5rem}
+  .proj-index__head{grid-template-columns:1fr}
+  .proj-index__count{text-align:start}
+}
+@media(max-width:768px){
+  .proj-cta{padding:5rem 1.5rem}
+  .proj-cta-block{grid-template-columns:44px 1fr;gap:1rem}
+  .proj-cta-block__arrow{grid-column:2;margin-top:.4rem}
+}
+</style>
+</head>
+<body>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/nav.js"></script>
+
+<header class="proj-mast">
+  <div class="proj-mast__inner">
+    <div>
+      <div class="proj-mast__eyebrow">
+        <span data-fr="Le Cahier" data-en="The Notebook">Le Cahier</span>
+        <span class="dot">●</span>
+        <span class="tag" data-fr="Dossiers en cours" data-en="Active files">Dossiers en cours</span>
+      </div>
+      <h1 data-fr="Des projets <em>réels</em>,<br>en cours d'écriture." data-en="Real <em>projects</em>,<br>being written.">Des projets <em>réels</em>,<br>en cours d'écriture.</h1>
+      <p class="proj-mast__sub" data-fr="Études de faisabilité, propositions architecturales et terrains identifiés — documentés en temps réel, sans mise en scène." data-en="Feasibility studies, architectural proposals and identified sites — documented in real time, without staging.">Études de faisabilité, propositions architecturales et terrains identifiés — documentés en temps réel, sans mise en scène.</p>
+    </div>
+    <dl class="proj-mast__meta">
+      <div><dt data-fr="Édition" data-en="Edition">Édition</dt><dd data-fr="Avril 2026" data-en="April 2026">Avril 2026</dd></div>
+      <div><dt data-fr="Projet à la une" data-en="Featured project">Projet à la une</dt><dd data-fr="Saint-François, Guadeloupe" data-en="Saint-François, Guadeloupe">Saint-François, Guadeloupe</dd></div>
+      <div><dt data-fr="Territoires" data-en="Territories">Territoires</dt><dd data-fr="Antilles · Guyane · Caraïbe" data-en="Antilles · Guiana · Caribbean">Antilles · Guyane · Caraïbe</dd></div>
+      <div><dt data-fr="Partenaires" data-en="Partners">Partenaires</dt><dd data-fr="Jay Family · Charlemagne" data-en="Jay Family · Charlemagne">Jay Family · Charlemagne</dd></div>
+    </dl>
+  </div>
+  <span class="proj-mast__numeral" aria-hidden="true">05</span>
+</header>
+
+<section class="proj-intro">
+  <div class="proj-intro__inner">
+    <div>
+      <span class="proj-intro__lbl reveal" data-fr="Transparence" data-en="Transparency">Transparence</span>
+      <h2 class="reveal reveal-delay-1" data-fr="Des projets réels, en cours de réalisation." data-en="Real projects, in progress.">Des projets réels, en cours de réalisation.</h2>
+    </div>
+    <div>
+      <p class="reveal reveal-delay-2" data-fr="Home Kit Home est en phase de lancement. Nous avons fait le choix de la transparence : les projets ci-dessous sont des collaborations actives avec nos partenaires, accompagnées d'études de faisabilité et de propositions visuelles." data-en="Home Kit Home is in its launch phase. We have chosen transparency: the projects below are active collaborations with our partners, accompanied by feasibility studies and visual proposals.">Home Kit Home est en phase de lancement. Nous avons fait le choix de la transparence : les projets ci-dessous sont des collaborations actives avec nos partenaires, accompagnées d'études de faisabilité et de propositions visuelles.</p>
+      <p class="reveal reveal-delay-3" data-fr="Ces collaborations témoignent de la confiance que des professionnels de l'immobilier premium nous accordent dès le démarrage." data-en="These collaborations demonstrate the trust premium real estate professionals place in us from the very start.">Ces collaborations témoignent de la confiance que des professionnels de l'immobilier premium nous accordent dès le démarrage.</p>
+    </div>
+  </div>
+</section>
+
+<a href="blog-jay-family-saint-francois.html" class="feat-project" id="featProject" style="text-decoration:none">
+  <div class="feat-project__inner">
+    <div class="feat-project__folio" aria-hidden="true">
+      <span data-fr="Le Cahier" data-en="The Notebook">Le Cahier</span>
+      <span data-fr="Projet phare" data-en="Featured project">Projet phare</span>
+      <span id="featProjectFolioPays" data-fr="Guadeloupe" data-en="Guadeloupe">Guadeloupe</span>
+      <span class="feat-project__folio-rule"></span>
+      <span>Avril 2026</span>
+    </div>
+    <span class="feat-project__numeral" id="featProjectNumeral" aria-hidden="true">01</span>
+    <div class="feat-project__visual reveal">
+      <div class="feat-project__img">
+        <picture>
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/2.avif" type="image/avif">
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/2.webp" type="image/webp">
+  <img id="featProjectImg" src="images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/2.png" alt="Village de standing — Saint-François, Guadeloupe"/>
+</picture>
+      </div>
+      <span class="feat-project__caption" id="featProjectCaption" data-fr="Saint-François, Guadeloupe · Vue du projet en cours d'étude" data-en="Saint-François, Guadeloupe · Project under study">Saint-François, Guadeloupe · Vue du projet en cours d'étude</span>
+    </div>
+    <div class="feat-project__body">
+      <span class="feat-project__lbl reveal" id="featProjectLbl" data-fr="Guadeloupe — Saint-François" data-en="Guadeloupe — Saint-François">Guadeloupe — Saint-François</span>
+      <p class="feat-project__partner reveal reveal-delay-1" id="featProjectPartner">Jay Family Properties</p>
+      <h3 class="feat-project__title reveal reveal-delay-1" id="featProjectTitle" data-fr="Village de standing, 6 habitats à piscines privées." data-en="Boutique village, 6 residences with private pools.">Village de standing, 6 habitats à piscines privées.</h3>
+      <p class="feat-project__desc reveal reveal-delay-2" id="featProjectDesc" data-fr="Terrain de 2 000 m² à Saint-François. Étude d'implantation, rendus 3D et dossier de rentabilité locative réalisés conjointement." data-en="2,000 m² plot in Saint-François. Site study, 3D renderings and rental profitability file produced jointly.">Terrain de 2 000 m² à Saint-François. Étude d'implantation, rendus 3D et dossier de rentabilité locative réalisés conjointement.</p>
+      <dl class="feat-project__specs reveal reveal-delay-3" id="featProjectSpecs">
+        <div class="feat-project__spec"><dt data-fr="Surface" data-en="Surface">Surface</dt><dd class="v">2 000 m²</dd></div>
+        <div class="feat-project__spec"><dt data-fr="Habitats" data-en="Residences">Habitats</dt><dd class="v">6</dd></div>
+        <div class="feat-project__spec"><dt data-fr="Enveloppe" data-en="Budget">Enveloppe</dt><dd class="v">~400 000 €</dd></div>
+        <div class="feat-project__spec"><dt data-fr="Statut" data-en="Status">Statut</dt><dd class="v" data-fr="En proposition" data-en="In proposal">En proposition</dd></div>
+      </dl>
+      <span class="editorial__link feat-project__link reveal reveal-delay-3" data-fr="Consulter le dossier complet" data-en="View full case file">Consulter le dossier complet</span>
+    </div>
+  </div>
+</a>
+
+<nav class="feat-project-nav" aria-label="Projets phares par pays">
+  <div class="feat-project-nav__segs" id="featProjectSegs">
+    <button class="feat-project-seg is-active" data-filter="guadeloupe" aria-label="Projet phare — Guadeloupe"><span class="feat-project-seg__line"></span></button>
+    <button class="feat-project-seg" data-filter="saint-martin" aria-label="Projet phare — Saint-Martin"><span class="feat-project-seg__line"></span></button>
+    <button class="feat-project-seg" data-filter="guyane" aria-label="Projet phare — Guyane"><span class="feat-project-seg__line"></span></button>
+  </div>
+  <div class="feat-project-nav__idx" aria-live="polite">
+    <span>№&nbsp;<em id="featProjectIdxNum">01</em>&nbsp;/&nbsp;03</span>
+    <span class="feat-project-nav__cat" id="featProjectIdxCat" data-fr="Guadeloupe" data-en="Guadeloupe">Guadeloupe</span>
+  </div>
+</nav>
+
+<section class="proj-index">
+  <div class="proj-index__inner">
+    <div class="proj-index__head">
+      <div>
+        <span class="proj-index__head-lbl reveal" data-fr="Autres collaborations" data-en="Other collaborations">Autres collaborations</span>
+        <h2 class="reveal reveal-delay-1" data-fr="Terrains & études en cours." data-en="Sites & studies in progress.">Terrains & études en cours.</h2>
+      </div>
+      <span class="proj-index__count reveal reveal-delay-2"><em>Nº 01 — 05</em> · <span data-fr="5 dossiers" data-en="5 case files">5 dossiers</span></span>
+    </div>
+
+    <div class="proj-filter">
+      <span class="proj-filter__lbl">Filtrer</span>
+      <button class="proj-chip active" data-filter="tous" data-fr="Tous" data-en="All">Tous</button>
+      <button class="proj-chip" data-filter="guadeloupe" data-fr="Guadeloupe" data-en="Guadeloupe">Guadeloupe</button>
+      <button class="proj-chip" data-filter="guyane" data-fr="Guyane" data-en="Guiana">Guyane</button>
+      <button class="proj-chip" data-filter="saint-martin" data-fr="Saint-Martin" data-en="Saint-Martin">Saint-Martin</button>
+      <button class="proj-chip proj-chip--soon" data-filter="france" data-fr="France" data-en="France">France</button>
+      <button class="proj-chip proj-chip--soon" data-filter="martinique" data-fr="Martinique" data-en="Martinique">Martinique</button>
+    </div>
+
+    <a href="blog-jay-family-saint-francois.html" class="proj-row reveal is-phare" style="text-decoration:none;color:inherit" data-pays="guadeloupe">
+      <span class="proj-row__num">01</span>
+      <h3 class="proj-row__place">
+        <span class="proj-row__phare" data-fr="Phare" data-en="Featured">Phare</span>
+        <span data-fr="Saint-François" data-en="Saint-François">Saint-François</span><small data-fr="Guadeloupe · Village de standing" data-en="Guadeloupe · Boutique village">Guadeloupe · Village de standing</small>
+      </h3>
+      <div class="proj-row__partner"><b>Jay Family Properties</b><span data-fr="Terrain 2 000 m², six habitats à piscines privées." data-en="2,000 m² plot, six residences with private pools.">Terrain 2 000 m², six habitats à piscines privées.</span></div>
+      <div class="proj-row__model">6× HORIZON T</div>
+      <div class="proj-row__status proj-row__status--active" data-fr="Proposition en cours" data-en="Proposal in progress">Proposition en cours</div>
+      <div class="proj-row__thumb"><picture>
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/2.avif" type="image/avif">
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/2.webp" type="image/webp">
+  <img src="images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/2.png" alt="Saint-François" loading="lazy"/>
+</picture></div>
+    </a>
+
+    <a href="#" class="proj-row reveal reveal-delay-1" style="text-decoration:none;color:inherit" data-pays="guadeloupe">
+      <span class="proj-row__num">02</span>
+      <h3 class="proj-row__place"><span data-fr="Sainte-Anne" data-en="Sainte-Anne">Sainte-Anne</span><small data-fr="Guadeloupe · Vue mer" data-en="Guadeloupe · Sea view">Guadeloupe · Vue mer</small></h3>
+      <div class="proj-row__partner"><b>Jay Family Properties</b><span data-fr="Terrain 1 200 m² en zone constructible, vue mer dégagée." data-en="1,200 m² buildable plot, open sea view.">Terrain 1 200 m² en zone constructible, vue mer dégagée.</span></div>
+      <div class="proj-row__model">SIGNATURE DUO</div>
+      <div class="proj-row__status proj-row__status--active" data-fr="Proposition en cours" data-en="Proposal in progress">Proposition en cours</div>
+      <div class="proj-row__thumb"><picture>
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/2.avif" type="image/avif">
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/2.webp" type="image/webp">
+  <img src="images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/2.png" alt="Sainte-Anne" loading="lazy"/>
+</picture></div>
+    </a>
+
+    <a href="#" class="proj-row reveal reveal-delay-2" style="text-decoration:none;color:inherit" data-pays="guadeloupe">
+      <span class="proj-row__num">03</span>
+      <h3 class="proj-row__place"><span data-fr="Le Gosier" data-en="Le Gosier">Le Gosier</span><small data-fr="Guadeloupe · Domaine boisé" data-en="Guadeloupe · Wooded estate">Guadeloupe · Domaine boisé</small></h3>
+      <div class="proj-row__partner"><b>Charlemagne Investissement</b><span data-fr="Écolodge 4 500 m² en forêt tropicale, étude de rentabilité incluse." data-en="4,500 m² eco-lodge in tropical forest, profitability study included.">Écolodge 4 500 m² en forêt tropicale, étude de rentabilité incluse.</span></div>
+      <div class="proj-row__model">3× HORIZON T</div>
+      <div class="proj-row__status proj-row__status--active" data-fr="Proposition en cours" data-en="Proposal in progress">Proposition en cours</div>
+      <div class="proj-row__thumb"><picture>
+  <source srcset="dist/images/Habitats/Horizon%20T/Gemini_Generated_Image_ka43m7ka43m7ka43.avif" type="image/avif">
+  <source srcset="dist/images/Habitats/Horizon%20T/Gemini_Generated_Image_ka43m7ka43m7ka43.webp" type="image/webp">
+  <img src="images/Habitats/Horizon%20T/Gemini_Generated_Image_ka43m7ka43m7ka43.png" alt="Le Gosier" loading="lazy"/>
+</picture></div>
+    </a>
+
+    <a href="#" class="proj-row reveal reveal-delay-2 is-phare" style="text-decoration:none;color:inherit" data-pays="saint-martin">
+      <span class="proj-row__num">04</span>
+      <h3 class="proj-row__place">
+        <span class="proj-row__phare" data-fr="Phare" data-en="Featured">Phare</span>
+        <span data-fr="Marigot" data-en="Marigot">Marigot</span><small data-fr="Saint-Martin · Résidentiel premium" data-en="Saint-Martin · Premium residential">Saint-Martin · Résidentiel premium</small>
+      </h3>
+      <div class="proj-row__partner"><b>Antilles Patrimoine</b><span data-fr="Terrain plat 800 m², accès rapide plage, côté français." data-en="800 m² flat plot, quick beach access, French side.">Terrain plat 800 m², accès rapide plage, côté français.</span></div>
+      <div class="proj-row__model">SIGNATURE</div>
+      <div class="proj-row__status" data-fr="À l'étude" data-en="Under study">À l'étude</div>
+      <div class="proj-row__thumb"><picture>
+  <source srcset="dist/images/Habitats/Signature/Gemini_Generated_Image_aiows5aiows5aiow.avif" type="image/avif">
+  <source srcset="dist/images/Habitats/Signature/Gemini_Generated_Image_aiows5aiows5aiow.webp" type="image/webp">
+  <img src="images/Habitats/Signature/Gemini_Generated_Image_aiows5aiows5aiow.png" alt="Marigot" loading="lazy"/>
+</picture></div>
+    </a>
+
+    <a href="#" class="proj-row reveal reveal-delay-3 is-phare" style="text-decoration:none;color:inherit" data-pays="guyane">
+      <span class="proj-row__num">05</span>
+      <h3 class="proj-row__place">
+        <span class="proj-row__phare" data-fr="Phare" data-en="Featured">Phare</span>
+        <span data-fr="Cayenne" data-en="Cayenne">Cayenne</span><small data-fr="Guyane · Investissement locatif" data-en="Guiana · Rental investment">Guyane · Investissement locatif</small>
+      </h3>
+      <div class="proj-row__partner"><b>Guyane Promotion</b><span data-fr="Deux résidences sur terrain locatif, livraison FOB Cayenne." data-en="Two residences on rental plot, FOB Cayenne delivery.">Deux résidences sur terrain locatif, livraison FOB Cayenne.</span></div>
+      <div class="proj-row__model">2× ESSENCE +</div>
+      <div class="proj-row__status" data-fr="À l'étude" data-en="Under study">À l'étude</div>
+      <div class="proj-row__thumb"><picture>
+  <source srcset="dist/images/Habitats/Essence%20%2B/essence-plus-z%C3%A9nith.avif" type="image/avif">
+  <source srcset="dist/images/Habitats/Essence%20%2B/essence-plus-z%C3%A9nith.webp" type="image/webp">
+  <img src="images/Habitats/Essence%20%2B/essence-plus-z%C3%A9nith.png" alt="Cayenne" loading="lazy"/>
+</picture></div>
+    </a>
+
+  </div>
+</section>
+
+<div class="proj-cta">
+  <div class="proj-cta__bg" aria-hidden="true"></div>
+  <div class="proj-cta__inner">
+    <div class="proj-cta__side">
+      <span class="proj-cta__eyebrow">
+        <span data-fr="Vous avez un projet" data-en="You have a project">Vous avez un projet</span>
+        <em data-fr="Deux entrées" data-en="Two entries">Deux entrées</em>
+      </span>
+      <h2 data-fr="Votre projet mérite mieux qu'<em>une annonce</em>." data-en="Your project deserves more than <em>a listing</em>.">Votre projet mérite mieux qu'<em>une annonce</em>.</h2>
+      <p class="proj-cta__lead" data-fr="Que vous apportiez un terrain à valoriser ou cherchiez à vous positionner sur un projet en cours, nous prenons le temps d'une conversation avant toute proposition." data-en="Whether you bring a site to develop or wish to position yourself on a project underway, we take the time for a conversation before any proposal.">Que vous apportiez un terrain à valoriser ou cherchiez à vous positionner sur un projet en cours, nous prenons le temps d'une conversation avant toute proposition.</p>
+    </div>
+    <div class="proj-cta__blocks">
+      <a href="contact.html?type=projet" class="proj-cta-block">
+        <span class="proj-cta-block__n">№ 01</span>
+        <span class="proj-cta-block__body">
+          <span class="proj-cta-block__label" data-fr="Un projet vous intéresse" data-en="A project interests you">Un projet vous intéresse</span>
+          <span class="proj-cta-block__title" data-fr="Se positionner sur <em>un projet</em>" data-en="Position on <em>a project</em>">Se positionner sur <em>un projet</em></span>
+        </span>
+        <span class="proj-cta-block__arrow" data-fr="Prendre contact" data-en="Get in touch">Prendre contact</span>
+      </a>
+      <a href="contact.html?type=terrain" class="proj-cta-block">
+        <span class="proj-cta-block__n">№ 02</span>
+        <span class="proj-cta-block__body">
+          <span class="proj-cta-block__label" data-fr="Vous avez un terrain" data-en="You have land">Vous avez un terrain</span>
+          <span class="proj-cta-block__title" data-fr="Parler de <em>mon terrain</em>" data-en="Discuss <em>my land</em>">Parler de <em>mon terrain</em></span>
+        </span>
+        <span class="proj-cta-block__arrow" data-fr="Prendre contact" data-en="Get in touch">Prendre contact</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const els=document.querySelectorAll('.reveal');
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:0,rootMargin:'0px 0px -8% 0px'});
+  els.forEach(el=>io.observe(el));
+  setTimeout(()=>els.forEach(el=>el.classList.add('visible')),2000);
+})();
+
+/* Projets phares par pays — data */
+const FEAT_PROJECTS = {
+  guadeloupe: {
+    num:'01',
+    href:'blog-jay-family-saint-francois.html',
+    img:'images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/2.png',
+    altFr:'Village de standing — Saint-François, Guadeloupe',
+    altEn:'Boutique village — Saint-François, Guadeloupe',
+    paysFr:'Guadeloupe',paysEn:'Guadeloupe',
+    captionFr:'Saint-François, Guadeloupe · Vue du projet en cours d’étude',
+    captionEn:'Saint-François, Guadeloupe · Project under study',
+    lblFr:'Guadeloupe — Saint-François',lblEn:'Guadeloupe — Saint-François',
+    partner:'Jay Family Properties',
+    titleFr:'Village de standing, 6 habitats à piscines privées.',
+    titleEn:'Boutique village, 6 residences with private pools.',
+    descFr:'Terrain de 2 000 m² à Saint-François. Étude d’implantation, rendus 3D et dossier de rentabilité locative réalisés conjointement avec Jay Family Properties.',
+    descEn:'2,000 m² plot in Saint-François. Site study, 3D renderings and rental profitability file produced jointly with Jay Family Properties.',
+    specs:[
+      {fr:'Surface',en:'Surface',vFr:'2 000 m²',vEn:'2,000 m²'},
+      {fr:'Habitats',en:'Residences',vFr:'6',vEn:'6'},
+      {fr:'Enveloppe',en:'Budget',vFr:'~400 000 €',vEn:'~€400,000'},
+      {fr:'Statut',en:'Status',vFr:'En proposition',vEn:'In proposal'}
+    ]
+  },
+  'saint-martin': {
+    num:'02',
+    href:'#',
+    img:'images/Habitats/Signature/Gemini_Generated_Image_aiows5aiows5aiow.png',
+    altFr:'Marigot, Saint-Martin · Résidence SIGNATURE',
+    altEn:'Marigot, Saint-Martin · SIGNATURE residence',
+    paysFr:'Saint-Martin',paysEn:'Saint-Martin',
+    captionFr:'Marigot, Saint-Martin · Implantation SIGNATURE sur terrain plat',
+    captionEn:'Marigot, Saint-Martin · SIGNATURE siting on flat plot',
+    lblFr:'Saint-Martin — Marigot',lblEn:'Saint-Martin — Marigot',
+    partner:'Antilles Patrimoine',
+    titleFr:'Résidence SIGNATURE, pied-à-terre côté français.',
+    titleEn:'SIGNATURE residence, French-side pied-à-terre.',
+    descFr:'Terrain plat de 800 m² à Marigot, accès rapide plage et centre. Étude d’implantation pour une résidence haut de gamme à destination locative saisonnière.',
+    descEn:'800 m² flat plot in Marigot, quick access to beach and centre. Site study for a premium residence dedicated to seasonal rentals.',
+    specs:[
+      {fr:'Surface',en:'Surface',vFr:'800 m²',vEn:'800 m²'},
+      {fr:'Habitats',en:'Residences',vFr:'1',vEn:'1'},
+      {fr:'Enveloppe',en:'Budget',vFr:'~180 000 €',vEn:'~€180,000'},
+      {fr:'Statut',en:'Status',vFr:'À l’étude',vEn:'Under study'}
+    ]
+  },
+  guyane: {
+    num:'03',
+    href:'#',
+    img:'images/Habitats/Essence%20%2B/essence-plus-z%C3%A9nith.png',
+    altFr:'Cayenne, Guyane · Double ESSENCE+',
+    altEn:'Cayenne, Guiana · Two ESSENCE+',
+    paysFr:'Guyane',paysEn:'Guiana',
+    captionFr:'Cayenne, Guyane · Deux ESSENCE+ sur terrain locatif',
+    captionEn:'Cayenne, Guiana · Two ESSENCE+ on rental plot',
+    lblFr:'Guyane — Cayenne',lblEn:'Guiana — Cayenne',
+    partner:'Guyane Promotion',
+    titleFr:'Deux habitats ESSENCE+, investissement locatif.',
+    titleEn:'Two ESSENCE+ residences, rental investment.',
+    descFr:'Deux résidences ESSENCE+ sur un terrain locatif à Cayenne. Livraison FOB Cayenne, structure acier galvanisé, finition clé en main. Dossier de rentabilité en cours.',
+    descEn:'Two ESSENCE+ residences on a rental plot in Cayenne. FOB Cayenne delivery, galvanised steel structure, turnkey finish. Profitability case file under way.',
+    specs:[
+      {fr:'Surface',en:'Surface',vFr:'1 400 m²',vEn:'1,400 m²'},
+      {fr:'Habitats',en:'Residences',vFr:'2',vEn:'2'},
+      {fr:'Enveloppe',en:'Budget',vFr:'~140 000 €',vEn:'~€140,000'},
+      {fr:'Statut',en:'Status',vFr:'À l’étude',vEn:'Under study'}
+    ]
+  }
+};
+const FEAT_ORDER = ['guadeloupe','saint-martin','guyane'];
+
+function applyFeatProject(cat){
+  const data = FEAT_PROJECTS[cat];
+  if (!data) return;
+  const host = document.getElementById('featProject');
+  const inner = host.querySelector('.feat-project__inner');
+  inner.classList.add('is-switching');
+  setTimeout(()=>{
+    host.setAttribute('href', data.href);
+    document.getElementById('featProjectNumeral').textContent = data.num;
+    const folioPays = document.getElementById('featProjectFolioPays');
+    folioPays.setAttribute('data-fr', data.paysFr);
+    folioPays.setAttribute('data-en', data.paysEn);
+    const img = document.getElementById('featProjectImg');
+    img.src = data.img;
+    img.setAttribute('data-fr', data.altFr); img.setAttribute('data-en', data.altEn);
+    img.alt = data.altFr;
+    const cap = document.getElementById('featProjectCaption');
+    cap.setAttribute('data-fr', data.captionFr); cap.setAttribute('data-en', data.captionEn);
+    const lbl = document.getElementById('featProjectLbl');
+    lbl.setAttribute('data-fr', data.lblFr); lbl.setAttribute('data-en', data.lblEn);
+    document.getElementById('featProjectPartner').textContent = data.partner;
+    const title = document.getElementById('featProjectTitle');
+    title.setAttribute('data-fr', data.titleFr); title.setAttribute('data-en', data.titleEn);
+    const desc = document.getElementById('featProjectDesc');
+    desc.setAttribute('data-fr', data.descFr); desc.setAttribute('data-en', data.descEn);
+    // Specs
+    const specsRoot = document.getElementById('featProjectSpecs');
+    const specDivs = specsRoot.querySelectorAll('.feat-project__spec');
+    data.specs.forEach((s,i)=>{
+      const d = specDivs[i]; if(!d) return;
+      const dt = d.querySelector('dt'); const dd = d.querySelector('dd');
+      dt.setAttribute('data-fr', s.fr); dt.setAttribute('data-en', s.en);
+      dd.setAttribute('data-fr', s.vFr); dd.setAttribute('data-en', s.vEn);
+    });
+    if (window.applyLang) window.applyLang(localStorage.getItem('hkh-lang')||'fr');
+    inner.classList.remove('is-switching');
+  }, 280);
+}
+
+/* Synchronisation filtres pays + projet phare */
+(function(){
+  const chips = document.querySelectorAll('.proj-chip');
+  const rows = document.querySelectorAll('.proj-row');
+  const segs = document.querySelectorAll('.feat-project-seg');
+  const idxNum = document.getElementById('featProjectIdxNum');
+  const idxCat = document.getElementById('featProjectIdxCat');
+
+  const COUNTRY_LABELS = {
+    guadeloupe:{fr:'Guadeloupe',en:'Guadeloupe'},
+    'saint-martin':{fr:'Saint-Martin',en:'Saint-Martin'},
+    guyane:{fr:'Guyane',en:'Guiana'}
+  };
+
+  function setFeat(cat){
+    // Seg actif
+    segs.forEach(s=>{
+      const isA = s.dataset.filter===cat;
+      s.classList.toggle('is-active', isA);
+      const line = s.querySelector('.feat-project-seg__line');
+      line.style.background = isA ? 'var(--copper)' : 'var(--cream-dk)';
+      line.style.opacity = isA ? '1' : '.55';
+    });
+    // Indicator № + label pays actif
+    const i = FEAT_ORDER.indexOf(cat);
+    if (i >= 0) idxNum.textContent = String(i+1).padStart(2,'0');
+    const lbl = COUNTRY_LABELS[cat] || {fr:cat,en:cat};
+    idxCat.setAttribute('data-fr', lbl.fr);
+    idxCat.setAttribute('data-en', lbl.en);
+    applyFeatProject(cat);
+  }
+
+  function setFilter(cat){
+    chips.forEach(x=>x.classList.toggle('active', x.dataset.filter===cat));
+    rows.forEach(r=>{r.style.display=(cat==='tous'||r.dataset.pays===cat)?'':'none'});
+    // Sync feat project si pays dispo
+    if (FEAT_PROJECTS[cat]) setFeat(cat);
+  }
+
+  chips.forEach(c=>c.addEventListener('click',()=>setFilter(c.dataset.filter)));
+  segs.forEach(s=>s.addEventListener('click',()=>{
+    setFeat(s.dataset.filter);
+    // Synchronise aussi le filtre index (chip actif)
+    chips.forEach(x=>x.classList.toggle('active', x.dataset.filter===s.dataset.filter));
+    rows.forEach(r=>{r.style.display=(r.dataset.pays===s.dataset.filter)?'':'none'});
+  }));
+
+  // État initial : styles inline sur segs pour éviter bug de style invalidation
+  segs.forEach(s=>{
+    const isA = s.classList.contains('is-active');
+    const line = s.querySelector('.feat-project-seg__line');
+    line.style.background = isA ? 'var(--copper)' : 'var(--cream-dk)';
+    line.style.opacity = isA ? '1' : '.55';
+  });
+})();
+</script>
+
+<div id="footer-placeholder"></div>
+<script>
+fetch('partials/footer-simple.html')
+  .then(function(r){ if(!r.ok) throw new Error(); return r.text(); })
+  .then(function(h){
+    document.getElementById('footer-placeholder').innerHTML=h;
+    if(window.applyLang)window.applyLang(localStorage.getItem('hkh-lang')||'fr');
+  })
+  .catch(function(){
+    document.getElementById('footer-placeholder').innerHTML=
+      '<footer style="padding:2rem;text-align:center;font-size:.8rem;color:#6B6660">© Home Kit Home — contact@home-kit-home.com</footer>';
+  });
+</script>
+
+</body>
+</html>

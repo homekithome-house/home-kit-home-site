@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nos Habitats — Home Kit Home</title>
+  <meta name="description" content="Découvrez les 6 habitats architecturaux Home Kit Home — de 20 à 46 m², livrés clés en main. Trois familles : ESSENCE, HORIZON, SIGNATURE."/>
+  <meta property="og:title" content="Nos Habitats — Home Kit Home"/>
+  <meta property="og:description" content="Découvrez les 6 habitats architecturaux Home Kit Home — de 20 à 46 m², livrés clés en main. Trois familles : ESSENCE, HORIZON, SIGNATURE."/>
+  <meta property="og:image" content="images/landing-top-slide-img-1.png"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="fr_FR"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap" media="print" onload="this.media='all'"/>
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
+  </noscript>
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css"/>
+  <style>
+    /* local — spécifique modeles */
+
+    /* CATALOGUE LIST */
+    .catalogue{max-width:1200px;margin:0 auto;padding:1.5rem 2.5rem}
+    .catalogue-item{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:2px;overflow:hidden;position:relative}
+    .catalogue-item__body{order:1;padding:3.5rem;display:flex;flex-direction:column;justify-content:center;gap:1.4rem;background:var(--paper);position:relative;overflow:hidden}
+    .catalogue-item__body::before{content:'';position:absolute;inset:0;background:var(--cream);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.4,0,.2,1);z-index:0}
+    .catalogue-item:hover .catalogue-item__body::before{transform:scaleX(1)}
+    .catalogue-item__body>*{position:relative;z-index:1}
+    .catalogue-item__img{order:2;position:relative;min-height:500px;max-height:500px;overflow:hidden;background:var(--dark);display:flex;align-items:center;justify-content:center}
+    .catalogue-item__img img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+    .catalogue-item:hover .catalogue-item__img img{transform:scale(1.04)}
+    .catalogue-item__img .badge{position:absolute;top:1.5rem;right:1.5rem;left:auto;background:var(--copper);color:var(--white);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;padding:.35rem .85rem;z-index:2}
+    /* Reversed: image gauche, texte droite */
+    .catalogue-item.reversed .catalogue-item__img{order:1}
+    .catalogue-item.reversed .catalogue-item__body{order:2}
+    .catalogue-item__family{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--copper)}
+    .catalogue-item__name{font-family:var(--serif);font-size:2.6rem;font-weight:400;color:var(--dark);line-height:1}
+    .catalogue-item__tagline{font-size:.85rem;font-style:italic;color:var(--mid)}
+    .catalogue-item__desc{font-size:.9rem;color:var(--mid);line-height:1.75}
+    .specs-row{display:flex;gap:0;border:1px solid rgba(0,0,0,.08)}
+    .spec{flex:1;text-align:center;padding:.8rem .5rem;border-right:1px solid rgba(0,0,0,.08)}
+    .spec:last-child{border-right:none}
+    .spec__val{font-family:var(--serif);font-size:1rem;color:var(--dark);margin-bottom:.2rem}
+    .spec__lbl{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mid)}
+    .catalogue-item__cta{display:inline-flex;align-items:center;gap:.6rem;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;padding:.85rem 1.8rem;border:1px solid var(--dark);color:var(--dark);background:transparent;transition:all .3s;align-self:flex-start}
+    .catalogue-item__cta:hover{background:var(--dark);color:var(--white)}
+    .catalogue-item__cta svg{width:14px;height:14px}
+
+    /* Section divider */
+    .family-divider{max-width:1200px;margin:0 auto 1.5rem;padding:0 2.5rem}
+    .family-divider__inner{padding:2rem 0 1.2rem;border-bottom:1px solid var(--cream-dk)}
+    .family-divider__eyebrow{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--copper);display:block;margin-bottom:.6rem}
+    .family-divider__name{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;color:var(--dark);line-height:1;margin-bottom:.5rem}
+    .family-divider__sub{font-size:.85rem;color:var(--mid);font-style:italic}
+
+    /* Placeholder image */
+    .img-placeholder{width:100%;height:100%;min-height:500px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.8rem;background:var(--dark2)}
+    .img-placeholder span{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25);text-align:center;padding:0 2rem;line-height:1.7}
+    .img-placeholder .model-name-ph{font-family:var(--serif);font-size:1.8rem;color:rgba(255,255,255,.15)}
+
+    /* CTA BAND */
+    .cta-band{background:var(--copper);padding:5rem 2.5rem;text-align:center;margin-top:2rem}
+    .cta-band h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);color:var(--white);margin-bottom:.8rem}
+    .cta-band p{color:rgba(255,255,255,.75);margin-bottom:2.5rem;font-size:.95rem}
+    .btn-light{display:inline-flex;align-items:center;gap:.5rem;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;padding:.9rem 2rem;background:var(--white);color:var(--dark);border:1px solid var(--white);transition:all .3s}
+    .btn-light:hover{background:transparent;color:var(--white)}
+
+    /* FOOTER */
+    .footer{background:var(--dark);color:rgba(255,255,255,.5)}
+    .footer__main{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding:5rem 2.5rem 4rem;border-bottom:1px solid rgba(255,255,255,.07)}
+    .footer__logo{font-family:var(--serif);font-size:1.8rem;color:var(--white);margin-bottom:.3rem}
+    .footer__logo-sub{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--copper);margin-bottom:1.2rem;display:block}
+    .footer__brand p{font-size:.85rem;line-height:1.65;color:rgba(255,255,255,.38);margin-bottom:1.5rem}
+    .footer__col-t{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:1.4rem;display:block}
+    .footer__col ul{display:flex;flex-direction:column;gap:.6rem}
+    .footer__col li a{font-size:.85rem;color:rgba(255,255,255,.45);transition:color .2s}
+    .footer__col li a:hover{color:var(--white)}
+    .footer__social a{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--copper)}
+    .footer__bottom{display:flex;justify-content:space-between;padding:1.4rem 2.5rem;font-size:.68rem;color:rgba(255,255,255,.2)}
+
+    @media(max-width:900px){
+      .catalogue-item{grid-template-columns:1fr}
+      .catalogue-item__img{height:320px}
+      .footer__main{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:600px){
+      .catalogue{padding:2rem 1rem}
+      .catalogue-item__body{padding:2rem}
+      .footer__main{grid-template-columns:1fr}
+      .footer__bottom{flex-direction:column;gap:.4rem}
+    }
+  </style>
+</head>
+<body>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/nav.js"></script>
+
+<!-- PAGE HEADER -->
+<div class="ph-hero">
+  <span class="lbl" data-fr="Catalogue complet" data-en="Full catalogue">Catalogue complet</span>
+  <h1 data-fr="Nos Habitats" data-en="Our Homes">Nos Habitats</h1>
+  <p data-fr="Trois familles. Six résidences architecturales. Livrées prêtes à vivre, aux Antilles françaises, dans la Caraïbe et dans le monde entier." data-en="Three families. Six architectural residences. Delivered ready to live in, in the French Antilles, the Caribbean and worldwide.">Trois familles. Six résidences architecturales. Livrées prêtes à vivre, aux Antilles françaises, dans la Caraïbe et dans le monde entier.</p>
+  <hr/>
+</div>
+
+<!-- CATALOGUE -->
+<div class="catalogue">
+
+  <!-- ── FAMILLE ESSENCE ── -->
+  <div class="family-divider">
+    <div class="family-divider__inner">
+      <span class="family-divider__eyebrow" data-fr="Famille" data-en="Family">Famille</span>
+      <h2 class="family-divider__name">ESSENCE</h2>
+      <p class="family-divider__sub" data-fr="Le compact d'excellence" data-en="The excellence compact">Le compact d'excellence</p>
+    </div>
+  </div>
+
+  <!-- ESSENCE -->
+  <div class="catalogue-item">
+    <div class="catalogue-item__img">
+      <picture>
+  <source srcset="dist/images/essence-ext.avif" type="image/avif">
+  <source srcset="dist/images/essence-ext.webp" type="image/webp">
+  <img src="images/essence-ext.png" alt="ESSENCE — Résidence architecturale 20 m²" loading="lazy" decoding="async"/>
+</picture>
+      <div class="badge">20 m²</div>
+    </div>
+    <div class="catalogue-item__body">
+      <div class="catalogue-item__family" data-fr="Famille ESSENCE" data-en="ESSENCE Family">Famille ESSENCE</div>
+      <div class="catalogue-item__name">ESSENCE</div>
+      <div class="catalogue-item__tagline" data-fr="Le compact d'excellence · Sans cuisine" data-en="The excellence compact · Without kitchen">Le compact d'excellence · Sans cuisine</div>
+      <p class="catalogue-item__desc" data-fr="Conçu pour offrir le confort essentiel dans un format élégant. Idéal pour les projets touristiques, éco-lodges et suites indépendantes. La finition Essence est disponible pour la Métropole et la Guyane." data-en="Designed to offer essential comfort in an elegant format. Ideal for tourism projects, eco-lodges and independent suites. The Essence finish is available for Mainland France and Guiana.">Conçu pour offrir le confort essentiel dans un format élégant. Idéal pour les projets touristiques, éco-lodges et suites indépendantes. La finition Essence est disponible pour la Métropole et la Guyane.</p>
+      <div class="specs-row">
+        <div class="spec"><div class="spec__val">20 m²</div><div class="spec__lbl">Surface</div></div>
+        <div class="spec"><div class="spec__val">5×4 m</div><div class="spec__lbl">Dimensions</div></div>
+        <div class="spec"><div class="spec__val">4,5 T</div><div class="spec__lbl">Masse</div></div>
+        <div class="spec"><div class="spec__val">3,3 m</div><div class="spec__lbl">Hauteur</div></div>
+      </div>
+      <a href="residence-essence.html" class="catalogue-item__cta" data-fr="Voir la résidence" data-en="View residence">Voir la résidence <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+  </div>
+
+  <!-- ESSENCE + -->
+  <div class="catalogue-item reversed">
+    <div class="catalogue-item__img">
+      <picture>
+  <source srcset="dist/images/essence-plus-ext.avif" type="image/avif">
+  <source srcset="dist/images/essence-plus-ext.webp" type="image/webp">
+  <img src="images/essence-plus-ext.png" alt="ESSENCE + — Résidence architecturale 20 m² avec kitchenette" loading="lazy" decoding="async"/>
+</picture>
+      <div class="badge">20 m²</div>
+    </div>
+    <div class="catalogue-item__body">
+      <div class="catalogue-item__family" data-fr="Famille ESSENCE" data-en="ESSENCE Family">Famille ESSENCE</div>
+      <div class="catalogue-item__name">ESSENCE +</div>
+      <div class="catalogue-item__tagline" data-fr="Le compact d'excellence · Avec kitchenette intégrée" data-en="The excellence compact · With integrated kitchenette">Le compact d'excellence · Avec kitchenette intégrée</div>
+      <p class="catalogue-item__desc" data-fr="Toute l'élégance de l'ESSENCE enrichie d'une kitchenette entièrement équipée. Plaque vitrocéramique, évier, rangements intégrés — tout est pensé pour que rien ne dépasse, et que tout fonctionne." data-en="All the elegance of the ESSENCE enriched with a fully equipped kitchenette. Ceramic hob, sink, integrated storage — everything designed so nothing protrudes, and everything works.">Toute l'élégance de l'ESSENCE enrichie d'une kitchenette entièrement équipée. Plaque vitrocéramique, évier, rangements intégrés — tout est pensé pour que rien ne dépasse, et que tout fonctionne.</p>
+      <div class="specs-row">
+        <div class="spec"><div class="spec__val">20 m²</div><div class="spec__lbl">Surface</div></div>
+        <div class="spec"><div class="spec__val">5×4 m</div><div class="spec__lbl">Dimensions</div></div>
+        <div class="spec"><div class="spec__val">4,5 T</div><div class="spec__lbl">Masse</div></div>
+        <div class="spec"><div class="spec__val">3,3 m</div><div class="spec__lbl">Hauteur</div></div>
+      </div>
+      <a href="residence-essence-plus.html" class="catalogue-item__cta" data-fr="Voir la résidence" data-en="View residence">Voir la résidence <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+  </div>
+
+  <!-- ── FAMILLE HORIZON ── -->
+  <div class="family-divider" style="margin-top:2.5rem">
+    <div class="family-divider__inner">
+      <span class="family-divider__eyebrow" data-fr="Famille" data-en="Family">Famille</span>
+      <h2 class="family-divider__name">HORIZON</h2>
+      <p class="family-divider__sub" data-fr="L'essentiel contemporain" data-en="The contemporary essential">L'essentiel contemporain</p>
+    </div>
+  </div>
+
+  <!-- HORIZON -->
+  <div class="catalogue-item">
+    <div class="catalogue-item__img">
+      <picture>
+  <source srcset="dist/images/horizon-ext.avif" type="image/avif">
+  <source srcset="dist/images/horizon-ext.webp" type="image/webp">
+  <img src="images/horizon-ext.png" alt="HORIZON — Résidence architecturale 36 m²" loading="lazy" decoding="async"/>
+</picture>
+      <div class="badge">36 m²</div>
+    </div>
+    <div class="catalogue-item__body">
+      <div class="catalogue-item__family" data-fr="Famille HORIZON" data-en="HORIZON Family">Famille HORIZON</div>
+      <div class="catalogue-item__name">HORIZON</div>
+      <div class="catalogue-item__tagline" data-fr="L'essentiel contemporain · Entièrement équipé" data-en="The contemporary essential · Fully equipped">L'essentiel contemporain · Entièrement équipé</div>
+      <p class="catalogue-item__desc" data-fr="Un modèle aux volumes harmonieux, baigné de lumière naturelle. Conçu pour conjuguer confort, style et modernité. Toiture inclinée distinctive, grandes baies vitrées, cuisine complète intégrée." data-en="A model with harmonious volumes, bathed in natural light. Designed to combine comfort, style and modernity. Distinctive sloped roofline, large bay windows, complete integrated kitchen.">Un modèle aux volumes harmonieux, baigné de lumière naturelle. Conçu pour conjuguer confort, style et modernité. Toiture inclinée distinctive, grandes baies vitrées, cuisine complète intégrée.</p>
+      <div class="specs-row">
+        <div class="spec"><div class="spec__val">36 m²</div><div class="spec__lbl">Surface</div></div>
+        <div class="spec"><div class="spec__val">9×4 m</div><div class="spec__lbl">Dimensions</div></div>
+        <div class="spec"><div class="spec__val">8 T</div><div class="spec__lbl">Masse</div></div>
+        <div class="spec"><div class="spec__val">2,9–3,3 m</div><div class="spec__lbl">Hauteur</div></div>
+      </div>
+      <a href="residence-horizon.html" class="catalogue-item__cta" data-fr="Voir la résidence" data-en="View residence">Voir la résidence <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+  </div>
+
+  <!-- HORIZON T -->
+  <div class="catalogue-item reversed">
+    <div class="catalogue-item__img">
+      <picture>
+  <source srcset="dist/images/horizon-t-ext.avif" type="image/avif">
+  <source srcset="dist/images/horizon-t-ext.webp" type="image/webp">
+  <img src="images/horizon-t-ext.png" alt="HORIZON T — Résidence architecturale 46 m² avec terrasse" loading="lazy" decoding="async"/>
+</picture>
+      <div class="badge">46 m²</div>
+    </div>
+    <div class="catalogue-item__body">
+      <div class="catalogue-item__family" data-fr="Famille HORIZON" data-en="HORIZON Family">Famille HORIZON</div>
+      <div class="catalogue-item__name">HORIZON T</div>
+      <div class="catalogue-item__tagline" data-fr="L'ouverture sur la nature · Avec terrasse intégrée" data-en="Opening onto nature · With integrated terrace">L'ouverture sur la nature · Avec terrasse intégrée</div>
+      <p class="catalogue-item__desc" data-fr="Un modèle pensé pour vivre dedans-dehors, alliant élégance, confort et authenticité. La terrasse intégrée de 10 m² prolonge naturellement l'espace de vie vers l'extérieur. Parfait pour les sites naturels et hôteliers." data-en="A model designed for indoor-outdoor living, combining elegance, comfort and authenticity. The 10 m² integrated terrace naturally extends the living space outdoors. Perfect for natural and hotel sites.">Un modèle pensé pour vivre dedans-dehors, alliant élégance, confort et authenticité. La terrasse intégrée de 10 m² prolonge naturellement l'espace de vie vers l'extérieur. Parfait pour les sites naturels et hôteliers.</p>
+      <div class="specs-row">
+        <div class="spec"><div class="spec__val">46 m²</div><div class="spec__lbl">Surface</div></div>
+        <div class="spec"><div class="spec__val">11,5×4 m</div><div class="spec__lbl">Dimensions</div></div>
+        <div class="spec"><div class="spec__val">10,5 T</div><div class="spec__lbl">Masse</div></div>
+        <div class="spec"><div class="spec__val">+10 m²</div><div class="spec__lbl">Terrasse</div></div>
+      </div>
+      <a href="residence-horizon-t.html" class="catalogue-item__cta" data-fr="Voir la résidence" data-en="View residence">Voir la résidence <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+  </div>
+
+  <!-- ── FAMILLE SIGNATURE ── -->
+  <div class="family-divider" style="margin-top:2.5rem">
+    <div class="family-divider__inner">
+      <span class="family-divider__eyebrow" data-fr="Famille" data-en="Family">Famille</span>
+      <h2 class="family-divider__name">SIGNATURE</h2>
+      <p class="family-divider__sub" data-fr="La résidence d'exception" data-en="The exceptional residence">La résidence d'exception</p>
+    </div>
+  </div>
+
+  <!-- SIGNATURE -->
+  <div class="catalogue-item">
+    <div class="catalogue-item__img">
+      <picture>
+  <source srcset="dist/images/signature-ext.avif" type="image/avif">
+  <source srcset="dist/images/signature-ext.webp" type="image/webp">
+  <img src="images/signature-ext.png" alt="SIGNATURE — Résidence d'exception 46 m²" loading="lazy" decoding="async"/>
+</picture>
+      <div class="badge">46 m²</div>
+    </div>
+    <div class="catalogue-item__body">
+      <div class="catalogue-item__family" data-fr="Famille SIGNATURE" data-en="SIGNATURE Family">Famille SIGNATURE</div>
+      <div class="catalogue-item__name">SIGNATURE</div>
+      <div class="catalogue-item__tagline" data-fr="La résidence d'exception · 1 chambre" data-en="The exceptional residence · 1 bedroom">La résidence d'exception · 1 chambre</div>
+      <p class="catalogue-item__desc" data-fr="Notre résidence phare. 46 m² qui redéfinissent le standard de l'habitat premium en milieu tropical. Vitrages panoramiques 180° à 360°, domotique intégrée, finitions sur mesure. La référence pour les projets résidentiels et les investisseurs exigeants." data-en="Our flagship residence. 46 m² that redefine the premium housing standard in a tropical setting. 180°–360° panoramic glazing, integrated home automation, bespoke finishes. The reference for residential projects and demanding investors.">Notre résidence phare. 46 m² qui redéfinissent le standard de l'habitat premium en milieu tropical. Vitrages panoramiques 180° à 360°, domotique intégrée, finitions sur mesure. La référence pour les projets résidentiels et les investisseurs exigeants.</p>
+      <div class="specs-row">
+        <div class="spec"><div class="spec__val">46 m²</div><div class="spec__lbl">Surface</div></div>
+        <div class="spec"><div class="spec__val">11,5×4 m</div><div class="spec__lbl">Dimensions</div></div>
+        <div class="spec"><div class="spec__val">10,5 T</div><div class="spec__lbl">Masse</div></div>
+        <div class="spec"><div class="spec__val">1 ch.</div><div class="spec__lbl">Chambre</div></div>
+      </div>
+      <a href="residence-signature.html" class="catalogue-item__cta" data-fr="Voir la résidence" data-en="View residence">Voir la résidence <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+  </div>
+
+  <!-- SIGNATURE DUO -->
+  <div class="catalogue-item reversed">
+    <div class="catalogue-item__img">
+      <picture>
+  <source srcset="dist/images/signature-duo-ext.avif" type="image/avif">
+  <source srcset="dist/images/signature-duo-ext.webp" type="image/webp">
+  <img src="images/signature-duo-ext.png" alt="SIGNATURE DUO — Résidence d'exception 46 m² 2 chambres" loading="lazy" decoding="async"/>
+</picture>
+      <div class="badge">46 m²</div>
+    </div>
+    <div class="catalogue-item__body">
+      <div class="catalogue-item__family" data-fr="Famille SIGNATURE" data-en="SIGNATURE Family">Famille SIGNATURE</div>
+      <div class="catalogue-item__name">SIGNATURE DUO</div>
+      <div class="catalogue-item__tagline" data-fr="La résidence familiale ou hôtelière · 2 chambres" data-en="The family or hotel residence · 2 bedrooms">La résidence familiale ou hôtelière · 2 chambres</div>
+      <p class="catalogue-item__desc" data-fr="La version deux chambres de notre résidence phare. Même niveau d'excellence, même signature architecturale — pour accueillir une famille ou maximiser la capacité locative d'un projet hôtelier haut de gamme." data-en="The two-bedroom version of our flagship residence. Same level of excellence, same architectural signature — to accommodate a family or maximise rental capacity for a premium hotel project.">La version deux chambres de notre résidence phare. Même niveau d'excellence, même signature architecturale — pour accueillir une famille ou maximiser la capacité locative d'un projet hôtelier haut de gamme.</p>
+      <div class="specs-row">
+        <div class="spec"><div class="spec__val">46 m²</div><div class="spec__lbl">Surface</div></div>
+        <div class="spec"><div class="spec__val">11,5×4 m</div><div class="spec__lbl">Dimensions</div></div>
+        <div class="spec"><div class="spec__val">10,5 T</div><div class="spec__lbl">Masse</div></div>
+        <div class="spec"><div class="spec__val">2 ch.</div><div class="spec__lbl">Chambres</div></div>
+      </div>
+      <a href="residence-signature-duo.html" class="catalogue-item__cta" data-fr="Voir la résidence" data-en="View residence">Voir la résidence <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+  </div>
+
+</div><!-- /catalogue -->
+
+<!-- CTA -->
+<div class="cta-band">
+  <h2 data-fr="Votre projet mérite une réponse sur mesure" data-en="Your project deserves a bespoke response">Votre projet mérite une réponse sur mesure</h2>
+  <p data-fr="Terrain, budget, territoire, usage — parlez-nous de votre vision." data-en="Land, budget, territory, use — tell us about your vision.">Terrain, budget, territoire, usage — parlez-nous de votre vision.</p>
+  <a href="contact.html" class="btn-light" data-fr="Démarrer mon projet →" data-en="Start my project →">Démarrer mon projet →</a>
+</div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+fetch('partials/footer-simple.html')
+  .then(function(r){ if(!r.ok) throw new Error(); return r.text(); })
+  .then(function(h){
+    document.getElementById('footer-placeholder').innerHTML=h;
+    if(window.applyLang)window.applyLang(localStorage.getItem('hkh-lang')||'fr');
+  })
+  .catch(function(){
+    document.getElementById('footer-placeholder').innerHTML=
+      '<footer style="padding:2rem;text-align:center;font-size:.8rem;color:#6B6660">© Home Kit Home — contact@home-kit-home.com</footer>';
+  });
+</script>
+
+</body>
+</html>

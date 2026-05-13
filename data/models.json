@@ -1,0 +1,260 @@
+{
+  "models": [
+    {
+      "id": "essence",
+      "name": "ESSENCE",
+      "family": {
+        "fr": "Famille ESSENCE",
+        "en": "ESSENCE Family"
+      },
+      "familyTagline": {
+        "fr": "Le compact d'excellence",
+        "en": "The excellence compact"
+      },
+      "badge": "20 m²",
+      "tagline": {
+        "fr": "Le compact d'excellence · Sans cuisine",
+        "en": "The excellence compact · Without kitchen"
+      },
+      "description": {
+        "fr": "Conçu pour offrir le confort essentiel dans un format élégant. Idéal pour les projets touristiques, éco-lodges et suites indépendantes. La finition Essence est disponible pour la Métropole et la Guyane.",
+        "en": "Designed to offer essential comfort in an elegant format. Ideal for tourism projects, eco-lodges and independent suites. The Essence finish is available for Mainland France and Guiana."
+      },
+      "specs": {
+        "surface": "20 m²",
+        "dimensions": "5×4 m",
+        "masse": "4,5 T",
+        "hauteur": "3,3 m"
+      },
+      "url": "residence-essence.html",
+      "photos": {
+        "cover": "images/essence-ext-bois.png",
+        "exterior": [
+          "images/essence-ext-bois.png",
+          "images/essence-ext-metal.png"
+        ],
+        "plan": "images/essence-plan.png",
+        "interior": []
+      }
+    },
+    {
+      "id": "essence-plus",
+      "name": "ESSENCE +",
+      "family": {
+        "fr": "Famille ESSENCE",
+        "en": "ESSENCE Family"
+      },
+      "familyTagline": {
+        "fr": "Le compact d'excellence",
+        "en": "The excellence compact"
+      },
+      "badge": "20 m²",
+      "tagline": {
+        "fr": "Le compact d'excellence · Avec kitchenette intégrée",
+        "en": "The excellence compact · With integrated kitchenette"
+      },
+      "description": {
+        "fr": "Toute l'élégance de l'ESSENCE enrichie d'une kitchenette entièrement équipée. Plaque vitrocéramique, évier, rangements intégrés — tout est pensé pour que rien ne dépasse, et que tout fonctionne.",
+        "en": "All the elegance of the ESSENCE enriched with a fully equipped kitchenette. Ceramic hob, sink, integrated storage — everything designed so nothing protrudes, and everything works."
+      },
+      "specs": {
+        "surface": "20 m²",
+        "dimensions": "5×4 m",
+        "masse": "4,5 T",
+        "hauteur": "3,3 m"
+      },
+      "url": "residence-essence-plus.html",
+      "photos": {
+        "cover": "images/essence-plus-ext-bois.png",
+        "exterior": [
+          "images/essence-plus-ext-bois.png",
+          "images/essence-plus-ext-metal.png"
+        ],
+        "plan": "images/essence-plus-plan.png",
+        "interior": [
+          "images/essence-plus-int-1.jpg",
+          "images/essence-plus-int-2.jpg",
+          "images/essence-plus-int-3.jpg",
+          "images/essence-plus-int-4.jpg",
+          "images/essence-plus-int-cuisine.jpg"
+        ]
+      }
+    },
+    {
+      "id": "horizon",
+      "name": "HORIZON",
+      "family": {
+        "fr": "Famille HORIZON",
+        "en": "HORIZON Family"
+      },
+      "familyTagline": {
+        "fr": "L'essentiel contemporain",
+        "en": "The contemporary essential"
+      },
+      "badge": "36 m²",
+      "tagline": {
+        "fr": "L'essentiel contemporain · Entièrement équipé",
+        "en": "The contemporary essential · Fully equipped"
+      },
+      "description": {
+        "fr": "Un modèle aux volumes harmonieux, baigné de lumière naturelle. Conçu pour conjuguer confort, style et modernité. Toiture inclinée distinctive, grandes baies vitrées, cuisine complète intégrée.",
+        "en": "A model with harmonious volumes, bathed in natural light. Designed to combine comfort, style and modernity. Distinctive sloped roofline, large bay windows, complete integrated kitchen."
+      },
+      "specs": {
+        "surface": "36 m²",
+        "dimensions": "9×4 m",
+        "masse": "8 T",
+        "hauteur": "2,9–3,3 m"
+      },
+      "url": "residence-horizon.html",
+      "photos": {
+        "cover": "images/horizon-ext-bois.png",
+        "exterior": [
+          "images/horizon-ext-bois.png",
+          "images/horizon-ext-bois-alt.png",
+          "images/horizon-ext-bois-pano.png",
+          "images/horizon-ext-metal.png",
+          "images/horizon-ext-metal-alt.png",
+          "images/horizon-ext-metal-pano.png"
+        ],
+        "plan": "images/horizon-plan.png",
+        "interior": [
+          "images/horizon-int-salon-1.jpg",
+          "images/horizon-int-salon-2.jpg",
+          "images/horizon-int-chambre-1.jpg",
+          "images/horizon-int-chambre-2.jpg",
+          "images/horizon-int-cuisine.jpg"
+        ]
+      }
+    },
+    {
+      "id": "horizon-t",
+      "name": "HORIZON T",
+      "family": {
+        "fr": "Famille HORIZON",
+        "en": "HORIZON Family"
+      },
+      "familyTagline": {
+        "fr": "L'essentiel contemporain",
+        "en": "The contemporary essential"
+      },
+      "badge": "46 m²",
+      "tagline": {
+        "fr": "L'ouverture sur la nature · Avec terrasse intégrée",
+        "en": "Opening onto nature · With integrated terrace"
+      },
+      "description": {
+        "fr": "Un modèle pensé pour vivre dedans-dehors, alliant élégance, confort et authenticité. La terrasse intégrée de 10 m² prolonge naturellement l'espace de vie vers l'extérieur. Parfait pour les sites naturels et hôteliers.",
+        "en": "A model designed for indoor-outdoor living, combining elegance, comfort and authenticity. The 10 m² integrated terrace naturally extends the living space outdoors. Perfect for natural and hotel sites."
+      },
+      "specs": {
+        "surface": "46 m²",
+        "dimensions": "11,5×4 m",
+        "masse": "10,5 T",
+        "terrasse": "+10 m²"
+      },
+      "url": "residence-horizon-t.html",
+      "photos": {
+        "cover": "images/horizon-t-ext-bois.png",
+        "exterior": [
+          "images/horizon-t-ext-bois.png",
+          "images/horizon-t-ext-bois-alt.png",
+          "images/horizon-t-ext-bois-pano.png",
+          "images/horizon-t-ext-metal.png",
+          "images/horizon-t-ext-metal-alt.png",
+          "images/horizon-t-ext-metal-pano.png"
+        ],
+        "plan": "images/horizon-t-plan.png",
+        "interior": [
+          "images/horizon-t-int-salon-1.jpg",
+          "images/horizon-t-int-salon-2.jpg",
+          "images/horizon-t-int-chambre.jpg",
+          "images/horizon-t-int-sdb.jpg",
+          "images/horizon-t-int-archi.jpg"
+        ]
+      }
+    },
+    {
+      "id": "signature",
+      "name": "SIGNATURE",
+      "family": {
+        "fr": "Famille SIGNATURE",
+        "en": "SIGNATURE Family"
+      },
+      "familyTagline": {
+        "fr": "La résidence d'exception",
+        "en": "The exceptional residence"
+      },
+      "badge": "46 m²",
+      "tagline": {
+        "fr": "La résidence d'exception · 1 chambre",
+        "en": "The exceptional residence · 1 bedroom"
+      },
+      "description": {
+        "fr": "Notre résidence phare. 46 m² qui redéfinissent le standard de l'habitat premium en milieu tropical. Vitrages panoramiques 180° à 360°, domotique intégrée, finitions sur mesure. La référence pour les projets résidentiels et les investisseurs exigeants.",
+        "en": "Our flagship residence. 46 m² that redefine the premium housing standard in a tropical setting. 180°–360° panoramic glazing, integrated home automation, bespoke finishes. The reference for residential projects and demanding investors."
+      },
+      "specs": {
+        "surface": "46 m²",
+        "dimensions": "11,5×4 m",
+        "masse": "10,5 T",
+        "chambres": "1 ch."
+      },
+      "url": "residence-signature.html",
+      "photos": {
+        "cover": "images/signature-ext-bois.png",
+        "exterior": [
+          "images/signature-ext-bois.png",
+          "images/signature-ext-bois-pano.png",
+          "images/signature-ext-metal.png",
+          "images/signature-ext-metal-pano.png"
+        ],
+        "plan": "images/signature-plan.png",
+        "interior": [
+          "images/signature-int-salon-1.jpg",
+          "images/signature-int-salon-2.jpg",
+          "images/signature-int-salon-3.jpg",
+          "images/signature-int-chambre.jpg",
+          "images/signature-int-sdb.jpg"
+        ]
+      }
+    },
+    {
+      "id": "signature-duo",
+      "name": "SIGNATURE DUO",
+      "family": {
+        "fr": "Famille SIGNATURE",
+        "en": "SIGNATURE Family"
+      },
+      "familyTagline": {
+        "fr": "La résidence d'exception",
+        "en": "The exceptional residence"
+      },
+      "badge": "46 m²",
+      "tagline": {
+        "fr": "La résidence familiale ou hôtelière · 2 chambres",
+        "en": "The family or hotel residence · 2 bedrooms"
+      },
+      "description": {
+        "fr": "La version deux chambres de notre résidence phare. Même niveau d'excellence, même signature architecturale — pour accueillir une famille ou maximiser la capacité locative d'un projet hôtelier haut de gamme.",
+        "en": "The two-bedroom version of our flagship residence. Same level of excellence, same architectural signature — to accommodate a family or maximise rental capacity for a premium hotel project."
+      },
+      "specs": {
+        "surface": "46 m²",
+        "dimensions": "11,5×4 m",
+        "masse": "10,5 T",
+        "chambres": "2 ch."
+      },
+      "url": "residence-signature-duo.html",
+      "photos": {
+        "cover": "images/signature-duo-ext-bois.png",
+        "exterior": [
+          "images/signature-duo-ext-bois.png",
+          "images/signature-duo-ext-metal.png"
+        ],
+        "plan": "images/signature-duo-plan.png",
+        "interior": []
+      }
+    }
+  ]
+}

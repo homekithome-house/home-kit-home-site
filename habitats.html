@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nos Habitats — Home Kit Home</title>
+  <meta name="description" content="Découvrez les 6 habitats architecturaux Home Kit Home — de 20 à 46 m², livrés clés en main. Trois familles : ESSENCE, HORIZON, SIGNATURE."/>
+  <meta property="og:title" content="Nos Habitats — Home Kit Home"/>
+  <meta property="og:description" content="Découvrez les 6 habitats architecturaux Home Kit Home — de 20 à 46 m², livrés clés en main."/>
+  <meta property="og:image" content="images/landing-top-slide-img-1.png"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="fr_FR"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap" media="print" onload="this.media='all'"/>
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
+  </noscript>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css"/>
+  <style>
+    /* ── Masthead éditorial — La Collection (pattern proj/corr) ── */
+    .hab-mast{
+      padding:calc(var(--nav-h) + 4.5rem) 2.5rem 3.5rem;
+      background:var(--paper);
+      position:relative;overflow:hidden
+    }
+    .hab-mast__inner{
+      max-width:1240px;margin:0 auto;
+      display:grid;grid-template-columns:1.3fr 1fr;gap:5rem;align-items:end;
+    }
+    .hab-mast__eyebrow{
+      display:flex;align-items:center;gap:1rem;flex-wrap:wrap;
+      font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;
+      text-transform:uppercase;color:var(--copper);margin-bottom:1.8rem
+    }
+    .hab-mast__eyebrow::before{content:'';width:36px;height:1px;background:var(--copper)}
+    .hab-mast__eyebrow .dot{color:rgba(184,115,51,.5);font-size:.5rem}
+    .hab-mast__eyebrow .tag{
+      color:var(--mid);font-family:var(--serif);font-style:italic;
+      letter-spacing:.04em;text-transform:none;font-size:.85rem
+    }
+    .hab-mast h1{
+      font-family:var(--serif);font-weight:400;
+      font-size:clamp(3rem,6.6vw,5.2rem);
+      color:var(--dark);line-height:.98;letter-spacing:-.025em;
+      margin:0 0 1.4rem
+    }
+    .hab-mast h1 em{font-style:italic;color:var(--copper)}
+    .hab-mast__lead{
+      font-family:var(--serif);font-style:italic;font-weight:400;
+      font-size:clamp(1.02rem,1.5vw,1.2rem);
+      color:var(--mid);line-height:1.7;max-width:48ch;margin:0
+    }
+    .hab-mast__meta{
+      display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 2rem;
+      padding:1.4rem 0 0;border-top:1px solid var(--cream-dk)
+    }
+    .hab-mast__meta dt{
+      font-family:var(--sans);font-size:.58rem;letter-spacing:.24em;
+      text-transform:uppercase;color:var(--mid);margin-bottom:.4rem;font-weight:400
+    }
+    .hab-mast__meta dd{
+      font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--dark);margin:0
+    }
+    .hab-mast__numeral{
+      position:absolute;z-index:1;pointer-events:none;
+      right:2.5rem;bottom:-2.6rem;
+      font-family:var(--serif);font-style:italic;font-weight:400;
+      font-size:clamp(9rem,16vw,15rem);line-height:.82;
+      color:var(--copper);opacity:.1;letter-spacing:-.055em
+    }
+    @media(max-width:900px){
+      .hab-mast__inner{grid-template-columns:1fr;gap:2.5rem;align-items:start}
+      .hab-mast__numeral{font-size:clamp(7rem,13vw,10rem);right:1.5rem;bottom:-1.5rem}
+    }
+    @media(max-width:600px){
+      .hab-mast{padding:calc(var(--nav-h) + 2.5rem) 1.5rem 2.5rem}
+    }
+
+    /* ── Nav famille sticky (chips italique cohérents) ── */
+    .family-nav {
+      position: sticky;
+      top: var(--nav-h);
+      background: var(--paper);
+      z-index: 90;
+    }
+    .family-nav__inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 1.1rem 2.5rem;
+      border-top: 1px solid rgba(44,44,40,.1);
+      border-bottom: 1px solid rgba(44,44,40,.1);
+      display: flex;
+      align-items: baseline;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    .family-nav__lbl {
+      font-family: var(--sans);
+      font-size: .58rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-right: 2rem;
+      padding-right: 2rem;
+      border-right: 1px solid var(--cream-dk);
+    }
+    .family-nav__item {
+      background: none;
+      border: none;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--mid);
+      padding: .25rem 1.2rem;
+      letter-spacing: 0;
+      text-transform: none;
+      text-decoration: none;
+      position: relative;
+      transition: color .25s ease;
+    }
+    .family-nav__item:not(:last-child)::after {
+      content: '·';
+      position: absolute;
+      right: -.15rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--cream-dk);
+      font-style: normal;
+    }
+    .family-nav__item:hover { color: var(--dark); }
+    .family-nav__item.active { color: var(--copper); }
+    .family-nav__item.active::before {
+      content: '';
+      position: absolute;
+      bottom: -.15rem;
+      left: 1.2rem;
+      right: 1.2rem;
+      height: 1px;
+      background: var(--copper);
+    }
+    @media(max-width:600px){
+      .family-nav__inner{padding:.9rem 1.5rem}
+      .family-nav__lbl{margin-right:0;padding-right:0;border-right:none;width:100%;margin-bottom:.4rem}
+    }
+
+    /* ── Catalogue wrapper ─────────────────────────────── */
+    .catalogue {
+      background: var(--paper);
+      padding: .5rem 0 4rem;
+    }
+
+    /* ── Séparateur de famille ─────────────────────────── */
+    .family-divider {
+      max-width: 1340px;
+      margin: 5rem auto 1rem;
+      padding: 0 2.5rem;
+    }
+    .family-divider:first-of-type { margin-top: 3rem; }
+    .family-divider__inner {
+      padding: 1.8rem 0 1.4rem;
+      border-bottom: 1px solid var(--cream-dk);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: baseline;
+      gap: 1.6rem 2rem;
+    }
+    .family-divider__num {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+      color: var(--copper);
+      letter-spacing: .01em;
+      line-height: 1;
+    }
+    .family-divider__name {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.6vw, 2.8rem);
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1;
+      letter-spacing: -.022em;
+    }
+    .family-divider__surface {
+      font-family: var(--sans);
+      font-size: .6rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--copper);
+      display: inline-flex;
+      align-items: center;
+      gap: .8rem;
+    }
+    .family-divider__surface::before {
+      content: '';
+      width: 1.2rem;
+      height: 1px;
+      background: var(--copper);
+    }
+    .family-divider__sub {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(.95rem, 1.2vw, 1.05rem);
+      color: var(--mid);
+      letter-spacing: .01em;
+      line-height: 1.3;
+      grid-column: 1 / -1;
+      margin-top: .3rem;
+    }
+    @media(max-width:900px){
+      .family-divider__inner{grid-template-columns:auto 1fr;gap:.8rem 1.4rem}
+      .family-divider__sub{grid-column:1 / -1;margin-top:.3rem}
+    }
+    @media(max-width:600px){
+      .family-divider{padding:0 1.5rem;margin:3rem auto .5rem}
+    }
+
+    /* ── Lien éditorial (CTA) ──────────────────────────── */
+    .editorial__link {
+      font-family: var(--sans);
+      font-size: .7rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--dark);
+      font-weight: 400;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .editorial__link::after {
+      content: '→';
+      color: var(--copper);
+      font-size: .9rem;
+      letter-spacing: 0;
+      transition: transform .3s ease;
+    }
+    .editorial__link:hover::after { transform: translateX(.4rem); }
+
+    /* ════════════════════════════════════════════════
+       HABITAT ITEM — nouveau pattern éditorial commercial
+       ════════════════════════════════════════════════ */
+    .habitat-item{
+      max-width:1340px;margin:4.5rem auto;padding:0 2.5rem;
+      display:grid;grid-template-columns:45fr 55fr;gap:0;
+      background:var(--cream);align-items:stretch;min-height:560px;
+      position:relative;overflow:hidden
+    }
+    .habitat-item__visual{
+      padding:3rem 2.5rem 2rem;
+      display:flex;flex-direction:column;height:100%;
+      position:relative
+    }
+    .habitat-item__img{
+      overflow:hidden;min-height:380px;background:#1A1A16;
+      flex:1 1 auto;position:relative
+    }
+    .habitat-item__img img{
+      width:100%;height:100%;object-fit:cover;
+      transition:transform 1.4s cubic-bezier(.2,.8,.2,1)
+    }
+    .habitat-item:hover .habitat-item__img img{transform:scale(1.025)}
+    .habitat-item__img::after{
+      content:'';position:absolute;inset:0;pointer-events:none;
+      box-shadow:inset 0 0 0 1px rgba(44,44,40,.08)
+    }
+    .habitat-item__img--placeholder{
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:1rem;background:var(--dark2);min-height:380px
+    }
+    .habitat-item__img-ph-name{
+      font-family:var(--serif);font-style:italic;font-size:1.8rem;
+      color:rgba(255,255,255,.18);letter-spacing:.01em
+    }
+    .habitat-item__img-ph-note{
+      font-family:var(--sans);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;
+      color:rgba(255,255,255,.3);text-align:center;padding:0 1.5rem
+    }
+    .habitat-item__caption{
+      font-family:var(--serif);font-style:italic;font-size:.78rem;
+      color:var(--mid);letter-spacing:.015em;
+      padding:1rem 0 0;opacity:.78;flex-shrink:0;
+      display:flex;align-items:baseline;gap:.7rem
+    }
+    .habitat-item__caption::before{
+      content:'';width:1.4rem;height:1px;background:var(--copper);
+      flex-shrink:0;transform:translateY(-.25rem)
+    }
+
+    .habitat-item__body{
+      padding:3.4rem 3.2rem 3.2rem;
+      display:flex;flex-direction:column;gap:1.5rem;
+      justify-content:center
+    }
+    .habitat-item__header{display:flex;flex-direction:column;gap:.7rem}
+    .habitat-item__num{
+      font-family:var(--serif);font-style:italic;
+      font-size:1.05rem;color:var(--copper);letter-spacing:.01em
+    }
+    .habitat-item__name{
+      font-family:var(--serif);font-weight:400;
+      font-size:clamp(2.4rem,3.4vw,3.3rem);
+      color:var(--dark);line-height:1;letter-spacing:-.025em;
+      margin:0
+    }
+    .habitat-item__name em{font-style:italic;color:var(--copper)}
+    .habitat-item__tag{
+      display:inline-flex;align-items:center;gap:.9rem;
+      font-family:var(--sans);font-size:.6rem;letter-spacing:.24em;
+      text-transform:uppercase;color:var(--copper)
+    }
+    .habitat-item__tag::before{
+      content:'';width:1.6rem;height:1px;background:var(--copper)
+    }
+    .habitat-item__tag em{
+      font-family:var(--serif);font-style:italic;font-size:.82rem;
+      letter-spacing:0;text-transform:none;color:var(--dark)
+    }
+
+    .habitat-item__lead{
+      font-family:var(--serif);font-style:italic;font-weight:400;
+      font-size:1.05rem;color:var(--mid);line-height:1.55;
+      margin:0;max-width:44ch
+    }
+    .habitat-item__lead::before{content:'« ';color:var(--copper)}
+    .habitat-item__lead::after{content:' »';color:var(--copper)}
+
+    .habitat-item__specs{
+      display:grid;grid-template-columns:1fr 1fr;gap:1.3rem 2rem;
+      padding:1.4rem 0;margin:0;
+      border-top:1px solid rgba(44,44,40,.1);
+      border-bottom:1px solid rgba(44,44,40,.1)
+    }
+    .habitat-item__spec{margin:0}
+    .habitat-item__spec dt{
+      font-family:var(--sans);font-size:.55rem;letter-spacing:.24em;
+      text-transform:uppercase;color:var(--copper);opacity:.9;
+      margin-bottom:.35rem
+    }
+    .habitat-item__spec dd{
+      font-family:var(--serif);font-size:1.1rem;color:var(--dark);
+      margin:0;letter-spacing:-.005em
+    }
+
+    .habitat-item__fin{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:1.2rem;flex-wrap:wrap;
+      padding:.2rem 0 .3rem
+    }
+    .habitat-item__fin-lbl{
+      display:inline-flex;align-items:center;gap:.6rem;
+      font-family:var(--sans);font-size:.54rem;letter-spacing:.24em;
+      text-transform:uppercase;color:var(--copper);opacity:.85
+    }
+    .habitat-item__fin-lbl em{
+      font-family:var(--serif);font-style:italic;font-size:.78rem;
+      color:var(--mid);opacity:.7;letter-spacing:.02em;text-transform:none
+    }
+    .habitat-item__fin-swatches{display:inline-flex;gap:.7rem;align-items:center}
+    .habitat-item__fin-swatch{
+      position:relative;
+      width:30px;height:30px;border-radius:50%;
+      box-shadow:inset 0 0 0 1px rgba(0,0,0,.06),inset 0 -3px 6px rgba(0,0,0,.08);
+      cursor:default;
+      transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .3s ease
+    }
+    .habitat-item__fin-swatch:hover{
+      transform:scale(1.12);
+      box-shadow:inset 0 0 0 1px rgba(0,0,0,.06),
+                 0 0 0 2px var(--paper),
+                 0 0 0 3px var(--copper)
+    }
+    .habitat-item__fin-swatch[data-fin="zenith"],
+    .habitat-item__fin-swatch[data-fin="pinede"]{background:#C8A878}
+    .habitat-item__fin-swatch[data-fin="pure"],
+    .habitat-item__fin-swatch[data-fin="linea"]{background:#EFEDE6}
+    .habitat-item__fin-swatch::before{
+      content:'';position:absolute;left:50%;transform:translateX(-50%);
+      pointer-events:none
+    }
+    .habitat-item__fin-swatch[data-roof="pitched"]::before{
+      top:7px;width:13px;height:6px;
+      background:rgba(26,26,24,.55);
+      clip-path:polygon(0 100%,50% 0,100% 100%)
+    }
+    .habitat-item__fin-swatch[data-roof="flat"]::before{
+      top:11px;width:11px;height:1.5px;
+      background:rgba(26,26,24,.55);
+      border-radius:1px
+    }
+    .habitat-item__fin-swatch[data-fin="pure"]::before,
+    .habitat-item__fin-swatch[data-fin="linea"]::before{
+      background:rgba(26,26,24,.38)
+    }
+
+    .habitat-item__commercial{
+      display:flex;flex-wrap:wrap;align-items:center;gap:.9rem 2.4rem
+    }
+    .habitat-item__commercial-block{display:flex;flex-direction:column;gap:.25rem}
+    .habitat-item__commercial-lbl{
+      font-family:var(--sans);font-size:.52rem;letter-spacing:.24em;
+      text-transform:uppercase;color:var(--copper);opacity:.85
+    }
+    .habitat-item__commercial-val{
+      font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--dark)
+    }
+    .habitat-item__girardin{
+      display:inline-flex;align-items:center;gap:.55rem;
+      font-family:var(--sans);font-size:.54rem;letter-spacing:.22em;
+      text-transform:uppercase;color:var(--copper);font-weight:400
+    }
+    .habitat-item__girardin::before{
+      content:'';width:.4rem;height:.4rem;background:var(--copper);
+      border-radius:50%;display:inline-block;
+      animation:habPulse 2.4s ease-in-out infinite
+    }
+    @keyframes habPulse{
+      0%,100%{box-shadow:0 0 0 0 rgba(184,115,51,.4)}
+      50%{box-shadow:0 0 0 4px rgba(184,115,51,0)}
+    }
+    .habitat-item__cta{margin-top:.3rem;align-self:flex-start}
+
+    /* ═══ Responsive habitat-item ═══ */
+    @media(max-width:1000px){
+      .habitat-item{grid-template-columns:1fr;margin:2.5rem auto;min-height:auto}
+      .habitat-item__visual{padding:2.4rem 2rem 1.6rem}
+      .habitat-item__body{padding:2.6rem 2rem}
+      .habitat-item__img{min-height:320px}
+    }
+    @media(max-width:600px){
+      .habitat-item{padding:0 1rem;margin:2rem auto}
+      .habitat-item__body{padding:2rem 1.5rem;gap:1.2rem}
+      .habitat-item__visual{padding:2rem 1.5rem 1.4rem}
+      .habitat-item__specs{grid-template-columns:1fr 1fr;gap:1rem 1.4rem}
+      .habitat-item__fin{flex-direction:column;align-items:flex-start;gap:.7rem}
+    }
+
+    /* ── Galerie habitats ─────────────────────────────── */
+    .hab-gallery{background:var(--paper);padding:1rem 0 3rem}
+
+    /* ── Tableau comparatif ────────────────────────────── */
+    .hab-compare{
+      padding:6rem 2.5rem 5rem;
+      background:var(--paper)
+    }
+    .hab-compare__inner{max-width:1340px;margin:0 auto}
+    .hab-compare__head{
+      display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;
+      margin-bottom:3.5rem;padding-bottom:1.4rem;
+      border-bottom:1px solid var(--cream-dk)
+    }
+    .hab-compare__lbl{
+      display:inline-flex;align-items:center;gap:.9rem;
+      font-family:var(--sans);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;
+      color:var(--copper);margin-bottom:.9rem
+    }
+    .hab-compare__lbl::before{
+      content:'';width:1.6rem;height:1px;background:var(--copper)
+    }
+    .hab-compare h2{
+      font-family:var(--serif);font-weight:400;
+      font-size:clamp(1.8rem,2.8vw,2.4rem);
+      color:var(--dark);line-height:1.08;letter-spacing:-.02em;margin:0
+    }
+    .hab-compare h2 em{font-style:italic;color:var(--copper)}
+    .hab-compare__count{
+      font-family:var(--serif);font-style:italic;font-size:.95rem;color:var(--mid);white-space:nowrap
+    }
+
+    .hab-compare-row{
+      display:grid;
+      grid-template-columns:50px 1.4fr 1fr 1fr 1.4fr auto;
+      gap:2rem;align-items:baseline;
+      padding:1.6rem 0;
+      border-bottom:1px solid var(--cream-dk);
+      text-decoration:none;color:inherit;
+      transition:padding-left .4s cubic-bezier(.16,1,.3,1),background .4s ease;
+      position:relative
+    }
+    .hab-compare-row:last-child{border-bottom:none}
+    .hab-compare-row:hover{
+      padding-left:1.2rem;
+      background:linear-gradient(to right,rgba(184,115,51,.03),transparent 60%)
+    }
+    .hab-compare-row__num{
+      font-family:var(--serif);font-style:italic;font-size:1.4rem;
+      color:rgba(44,44,40,.28);line-height:1;letter-spacing:.01em
+    }
+    .hab-compare-row:hover .hab-compare-row__num{color:var(--copper)}
+    .hab-compare-row__name{
+      font-family:var(--serif);font-size:1.3rem;font-weight:400;
+      color:var(--dark);line-height:1.15;letter-spacing:-.012em;margin:0
+    }
+    .hab-compare-row__name em{font-style:italic;color:var(--copper)}
+    .hab-compare-row__name small{
+      display:block;font-family:var(--serif);font-style:italic;font-size:.82rem;
+      color:var(--mid);margin-top:.3rem;letter-spacing:0
+    }
+    .hab-compare-row__surface,
+    .hab-compare-row__config{
+      font-family:var(--serif);font-size:1rem;color:var(--dark);
+      font-style:italic;letter-spacing:-.005em
+    }
+    .hab-compare-row__usage{
+      font-family:var(--sans);font-weight:300;font-size:.88rem;color:var(--mid);
+      line-height:1.55
+    }
+    .hab-compare-row__arrow{
+      font-family:var(--sans);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;
+      color:var(--mid);display:inline-flex;align-items:center;gap:.8rem;
+      transition:color .3s ease
+    }
+    .hab-compare-row__arrow::after{
+      content:'→';color:var(--copper);
+      transition:transform .35s cubic-bezier(.16,1,.3,1)
+    }
+    .hab-compare-row:hover .hab-compare-row__arrow{color:var(--copper)}
+    .hab-compare-row:hover .hab-compare-row__arrow::after{transform:translateX(.4rem)}
+    @media(max-width:900px){
+      .hab-compare{padding:4rem 2rem 3.5rem}
+      .hab-compare__head{grid-template-columns:1fr;gap:1rem}
+      .hab-compare__count{text-align:left}
+      .hab-compare-row{grid-template-columns:40px 1fr;gap:.6rem 1rem;padding:1.2rem 0}
+      .hab-compare-row__surface,
+      .hab-compare-row__config,
+      .hab-compare-row__usage,
+      .hab-compare-row__arrow{grid-column:2}
+      .hab-compare-row__num{grid-row:span 4}
+    }
+    @media(max-width:600px){
+      .hab-compare{padding:3.5rem 1.5rem 3rem}
+    }
+
+    /* ── CTA final (dark + photo overlay, pattern HKH) ── */
+    .hab-cta{
+      padding:7rem 2.5rem;position:relative;overflow:hidden;
+      background:var(--dark);isolation:isolate
+    }
+    .hab-cta__bg{
+      position:absolute;inset:0;z-index:-1;
+      background-size:cover;background-position:center 55%;
+      background-image:url('images/Habitats/Signature/finitions/singnature-zenith.png');
+      opacity:.22;filter:grayscale(.2)
+    }
+    .hab-cta__bg::after{
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(to right,rgba(20,20,18,.9) 0%,rgba(20,20,18,.78) 55%,rgba(20,20,18,.62) 100%)
+    }
+    .hab-cta__inner{
+      max-width:1340px;margin:0 auto;
+      display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center
+    }
+    .hab-cta__lbl{
+      display:inline-flex;align-items:center;gap:.9rem;margin-bottom:1.4rem;
+      font-family:var(--sans);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;
+      color:var(--copper)
+    }
+    .hab-cta__lbl::before{content:'';width:1.6rem;height:1px;background:var(--copper)}
+    .hab-cta h2{
+      font-family:var(--serif);font-weight:400;
+      font-size:clamp(2rem,3.6vw,2.8rem);
+      color:var(--white);line-height:1.08;letter-spacing:-.02em;margin:0
+    }
+    .hab-cta h2 em{font-style:italic;color:var(--copper)}
+    .hab-cta__text{
+      font-family:var(--serif);font-style:italic;font-size:1.05rem;
+      color:rgba(255,255,255,.7);line-height:1.65;margin:0 0 2rem;max-width:46ch
+    }
+    .hab-cta__link{
+      display:inline-flex;align-items:center;gap:1rem;
+      font-family:var(--sans);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;
+      color:var(--white);text-decoration:none;
+      border-top:1px solid rgba(255,255,255,.25);padding-top:1rem;
+      transition:color .3s ease
+    }
+    .hab-cta__link::after{
+      content:'→';color:var(--copper);
+      transition:transform .35s cubic-bezier(.16,1,.3,1)
+    }
+    .hab-cta__link:hover{color:var(--copper)}
+    .hab-cta__link:hover::after{transform:translateX(.4rem)}
+    @media(max-width:900px){
+      .hab-cta__inner{grid-template-columns:1fr;gap:2.2rem}
+    }
+    @media(max-width:600px){
+      .hab-cta{padding:4.5rem 1.5rem}
+    }
+
+    /* ── Family divider (numérotation romaine) ──────────── */
+
+    /* ── Responsive global ─────────────────────────────── */
+    @media(max-width:600px){
+      .catalogue { padding: .5rem 0 3rem; }
+    }
+  </style>
+</head>
+<body>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/nav.js"></script>
+
+<!-- MASTHEAD ÉDITORIAL — LA COLLECTION -->
+<header class="hab-mast">
+  <div class="hab-mast__inner">
+    <div>
+      <div class="hab-mast__eyebrow">
+        <span data-fr="La Collection" data-en="The Collection">La Collection</span>
+        <span class="dot">●</span>
+        <span class="tag" data-fr="Catalogue architectural" data-en="Architectural catalogue">Catalogue architectural</span>
+      </div>
+      <h1 data-fr="Six résidences, <em>trois familles</em>, un seul engagement : livré prêt à vivre." data-en="Six residences, <em>three families</em>, one single promise: delivered ready to live in.">Six résidences, <em>trois familles</em>, un seul engagement : livré prêt à vivre.</h1>
+      <p class="hab-mast__lead" data-fr="Trois manières d&#x2019;habiter, trois échelles de surface &#x2014; pour une résidence principale, un investissement locatif ou une extension hôtelière." data-en="Three ways to live, three scales of surface &#x2014; for a primary residence, a premium rental investment or a hospitality extension.">Trois manières d'habiter, trois échelles de surface — pour une résidence principale, un investissement locatif ou une extension hôtelière.</p>
+    </div>
+
+    <dl class="hab-mast__meta">
+      <div><dt data-fr="Surface" data-en="Surface">Surface</dt><dd data-fr="20 — 46 m²" data-en="20 — 46 m²">20 — 46 m²</dd></div>
+      <div><dt data-fr="Structure" data-en="Structure">Structure</dt><dd data-fr="Acier galvanisé · Pose sur pieux" data-en="Galvanised steel · Pile foundation">Acier galvanisé · Pose sur pieux</dd></div>
+      <div><dt data-fr="Livraison" data-en="Delivery">Livraison</dt><dd data-fr="Monobloc par grue · Clé en main" data-en="Crane monobloc · Turnkey">Monobloc par grue · Clé en main</dd></div>
+      <div><dt data-fr="Certifications" data-en="Certifications">Certifications</dt><dd data-fr="CE · Bureau Veritas en cours" data-en="CE · Bureau Veritas in progress">CE · Bureau Veritas en cours</dd></div>
+    </dl>
+  </div>
+
+  <span class="hab-mast__numeral" aria-hidden="true">06</span>
+</header>
+
+<!-- NAV FAMILLES (sticky) -->
+<nav class="family-nav" aria-label="Familles d'habitats">
+  <div class="family-nav__inner">
+    <span class="family-nav__lbl" data-fr="Familles" data-en="Families">Familles</span>
+    <a href="#essence" class="family-nav__item active" data-fr="Essence" data-en="Essence">Essence</a>
+    <a href="#horizon" class="family-nav__item" data-fr="Horizon" data-en="Horizon">Horizon</a>
+    <a href="#signature" class="family-nav__item" data-fr="Signature" data-en="Signature">Signature</a>
+  </div>
+</nav>
+
+<!-- GALERIE HABITATS -->
+<section class="hab-gallery">
+
+<!-- CATALOGUE -->
+<div class="catalogue">
+
+  <!-- ── FAMILLE I · ESSENCE ── -->
+  <div class="family-divider" id="essence">
+    <div class="family-divider__inner">
+      <span class="family-divider__num">I</span>
+      <h2 class="family-divider__name">ESSENCE</h2>
+      <span class="family-divider__surface">20 m²</span>
+      <p class="family-divider__sub" data-fr="Le compact d'excellence" data-en="The excellence compact">Le compact d'excellence</p>
+    </div>
+  </div>
+
+  <!-- ESSENCE (refonte éditoriale commerciale) -->
+  <article class="habitat-item reveal">
+    <div class="habitat-item__visual">
+      <div class="habitat-item__img">
+        <picture>
+  <source srcset="dist/images/Habitats/Essence/unwatermarked_Gemini_Generated_Image_8xoavn8xoavn8xoa.avif" type="image/avif">
+  <source srcset="dist/images/Habitats/Essence/unwatermarked_Gemini_Generated_Image_8xoavn8xoavn8xoa.webp" type="image/webp">
+  <img src="images/Habitats/Essence/unwatermarked_Gemini_Generated_Image_8xoavn8xoavn8xoa.png" alt="ESSENCE — Résidence architecturale 20 m²" loading="eager" decoding="async"/>
+</picture>
+      </div>
+      <span class="habitat-item__caption" data-fr="ESSENCE · Studio architectural compact" data-en="ESSENCE · Compact architectural studio">ESSENCE · Studio architectural compact</span>
+    </div>
+
+    <div class="habitat-item__body">
+      <div class="habitat-item__header">
+        <span class="habitat-item__num">Nº 01</span>
+        <h3 class="habitat-item__name">ESSENCE</h3>
+        <span class="habitat-item__tag">
+          <span data-fr="Studio compact" data-en="Compact studio">Studio compact</span>
+          <em data-fr="Le compact d'excellence" data-en="The excellence compact">Le compact d'excellence</em>
+        </span>
+      </div>
+
+      <blockquote class="habitat-item__lead" data-fr="20 m² pensés pour ne rien perdre de la finesse — un habitat éco-lodge, une suite indépendante, un refuge premium." data-en="20 m² designed to lose nothing of refinement — an eco-lodge residence, an independent suite, a premium retreat.">20 m² pensés pour ne rien perdre de la finesse — un habitat éco-lodge, une suite indépendante, un refuge premium.</blockquote>
+
+      <dl class="habitat-item__specs">
+        <div class="habitat-item__spec"><dt data-fr="Surface" data-en="Surface">Surface</dt><dd>20 m²</dd></div>
+        <div class="habitat-item__spec"><dt data-fr="Dimensions" data-en="Dimensions">Dimensions</dt><dd>5 × 4 m</dd></div>
+        <div class="habitat-item__spec"><dt data-fr="Masse" data-en="Weight">Masse</dt><dd>4,5 T</dd></div>
+        <div class="habitat-item__spec"><dt data-fr="Hauteur" data-en="Height">Hauteur</dt><dd>3,3 m</dd></div>
+      </dl>
+
+      <div class="habitat-item__fin">
+        <span class="habitat-item__fin-lbl">
+          <span data-fr="Finitions disponibles" data-en="Available finishes">Finitions disponibles</span>
+          <em data-fr="· 4 finitions" data-en="· 4 finishes">· 4 finitions</em>
+        </span>
+        <span class="habitat-item__fin-swatches">
+          <span class="habitat-item__fin-swatch" data-fin="zenith" data-roof="pitched" title="Zénith · bardage clair · toit 2 pans"></span>
+          <span class="habitat-item__fin-swatch" data-fin="pinede" data-roof="flat" title="Pinède · bardage clair · toit plat"></span>
+          <span class="habitat-item__fin-swatch" data-fin="pure" data-roof="pitched" title="Pure · bardage blanc · toit 2 pans"></span>
+          <span class="habitat-item__fin-swatch" data-fin="linea" data-roof="flat" title="Linéa · bardage blanc · toit plat"></span>
+        </span>
+      </div>
+
+      <div class="habitat-item__commercial">
+        <div class="habitat-item__commercial-block">
+          <span class="habitat-item__commercial-lbl" data-fr="Territoire" data-en="Territory">Territoire</span>
+          <span class="habitat-item__commercial-val" data-territory-name>France</span>
+        </div>
+        <div class="habitat-item__commercial-block">
+          <span class="habitat-item__commercial-lbl" data-fr="Livraison" data-en="Delivery">Livraison</span>
+          <span class="habitat-item__commercial-val" data-territory-delay>5–8 semaines</span>
+        </div>
+        <span class="habitat-item__girardin" data-territory-girardin>
+          <span data-fr="Éligible Girardin · " data-en="Girardin eligible · ">Éligible Girardin · </span><span data-territory-girardin-val>39 %</span>
+        </span>
+      </div>
+
+      <a href="residence-essence.html" class="editorial__link habitat-item__cta" data-fr="Découvrir le dossier ESSENCE" data-en="Discover the ESSENCE dossier">Découvrir le dossier ESSENCE</a>
+    </div>
+  </article>
+
+  <!-- ESSENCE + -->
+  <article id="essenceplus" class="habitat-item reveal">
+    <div class="habitat-item__visual">
+      <div class="habitat-item__img">
+        <picture>
+  <source srcset="dist/images/Habitats/Essence +/Finitions/essence-plus-zénith.avif" type="image/avif">
+  <source srcset="dist/images/Habitats/Essence +/Finitions/essence-plus-zénith.webp" type="image/webp">
+  <img src="images/Habitats/Essence +/Finitions/essence-plus-zénith.png" alt="ESSENCE + — Résidence architecturale 20 m² avec kitchenette" loading="lazy" decoding="async"/>
+</picture>
+      </div>
+      <span class="habitat-item__caption" data-fr="ESSENCE + · Studio autonome avec kitchenette intégrée" data-en="ESSENCE + · Autonomous studio with integrated kitchenette">ESSENCE + · Studio autonome avec kitchenette intégrée</span>
+    </div>
+
+    <div class="habitat-item__body">
+      <div class="habitat-item__header">
+        <span class="habitat-item__num">Nº 02</span>
+        <h3 class="habitat-item__name">ESSENCE <em>+</em></h3>
+        <span class="habitat-item__tag">
+          <span data-fr="Studio équipé" data-en="Equipped studio">Studio équipé</span>
+          <em data-fr="L'essentiel autonome" data-en="The autonomous essential">L'essentiel autonome</em>
+        </span>
+      </div>
+
+      <blockquote class="habitat-item__lead" data-fr="L'ESSENCE enrichie d'une kitchenette complète — rien ne dépasse, tout fonctionne, la vie peut commencer à l'arrivée." data-en="The ESSENCE enriched with a full kitchenette — nothing protrudes, everything works, life begins on arrival.">L'ESSENCE enrichie d'une kitchenette complète — rien ne dépasse, tout fonctionne, la vie peut commencer à l'arrivée.</blockquote>
+
+      <dl class="habitat-item__specs">
+        <div class="habitat-item__spec"><dt data-fr="Surface" data-en="Surface">Surface</dt><dd>20 m²</dd></div>
+        <div class="habitat-item__spec"><dt data-fr="Dimensions" data-en="Dimensions">Dimensions</dt><dd>5 × 4 m</dd></div>
+        <div class="habitat-item__spec"><dt data-fr="Masse" data-en="Weight">Masse</dt><dd>4,5 T</dd></div>
+        <div class="habitat-item__spec"><dt data-fr="Kitchenette" data-en="Kitchenette">Kitchenette</dt><dd data-fr="Intégrée" data-en="Integrated">Intégrée</dd></div>
+      </dl>
+
+      <div class="habitat-item__fin">
+        <span class="habitat-item__fin-lbl">
+          <span data-fr="Finitions disponibles" data-en="Available finishes">Finitions disponibles</span>
+          <em data-fr="· 4 finitions" data-en="· 4 finishes">· 4 finitions</em>
+        </span>
+        <span class="habitat-item__fin-swatches">
+          <span class="habitat-item__fin-swatch" data-fin="zenith" data-roof="pitched" title="Zénith · bardage clair · toit 2 pans"></span>
+          <span class="habitat-item__fin-swatch" data-fin="pinede" data-roof="flat" title="Pinède · bardage clair · toit plat"></span>
+          <span class="habitat-item__fin-swatch" data-fin="pure" data-roof="pitched" title="Pure · bardage blanc · toit 2 pans"></span>
+          <span class="habitat-item__fin-swatch" data-fin="linea" data-roof="flat" title="Linéa · bardage blanc · toit plat"></span>
+        </span>
+      </div>
+
+      <div class="habitat-item__commercial">
+        <div class="habitat-item__commercial-block">
+          <span class="habitat-item__commercial-lbl" data-fr="Territoire" data-en="Territory">Territoire</span>
+          <span class="habitat-item__commercial-val" data-territory-name>France</span>
+        </div>
+        <div class="habitat-item__commercial-block">
+          <span class="habitat-item__commercial-lbl" data-fr="Livraison" data-en="Delivery">Livraison</span>
+          <span class="habitat-item__commercial-val" data-territory-delay>5–8 semaines</span>
+        </div>
+        <span class="habitat-item__girardin" data-territory-girardin>
+          <span data-fr="Éligible Girardin · " data-en="Girardin eligible · ">Éligible Girardin · </span><span data-territory-girardin-val>39 %</span>
+        </span>
+      </div>
+
+      <a href="residence-essence-plus.html" class="editorial__link habitat-item__cta" data-fr="Découvrir le dossier ESSENCE +" data-en="Discover the ESSENCE + dossier">Découvrir le dossier ESSENCE +</a>
+    </div>
+  </article>
+
+  <!-- ── FAMILLE II · HORIZON ── -->
+  <div class="family-divider" id="horizon">
+    <div class="family-divider__inner">
+      <span class="family-divider__num">II</span>
+      <h2 class="family-divider__name">HORIZON</h2>
+      <span class="family-divider__surface">36–46 m²</span>
+      <p class="family-divider__sub" data-fr="L'essentiel contemporain" data-en="The contemporary essential">L'essentiel contemporain</p>
+    </div>
+  </div>
+
+  <!-- HORIZON -->
+  <article class="habitat-item reveal">
+    <div class="habitat-item__visual">
+      <div class="habitat-item__img">
+        <picture>
+  <source srcset="dist/images/Habitats/Horizon/finitions/horizon-zenith.avif" type="image/avif">
+  <source srcset="dist/images/Habitats/Horizon/finitions/horizon-zenith.webp" type="image/webp">
+  <img src="images/Habitats/Horizon/finitions/horizon-zenith.png" alt="HORIZON — Résidence architecturale 36 m²" loading="lazy" decoding="async"/>
+</picture>
+      </div>
+      <span class="habitat-item__caption" data-fr="HORIZON · Résidence complète, toiture inclinée signature" data-en="HORIZON · Full residence, signature sloped roofline">HORIZON · Résidence complète, toiture inclinée signature</span>
+    </div>
+
+    <div class="habitat-item__body">
+      <div class="habitat-item__header">
+        <span class="habitat-item__num">Nº 03</span>
+        <h3 class="habitat-item__name">HORIZON</h3>
+        <span class="habitat-item__tag">
+          <span data-fr="Résidence complète" data-en="Full residence">Résidence complète</span>
+          <em data-fr="L'essentiel contemporain" data-en="The contemporary essential">L'essentiel contemporain</em>
+        </span>
+      </div>
+
+      <blockquote class="habitat-item__lead" data-fr="36 m² de volumes baignés de lumière, toiture inclinée distinctive, baies vitrées pleine hauteur — l'habitat qui conjugue confort, style et modernité." data-en="36 m² of volumes bathed in light, distinctive sloped roofline, full-height bay windows — the residence that combines comfort, style and modernity.">36 m² de volumes baignés de lumière, toiture inclinée distinctive, baies vitrées pleine hauteur — l'habitat qui conjugue confort, style et modernité.</blockquote>
+
+      <dl class="habitat-item__specs">
+        <div class="habitat-item__spec"><dt data-fr="Surface" data-en="Surface">Surface</dt><dd>36 m²</dd></div>
+        <div class="habitat-item__spec"><dt data-fr="Dimensions" data-en="Dimensions">Dimensions</dt><dd>9 × 4 m</dd></div>
+        <div class="habitat-item__spec"><dt data-fr="Masse" data-en="Weight">Masse</dt><dd>8 T</dd></div>
+        <div class="habitat-item__spec"><dt data-fr="Hauteur" data-en="Height">Hauteur</dt><dd>2,9 — 3,3 m</dd></div>
+      </dl>
+
+      <div class="habitat-item__fin">
+        <span class="habitat-item__fin-lbl">
+          <span data-fr="Finitions disponibles" data-en="Available finishes">Finitions disponibles</span>
+          <em data-fr="· 4 finitions" data-en="· 4 finishes">· 4 finitions</em>
+        </span>
+        <span class="habitat-item__fin-swatches">
+          <span class="habitat-item__fin-swatch" data-fin="zenith" data-roof="pitched" title="Zénith · bardage clair · toit 2 pans"></span>
+          <span class="habitat-item__fin-swatch" data-fin="pinede" data-roof="flat" title="Pinède · bardage clair · toit plat"></span>
+          <span class="habitat-item__fin-swatch" data-fin="pure" data-roof="pitched" title="Pure · bardage blanc · toit 2 pans"></span>
+          <span class="habitat-item__fin-swatch" data-fin="linea" data-roof="flat" title="Linéa · bardage blanc · toit plat"></span>
+        </span>
+      </div>
+
+      <div class="habitat-item__commercial">
+        <div class="habitat-item__commercial-block">
+          <span class="habitat-item__commercial-lbl" data-fr="Territoire" data-en="Territory">Territoire</span>
+          <span class="habitat-item__commercial-val" data-territory-name>France</span>
+        </div>
+        <div class="habitat-item__commercial-block">
+          <span class="habitat-item__commercial-lbl" data-fr="Livraison" data-en="Delivery">Livraison</span>
+          <span class="habitat-item__commercial-val" data-territory-delay>5–8 semaines</span>
+        </div>
+        <span class="habitat-item__girardin" data-territory-girardin>
+          <span data-fr="Éligible Girardin · " data-en="Girardin eligible · ">Éligible Girardin · </span><span data-territory-girardin-val>39 %</span>
+        </span>
+      </div>
+
+      <a href="residence-horizon.html" class="editorial__link habitat-item__cta" data-fr="Découvrir le dossier HORIZON" data-en="Discover the HORIZON dossier">Découvrir le dossier HORIZON</a>
+    </div>
+  </article>
+
+  <!-- HORIZON T -->
+  <article id="horizont" class="habitat-item reveal">
+    <div class="habitat-item__visual">
+      <div class="habitat-item__img">
+        <picture>
+  <source srcset="dist/images/Habitats/Horizon T/finitions/horizon-t-zenith.avif" type="image/avif">
+  <source srcset="dist/images/Habitats/Horizon T/finitions/horizon-t-zenith.webp" type="image/webp">
+  <img src="images/Habitats/Horizon T/finitions/horizon-t-zenith.png" alt="HORIZON T — Résidence architecturale 46 m² avec terrasse" loading="lazy" decoding="async"/>
+</picture>
+      </div>
+      <span class="habitat-item__caption" data-fr="HORIZON T · Terrasse intégrée, vivre dedans-dehors" data-en="HORIZON T · Integrated terrace, indoor-outdoor living">HORIZON T · Terrasse intégrée, vivre dedans-dehors</span>
+    </div>
+
+    <div class="habitat-item__body">
+      <div class="habitat-item__header">
+        <span class="habitat-item__num">Nº 04</span>
+        <h3 class="habitat-item__name">HORIZON <em>T</em></h3>
+        <span class="habitat-item__tag">
+          <span data-fr="Avec terrasse intégrée" data-en="With integrated terrace">Avec terrasse intégrée</span>
+          <em data-fr="Le vivre dedans-dehors" data-en="Indoor-outdoor living">Le vivre dedans-dehors</em>
+        </span>
+      </div>
+
+      <blockquote class="habitat-item__lead" data-fr="46 m² qui prolongent l'espace de vie vers l'extérieur — la terrasse intégrée fait du site une partie de la résidence." data-en="46 m² that extend the living space outdoors — the integrated terrace makes the site part of the residence.">46 m² qui prolongent l'espace de vie vers l'extérieur — la terrasse intégrée fait du site une partie de la résidence.</blockquote>
+
+      <dl class="habitat-item__specs">
+        <div class="habitat-item__spec"><dt data-fr="Surface" data-en="Surface">Surface</dt><dd>46 m²</dd></div>
+        <div class="habitat-item__spec"><dt data-fr="Dimensions" data-en="Dimensions">Dimensions</dt><dd>11,5 × 4 m</dd></div>
+        <div class="habitat-item__spec"><dt data-fr="Masse" data-en="Weight">Masse</dt><dd>10,5 T</dd></div>
+        <div class="habitat-item__spec"><dt data-fr="Terrasse" data-en="Terrace">Terrasse</dt><dd>+ 10 m²</dd></div>
+      </dl>
+
+      <div class="habitat-item__fin">
+        <span class="habitat-item__fin-lbl">
+          <span data-fr="Finitions disponibles" data-en="Available finishes">Finitions disponibles</span>
+          <em data-fr="· 4 finitions" data-en="· 4 finishes">· 4 finitions</em>
+        </span>
+        <span class="habitat-item__fin-swatches">
+          <span class="habitat-item__fin-swatch" data-fin="zenith" data-roof="pitched" title="Zénith · bardage clair · toit 2 pans"></span>
+          <span class="habitat-item__fin-swatch" data-fin="pinede" data-roof="flat" title="Pinède · bardage clair · toit plat"></span>
+          <span class="habitat-item__fin-swatch" data-fin="pure" data-roof="pitched" title="Pure · bardage blanc · toit 2 pans"></span>
+          <span class="habitat-item__fin-swatch" data-fin="linea" data-roof="flat" title="Linéa · bardage blanc · toit plat"></span>
+        </span>
+      </div>
+
+      <div class="habitat-item__commercial">
+        <div class="habitat-item__commercial-block">
+          <span class="habitat-item__commercial-lbl" data-fr="Territoire" data-en="Territory">Territoire</span>
+          <span class="habitat-item__commercial-val" data-territory-name>France</span>
+        </div>
+        <div class="habitat-item__commercial-block">
+          <span class="habitat-item__commercial-lbl" data-fr="Livraison" data-en="Delivery">Livraison</span>
+          <span class="habitat-item__commercial-val" data-territory-delay>5–8 semaines</span>
+        </div>
+        <span class="habitat-item__girardin" data-territory-girardin>
+          <span data-fr="Éligible Girardin · " data-en="Girardin eligible · ">Éligible Girardin · </span><span data-territory-girardin-val>39 %</span>
+        </span>
+      </div>
+
+      <a href="residence-horizon-t.html" class="editorial__link habitat-item__cta" data-fr="Découvrir le dossier HORIZON T" data-en="Discover the HORIZON T dossier">Découvrir le dossier HORIZON T</a>
+    </div>
+  </article>
+
+  <!-- ── FAMILLE III · SIGNATURE ── -->
+  <div class="family-divider" id="signature">
+    <div class="family-divider__inner">
+      <span class="family-divider__num">III</span>
+      <h2 class="family-divider__name">SIGNATURE</h2>
+      <span class="family-divider__surface">46 m²</span>
+      <p class="family-divider__sub" data-fr="La résidence d'exception" data-en="The exceptional residence">La résidence d'exception</p>
+    </div>
+  </div>
+
+  <!-- SIGNATURE -->
+  <article class="habitat-item reveal">
+    <div class="habitat-item__visual">
+      <div class="habitat-item__img">
+        <picture>
+  <source srcset="dist/images/Habitats/Signature/finitions/singnature-zenith.avif" type="image/avif">
+  <source srcset="dist/images/Habitats/Signature/finitions/singnature-zenith.webp" type="image/webp">
+  <img src="images/Habitats/Signature/finitions/singnature-zenith.png" alt="SIGNATURE — Résidence d'exception 46 m²" loading="lazy" decoding="async"/>
+</picture>
+      </div>
+      <span class="habitat-item__caption" data-fr="SIGNATURE · Résidence d'exception, vitrages panoramiques 180° à 360°" data-en="SIGNATURE · Exceptional residence, 180°–360° panoramic glazing">SIGNATURE · Résidence d'exception, vitrages panoramiques 180° à 360°</span>
+    </div>
+
+    <div class="habitat-item__body">
+      <div class="habitat-item__header">
+        <span class="habitat-item__num">Nº 05</span>
+        <h3 class="habitat-item__name">SIGNATURE</h3>
+        <span class="habitat-item__tag">
+          <span data-fr="Résidence · 1 chambre" data-en="Residence · 1 bedroom">Résidence · 1 chambre</span>
+          <em data-fr="La résidence d'exception" data-en="The exceptional residence">La résidence d'exception</em>
+        </span>
+      </div>
+
+      <blockquote class="habitat-item__lead" data-fr="46 m² qui redéfinissent le standard premium en milieu tropical — vitrages panoramiques, domotique intégrée, finitions sur mesure." data-en="46 m² that redefine the premium standard in a tropical setting — panoramic glazing, integrated home automation, bespoke finishes.">46 m² qui redéfinissent le standard premium en milieu tropical — vitrages panoramiques, domotique intégrée, finitions sur mesure.</blockquote>
+
+      <dl class="habitat-item__specs">
+        <div class="habitat-item__spec"><dt data-fr="Surface" data-en="Surface">Surface</dt><dd>46 m²</dd></div>
+        <div class="habitat-item__spec"><dt data-fr="Dimensions" data-en="Dimensions">Dimensions</dt><dd>11,5 × 4 m</dd></div>
+        <div class="habitat-item__spec"><dt data-fr="Masse" data-en="Weight">Masse</dt><dd>10,5 T</dd></div>
+        <div class="habitat-item__spec"><dt data-fr="Chambre" data-en="Bedroom">Chambre</dt><dd data-fr="1 chambre" data-en="1 bedroom">1 chambre</dd></div>
+      </dl>
+
+      <div class="habitat-item__fin">
+        <span class="habitat-item__fin-lbl">
+          <span data-fr="Finitions disponibles" data-en="Available finishes">Finitions disponibles</span>
+          <em data-fr="· 4 finitions" data-en="· 4 finishes">· 4 finitions</em>
+        </span>
+        <span class="habitat-item__fin-swatches">
+          <span class="habitat-item__fin-swatch" data-fin="zenith" data-roof="pitched" title="Zénith · bardage clair · toit 2 pans"></span>
+          <span class="habitat-item__fin-swatch" data-fin="pinede" data-roof="flat" title="Pinède · bardage clair · toit plat"></span>
+          <span class="habitat-item__fin-swatch" data-fin="pure" data-roof="pitched" title="Pure · bardage blanc · toit 2 pans"></span>
+          <span class="habitat-item__fin-swatch" data-fin="linea" data-roof="flat" title="Linéa · bardage blanc · toit plat"></span>
+        </span>
+      </div>
+
+      <div class="habitat-item__commercial">
+        <div class="habitat-item__commercial-block">
+          <span class="habitat-item__commercial-lbl" data-fr="Territoire" data-en="Territory">Territoire</span>
+          <span class="habitat-item__commercial-val" data-territory-name>France</span>
+        </div>
+        <div class="habitat-item__commercial-block">
+          <span class="habitat-item__commercial-lbl" data-fr="Livraison" data-en="Delivery">Livraison</span>
+          <span class="habitat-item__commercial-val" data-territory-delay>5–8 semaines</span>
+        </div>
+        <span class="habitat-item__girardin" data-territory-girardin>
+          <span data-fr="Éligible Girardin · " data-en="Girardin eligible · ">Éligible Girardin · </span><span data-territory-girardin-val>39 %</span>
+        </span>
+      </div>
+
+      <a href="residence-signature.html" class="editorial__link habitat-item__cta" data-fr="Découvrir le dossier SIGNATURE" data-en="Discover the SIGNATURE dossier">Découvrir le dossier SIGNATURE</a>
+    </div>
+  </article>
+
+  <!-- SIGNATURE DUO -->
+  <article id="signatureduo" class="habitat-item reveal">
+    <div class="habitat-item__visual">
+      <div class="habitat-item__img habitat-item__img--placeholder">
+        <span class="habitat-item__img-ph-name">SIGNATURE DUO</span>
+        <span class="habitat-item__img-ph-note" data-fr="Visuel en cours de production" data-en="Visual in production">Visuel en cours de production</span>
+      </div>
+      <span class="habitat-item__caption" data-fr="SIGNATURE DUO · Résidence phare, version deux chambres" data-en="SIGNATURE DUO · Flagship residence, two-bedroom version">SIGNATURE DUO · Résidence phare, version deux chambres</span>
+    </div>
+
+    <div class="habitat-item__body">
+      <div class="habitat-item__header">
+        <span class="habitat-item__num">Nº 06</span>
+        <h3 class="habitat-item__name">SIGNATURE <em>DUO</em></h3>
+        <span class="habitat-item__tag">
+          <span data-fr="Résidence · 2 chambres" data-en="Residence · 2 bedrooms">Résidence · 2 chambres</span>
+          <em data-fr="La capacité locative maximale" data-en="Maximum rental capacity">La capacité locative maximale</em>
+        </span>
+      </div>
+
+      <blockquote class="habitat-item__lead" data-fr="La SIGNATURE en deux chambres — même exigence architecturale, capacité doublée, pour une famille ou un investissement locatif maximisé." data-en="The SIGNATURE in two bedrooms — same architectural standard, doubled capacity, for a family or maximised rental investment.">La SIGNATURE en deux chambres — même exigence architecturale, capacité doublée, pour une famille ou un investissement locatif maximisé.</blockquote>
+
+      <dl class="habitat-item__specs">
+        <div class="habitat-item__spec"><dt data-fr="Surface" data-en="Surface">Surface</dt><dd>46 m²</dd></div>
+        <div class="habitat-item__spec"><dt data-fr="Dimensions" data-en="Dimensions">Dimensions</dt><dd>11,5 × 4 m</dd></div>
+        <div class="habitat-item__spec"><dt data-fr="Masse" data-en="Weight">Masse</dt><dd>10,5 T</dd></div>
+        <div class="habitat-item__spec"><dt data-fr="Chambres" data-en="Bedrooms">Chambres</dt><dd data-fr="2 chambres" data-en="2 bedrooms">2 chambres</dd></div>
+      </dl>
+
+      <div class="habitat-item__fin">
+        <span class="habitat-item__fin-lbl">
+          <span data-fr="Finitions disponibles" data-en="Available finishes">Finitions disponibles</span>
+          <em data-fr="· 4 finitions" data-en="· 4 finishes">· 4 finitions</em>
+        </span>
+        <span class="habitat-item__fin-swatches">
+          <span class="habitat-item__fin-swatch" data-fin="zenith" data-roof="pitched" title="Zénith · bardage clair · toit 2 pans"></span>
+          <span class="habitat-item__fin-swatch" data-fin="pinede" data-roof="flat" title="Pinède · bardage clair · toit plat"></span>
+          <span class="habitat-item__fin-swatch" data-fin="pure" data-roof="pitched" title="Pure · bardage blanc · toit 2 pans"></span>
+          <span class="habitat-item__fin-swatch" data-fin="linea" data-roof="flat" title="Linéa · bardage blanc · toit plat"></span>
+        </span>
+      </div>
+
+      <div class="habitat-item__commercial">
+        <div class="habitat-item__commercial-block">
+          <span class="habitat-item__commercial-lbl" data-fr="Territoire" data-en="Territory">Territoire</span>
+          <span class="habitat-item__commercial-val" data-territory-name>France</span>
+        </div>
+        <div class="habitat-item__commercial-block">
+          <span class="habitat-item__commercial-lbl" data-fr="Livraison" data-en="Delivery">Livraison</span>
+          <span class="habitat-item__commercial-val" data-territory-delay>5–8 semaines</span>
+        </div>
+        <span class="habitat-item__girardin" data-territory-girardin>
+          <span data-fr="Éligible Girardin · " data-en="Girardin eligible · ">Éligible Girardin · </span><span data-territory-girardin-val>39 %</span>
+        </span>
+      </div>
+
+      <a href="residence-signature-duo.html" class="editorial__link habitat-item__cta" data-fr="Découvrir le dossier SIGNATURE DUO" data-en="Discover the SIGNATURE DUO dossier">Découvrir le dossier SIGNATURE DUO</a>
+    </div>
+  </article>
+
+</div><!-- /catalogue -->
+
+</section><!-- /hab-gallery -->
+
+<!-- TABLEAU COMPARATIF — les 6 habitats en un coup d'œil -->
+<section class="hab-compare reveal">
+  <div class="hab-compare__inner">
+  <div class="hab-compare__head">
+    <div>
+      <span class="hab-compare__lbl" data-fr="Comparatif" data-en="Comparison">Comparatif</span>
+      <h2 data-fr="Les six habitats <em>en un coup d'œil</em>." data-en="All six residences <em>at a glance</em>.">Les six habitats <em>en un coup d'œil</em>.</h2>
+    </div>
+    <span class="hab-compare__count" data-fr="Nº 01 — 06 · 6 modèles" data-en="Nº 01 — 06 · 6 models">Nº 01 — 06 · 6 modèles</span>
+  </div>
+
+  <a href="#essence" class="hab-compare-row">
+    <span class="hab-compare-row__num">01</span>
+    <h3 class="hab-compare-row__name">ESSENCE<small data-fr="Le compact d'excellence" data-en="The excellence compact">Le compact d'excellence</small></h3>
+    <span class="hab-compare-row__surface">20 m²</span>
+    <span class="hab-compare-row__config" data-fr="Studio compact" data-en="Compact studio">Studio compact</span>
+    <span class="hab-compare-row__usage" data-fr="Éco-lodge, suite indépendante, refuge premium" data-en="Eco-lodge, independent suite, premium retreat">Éco-lodge, suite indépendante, refuge premium</span>
+    <span class="hab-compare-row__arrow" data-fr="Voir" data-en="View">Voir</span>
+  </a>
+
+  <a href="#essenceplus" class="hab-compare-row">
+    <span class="hab-compare-row__num">02</span>
+    <h3 class="hab-compare-row__name">ESSENCE <em>+</em><small data-fr="L'essentiel autonome" data-en="The autonomous essential">L'essentiel autonome</small></h3>
+    <span class="hab-compare-row__surface">20 m²</span>
+    <span class="hab-compare-row__config" data-fr="Studio + kitchenette" data-en="Studio + kitchenette">Studio + kitchenette</span>
+    <span class="hab-compare-row__usage" data-fr="Résidence autonome, location courte durée" data-en="Autonomous residence, short-term rental">Résidence autonome, location courte durée</span>
+    <span class="hab-compare-row__arrow" data-fr="Voir" data-en="View">Voir</span>
+  </a>
+
+  <a href="#horizon" class="hab-compare-row">
+    <span class="hab-compare-row__num">03</span>
+    <h3 class="hab-compare-row__name">HORIZON<small data-fr="L'essentiel contemporain" data-en="The contemporary essential">L'essentiel contemporain</small></h3>
+    <span class="hab-compare-row__surface">36 m²</span>
+    <span class="hab-compare-row__config" data-fr="Résidence complète" data-en="Full residence">Résidence complète</span>
+    <span class="hab-compare-row__usage" data-fr="Résidentiel, investissement locatif familial" data-en="Residential, family rental investment">Résidentiel, investissement locatif familial</span>
+    <span class="hab-compare-row__arrow" data-fr="Voir" data-en="View">Voir</span>
+  </a>
+
+  <a href="#horizont" class="hab-compare-row">
+    <span class="hab-compare-row__num">04</span>
+    <h3 class="hab-compare-row__name">HORIZON <em>T</em><small data-fr="Le vivre dedans-dehors" data-en="Indoor-outdoor living">Le vivre dedans-dehors</small></h3>
+    <span class="hab-compare-row__surface">46 m²</span>
+    <span class="hab-compare-row__config" data-fr="+ Terrasse intégrée" data-en="+ Integrated terrace">+ Terrasse intégrée</span>
+    <span class="hab-compare-row__usage" data-fr="Hôtellerie, site naturel, location premium" data-en="Hospitality, natural site, premium rental">Hôtellerie, site naturel, location premium</span>
+    <span class="hab-compare-row__arrow" data-fr="Voir" data-en="View">Voir</span>
+  </a>
+
+  <a href="#signature" class="hab-compare-row">
+    <span class="hab-compare-row__num">05</span>
+    <h3 class="hab-compare-row__name">SIGNATURE<small data-fr="La résidence d'exception" data-en="The exceptional residence">La résidence d'exception</small></h3>
+    <span class="hab-compare-row__surface">46 m²</span>
+    <span class="hab-compare-row__config" data-fr="Résidence · 1 chambre" data-en="Residence · 1 bedroom">Résidence · 1 chambre</span>
+    <span class="hab-compare-row__usage" data-fr="Premium résidentiel, pied-à-terre tropical" data-en="Premium residential, tropical pied-à-terre">Premium résidentiel, pied-à-terre tropical</span>
+    <span class="hab-compare-row__arrow" data-fr="Voir" data-en="View">Voir</span>
+  </a>
+
+  <a href="#signatureduo" class="hab-compare-row">
+    <span class="hab-compare-row__num">06</span>
+    <h3 class="hab-compare-row__name">SIGNATURE <em>DUO</em><small data-fr="La capacité locative maximale" data-en="Maximum rental capacity">La capacité locative maximale</small></h3>
+    <span class="hab-compare-row__surface">46 m²</span>
+    <span class="hab-compare-row__config" data-fr="Résidence · 2 chambres" data-en="Residence · 2 bedrooms">Résidence · 2 chambres</span>
+    <span class="hab-compare-row__usage" data-fr="Famille, projet locatif haut de gamme" data-en="Family, premium rental project">Famille, projet locatif haut de gamme</span>
+    <span class="hab-compare-row__arrow" data-fr="Voir" data-en="View">Voir</span>
+  </a>
+  </div><!-- /hab-compare__inner -->
+</section>
+
+<!-- CTA FINAL — dark + photo overlay -->
+<section class="hab-cta reveal">
+  <div class="hab-cta__bg"></div>
+  <div class="hab-cta__inner">
+    <div>
+      <span class="hab-cta__lbl" data-fr="Votre projet" data-en="Your project">Votre projet</span>
+      <h2 data-fr="Votre terrain mérite <em>mieux</em> qu'un catalogue." data-en="Your land deserves <em>more</em> than a catalogue.">Votre terrain mérite <em>mieux</em> qu'un catalogue.</h2>
+    </div>
+    <div>
+      <p class="hab-cta__text" data-fr="Parlez-nous du site, du budget, du territoire et de l'usage. Nous étudions l'implantation et proposons le modèle le plus adapté à votre projet." data-en="Tell us about the site, budget, territory and use. We study the siting and propose the model best suited to your project.">Parlez-nous du site, du budget, du territoire et de l'usage. Nous étudions l'implantation et proposons le modèle le plus adapté à votre projet.</p>
+      <a href="contact.html" class="hab-cta__link" data-fr="Démarrer mon projet" data-en="Start my project">Démarrer mon projet</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+const _io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){_io.observe(el);});
+</script>
+
+<script>
+/* ─── Territory sync (listens to global nav dropdown) ─── */
+(function(){
+  const TERRITORIES = {
+    france:        { fr:'France',        en:'France',        girardin:null,   delayFr:'5–8 semaines',   delayEn:'5–8 weeks'   },
+    guadeloupe:    { fr:'Guadeloupe',    en:'Guadeloupe',    girardin:'39 %', delayFr:'10–14 semaines', delayEn:'10–14 weeks' },
+    martinique:    { fr:'Martinique',    en:'Martinique',    girardin:'39 %', delayFr:'10–14 semaines', delayEn:'10–14 weeks' },
+    'saint-martin':{ fr:'Saint-Martin',  en:'Saint-Martin',  girardin:'39 %', delayFr:'10–14 semaines', delayEn:'10–14 weeks' },
+    guyane:        { fr:'Guyane',        en:'Guiana',        girardin:'39 %', delayFr:'8–12 semaines',  delayEn:'8–12 weeks'  }
+  };
+
+  function getLang(){ return localStorage.getItem('hkh-lang') || 'fr'; }
+  function getTerritory(){ return localStorage.getItem('hkh-territory') || 'france'; }
+
+  function applyTerritory(key){
+    const data = TERRITORIES[key] || TERRITORIES.france;
+    const lang = getLang();
+    document.body.setAttribute('data-territory', key);
+
+    document.querySelectorAll('[data-territory-name]').forEach(function(el){
+      el.textContent = lang === 'en' ? data.en : data.fr;
+    });
+
+    document.querySelectorAll('[data-territory-delay]').forEach(function(el){
+      el.textContent = lang === 'en' ? data.delayEn : data.delayFr;
+    });
+
+    document.querySelectorAll('[data-territory-girardin]').forEach(function(el){
+      if(data.girardin){
+        el.style.display = '';
+        const valEl = el.querySelector('[data-territory-girardin-val]');
+        if(valEl) valEl.textContent = data.girardin;
+      } else {
+        el.style.display = 'none';
+      }
+    });
+  }
+
+  applyTerritory(getTerritory());
+
+  window.addEventListener('hkh:territory-changed', function(e){
+    applyTerritory((e.detail && e.detail.territory) || getTerritory());
+  });
+  window.addEventListener('hkh:lang-changed', function(){
+    applyTerritory(getTerritory());
+  });
+})();
+</script>
+<script>
+(function(){
+  var families = ['essence','horizon','signature'];
+  var navItems = document.querySelectorAll('.family-nav__item');
+  function setActive(id){
+    navItems.forEach(function(a){
+      a.classList.toggle('active', a.getAttribute('href')==='#'+id);
+    });
+  }
+  function updateActive(){
+    var threshold = window.scrollY + window.innerHeight * 0.35;
+    var current = families[0];
+    families.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el && el.getBoundingClientRect().top + window.scrollY <= threshold) current = id;
+    });
+    setActive(current);
+  }
+  window.addEventListener('scroll', updateActive, {passive:true});
+  updateActive();
+})();
+</script>
+<script>
+fetch('partials/footer-simple.html')
+  .then(function(r){ if(!r.ok) throw new Error(); return r.text(); })
+  .then(function(h){
+    document.getElementById('footer-placeholder').innerHTML=h;
+    if(window.applyLang)window.applyLang(localStorage.getItem('hkh-lang')||'fr');
+  })
+  .catch(function(){
+    document.getElementById('footer-placeholder').innerHTML=
+      '<footer style="padding:2rem;text-align:center;font-size:.8rem;color:#6B6660">© Home Kit Home — contact@home-kit-home.com</footer>';
+  });
+</script>
+
+</body>
+</html>

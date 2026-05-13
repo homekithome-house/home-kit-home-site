@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Home Kit Home</title>
+  <meta name="description" content="Contact Home Kit Home — démarrez votre projet d'habitat architectural. Une réponse personnelle sous 48 heures ouvrées. Antilles, Guyane, France."/>
+  <meta property="og:title" content="Contact — Home Kit Home"/>
+  <meta property="og:description" content="Démarrez votre projet d'habitat architectural Home Kit Home — réponse sous 48h."/>
+  <meta property="og:image" content="images/landing-top-slide-img-1.png"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="fr_FR"/>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="assets/css/animations.css"/>
+<style>
+/* ════════════════════════════════════════════════
+   CONTACT — bureau de Sainte-Anne, Guadeloupe
+   ════════════════════════════════════════════════ */
+
+/* ── Masthead ──────────────────────────────── */
+.corr-mast{
+  padding:calc(var(--nav-h) + 4.5rem) 2.5rem 2rem;
+  background:var(--paper);
+}
+.corr-mast__inner{
+  max-width:1240px;margin:0 auto;
+  display:grid;grid-template-columns:1.3fr 1fr;gap:5rem;align-items:end;
+}
+.corr-mast__eyebrow{
+  display:flex;align-items:center;gap:1rem;flex-wrap:wrap;
+  font-family:var(--sans);font-size:.62rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--copper-text-light);margin-bottom:1.8rem;
+}
+.corr-mast__eyebrow::before{content:'';width:36px;height:1px;background:var(--copper-text-light)}
+.corr-mast__eyebrow .dot{color:rgba(154,90,30,.5);font-size:.5rem}
+.corr-mast__eyebrow .bureau{
+  color:var(--mid);font-family:var(--serif);font-style:italic;
+  letter-spacing:.04em;text-transform:none;font-size:.85rem;
+}
+.corr-mast h1{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(3rem,6vw,5rem);
+  color:var(--dark);line-height:1.0;letter-spacing:-.025em;
+  margin:0 0 1.4rem;
+}
+.corr-mast h1 em{font-style:italic;color:var(--copper)}
+.corr-mast__sub{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(1.02rem,1.5vw,1.2rem);
+  color:var(--mid);line-height:1.7;max-width:48ch;margin:0;
+}
+.corr-mast__meta{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 2rem;
+  padding:1.4rem 0 0;border-top:1px solid var(--cream-dk);
+}
+.corr-mast__meta dt{
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--mid);margin-bottom:.4rem;font-weight:400;
+}
+.corr-mast__meta dd{
+  font-family:var(--serif);font-style:italic;font-size:1rem;
+  color:var(--dark);margin:0;
+}
+/* ── Layout principal ──────────────────────── */
+.corr-body{
+  max-width:1240px;margin:0 auto;
+  padding:5rem 2.5rem 6rem;
+  background:var(--white);
+  display:grid;grid-template-columns:1.15fr 1fr;gap:6rem;
+}
+
+/* ════════ FORM SIDE ════════ */
+.corr-form-side{min-width:0}
+.corr-form-side h2{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(1.9rem,3vw,2.6rem);
+  color:var(--dark);line-height:1.08;letter-spacing:-.02em;
+  margin:0 0 1rem;max-width:18ch;
+}
+.corr-form-side h2 em{font-style:italic;color:var(--copper)}
+.corr-form-side__intro{
+  font-family:var(--serif);font-style:italic;
+  font-size:1.02rem;color:var(--mid);line-height:1.65;
+  margin:0 0 3rem;max-width:46ch;
+}
+
+/* Form — underline only */
+.corr-form{display:flex;flex-direction:column;gap:2rem}
+.corr-form__row{
+  display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;
+}
+.corr-fld{display:flex;flex-direction:column;gap:.4rem;position:relative}
+
+.corr-fld label{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--mid);font-weight:400;
+}
+.corr-fld label em{
+  font-style:italic;color:var(--copper-text-light);text-transform:none;
+  letter-spacing:.04em;font-family:var(--serif);font-size:.85rem;
+  margin-left:.4rem;
+}
+
+.corr-fld input,
+.corr-fld select,
+.corr-fld textarea{
+  width:100%;
+  background:transparent;border:none;
+  border-bottom:1px solid var(--cream-dk);
+  padding:.75rem 0;
+  font-family:var(--serif);font-size:1.05rem;
+  color:var(--dark);outline:none;
+  transition:border-color .25s ease;
+  border-radius:0;
+}
+.corr-fld input::placeholder,
+.corr-fld textarea::placeholder{
+  color:var(--mid);font-style:italic;opacity:.6;
+}
+.corr-fld input:focus,
+.corr-fld select:focus,
+.corr-fld textarea:focus{
+  border-bottom-color:var(--copper);
+}
+.corr-fld textarea{
+  resize:vertical;min-height:120px;line-height:1.7;
+}
+.corr-fld select{
+  appearance:none;-webkit-appearance:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='none' stroke='%23B87333' stroke-width='1.2' d='M1 1.5l5 5 5-5'/></svg>");
+  background-repeat:no-repeat;background-position:right .3rem center;
+  padding-right:1.8rem;cursor:pointer;
+}
+
+/* Submit button — editorial arrow */
+.corr-submit{
+  align-self:flex-start;
+  font-family:var(--sans);font-size:.72rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--dark);
+  background:none;border:none;font-weight:400;
+  padding:1.2rem 0 .9rem;margin-top:1rem;
+  border-top:1px solid rgba(44,44,40,.2);
+  display:inline-flex;align-items:center;gap:1.2rem;
+  cursor:pointer;transition:color .25s ease;
+}
+.corr-submit::after{content:'→';color:var(--copper);transition:transform .3s ease;font-size:1rem}
+.corr-submit:hover{color:var(--copper)}
+.corr-submit:hover::after{transform:translateX(.5rem)}
+
+.corr-success{
+  display:none;
+  margin-top:1.5rem;padding:1.2rem 0;
+  border-top:1px solid var(--copper);
+  font-family:var(--serif);font-style:italic;font-size:1rem;
+  color:var(--dark);
+}
+.corr-success.is-visible{display:block}
+.corr-success::before{content:'— ';color:var(--copper)}
+
+/* ── Case à cocher rappel (style éditorial minimal) ── */
+.corr-check{
+  display:flex;align-items:center;gap:.9rem;
+  cursor:pointer;user-select:none;
+  font-family:var(--sans);font-size:.7rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--mid);
+  padding:.5rem 0;
+}
+.corr-check input{
+  position:absolute;opacity:0;pointer-events:none;
+  width:1px;height:1px;
+}
+.corr-check__box{
+  width:18px;height:18px;
+  border:1px solid var(--cream-dk);
+  background:transparent;
+  display:flex;align-items:center;justify-content:center;
+  transition:border-color .25s ease;
+  flex-shrink:0;
+}
+.corr-check__box::after{
+  content:'';width:8px;height:8px;
+  background:var(--copper);
+  opacity:0;transition:opacity .2s ease;
+}
+.corr-check:hover .corr-check__box,
+.corr-check input:focus-visible + .corr-check__box{border-color:var(--copper)}
+.corr-check input:checked + .corr-check__box{border-color:var(--copper)}
+.corr-check input:checked + .corr-check__box::after{opacity:1}
+.corr-check input:checked ~ .corr-check__txt{color:var(--dark)}
+
+/* Astérisque téléphone visible quand rappel est coché */
+.req-rappel{display:none}
+.corr-form.has-rappel .req-rappel{display:inline}
+
+/* ════════ INFO SIDE ════════ */
+.corr-info-side{display:flex;flex-direction:column;gap:3rem}
+
+.corr-info__portrait{
+  width:100%;aspect-ratio:4/5;overflow:hidden;
+  background:var(--cream);
+}
+.corr-info__portrait img{
+  width:100%;height:100%;object-fit:cover;
+  filter:saturate(.92);
+}
+.corr-info__caption{
+  font-family:var(--serif);font-style:italic;
+  font-size:.82rem;color:var(--mid);line-height:1.55;
+  margin:.8rem 0 0;
+  padding-left:1rem;border-left:1px solid var(--cream-dk);
+}
+
+/* Coordonnées en liste éditoriale */
+.corr-coords{margin:0;padding:0}
+.corr-coords__head{
+  font-family:var(--sans);font-size:.62rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--copper-text-light);font-weight:400;
+  padding-bottom:1rem;margin-bottom:0;
+  border-bottom:1px solid var(--cream-dk);
+}
+.corr-coords dl{margin:0;padding:0}
+.corr-coords__row{
+  display:grid;grid-template-columns:110px 1fr;gap:1.5rem;
+  align-items:baseline;
+  padding:1.1rem 0;
+  border-bottom:1px solid var(--cream-dk);
+}
+.corr-coords__row dt{
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--mid);font-weight:400;
+}
+.corr-coords__row dd{
+  font-family:var(--serif);font-size:1rem;color:var(--dark);
+  line-height:1.55;margin:0;
+}
+.corr-coords__row dd a{color:var(--dark);text-decoration:none;transition:color .25s ease}
+.corr-coords__row dd a:hover{color:var(--copper)}
+.corr-coords__row dd em{
+  font-style:italic;color:var(--mid);font-size:.85rem;
+  display:block;margin-top:.2rem;
+}
+
+/* ── Responsive ────────────────────────────── */
+@media(max-width:1100px){
+  .corr-body{gap:4rem}
+}
+
+@media(max-width:900px){
+  .corr-mast__inner{grid-template-columns:1fr;gap:2.5rem;align-items:start}
+  .corr-body{grid-template-columns:1fr;gap:4rem;padding:4rem 1.5rem 5rem}
+  .corr-info__portrait{aspect-ratio:16/10}
+  .corr-form__row{grid-template-columns:1fr;gap:2rem}
+}
+@media(max-width:600px){
+  .corr-mast{padding:calc(var(--nav-h) + 2.5rem) 1.5rem 2.5rem}
+  .corr-coords__row{grid-template-columns:1fr;gap:.3rem}
+}
+
+/* Reveal tab-safe */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease-out,transform .7s ease-out}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+
+/* ── Bureau — tampon avant footer (encart cream cadré avec respiration paper) ───────────── */
+.corr-bureau{
+  background:var(--paper);
+  padding:5rem 2.5rem;
+}
+.corr-bureau__inner{
+  max-width:1240px;margin:0 auto;
+  background:var(--cream);
+  padding:5rem 3.5rem;
+  text-align:center;
+}
+.corr-bureau__lbl{
+  font-family:var(--sans);font-size:.62rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--copper-text-light);
+  display:inline-block;
+  border-top:1px solid rgba(154,90,30,.3);
+  padding-top:1rem;margin-bottom:1.8rem;
+}
+.corr-bureau__q{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(1.7rem,2.6vw,2.2rem);
+  color:var(--dark);line-height:1.1;letter-spacing:-.02em;
+  margin:0 0 3rem;
+}
+.corr-bureau__q em{font-style:italic;color:var(--copper)}
+.corr-bureau__phones{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:0;align-items:center;
+  max-width:760px;margin:0 auto 2rem;
+  position:relative;
+}
+.corr-bureau__phones::after{
+  content:'';position:absolute;top:50%;left:50%;
+  width:1px;height:60%;
+  background:rgba(154,90,30,.3);
+  transform:translate(-50%,-50%);
+}
+.corr-bureau__phone{
+  display:flex;flex-direction:column;gap:.6rem;
+  padding:1rem 2rem;
+}
+.corr-bureau__phone-lbl{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--mid);font-weight:400;
+}
+.corr-bureau__phone-num{
+  font-family:var(--serif);font-size:clamp(1.3rem,2vw,1.7rem);
+  color:var(--dark);text-decoration:none;line-height:1;
+  letter-spacing:-.01em;transition:color .25s ease;
+}
+.corr-bureau__phone-num:hover{color:var(--copper)}
+.corr-bureau__hours{
+  font-family:var(--serif);font-style:italic;
+  font-size:.95rem;color:var(--mid);line-height:1.55;
+  margin:0;
+}
+@media(max-width:600px){
+  .corr-bureau{padding:3.5rem 1.5rem}
+  .corr-bureau__inner{padding:3rem 1.8rem}
+  .corr-bureau__phones{grid-template-columns:1fr;gap:2rem;max-width:none}
+  .corr-bureau__phones::after{display:none}
+  .corr-bureau__phone{padding:1.5rem 0;border-top:1px solid var(--cream-dk)}
+  .corr-bureau__phone:first-child{border-top:none}
+}
+</style>
+</head>
+<body>
+<script src="assets/js/i18n.js" defer></script>
+<script src="assets/js/nav.js" defer></script>
+
+<!-- ═══ MASTHEAD ═══════════════════════════════ -->
+<header class="corr-mast">
+  <div class="corr-mast__inner">
+    <div>
+      <div class="corr-mast__eyebrow">
+        <span data-fr="Contact" data-en="Contact">Contact</span>
+        <span class="dot">●</span>
+        <span class="bureau" data-fr="France · Antilles · Guyane" data-en="France · French West Indies · Guiana">France · Antilles · Guyane</span>
+      </div>
+      <h1 data-fr="Parlons de votre <em>projet</em>." data-en="Let's talk about your <em>project</em>.">Parlons de votre <em>projet</em>.</h1>
+      <p class="corr-mast__sub" data-fr="Une réponse personnelle sous 48 heures ouvrées — Antilles, Guyane, France." data-en="A personal reply within 48 working hours — Antilles, Guiana, France.">Une réponse personnelle sous 48 heures ouvrées — Antilles, Guyane, France.</p>
+    </div>
+    <dl class="corr-mast__meta">
+      <div><dt data-fr="Réponse" data-en="Reply">Réponse</dt><dd data-fr="Sous 48 h ouvrées" data-en="Within 48 working hours">Sous 48 h ouvrées</dd></div>
+      <div><dt data-fr="Devis" data-en="Quote">Devis</dt><dd data-fr="Gratuit · Sans engagement" data-en="Free · No commitment">Gratuit · Sans engagement</dd></div>
+      <div><dt data-fr="Délai projet" data-en="Project lead time">Délai projet</dt><dd data-fr="3 à 6 mois · étude → pose" data-en="3 to 6 months · study → install">3 à 6 mois · étude → pose</dd></div>
+      <div><dt data-fr="Couverture" data-en="Coverage">Couverture</dt><dd data-fr="France · Antilles · Guyane" data-en="France · French West Indies · Guiana">France · Antilles · Guyane</dd></div>
+    </dl>
+  </div>
+</header>
+
+<!-- ═══ BODY : FORM + INFO ═══════════════════ -->
+<div class="corr-body">
+
+  <!-- ── FORM SIDE ─────────────────── -->
+  <section class="corr-form-side reveal">
+    <h2 data-fr="Démarrez votre <em>projet</em>." data-en="Start your <em>project</em>.">Démarrez votre <em>projet</em>.</h2>
+    <p class="corr-form-side__intro" data-fr="Les champs marqués sont nécessaires. Le reste nous aide à préparer une réponse précise." data-en="Marked fields are required. The rest helps us craft a more precise reply.">Les champs marqués sont nécessaires. Le reste nous aide à préparer une réponse précise.</p>
+
+    <form class="corr-form" id="contact-form" onsubmit="handleSubmit(event)">
+      <div class="corr-form__row">
+        <div class="corr-fld">
+          <label for="f-prenom" data-fr="Prénom <em>*</em>" data-en="First name <em>*</em>">Prénom <em>*</em></label>
+          <input type="text" id="f-prenom" name="prenom" required/>
+        </div>
+        <div class="corr-fld">
+          <label for="f-nom" data-fr="Nom <em>*</em>" data-en="Last name <em>*</em>">Nom <em>*</em></label>
+          <input type="text" id="f-nom" name="nom" required/>
+        </div>
+      </div>
+
+      <div class="corr-form__row">
+        <div class="corr-fld">
+          <label for="f-email" data-fr="Courriel <em>*</em>" data-en="Email <em>*</em>">Courriel <em>*</em></label>
+          <input type="email" id="f-email" name="email" required/>
+        </div>
+        <div class="corr-fld">
+          <label for="f-tel" data-fr="Téléphone <em class='req-rappel'>*</em>" data-en="Telephone <em class='req-rappel'>*</em>">Téléphone <em class="req-rappel">*</em></label>
+          <input type="tel" id="f-tel" name="tel"/>
+        </div>
+      </div>
+
+      <div class="corr-fld">
+        <label for="f-territoire" data-fr="Territoire du projet <em>*</em>" data-en="Project territory <em>*</em>">Territoire du projet <em>*</em></label>
+        <select id="f-territoire" name="territoire" required>
+          <option value="" disabled selected data-fr="—" data-en="—">—</option>
+          <option value="guadeloupe">Guadeloupe</option>
+          <option value="martinique">Martinique</option>
+          <option value="guyane">Guyane</option>
+          <option value="saint-martin">Saint-Martin</option>
+          <option value="saint-barth">Saint-Barthélemy</option>
+          <option value="caraibes" data-fr="Caraïbes (autre)" data-en="Caribbean (other)">Caraïbes (autre)</option>
+          <option value="metropole" data-fr="France Métropolitaine" data-en="Metropolitan France">France Métropolitaine</option>
+          <option value="international" data-fr="International" data-en="International">International</option>
+        </select>
+      </div>
+
+      <div class="corr-fld">
+        <label for="f-message" data-fr="Votre message <em>*</em>" data-en="Your message <em>*</em>">Votre message <em>*</em></label>
+        <textarea id="f-message" name="message" rows="4" required data-fr="Quelques mots sur le terrain, l'usage, le calendrier — comme à un correspondant attentif." data-en="A few words about the land, the use, the schedule — as to an attentive correspondent." placeholder="Quelques mots sur le terrain, l'usage, le calendrier — comme à un correspondant attentif."></textarea>
+      </div>
+
+      <div class="corr-fld">
+        <label class="corr-check">
+          <input type="checkbox" id="f-rappel" name="rappel"/>
+          <span class="corr-check__box" aria-hidden="true"></span>
+          <span class="corr-check__txt" data-fr="Je préfère être rappelé(e)" data-en="I'd rather be called back">Je préfère être rappelé(e)</span>
+        </label>
+      </div>
+
+      <div class="corr-fld" id="f-creneau-wrap" hidden>
+        <label for="f-creneau" data-fr="Créneau préféré" data-en="Preferred time slot">Créneau préféré</label>
+        <input type="text" id="f-creneau" name="creneau" placeholder="Ex : jeudi après-midi, ou en soirée" data-fr="Ex : jeudi après-midi, ou en soirée" data-en="e.g. Thursday afternoon, or evening"/>
+      </div>
+
+      <button type="submit" class="corr-submit" data-fr="Envoyer" data-en="Send">Envoyer</button>
+
+      <div class="corr-success" id="formSuccess">
+        <span data-fr="Message bien reçu. Nous vous répondons sous 48 heures ouvrées." data-en="Message received. We will reply within 48 working hours.">Message bien reçu. Nous vous répondons sous 48 heures ouvrées.</span>
+      </div>
+    </form>
+  </section>
+
+  <!-- ── INFO SIDE ─────────────────── -->
+  <aside class="corr-info-side reveal">
+    <figure style="margin:0">
+      <div class="corr-info__portrait">
+        <picture>
+  <source srcset="dist/images/Top%20Photos/unwatermarked_Gemini_Generated_Image_pd7jvtpd7jvtpd7j.avif" type="image/avif">
+  <source srcset="dist/images/Top%20Photos/unwatermarked_Gemini_Generated_Image_pd7jvtpd7jvtpd7j.webp" type="image/webp">
+  <img src="images/Top Photos/unwatermarked_Gemini_Generated_Image_pd7jvtpd7jvtpd7j.png" alt="Premier projet locatif HKH — Petit-Bourg, Guadeloupe, mars 2026" loading="lazy" decoding="async"/>
+</picture>
+      </div>
+      <figcaption class="corr-info__caption" data-fr="Premier projet locatif HKH · Petit-Bourg, Guadeloupe · mars 2026." data-en="First HKH rental project · Petit-Bourg, Guadeloupe · March 2026.">Premier projet locatif HKH · Petit-Bourg, Guadeloupe · mars 2026.</figcaption>
+    </figure>
+
+    <div class="corr-coords">
+      <div class="corr-coords__head" data-fr="Nos coordonnées" data-en="Our details">Nos coordonnées</div>
+      <dl>
+        <div class="corr-coords__row">
+          <dt data-fr="Adresse" data-en="Address">Adresse</dt>
+          <dd>Rue de l'Anse à la Barque<em data-fr="97180 Sainte-Anne, Guadeloupe" data-en="97180 Sainte-Anne, Guadeloupe">97180 Sainte-Anne, Guadeloupe</em></dd>
+        </div>
+        <div class="corr-coords__row">
+          <dt data-fr="Courriel" data-en="Email">Courriel</dt>
+          <dd><a href="mailto:contact@home-kit-home.com">contact@home-kit-home.com</a></dd>
+        </div>
+        <div class="corr-coords__row">
+          <dt data-fr="Antilles · Guyane" data-en="Antilles · Guiana">Antilles · Guyane</dt>
+          <dd><a href="tel:+590691270091">+590 (0)6 91 27 00 91</a></dd>
+        </div>
+        <div class="corr-coords__row">
+          <dt data-fr="France · Europe" data-en="France · Europe">France · Europe</dt>
+          <dd><a href="tel:+33782577528">+33 (0)7 82 57 75 28</a></dd>
+        </div>
+        <div class="corr-coords__row">
+          <dt>Instagram</dt>
+          <dd><a href="https://www.instagram.com/home.kit.home" target="_blank" rel="noopener noreferrer">@home.kit.home</a></dd>
+        </div>
+        <div class="corr-coords__row">
+          <dt>Web</dt>
+          <dd><a href="https://www.home-kit-home.com" target="_blank" rel="noopener noreferrer">www.home-kit-home.com</a></dd>
+        </div>
+      </dl>
+    </div>
+  </aside>
+
+</div>
+
+<!-- ═══ BUREAU — TAMPON AVANT FOOTER ═══════════ -->
+<section class="corr-bureau">
+  <div class="corr-bureau__inner">
+    <span class="corr-bureau__lbl" data-fr="Joindre HKH" data-en="Reach HKH">Joindre HKH</span>
+    <h2 class="corr-bureau__q" data-fr="Vous préférez un échange <em>direct</em> ?" data-en="Prefer a <em>direct</em> exchange?">Vous préférez un échange <em>direct</em> ?</h2>
+    <div class="corr-bureau__phones">
+      <div class="corr-bureau__phone">
+        <span class="corr-bureau__phone-lbl" data-fr="Antilles · Guyane" data-en="Antilles · Guiana">Antilles · Guyane</span>
+        <a href="tel:+590691270091" class="corr-bureau__phone-num">+590 (0)6 91 27 00 91</a>
+      </div>
+      <div class="corr-bureau__phone">
+        <span class="corr-bureau__phone-lbl" data-fr="France · Europe" data-en="France · Europe">France · Europe</span>
+        <a href="tel:+33782577528" class="corr-bureau__phone-num">+33 (0)7 82 57 75 28</a>
+      </div>
+    </div>
+    <p class="corr-bureau__hours" data-fr="Du lundi au vendredi, 9h–18h (heure locale)." data-en="Monday to Friday, 9am–6pm (local time).">Du lundi au vendredi, 9h–18h (heure locale).</p>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script>
+fetch('partials/footer-full.html')
+  .then(function(r){ if(!r.ok) throw new Error(); return r.text(); })
+  .then(function(h){
+    document.getElementById('footer-placeholder').innerHTML=h;
+    if(window.applyLang)window.applyLang(localStorage.getItem('hkh-lang')||'fr');
+  })
+  .catch(function(){
+    document.getElementById('footer-placeholder').innerHTML=
+      '<footer style="padding:2rem;text-align:center;font-size:.8rem;color:#6B6660">© Home Kit Home — contact@home-kit-home.com</footer>';
+  });
+</script>
+
+<script>
+function handleSubmit(e){
+  e.preventDefault();
+  document.getElementById('formSuccess').classList.add('is-visible');
+  e.target.reset();
+  document.getElementById('f-creneau-wrap').hidden=true;
+  document.getElementById('f-tel').required=false;
+  document.getElementById('contact-form').classList.remove('has-rappel');
+}
+
+/* Toggle créneau + tel required on rappel checkbox */
+document.getElementById('f-rappel').addEventListener('change',function(e){
+  const on=e.target.checked;
+  document.getElementById('f-creneau-wrap').hidden=!on;
+  document.getElementById('f-tel').required=on;
+  document.getElementById('contact-form').classList.toggle('has-rappel',on);
+});
+
+/* Reveal tab-safe failsafe 2s */
+(function(){
+  const els=document.querySelectorAll('.reveal');
+  if(!els.length) return;
+  const io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){io.observe(el)});
+  setTimeout(function(){els.forEach(function(el){el.classList.add('is-visible')})},2000);
+})();
+
+/* Préfill territoire depuis localStorage (suit la navigation cross-pages) */
+(function(){
+  const stored = localStorage.getItem('hkh-territory');
+  if(!stored) return;
+  // Mapping slugs cross-pages → options du select contact
+  const MAP = { 'france':'metropole' };
+  const target = MAP[stored] || stored;
+  const sel = document.getElementById('f-territoire');
+  if(!sel) return;
+  if(sel.querySelector('option[value="'+target+'"]')) sel.value = target;
+})();
+
+/* Préfill textarea selon ?intent= (financement, résidences) — réduit la friction */
+(function(){
+  const params = new URLSearchParams(location.search);
+  const intent = params.get('intent');
+  if(!intent) return;
+
+  const MODEL_NAMES = {
+    'essence':'ESSENCE','essence-plus':'ESSENCE+','horizon':'HORIZON',
+    'horizon-t':'HORIZON T','signature':'SIGNATURE','signature-duo':'SIGNATURE DUO'
+  };
+  const model = params.get('model');
+  const modelLabel = model && MODEL_NAMES[model] ? MODEL_NAMES[model] : null;
+
+  const MSG = {
+    'direct':{
+      fr:"Je m'oriente vers un achat direct HKH. Pourriez-vous me préciser les étapes et délais pour démarrer un dossier ?",
+      en:"I'm moving towards a direct HKH purchase. Could you outline the steps and timeline to start a file?"
+    },
+    'mensuel':{
+      fr:"Je souhaite étudier une mensualité avec Charlemagne Investissement pour mon projet : [à compléter].",
+      en:"I'd like to study a monthly financing solution with Charlemagne Investissement for my project: [to fill in]."
+    },
+    'fiscal':{
+      fr:"Je souhaite explorer l'optimisation fiscale outre-mer pour un projet locatif. Profil : [à compléter].",
+      en:"I'd like to explore overseas tax optimisation for a rental project. Profile: [to fill in]."
+    },
+    'etude-fiscale':{
+      fr:"Je souhaite une étude fiscale personnalisée pour un projet outre-mer. Revenu imposable et territoire cible : [à compléter].",
+      en:"I'd like a personalised tax study for an overseas project. Taxable income and target territory: [to fill in]."
+    },
+    'financement':{
+      fr:"Je souhaite étudier les solutions de financement HKH pour mon projet : [à compléter].",
+      en:"I'd like to explore HKH financing solutions for my project: [to fill in]."
+    },
+    'devis':{
+      fr:function(m){return "Je souhaite recevoir un devis pour l'habitat "+m+". Mon projet : [à compléter]."},
+      en:function(m){return "I'd like to receive a quote for the "+m+" residence. My project: [to fill in]."}
+    },
+    'etude':{
+      fr:function(m){return "Je souhaite une étude personnalisée pour l'habitat "+m+". Mon projet : [à compléter]."},
+      en:function(m){return "I'd like a personalised study for the "+m+" residence. My project: [to fill in]."}
+    },
+    'residentiel':{
+      fr:function(m){return "Je souhaite l'habitat "+m+" pour un usage résidentiel personnel. Mon projet : [à compléter]."},
+      en:function(m){return "I'd like the "+m+" residence for personal residential use. My project: [to fill in]."}
+    },
+    'locatif':{
+      fr:function(m){return "Je souhaite l'habitat "+m+" pour un projet locatif. Mon projet : [à compléter]."},
+      en:function(m){return "I'd like the "+m+" residence for a rental project. My project: [to fill in]."}
+    }
+  };
+
+  const entry = MSG[intent];
+  if(!entry) return;
+
+  const ta = document.getElementById('f-message');
+  if(!ta || ta.value) return;
+
+  const lang = (localStorage.getItem('hkh-lang') === 'en') ? 'en' : 'fr';
+  const build = function(L){
+    const v = entry[L];
+    if(typeof v === 'function') return modelLabel ? v(modelLabel) : null;
+    return v;
+  };
+  const text = build(lang) || build('fr');
+  if(!text) return;
+
+  ta.value = text;
+  const firstEmpty = document.getElementById('f-prenom');
+  if(firstEmpty) firstEmpty.focus({preventScroll:true});
+})();
+
+</script>
+</body>
+</html>

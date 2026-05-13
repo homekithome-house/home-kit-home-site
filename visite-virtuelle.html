@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>La Salle — Visite Virtuelle — Home Kit Home</title>
+<meta name="description" content="La Salle de Projection HKH — visites 360° de chaque habitat : ESSENCE, HORIZON, SIGNATURE. Projetez-vous avant même de visiter un terrain."/>
+<meta property="og:title" content="La Salle — Home Kit Home"/>
+<meta property="og:description" content="Visites 360° de chaque habitat architectural Home Kit Home."/>
+<meta property="og:image" content="images/landing-top-slide-img-1.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="fr_FR"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap" media="print" onload="this.media='all'"/>
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
+</noscript>
+
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="assets/css/animations.css"/>
+<style>
+/* ════════════════════════════════════════════════
+   LA SALLE DE PROJECTION — refonte éditoriale
+   ════════════════════════════════════════════════ */
+
+/* ── Masthead ──────────────────────────────── */
+.slle-mast{
+  padding:calc(var(--nav-h) + 4.5rem) 2.5rem 3.5rem;
+  background:var(--paper);
+  position:relative;overflow:hidden;
+}
+.slle-mast__inner{
+  max-width:1240px;margin:0 auto;
+  display:grid;grid-template-columns:1.3fr 1fr;gap:5rem;align-items:end;
+}
+.slle-mast__eyebrow{
+  display:flex;align-items:center;gap:1rem;flex-wrap:wrap;
+  font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--copper);
+  margin-bottom:1.8rem;
+}
+.slle-mast__eyebrow::before{
+  content:'';width:36px;height:1px;background:var(--copper);
+}
+.slle-mast__eyebrow .dot{color:rgba(184,115,51,.5);font-size:.5rem}
+.slle-mast__eyebrow .count{color:var(--mid);font-family:var(--serif);font-style:italic;letter-spacing:.04em;text-transform:none;font-size:.85rem}
+
+.slle-mast h1{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(3.2rem,6.8vw,5.4rem);
+  color:var(--dark);line-height:.98;letter-spacing:-.025em;
+  margin:0 0 1.4rem;
+}
+.slle-mast h1 em{font-style:italic;color:var(--copper)}
+.slle-mast__sub{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(1.02rem,1.5vw,1.2rem);
+  color:var(--mid);line-height:1.65;max-width:44ch;margin:0;
+}
+
+.slle-mast__meta{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 2rem;
+  padding:1.4rem 0 0;border-top:1px solid var(--cream-dk);
+}
+.slle-mast__meta dt{
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--mid);margin-bottom:.4rem;font-weight:400;
+}
+.slle-mast__meta dd{
+  font-family:var(--serif);font-style:italic;font-size:1rem;
+  color:var(--dark);margin:0;
+}
+.slle-mast__numeral{position:absolute;z-index:1;pointer-events:none;right:2.5rem;bottom:-2.6rem;font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(9rem,16vw,15rem);line-height:.82;color:var(--copper);opacity:.1;letter-spacing:-.055em}
+@media(max-width:900px){
+  .slle-mast{padding:calc(var(--nav-h) + 2.5rem) 1.5rem 2.5rem}
+  .slle-mast__numeral{font-size:clamp(7rem,13vw,10rem);right:1.5rem;bottom:-1.5rem}
+}
+
+/* ── Index des projections (magazine) ─────── */
+.slle-index{
+  background:var(--white);
+  padding:6rem 2.5rem;
+}
+.slle-index__inner{max-width:1240px;margin:0 auto}
+.slle-index__head{
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;
+  margin-bottom:4rem;padding-bottom:2rem;
+  border-bottom:1px solid var(--cream-dk);
+}
+.slle-index__lbl{
+  font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--copper);display:inline-block;
+  border-top:1px solid rgba(184,115,51,.3);
+  padding-top:1rem;margin-bottom:1.2rem;
+}
+.slle-index h2{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(2rem,3.4vw,2.8rem);
+  color:var(--dark);line-height:1.08;letter-spacing:-.02em;margin:0;
+  max-width:18ch;
+}
+.slle-index h2 em{font-style:italic;color:var(--copper)}
+.slle-index__intro{
+  font-family:var(--serif);font-style:italic;
+  font-size:1.05rem;line-height:1.7;color:var(--mid);
+  max-width:48ch;margin:0;
+}
+
+/* Liste de projections */
+.slle-list{display:flex;flex-direction:column;gap:0}
+
+.slle-row{
+  display:grid;
+  grid-template-columns:60px 420px 1fr auto;
+  gap:2.5rem;align-items:center;
+  padding:2.2rem 0;
+  border-bottom:1px solid var(--cream-dk);
+  text-decoration:none;color:inherit;
+  transition:background .3s ease,padding .3s ease;
+}
+.slle-row:first-child{border-top:1px solid var(--cream-dk)}
+.slle-row:hover{background:rgba(184,115,51,.02);padding-left:1rem;padding-right:1rem}
+
+.slle-row__num{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:1.6rem;color:var(--copper);opacity:.6;
+  line-height:1;letter-spacing:-.02em;
+}
+.slle-row:hover .slle-row__num{opacity:1}
+
+.slle-row__media{
+  width:100%;height:220px;overflow:hidden;background:var(--cream);
+  position:relative;
+}
+.slle-row__media img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .8s cubic-bezier(.16,1,.3,1),filter .4s ease;
+  filter:saturate(.92) brightness(.96);
+}
+.slle-row:hover .slle-row__media img{transform:scale(1.05);filter:saturate(1) brightness(1)}
+.slle-row__format{
+  position:absolute;top:12px;left:12px;z-index:2;
+  background:rgba(14,14,12,.85);
+  color:var(--white);
+  font-family:var(--sans);font-size:.55rem;letter-spacing:.24em;
+  text-transform:uppercase;padding:.42rem .7rem;
+  display:inline-flex;align-items:center;gap:.5rem;
+}
+.slle-row__format::before{
+  content:'';width:5px;height:5px;border-radius:50%;background:var(--copper);
+}
+
+.slle-row__body{min-width:0;display:flex;flex-direction:column;gap:.6rem}
+.slle-row__kicker{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--mid);
+}
+.slle-row__title{
+  font-family:var(--serif);font-size:clamp(1.5rem,2.2vw,2rem);
+  font-weight:400;color:var(--dark);
+  line-height:1.05;letter-spacing:-.02em;margin:0;
+}
+.slle-row__specs{
+  font-family:var(--serif);font-style:italic;font-size:.95rem;
+  color:var(--mid);line-height:1.55;margin:0;
+}
+
+.slle-row__go{
+  font-family:var(--sans);font-size:.66rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--dark);font-weight:400;
+  display:inline-flex;align-items:center;gap:.9rem;
+  padding:.9rem 0;white-space:nowrap;
+  border-top:1px solid rgba(44,44,40,.15);
+}
+.slle-row__go::after{content:'→';color:var(--copper);transition:transform .3s ease}
+.slle-row:hover .slle-row__go::after{transform:translateX(.5rem)}
+
+/* ── Editorial CTA (cream — casse la séquence dark) ── */
+.slle-cta{
+  background:var(--cream);
+  padding:6rem 2.5rem;
+}
+.slle-cta__inner{
+  max-width:1240px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;
+}
+.slle-cta__lbl{
+  font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--copper);display:inline-block;
+  border-top:1px solid rgba(184,115,51,.3);
+  padding-top:1rem;margin-bottom:1.3rem;
+}
+.slle-cta h3{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(1.9rem,3vw,2.6rem);
+  color:var(--dark);line-height:1.1;letter-spacing:-.02em;
+  margin:0;max-width:16ch;
+}
+.slle-cta h3 em{font-style:italic;color:var(--copper)}
+.slle-cta__right{display:flex;flex-direction:column;gap:1.6rem;align-items:flex-start}
+.slle-cta p{
+  font-family:var(--serif);font-style:italic;font-size:1.05rem;
+  color:var(--mid);line-height:1.7;max-width:42ch;margin:0;
+}
+.slle-cta__link{
+  font-family:var(--sans);font-size:.7rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--dark);text-decoration:none;font-weight:400;
+  display:inline-flex;align-items:center;gap:1rem;
+  padding-top:1rem;border-top:1px solid rgba(44,44,40,.18);
+}
+.slle-cta__link::after{content:'→';color:var(--copper);transition:transform .3s ease}
+.slle-cta__link:hover::after{transform:translateX(.4rem)}
+
+/* ── Responsive ────────────────────────────── */
+@media(max-width:1100px){
+  .slle-row{grid-template-columns:48px 320px 1fr auto;gap:1.8rem}
+  .slle-row__media{height:180px}
+}
+@media(max-width:900px){
+  .slle-mast__inner{grid-template-columns:1fr;gap:2.5rem;align-items:start}
+  .slle-index__head{grid-template-columns:1fr;gap:2rem}
+  .slle-row{
+    grid-template-columns:1fr;gap:1rem;
+    padding:2rem 0;
+  }
+  .slle-row__num{font-size:1.2rem;margin-bottom:.3rem}
+  .slle-row__media{height:220px}
+  .slle-cta__inner{grid-template-columns:1fr;gap:2rem}
+}
+@media(max-width:600px){
+  .slle-mast{padding:calc(var(--nav-h) + 2.5rem) 1.5rem 2.5rem}
+  .slle-index{padding:4rem 1.5rem}
+  .slle-cta{padding:4rem 1.5rem}
+  .slle-row__media{height:180px}
+}
+
+/* ── Reveal tab-safe ────────────────────── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease-out,transform .7s ease-out}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+
+/* ════════════════════════════════════════════════
+   La Salle — Lightbox 360° fond noir
+   ════════════════════════════════════════════════ */
+.slle-player{
+  position:fixed;inset:0;z-index:9999;
+  background:radial-gradient(ellipse at center,#0A0A09 0%,#000 70%);
+  opacity:0;visibility:hidden;
+  transition:opacity .32s cubic-bezier(.16,1,.3,1),visibility 0s linear .32s;
+  display:flex;flex-direction:column;
+  padding:5rem 4rem 4rem
+}
+.slle-player.is-open{opacity:1;visibility:visible;transition:opacity .32s cubic-bezier(.16,1,.3,1)}
+.slle-player__overlay{position:absolute;inset:0;cursor:pointer;z-index:0}
+
+.slle-player__head{
+  position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:1.8rem;gap:2rem
+}
+.slle-player__title-wrap{display:flex;flex-direction:column;gap:.4rem;min-width:0}
+.slle-player__lbl{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;
+  color:rgba(255,255,255,.5);
+  display:inline-flex;align-items:center;gap:.9rem
+}
+.slle-player__lbl::before{content:'';width:1.4rem;height:1px;background:var(--copper)}
+.slle-player__title{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(1.6rem,2.4vw,2.2rem);
+  color:var(--white);line-height:1.1;letter-spacing:-.015em;margin:0;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+}
+.slle-player__title em{color:var(--copper);font-style:italic}
+
+.slle-player__close{
+  flex-shrink:0;width:44px;height:44px;
+  background:transparent;border:1px solid rgba(255,255,255,.18);
+  color:var(--white);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:border-color .25s ease,background .25s ease,transform .25s ease;
+  font-family:var(--sans);font-size:1.4rem;line-height:1;padding:0
+}
+.slle-player__close:hover{border-color:var(--copper);background:rgba(184,115,51,.08);transform:rotate(90deg)}
+.slle-player__close:focus-visible{outline:1px solid var(--copper);outline-offset:3px}
+
+.slle-player__stage{
+  position:relative;z-index:2;flex:1;min-height:0;
+  background:#000;border:1px solid rgba(255,255,255,.06);
+  overflow:hidden;
+  transform:scale(.96);opacity:0;
+  transition:transform .42s cubic-bezier(.16,1,.3,1) .08s,opacity .42s ease-out .08s
+}
+.slle-player.is-open .slle-player__stage{transform:scale(1);opacity:1}
+.slle-player__iframe{width:100%;height:100%;border:0;display:block;transition:opacity .22s ease-out}
+.slle-player__stage.is-swapping .slle-player__iframe{opacity:0;transition:opacity .18s ease-in}
+
+.slle-player__nav-btn{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:3;
+  width:54px;height:54px;
+  background:rgba(10,10,9,.55);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.08);
+  color:rgba(255,255,255,.5);cursor:pointer;
+  font-family:var(--serif);font-size:1.9rem;line-height:1;
+  display:flex;align-items:center;justify-content:center;
+  opacity:.5;
+  transition:opacity .3s ease,color .3s ease,border-color .3s ease,background .3s ease,transform .3s cubic-bezier(.16,1,.3,1)
+}
+.slle-player__nav-btn:hover{opacity:1;color:var(--white);border-color:var(--copper);background:rgba(184,115,51,.18)}
+.slle-player__nav-btn:focus-visible{outline:1px solid var(--copper);outline-offset:3px;opacity:1}
+.slle-player__nav-btn--prev{left:1.4rem}
+.slle-player__nav-btn--next{right:1.4rem}
+.slle-player__nav-btn--prev:hover{transform:translateY(-50%) translateX(-3px)}
+.slle-player__nav-btn--next:hover{transform:translateY(-50%) translateX(3px)}
+
+.slle-player__foot{
+  position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:space-between;
+  margin-top:1.6rem;gap:2rem;flex-wrap:wrap
+}
+.slle-player__counter{
+  font-family:var(--serif);font-style:italic;font-size:.9rem;
+  color:rgba(255,255,255,.78);
+  display:inline-flex;align-items:baseline;gap:.8rem;letter-spacing:.005em
+}
+.slle-player__counter::before{content:'';width:1.4rem;height:1px;background:var(--copper);flex-shrink:0;transform:translateY(-.32rem)}
+.slle-player__counter em{color:var(--copper);font-style:italic;font-weight:400}
+.slle-player__cta{
+  display:inline-flex;align-items:center;gap:1rem;
+  font-family:var(--sans);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(255,255,255,.78);text-decoration:none;font-weight:400;
+  padding:.7rem 0;
+  transition:color .25s ease,gap .25s ease
+}
+.slle-player__cta::after{content:'→';color:var(--copper);transition:transform .3s cubic-bezier(.16,1,.3,1)}
+.slle-player__cta:hover{color:var(--white);gap:1.4rem}
+.slle-player__cta:hover::after{transform:translateX(.4rem)}
+
+.slle-player__hint{
+  font-family:var(--serif);font-style:italic;font-size:.78rem;
+  color:rgba(255,255,255,.42);opacity:1;
+  transition:opacity 1.2s ease-out 2.8s
+}
+.slle-player.is-open .slle-player__hint{opacity:0}
+
+body.slle-locked{overflow:hidden}
+
+@media(max-width:900px){
+  .slle-player{padding:3rem 1.4rem 2rem}
+  .slle-player__head{flex-direction:row;gap:1rem;margin-bottom:1rem}
+  .slle-player__title{font-size:1.2rem}
+  .slle-player__foot{flex-direction:column;align-items:flex-start;gap:.8rem;margin-top:1rem}
+  .slle-player__hint{display:none}
+  .slle-player__nav-btn{width:44px;height:44px;font-size:1.5rem}
+  .slle-player__nav-btn--prev{left:.6rem}
+  .slle-player__nav-btn--next{right:.6rem}
+}
+@media(max-width:560px){
+  .slle-player{padding:2.5rem .9rem 1.4rem}
+  .slle-player__lbl{font-size:.52rem}
+  .slle-player__nav-btn{width:38px;height:38px;font-size:1.3rem}
+}
+</style>
+</head>
+<body>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/nav.js"></script>
+
+<!-- ═══ MASTHEAD ═══════════════════════════════ -->
+<header class="slle-mast">
+  <div class="slle-mast__inner">
+    <div>
+      <div class="slle-mast__eyebrow">
+        <span data-fr="La Salle" data-en="The Room">La Salle</span>
+        <span class="dot">●</span>
+        <span class="count" data-fr="Six projections disponibles" data-en="Six projections available">Six projections disponibles</span>
+      </div>
+      <h1 data-fr="Visitez <em>avant</em> de<br>vous déplacer." data-en="Visit <em>before</em> you<br>travel.">Visitez <em>avant</em> de<br>vous déplacer.</h1>
+      <p class="slle-mast__sub" data-fr="Avant un déplacement aux Antilles, en Guyane ou ailleurs, parcourez chaque habitat en 360° — finitions, volumes, ambiances — depuis votre salon." data-en="Before a trip to the Antilles, Guiana or elsewhere, walk through every habitat in 360° — finishes, volumes, ambiances — from your living room.">Avant un déplacement aux Antilles, en Guyane ou ailleurs, parcourez chaque habitat en 360° — finitions, volumes, ambiances — depuis votre salon.</p>
+    </div>
+    <dl class="slle-mast__meta">
+      <div><dt data-fr="Format" data-en="Format">Format</dt><dd data-fr="360° interactif" data-en="Interactive 360°">360° interactif</dd></div>
+      <div><dt data-fr="Durée moyenne" data-en="Average duration">Durée moyenne</dt><dd data-fr="≈ 6 min / habitat" data-en="≈ 6 min / habitat">≈ 6 min / habitat</dd></div>
+      <div><dt data-fr="Accès" data-en="Access">Accès</dt><dd data-fr="Ordinateur et mobile" data-en="Desktop and mobile">Ordinateur et mobile</dd></div>
+      <div><dt data-fr="Mise à jour" data-en="Updated">Mise à jour</dt><dd data-fr="Avril 2026" data-en="April 2026">Avril 2026</dd></div>
+    </dl>
+  </div>
+  <span class="slle-mast__numeral" aria-hidden="true">06</span>
+</header>
+
+<!-- ═══ INDEX DES PROJECTIONS ═══════════════════ -->
+<section class="slle-index">
+  <div class="slle-index__inner">
+    <header class="slle-index__head reveal">
+      <div>
+        <span class="slle-index__lbl" data-fr="Index des projections" data-en="Projections index">Index des projections</span>
+        <h2 data-fr="Six habitats.<br>Six <em>visites</em>." data-en="Six habitats.<br>Six <em>tours</em>.">Six habitats.<br>Six <em>visites</em>.</h2>
+      </div>
+      <p class="slle-index__intro" data-fr="Cliquez sur une ligne pour entrer dans la séance, explorer les angles et changer d'ambiance." data-en="Click a row to enter the screening, explore the angles, switch ambiances.">Cliquez sur une ligne pour entrer dans la séance, explorer les angles et changer d'ambiance.</p>
+    </header>
+
+    <div class="slle-list">
+
+      <a href="https://kuula.co/post/n1/collection/7HXH9" target="_blank" rel="noopener" class="slle-row reveal" data-model="ESSENCE" data-slug="essence" data-kuula="7HXH9">
+        <span class="slle-row__num">01</span>
+        <div class="slle-row__media">
+          <span class="slle-row__format">360°</span>
+          <picture>
+  <source srcset="dist/images/Habitats/Essence/Finitions/essence-zénith.avif" type="image/avif">
+  <source srcset="dist/images/Habitats/Essence/Finitions/essence-zénith.webp" type="image/webp">
+  <img src="images/Habitats/Essence/Finitions/essence-zénith.png" alt="ESSENCE — projection 360°" loading="lazy"/>
+</picture>
+        </div>
+        <div class="slle-row__body">
+          <span class="slle-row__kicker" data-fr="Séance nº 01 · ESSENCE" data-en="Screening nº 01 · ESSENCE">Séance nº 01 · ESSENCE</span>
+          <h3 class="slle-row__title">ESSENCE</h3>
+          <p class="slle-row__specs" data-fr="20 m² · sans kitchenette · finition Zénith" data-en="20 m² · without kitchenette · Zénith finish">20 m² · sans kitchenette · finition Zénith</p>
+        </div>
+        <span class="slle-row__go" data-fr="Lancer la visite" data-en="Launch tour">Lancer la visite</span>
+      </a>
+
+      <a href="https://kuula.co/post/n1/collection/7HX6L" target="_blank" rel="noopener" class="slle-row reveal" data-model="ESSENCE+" data-slug="essence-plus" data-kuula="7HX6L">
+        <span class="slle-row__num">02</span>
+        <div class="slle-row__media">
+          <span class="slle-row__format">360°</span>
+          <picture>
+  <source srcset="dist/images/Habitats/Essence +/Intérieur/essence-plus-int-1.avif" type="image/avif">
+  <source srcset="dist/images/Habitats/Essence +/Intérieur/essence-plus-int-1.webp" type="image/webp">
+  <img src="images/Habitats/Essence +/Intérieur/essence-plus-int-1.jpg" alt="ESSENCE+ — projection 360°" loading="lazy"/>
+</picture>
+        </div>
+        <div class="slle-row__body">
+          <span class="slle-row__kicker" data-fr="Séance nº 02 · ESSENCE" data-en="Screening nº 02 · ESSENCE">Séance nº 02 · ESSENCE</span>
+          <h3 class="slle-row__title">ESSENCE+</h3>
+          <p class="slle-row__specs" data-fr="20 m² · avec kitchenette · intérieur chêne clair" data-en="20 m² · with kitchenette · light oak interior">20 m² · avec kitchenette · intérieur chêne clair</p>
+        </div>
+        <span class="slle-row__go" data-fr="Lancer la visite" data-en="Launch tour">Lancer la visite</span>
+      </a>
+
+      <a href="https://kuula.co/post/n1/collection/7HX8h" target="_blank" rel="noopener" class="slle-row reveal" data-model="HORIZON" data-slug="horizon" data-kuula="7HX8h">
+        <span class="slle-row__num">03</span>
+        <div class="slle-row__media">
+          <span class="slle-row__format">360°</span>
+          <picture>
+  <source srcset="dist/images/Habitats/Horizon/horizon-int-salon-1.avif" type="image/avif">
+  <source srcset="dist/images/Habitats/Horizon/horizon-int-salon-1.webp" type="image/webp">
+  <img src="images/Habitats/Horizon/horizon-int-salon-1.jpg" alt="HORIZON — projection 360°" loading="lazy"/>
+</picture>
+        </div>
+        <div class="slle-row__body">
+          <span class="slle-row__kicker" data-fr="Séance nº 03 · HORIZON" data-en="Screening nº 03 · HORIZON">Séance nº 03 · HORIZON</span>
+          <h3 class="slle-row__title">HORIZON</h3>
+          <p class="slle-row__specs" data-fr="36 m² · sans terrasse · salon ouvert" data-en="36 m² · no terrace · open living area">36 m² · sans terrasse · salon ouvert</p>
+        </div>
+        <span class="slle-row__go" data-fr="Lancer la visite" data-en="Launch tour">Lancer la visite</span>
+      </a>
+
+      <a href="https://kuula.co/post/n1/collection/7HXgh" target="_blank" rel="noopener" class="slle-row reveal" data-model="HORIZON T" data-slug="horizon-t" data-kuula="7HXgh">
+        <span class="slle-row__num">04</span>
+        <div class="slle-row__media">
+          <span class="slle-row__format">360°</span>
+          <picture>
+  <source srcset="dist/images/Habitats/Horizon T/horizon-t-int-salon-1.avif" type="image/avif">
+  <source srcset="dist/images/Habitats/Horizon T/horizon-t-int-salon-1.webp" type="image/webp">
+  <img src="images/Habitats/Horizon T/horizon-t-int-salon-1.jpg" alt="HORIZON T — projection 360°" loading="lazy"/>
+</picture>
+        </div>
+        <div class="slle-row__body">
+          <span class="slle-row__kicker" data-fr="Séance nº 04 · HORIZON" data-en="Screening nº 04 · HORIZON">Séance nº 04 · HORIZON</span>
+          <h3 class="slle-row__title">HORIZON T</h3>
+          <p class="slle-row__specs" data-fr="36 m² · avec terrasse · prolongement extérieur" data-en="36 m² · with terrace · outdoor extension">36 m² · avec terrasse · prolongement extérieur</p>
+        </div>
+        <span class="slle-row__go" data-fr="Lancer la visite" data-en="Launch tour">Lancer la visite</span>
+      </a>
+
+      <a href="https://kuula.co/post/n1/collection/7HXgX" target="_blank" rel="noopener" class="slle-row reveal" data-model="SIGNATURE" data-slug="signature" data-kuula="7HXgX">
+        <span class="slle-row__num">05</span>
+        <div class="slle-row__media">
+          <span class="slle-row__format">360°</span>
+          <picture>
+  <source srcset="dist/images/Habitats/Signature/intérieur/signature-int-salon-1.avif" type="image/avif">
+  <source srcset="dist/images/Habitats/Signature/intérieur/signature-int-salon-1.webp" type="image/webp">
+  <img src="images/Habitats/Signature/intérieur/signature-int-salon-1.jpg" alt="SIGNATURE — projection 360°" loading="lazy"/>
+</picture>
+        </div>
+        <div class="slle-row__body">
+          <span class="slle-row__kicker" data-fr="Séance nº 05 · SIGNATURE" data-en="Screening nº 05 · SIGNATURE">Séance nº 05 · SIGNATURE</span>
+          <h3 class="slle-row__title">SIGNATURE</h3>
+          <p class="slle-row__specs" data-fr="46 m² · une chambre · proposition architecturale" data-en="46 m² · one bedroom · architectural proposition">46 m² · une chambre · proposition architecturale</p>
+        </div>
+        <span class="slle-row__go" data-fr="Lancer la visite" data-en="Launch tour">Lancer la visite</span>
+      </a>
+
+      <a href="https://kuula.co/post/n1/collection/7HXxN" target="_blank" rel="noopener" class="slle-row reveal" data-model="SIGNATURE DUO" data-slug="signature-duo" data-kuula="7HXxN">
+        <span class="slle-row__num">06</span>
+        <div class="slle-row__media">
+          <span class="slle-row__format">360°</span>
+          <picture>
+  <source srcset="dist/images/Habitats/Signature/intérieur/signature-int-salon-2.avif" type="image/avif">
+  <source srcset="dist/images/Habitats/Signature/intérieur/signature-int-salon-2.webp" type="image/webp">
+  <img src="images/Habitats/Signature/intérieur/signature-int-salon-2.jpg" alt="SIGNATURE DUO — projection 360°" loading="lazy"/>
+</picture>
+        </div>
+        <div class="slle-row__body">
+          <span class="slle-row__kicker" data-fr="Séance nº 06 · SIGNATURE" data-en="Screening nº 06 · SIGNATURE">Séance nº 06 · SIGNATURE</span>
+          <h3 class="slle-row__title">SIGNATURE DUO</h3>
+          <p class="slle-row__specs" data-fr="46 m² · deux chambres · pensé pour la famille" data-en="46 m² · two bedrooms · designed for family">46 m² · deux chambres · pensé pour la famille</p>
+        </div>
+        <span class="slle-row__go" data-fr="Lancer la visite" data-en="Launch tour">Lancer la visite</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ÉDITORIAL (cream, pas dark) ═══════ -->
+<section class="slle-cta reveal">
+  <div class="slle-cta__inner">
+    <div>
+      <span class="slle-cta__lbl" data-fr="Aller plus loin" data-en="Go further">Aller plus loin</span>
+      <h3 data-fr="Au-delà de l'<em>écran</em>,<br>la visite sur mesure." data-en="Beyond the <em>screen</em>,<br>a bespoke tour.">Au-delà de l'<em>écran</em>,<br>la visite sur mesure.</h3>
+    </div>
+    <div class="slle-cta__right">
+      <p data-fr="Nous organisons des présentations personnalisées en visio — projection guidée, configuration de finitions en direct, et si vous avez un terrain, modélisation de l'implantation." data-en="We offer personalised video presentations — guided screening, live finish configuration, and if you have a site, implementation modelling.">Nous organisons des présentations personnalisées en visio — projection guidée, configuration de finitions en direct, et si vous avez un terrain, modélisation de l'implantation.</p>
+      <a href="contact.html" class="slle-cta__link" data-fr="Prendre rendez-vous" data-en="Book a session">Prendre rendez-vous</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ LIGHTBOX 360° — La Salle de projection ════ -->
+<div class="slle-player" id="sllePlayer" role="dialog" aria-modal="true" aria-labelledby="sllePlayerTitle" aria-hidden="true">
+  <div class="slle-player__overlay" data-close></div>
+  <div class="slle-player__head">
+    <div class="slle-player__title-wrap">
+      <span class="slle-player__lbl" data-fr="Séance en cours" data-en="Screening in progress">Séance en cours</span>
+      <h2 class="slle-player__title" id="sllePlayerTitle"><em>—</em></h2>
+    </div>
+    <button type="button" class="slle-player__close" data-close aria-label="Fermer la séance" title="Échap pour fermer">×</button>
+  </div>
+  <div class="slle-player__stage" id="slleStage">
+    <button type="button" class="slle-player__nav-btn slle-player__nav-btn--prev" id="sllePrev" aria-label="Séance précédente" title="Séance précédente (←)">‹</button>
+    <iframe class="slle-player__iframe" id="slleIframe" src="" title="Visite 360°" allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen" allowfullscreen loading="lazy"></iframe>
+    <button type="button" class="slle-player__nav-btn slle-player__nav-btn--next" id="slleNext" aria-label="Séance suivante" title="Séance suivante (→)">›</button>
+  </div>
+  <div class="slle-player__foot">
+    <span class="slle-player__counter" id="slleCounter" data-fr="Séance <em>—</em> / <em>—</em>" data-en="Screening <em>—</em> / <em>—</em>">Séance <em>—</em> / <em>—</em></span>
+    <a href="#" class="slle-player__cta" id="slleCtaFiche" data-fr="Voir la fiche complète" data-en="See full residence file">Voir la fiche complète</a>
+    <a href="#" class="slle-player__cta" id="slleCtaDevis" data-fr="Demander un devis" data-en="Request a quote">Demander un devis</a>
+    <span class="slle-player__hint" data-fr="← → pour naviguer · Échap pour quitter" data-en="← → to navigate · Esc to leave">← → pour naviguer · Échap pour quitter</span>
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+<script>
+fetch('partials/footer-simple.html')
+  .then(function(r){ if(!r.ok) throw new Error(); return r.text(); })
+  .then(function(h){
+    document.getElementById('footer-placeholder').innerHTML=h;
+    if(window.applyLang)window.applyLang(localStorage.getItem('hkh-lang')||'fr');
+  })
+  .catch(function(){
+    document.getElementById('footer-placeholder').innerHTML=
+      '<footer style="padding:2rem;text-align:center;font-size:.8rem;color:#6B6660">© Home Kit Home — contact@home-kit-home.com</footer>';
+  });
+</script>
+
+<script>
+/* Reveal tab-safe, failsafe 2s */
+(function(){
+  const els=document.querySelectorAll('.reveal');
+  if(!els.length) return;
+  const io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){io.observe(el)});
+  setTimeout(function(){els.forEach(function(el){el.classList.add('is-visible')})},2000);
+})();
+
+/* ════ La Salle — Lightbox 360° avec navigation cyclique ════ */
+(function(){
+  const player    = document.getElementById('sllePlayer');
+  const stage     = document.getElementById('slleStage');
+  const iframe    = document.getElementById('slleIframe');
+  const titleEl   = document.getElementById('sllePlayerTitle');
+  const counter   = document.getElementById('slleCounter');
+  const ctaFiche  = document.getElementById('slleCtaFiche');
+  const ctaDevis  = document.getElementById('slleCtaDevis');
+  const prevBtn   = document.getElementById('sllePrev');
+  const nextBtn   = document.getElementById('slleNext');
+  const closeBtn  = player.querySelector('.slle-player__close');
+  const rows      = Array.from(document.querySelectorAll('.slle-row[data-kuula]'));
+  if(!player || !rows.length) return;
+
+  let currentIndex = 0;
+  let lastFocus = null;
+  let swapping = false;
+
+  function buildKuulaEmbed(id){
+    return 'https://kuula.co/share/collection/'+id+'?logo=-1&info=0&fs=1&vr=1&zoom=1&autorotate=0.39&audio=0&thumbs=1&inst=0';
+  }
+
+  function applyRow(row){
+    const id    = row.dataset.kuula;
+    const model = row.dataset.model || '';
+    const slug  = row.dataset.slug || '';
+    if(!id) return;
+
+    titleEl.innerHTML = '<em>'+model+'</em>';
+    iframe.src = buildKuulaEmbed(id);
+    ctaFiche.href = 'residence-'+slug+'.html';
+    ctaDevis.href = 'contact.html?intent=devis&model='+slug;
+
+    const total = rows.length;
+    const cur   = String(currentIndex+1).padStart(2,'0');
+    const tot   = String(total).padStart(2,'0');
+    const fr = 'Séance <em>'+cur+'</em> / <em>'+tot+'</em>';
+    const en = 'Screening <em>'+cur+'</em> / <em>'+tot+'</em>';
+    counter.setAttribute('data-fr', fr);
+    counter.setAttribute('data-en', en);
+    const lang = (localStorage.getItem('hkh-lang')==='en') ? 'en' : 'fr';
+    counter.innerHTML = (lang==='en') ? en : fr;
+  }
+
+  function goTo(newIndex){
+    if(swapping) return;
+    const n = rows.length;
+    currentIndex = ((newIndex % n) + n) % n;
+    swapping = true;
+    stage.classList.add('is-swapping');
+    setTimeout(function(){
+      applyRow(rows[currentIndex]);
+      requestAnimationFrame(function(){
+        stage.classList.remove('is-swapping');
+        swapping = false;
+      });
+    }, 180);
+  }
+
+  function openPlayer(startIndex){
+    currentIndex = startIndex;
+    applyRow(rows[currentIndex]);
+    lastFocus = document.activeElement;
+    player.classList.add('is-open');
+    player.setAttribute('aria-hidden','false');
+    document.body.classList.add('slle-locked');
+    setTimeout(function(){ closeBtn.focus({preventScroll:true}); }, 200);
+  }
+
+  function closePlayer(){
+    player.classList.remove('is-open');
+    player.setAttribute('aria-hidden','true');
+    document.body.classList.remove('slle-locked');
+    setTimeout(function(){ iframe.src=''; }, 320);
+    if(lastFocus && typeof lastFocus.focus==='function'){
+      try{ lastFocus.focus({preventScroll:true}); }catch(e){}
+    }
+  }
+
+  rows.forEach(function(row, idx){
+    row.addEventListener('click', function(e){
+      if(e.metaKey || e.ctrlKey || e.shiftKey || e.button===1) return;
+      e.preventDefault();
+      openPlayer(idx);
+    });
+  });
+
+  player.querySelectorAll('[data-close]').forEach(function(el){
+    el.addEventListener('click', closePlayer);
+  });
+
+  prevBtn.addEventListener('click', function(){ goTo(currentIndex-1); });
+  nextBtn.addEventListener('click', function(){ goTo(currentIndex+1); });
+
+  document.addEventListener('keydown', function(e){
+    if(!player.classList.contains('is-open')) return;
+    if(e.key==='Escape') closePlayer();
+    else if(e.key==='ArrowLeft')  { e.preventDefault(); goTo(currentIndex-1); }
+    else if(e.key==='ArrowRight') { e.preventDefault(); goTo(currentIndex+1); }
+  });
+})();
+</script>
+</body>
+</html>

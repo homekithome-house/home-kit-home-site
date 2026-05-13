@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Investir · Home Kit Home</title>
+  <meta name="description" content="Investissement locatif outre-mer avec un habitat Home Kit Home : Girardin logement social, FEDER, crédit d'impôt outre-mer (244 quater W). Trois dispositifs cumulables, étude personnalisée par un partenaire fiscal spécialisé."/>
+  <meta property="og:title" content="Investir · Home Kit Home"/>
+  <meta property="og:description" content="Investissement locatif outre-mer : Girardin, FEDER, crédit d'impôt. Trois leviers cumulables pour un projet locatif aux Antilles ou en Guyane."/>
+  <meta property="og:image" content="images/Top Photos/Gemini_Generated_Image_ka43m7ka43m7ka43.png"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="fr_FR"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap" media="print" onload="this.media='all'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/></noscript>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="assets/css/animations.css"/>
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/nav.js" defer></script>
+  <style>
+    /* ═══════════════════════════════════════════════════════
+       INVESTIR — page éditoriale-commerciale (locatif outre-mer)
+       Namespaced .fin-* — réutilisable
+       ═══════════════════════════════════════════════════════ */
+
+    /* ── Masthead ─────────────────────────────────────────── */
+    .fin-mast{padding:calc(var(--nav-h) + 4.5rem) 2.5rem 3.5rem;background:var(--paper);position:relative;overflow:hidden}
+    .fin-mast__inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:5rem;align-items:end;position:relative;z-index:2}
+    .fin-mast__eyebrow{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--copper);margin-bottom:1.8rem}
+    .fin-mast__eyebrow::before{content:'';width:36px;height:1px;background:var(--copper)}
+    .fin-mast__eyebrow .dot{color:rgba(184,115,51,.5);font-size:.5rem}
+    .fin-mast__eyebrow .tag{color:var(--mid);font-family:var(--serif);font-style:italic;letter-spacing:.04em;text-transform:none;font-size:.85rem}
+    .fin-mast h1{font-family:var(--serif);font-weight:400;font-size:clamp(3rem,7vw,5.6rem);color:var(--dark);line-height:.96;letter-spacing:-.03em;margin:0 0 1.6rem}
+    .fin-mast h1 .ln{display:block;white-space:nowrap}
+    .fin-mast h1 em{font-style:italic;color:var(--copper);display:block;white-space:nowrap}
+    .fin-mast__lead{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.05rem,1.5vw,1.22rem);color:var(--mid);line-height:1.7;max-width:48ch;margin:0}
+    .fin-mast__meta{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 2rem;padding:1.4rem 0 0;border-top:1px solid var(--cream-dk);margin:0}
+    .fin-mast__meta dt{font-family:var(--sans);font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mid);margin-bottom:.4rem;font-weight:400}
+    .fin-mast__meta dd{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--dark);margin:0}
+    .fin-mast__numeral{position:absolute;z-index:1;pointer-events:none;right:2.5rem;bottom:-2.6rem;font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(9rem,16vw,15rem);line-height:.82;color:var(--copper);opacity:.1;letter-spacing:-.055em}
+    @media(max-width:900px){
+      .fin-mast__inner{grid-template-columns:1fr;gap:2.5rem;align-items:start}
+      .fin-mast__numeral{font-size:clamp(7rem,13vw,10rem);right:1.5rem;bottom:-1.5rem}
+    }
+    @media(max-width:600px){.fin-mast{padding:calc(var(--nav-h) + 2.5rem) 1.5rem 2.5rem}}
+
+    /* ── Trois chemins — empilés, full-bleed ──────────────── */
+    .fin-paths{padding:7rem 2.5rem 3rem;background:var(--paper)}
+    .fin-paths__inner{max-width:1240px;margin:0 auto}
+    .fin-paths__head{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:end;margin-bottom:5rem}
+    .fin-paths__col-text{display:flex;flex-direction:column;gap:.8rem}
+    .fin-paths__lbl{font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--copper);border-top:1px solid rgba(184,115,51,.3);padding-top:1.1rem;align-self:flex-start;margin:0}
+    .fin-paths__head h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,4.4vw,3.6rem);color:var(--dark);line-height:1.04;letter-spacing:-.025em;margin:0}
+    .fin-paths__head h2 em{font-style:italic;color:var(--copper)}
+    .fin-paths__sub{font-family:var(--serif);font-style:italic;font-size:clamp(1rem,1.4vw,1.15rem);color:var(--mid);line-height:1.65;max-width:42ch;margin:0;padding-bottom:.4rem}
+
+    .fin-path{display:grid;grid-template-columns:1fr 2fr;gap:5rem;padding:4.5rem 0;border-top:1px solid var(--cream-dk);scroll-margin-top:calc(var(--nav-h) + 1rem)}
+    .fin-path:last-child{border-bottom:1px solid var(--cream-dk)}
+    .fin-path__num{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(5rem,10vw,9rem);line-height:.85;color:var(--copper);opacity:.18;letter-spacing:-.06em;margin:0;align-self:start}
+    .fin-path__body{display:flex;flex-direction:column;gap:1.6rem;max-width:60ch}
+    .fin-path__tag{font-family:var(--sans);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--copper);font-weight:400;align-self:flex-start;padding:.4rem .8rem;border:1px solid rgba(184,115,51,.3);border-radius:2px}
+    .fin-path__name{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--dark);line-height:1.08;letter-spacing:-.018em;margin:0}
+    .fin-path__name em{font-style:italic;color:var(--copper)}
+    .fin-path__desc{font-family:var(--sans);font-weight:300;font-size:1rem;color:var(--mid);line-height:1.75;margin:0}
+    .fin-path__meta{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem 2rem;padding:1.4rem 0 .2rem;border-top:1px solid var(--cream-dk);margin:.4rem 0 0}
+    .fin-path__meta dt{font-family:var(--sans);font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mid);margin-bottom:.35rem;font-weight:400}
+    .fin-path__meta dd{font-family:var(--serif);font-style:italic;font-size:.95rem;color:var(--dark);margin:0;line-height:1.4}
+    .fin-path__cta{font-family:var(--sans);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dark);text-decoration:none;display:inline-flex;align-items:center;gap:1.2rem;align-self:flex-start;margin-top:.8rem;transition:gap .25s ease}
+    .fin-path__cta::after{content:'→';color:var(--copper);transition:transform .3s ease}
+    .fin-path__cta:hover{gap:1.6rem}
+    .fin-path__cta:hover::after{transform:translateX(.4rem)}
+    @media(max-width:900px){
+      .fin-paths__head{grid-template-columns:1fr;gap:1.4rem;margin-bottom:3rem}
+      .fin-path{grid-template-columns:1fr;gap:2rem;padding:3.5rem 0}
+      .fin-path__num{font-size:clamp(4rem,8vw,5rem)}
+    }
+    @media(max-width:600px){
+      .fin-paths{padding:5rem 1.5rem 2rem}
+      .fin-path__meta{grid-template-columns:1fr;gap:1.2rem}
+    }
+
+    /* ── Détail Girardin — split éditorial ────────────────── */
+    .fin-girardin{background:var(--cream);padding:0;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;min-height:560px}
+    .fin-girardin__visual{position:relative;overflow:hidden;background:var(--cream-dk)}
+    .fin-girardin__visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+    .fin-girardin__visual::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent 80%,rgba(242,237,228,.4) 100%);pointer-events:none}
+    .fin-girardin__cap{position:absolute;left:0;right:0;bottom:0;padding:1.6rem 1.8rem 1.3rem;display:flex;align-items:baseline;gap:.8rem;background:linear-gradient(to top,rgba(20,20,18,.92) 0%,rgba(20,20,18,.6) 60%,transparent 100%);font-family:var(--serif);font-style:italic;font-size:.88rem;letter-spacing:.005em;color:rgba(255,255,255,.92);z-index:1}
+    .fin-girardin__cap::before{content:'';width:1.4rem;height:1px;background:var(--copper);flex-shrink:0;transform:translateY(-.32rem)}
+    .fin-girardin__text{padding:6rem 4.5rem;display:flex;flex-direction:column;gap:1.4rem;justify-content:center;max-width:640px}
+    .fin-girardin__lbl{font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--copper);border-top:1px solid rgba(184,115,51,.3);padding-top:1.1rem;align-self:flex-start;margin:0 0 .6rem}
+    .fin-girardin h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,3.6vw,3rem);color:var(--dark);line-height:1.06;letter-spacing:-.022em;margin:0 0 .6rem}
+    .fin-girardin h2 em{font-style:italic;color:var(--copper)}
+    .fin-girardin p{font-family:var(--sans);font-weight:300;font-size:.96rem;color:var(--mid);line-height:1.85;margin:0}
+    .fin-girardin p strong{color:var(--dark);font-weight:400}
+    @media(max-width:1024px){
+      .fin-girardin{grid-template-columns:1fr;min-height:auto}
+      .fin-girardin__visual{aspect-ratio:16/10}
+      .fin-girardin__text{padding:4rem 2.5rem;max-width:100%}
+    }
+    @media(max-width:600px){.fin-girardin__text{padding:3rem 1.5rem}}
+
+    /* ── Trois leviers cumulables ─────────────────────────── */
+    .fin-stack{padding:7rem 2.5rem;background:var(--paper)}
+    .fin-stack__inner{max-width:1240px;margin:0 auto}
+    .fin-stack__head{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:end;margin-bottom:4rem}
+    .fin-stack__col-text{display:flex;flex-direction:column;gap:.8rem}
+    .fin-stack__lbl{font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--copper);border-top:1px solid rgba(184,115,51,.3);padding-top:1.1rem;align-self:flex-start;margin:0}
+    .fin-stack__head h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,4vw,3.2rem);color:var(--dark);line-height:1.04;letter-spacing:-.025em;margin:0}
+    .fin-stack__head h2 em{font-style:italic;color:var(--copper)}
+    .fin-stack__sub{font-family:var(--serif);font-style:italic;font-size:clamp(1rem,1.4vw,1.15rem);color:var(--mid);line-height:1.65;max-width:42ch;margin:0;padding-bottom:.4rem}
+
+    .fin-stack__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--cream-dk);border-bottom:1px solid var(--cream-dk)}
+    .fin-lever{padding:2.4rem 2.2rem;display:flex;flex-direction:column;gap:1rem;border-right:1px solid var(--cream-dk);transition:background .3s ease}
+    .fin-lever:last-child{border-right:none}
+    .fin-lever:hover{background:var(--cream)}
+    .fin-lever__num{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.4rem;color:var(--copper);letter-spacing:-.02em;line-height:1;margin:0}
+    .fin-lever__name{font-family:var(--serif);font-weight:400;font-size:clamp(1.4rem,2vw,1.7rem);color:var(--dark);letter-spacing:-.015em;line-height:1.15;margin:0}
+    .fin-lever__ref{font-family:var(--sans);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);margin:0;font-weight:400}
+    .fin-lever__desc{font-family:var(--sans);font-weight:300;font-size:.92rem;color:var(--mid);line-height:1.7;margin:.4rem 0 0}
+    .fin-stack__note{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--mid);line-height:1.7;text-align:center;max-width:60ch;margin:2.4rem auto 0}
+    @media(max-width:900px){
+      .fin-stack__head{grid-template-columns:1fr;gap:1.4rem;margin-bottom:3rem}
+      .fin-stack__grid{grid-template-columns:1fr}
+      .fin-lever{border-right:none;border-bottom:1px solid var(--cream-dk)}
+      .fin-lever:last-child{border-bottom:none}
+    }
+    @media(max-width:600px){.fin-stack{padding:5rem 1.5rem}}
+
+    /* ── Méthode (4 étapes) ───────────────────────────────── */
+    .fin-method{padding:7rem 2.5rem;background:var(--dark);color:var(--paper);position:relative}
+    .fin-method__inner{max-width:1240px;margin:0 auto}
+    .fin-method__head{display:flex;flex-direction:column;gap:.8rem;margin-bottom:4.5rem;max-width:780px}
+    .fin-method__lbl{font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--copper);border-top:1px solid rgba(184,115,51,.45);padding-top:1.1rem;align-self:flex-start;margin:0}
+    .fin-method__head h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,4vw,3.2rem);color:var(--paper);line-height:1.04;letter-spacing:-.025em;margin:0}
+    .fin-method__head h2 em{font-style:italic;color:var(--copper)}
+    .fin-method__steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(255,255,255,.1)}
+    .fin-step{padding:2.6rem 2rem 2.2rem;border-right:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:1rem;counter-increment:step}
+    .fin-step:last-child{border-right:none}
+    .fin-step__n{font-family:var(--serif);font-style:italic;font-weight:400;font-size:3.4rem;color:rgba(184,115,51,.55);line-height:.85;letter-spacing:-.04em;margin:0 0 .4rem}
+    .fin-step__n::before{content:counter(step,decimal-leading-zero)}
+    .fin-step__name{font-family:var(--serif);font-weight:400;font-size:1.35rem;color:var(--paper);letter-spacing:-.012em;line-height:1.2;margin:0}
+    .fin-step__dur{font-family:var(--sans);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--copper);font-weight:400;margin:0}
+    .fin-step__desc{font-family:var(--sans);font-weight:300;font-size:.9rem;color:rgba(249,247,242,.65);line-height:1.7;margin:0}
+    .fin-method__steps{counter-reset:step}
+    @media(max-width:900px){
+      .fin-method__steps{grid-template-columns:1fr 1fr}
+      .fin-step:nth-child(2){border-right:none}
+      .fin-step:nth-child(1),.fin-step:nth-child(2){border-bottom:1px solid rgba(255,255,255,.1)}
+    }
+    @media(max-width:600px){
+      .fin-method{padding:5rem 1.5rem}
+      .fin-method__steps{grid-template-columns:1fr}
+      .fin-step{border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}
+      .fin-step:last-child{border-bottom:none}
+    }
+
+    /* ── Partenaires (2 cards) ────────────────────────────── */
+    .fin-partners{padding:7rem 2.5rem;background:var(--paper)}
+    .fin-partners__inner{max-width:1100px;margin:0 auto}
+    .fin-partners__head{display:flex;flex-direction:column;gap:.8rem;margin-bottom:3.5rem;max-width:780px}
+    .fin-partners__lbl{font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--copper);border-top:1px solid rgba(184,115,51,.3);padding-top:1.1rem;align-self:flex-start;margin:0}
+    .fin-partners__head h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,3.6vw,2.8rem);color:var(--dark);line-height:1.06;letter-spacing:-.022em;margin:0}
+    .fin-partners__head h2 em{font-style:italic;color:var(--copper)}
+    .fin-partners__head p{font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--mid);line-height:1.7;max-width:56ch;margin:0}
+    .fin-partners__grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--cream-dk);background:var(--paper)}
+    .fin-partner{padding:3rem 2.6rem;display:flex;flex-direction:column;gap:1.4rem;border-right:1px solid var(--cream-dk);transition:background .3s ease,padding-left .35s ease}
+    .fin-partner:last-child{border-right:none}
+    .fin-partner:hover{background:var(--cream);padding-left:3.2rem}
+    .fin-partner__num{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--copper);letter-spacing:-.02em;line-height:1;margin:0}
+    .fin-partner__role{font-family:var(--sans);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--copper);font-weight:400;margin:0}
+    .fin-partner__name{font-family:var(--serif);font-weight:400;font-size:clamp(1.5rem,2.2vw,1.85rem);color:var(--dark);letter-spacing:-.015em;line-height:1.15;margin:0}
+    .fin-partner__desc{font-family:var(--sans);font-weight:300;font-size:.95rem;color:var(--mid);line-height:1.75;margin:0}
+    @media(max-width:900px){
+      .fin-partners__grid{grid-template-columns:1fr}
+      .fin-partner{border-right:none;border-bottom:1px solid var(--cream-dk)}
+      .fin-partner:last-child{border-bottom:none}
+    }
+    @media(max-width:600px){.fin-partners{padding:5rem 1.5rem}}
+
+    /* ── Encadrement légal ────────────────────────────────── */
+    .fin-legal{padding:6rem 2.5rem;background:var(--cream)}
+    .fin-legal__inner{max-width:1100px;margin:0 auto}
+    .fin-legal__head{display:flex;flex-direction:column;gap:.6rem;margin-bottom:3rem;max-width:780px}
+    .fin-legal__lbl{font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--copper);border-top:1px solid rgba(184,115,51,.3);padding-top:1.1rem;align-self:flex-start;margin:0}
+    .fin-legal__head h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,3vw,2.4rem);color:var(--dark);line-height:1.1;letter-spacing:-.018em;margin:0}
+    .fin-legal__head p{font-family:var(--sans);font-weight:300;font-size:.95rem;color:var(--mid);line-height:1.75;margin:0;max-width:56ch}
+    .fin-legal__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--cream-dk)}
+    .fin-legal-item{padding:1.6rem 1.8rem 1.6rem 0;border-bottom:1px solid var(--cream-dk);display:grid;grid-template-columns:160px 1fr;gap:1.4rem;align-items:baseline}
+    .fin-legal-item:nth-child(odd){border-right:1px solid var(--cream-dk);padding-right:2rem}
+    .fin-legal-item:nth-child(even){padding-left:2rem;padding-right:0}
+    .fin-legal-item__cat{font-family:var(--sans);font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--copper);font-weight:400}
+    .fin-legal-item__val{font-family:var(--sans);font-weight:300;font-size:.92rem;color:var(--dark);line-height:1.6}
+    @media(max-width:768px){
+      .fin-legal__grid{grid-template-columns:1fr}
+      .fin-legal-item,.fin-legal-item:nth-child(odd),.fin-legal-item:nth-child(even){padding:1.2rem 0;border-right:none}
+      .fin-legal-item{grid-template-columns:130px 1fr}
+    }
+    @media(max-width:600px){.fin-legal{padding:5rem 1.5rem}}
+  </style>
+</head>
+<body>
+
+<!-- ═══ MASTHEAD ─────────────────────────────────────── -->
+<header class="fin-mast">
+  <div class="fin-mast__inner">
+    <div class="fin-mast__col">
+      <div class="fin-mast__eyebrow">
+        <span data-fr="Le Manuel · Investir" data-en="The Manual · Invest">Le Manuel · Investir</span>
+        <span class="dot">●</span>
+        <span class="tag" data-fr="Étude personnalisée" data-en="Personalised study">Étude personnalisée</span>
+      </div>
+      <h1 data-fr="<span class='ln'>Investir</span><em>en outre-mer.</em>" data-en="<span class='ln'>Investing</span><em>overseas.</em>"><span class="ln">Investir</span><em>en outre-mer.</em></h1>
+      <p class="fin-mast__lead" data-fr="L'outre-mer français maintient un cadre fiscal incitatif pour les projets locatifs neufs. Voici comment HKH s'inscrit dans ces dispositifs, sans nous éloigner de l'essentiel : une résidence architecturale, livrée prête à vivre." data-en="French overseas territories maintain an incentive tax framework for new rental projects. Here is how HKH fits into these schemes, without straying from the essentials: an architectural home, delivered ready to live in.">L'outre-mer français maintient un cadre fiscal incitatif pour les projets locatifs neufs. Voici comment HKH s'inscrit dans ces dispositifs, sans nous éloigner de l'essentiel : une résidence architecturale, livrée prête à vivre.</p>
+    </div>
+    <dl class="fin-mast__meta">
+      <div><dt data-fr="Approche" data-en="Approach">Approche</dt><dd data-fr="Étude par projet" data-en="Project by project">Étude par projet</dd></div>
+      <div><dt data-fr="Cumul" data-en="Combined">Cumul</dt><dd data-fr="Dispositifs cumulables" data-en="Combinable schemes">Dispositifs cumulables</dd></div>
+      <div><dt data-fr="Territoires" data-en="Territories">Territoires</dt><dd data-fr="Antilles · Guyane · France" data-en="Antilles · Guiana · France">Antilles · Guyane · France</dd></div>
+      <div><dt data-fr="Encadrement" data-en="Framework">Encadrement</dt><dd data-fr="CGI · BOFiP · agréments" data-en="CGI · BOFiP · approvals">CGI · BOFiP · agréments</dd></div>
+    </dl>
+  </div>
+  <span class="fin-mast__numeral" aria-hidden="true">03</span>
+</header>
+
+<!-- ═══ STAT STRIP ───────────────────────────────────── -->
+<section class="stat-strip">
+  <div class="stat-strip__inner">
+    <div class="stat-strip__item">
+      <span class="stat-strip__val" data-fr="39 %" data-en="39%">39 %</span>
+      <span class="stat-strip__lbl" data-fr="Réduction Girardin · plafonnée" data-en="Girardin reduction · capped">Réduction Girardin · plafonnée</span>
+    </div>
+    <span class="stat-strip__sep" aria-hidden="true"></span>
+    <div class="stat-strip__item">
+      <span class="stat-strip__val" data-fr="Outre-mer" data-en="Overseas">Outre-mer</span>
+      <span class="stat-strip__lbl" data-fr="Antilles · Guyane · Mayotte" data-en="Antilles · Guiana · Mayotte">Antilles · Guyane · Mayotte</span>
+    </div>
+    <span class="stat-strip__sep" aria-hidden="true"></span>
+    <div class="stat-strip__item">
+      <span class="stat-strip__val" data-fr="199 C" data-en="199 C">199 C</span>
+      <span class="stat-strip__lbl" data-fr="Article 199 undecies C du CGI" data-en="Article 199 undecies C of the CGI">Article 199 undecies C du CGI</span>
+    </div>
+    <span class="stat-strip__sep" aria-hidden="true"></span>
+    <div class="stat-strip__item">
+      <span class="stat-strip__val" data-fr="Cumul" data-en="Combine">Cumul</span>
+      <span class="stat-strip__lbl" data-fr="Selon profil et zone" data-en="Based on profile and zone">Selon profil et zone</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TROIS CHEMINS ────────────────────────────────── -->
+<section class="fin-paths">
+  <div class="fin-paths__inner">
+    <header class="fin-paths__head reveal">
+      <div class="fin-paths__col-text">
+        <span class="fin-paths__lbl" data-fr="Trois chemins" data-en="Three paths">Trois chemins</span>
+        <h2 data-fr="À chaque profil,<br><em>sa porte d'entrée</em>." data-en="Each profile<br>has <em>its own entry</em>.">À chaque profil,<br><em>sa porte d'entrée</em>.</h2>
+      </div>
+      <p class="fin-paths__sub" data-fr="Selon que vous arrivez avec un capital, une capacité d'emprunt ou une fiscalité à optimiser, le parcours change — la qualité de l'habitat livré, jamais." data-en="Whether you arrive with capital, borrowing capacity or a tax position to optimise, the path changes — the quality of the home delivered, never does.">Selon que vous arrivez avec un capital, une capacité d'emprunt ou une fiscalité à optimiser, le parcours change, la qualité de l'habitat livré, jamais.</p>
+    </header>
+
+    <article class="fin-path reveal" id="direct">
+      <span class="fin-path__num">№ 01</span>
+      <div class="fin-path__body">
+        <span class="fin-path__tag" data-fr="Tous profils" data-en="All profiles">Tous profils</span>
+        <h3 class="fin-path__name" data-fr="Achat <em>direct</em>." data-en="Direct <em>purchase</em>.">Achat <em>direct</em>.</h3>
+        <p class="fin-path__desc" data-fr="Acquisition au comptant, livré clé en main. Le parcours le plus simple : vous validez le devis, l'habitat est fabriqué, transporté, posé par grue, raccordé. Du virement initial à la pose, tout passe par un seul interlocuteur." data-en="Cash purchase, delivered turnkey. The simplest path: you validate the quote, the home is manufactured, shipped, crane-installed and connected. From the initial transfer to handover, everything goes through a single contact.">Acquisition au comptant, livré clé en main. Le parcours le plus simple : vous validez le devis, l'habitat est fabriqué, transporté, posé par grue, raccordé. Du virement initial à la pose, tout passe par un seul interlocuteur.</p>
+        <dl class="fin-path__meta">
+          <div><dt data-fr="Pour qui" data-en="For whom">Pour qui</dt><dd data-fr="Capital disponible · résidence ou locatif" data-en="Available capital · residence or rental">Capital disponible · résidence ou locatif</dd></div>
+          <div><dt data-fr="Délai type" data-en="Typical lead time">Délai type</dt><dd data-fr="≈ 6 mois du devis à la pose" data-en="≈ 6 months from quote to install">≈ 6 mois du devis à la pose</dd></div>
+        </dl>
+        <a href="contact.html?intent=direct" class="fin-path__cta" data-fr="Démarrer un dossier achat direct" data-en="Start a direct purchase file">Démarrer un dossier achat direct</a>
+      </div>
+    </article>
+
+    <article class="fin-path reveal" id="mensuel">
+      <span class="fin-path__num">№ 02</span>
+      <div class="fin-path__body">
+        <span class="fin-path__tag" data-fr="Sans cash disponible" data-en="Without immediate cash">Sans cash disponible</span>
+        <h3 class="fin-path__name" data-fr="Financement <em>mensuel</em>." data-en="Monthly <em>financing</em>.">Financement <em>mensuel</em>.</h3>
+        <p class="fin-path__desc" data-fr="Mensualités sur la durée d'un crédit immobilier classique, structurées avec notre partenaire Charlemagne Investissement. L'habitat HKH devient accessible sans capital de départ massif, avec une mécanique financière éprouvée et un dossier monté par des spécialistes du crédit immobilier outre-mer." data-en="Monthly instalments over a standard mortgage timeframe, structured with our partner Charlemagne Investissement. HKH ownership becomes reachable without massive upfront capital, with a proven financial mechanism and a file built by specialists in overseas property lending.">Mensualités sur la durée d'un crédit immobilier classique, structurées avec notre partenaire Charlemagne Investissement. L'habitat HKH devient accessible sans capital de départ massif, avec une mécanique financière éprouvée et un dossier monté par des spécialistes du crédit immobilier outre-mer.</p>
+        <dl class="fin-path__meta">
+          <div><dt data-fr="Pour qui" data-en="For whom">Pour qui</dt><dd data-fr="Capacité d'emprunt · revenus stables" data-en="Borrowing capacity · stable income">Capacité d'emprunt · revenus stables</dd></div>
+          <div><dt data-fr="Partenaire" data-en="Partner">Partenaire</dt><dd>Charlemagne Investissement</dd></div>
+        </dl>
+        <a href="contact.html?intent=mensuel" class="fin-path__cta" data-fr="Étudier un financement mensuel" data-en="Explore monthly financing">Étudier un financement mensuel</a>
+      </div>
+    </article>
+
+    <article class="fin-path reveal" id="fiscal">
+      <span class="fin-path__num">№ 03</span>
+      <div class="fin-path__body">
+        <span class="fin-path__tag" data-fr="Investisseurs locatifs · outre-mer" data-en="Rental investors · overseas">Investisseurs locatifs · outre-mer</span>
+        <h3 class="fin-path__name" data-fr="Optimisation <em>fiscale</em>." data-en="Tax <em>optimisation</em>.">Optimisation <em>fiscale</em>.</h3>
+        <p class="fin-path__desc" data-fr="Pour un projet locatif aux Antilles ou en Guyane, plusieurs dispositifs nationaux sont cumulables : Girardin logement social, FEDER, crédit d'impôt outre-mer. Chaque montage est étudié individuellement avec un partenaire fiscal spécialisé, selon votre revenu imposable, votre territoire et la nature du bail." data-en="For a rental project in the Antilles or Guiana, several national schemes can be combined: Girardin social housing, FEDER, overseas tax credit. Each set-up is studied individually with a specialised tax partner, based on your taxable income, your territory and the nature of the lease.">Pour un projet locatif aux Antilles ou en Guyane, plusieurs dispositifs nationaux sont cumulables : Girardin logement social, FEDER, crédit d'impôt outre-mer. Chaque montage est étudié individuellement avec un partenaire fiscal spécialisé, selon votre revenu imposable, votre territoire et la nature du bail.</p>
+        <dl class="fin-path__meta">
+          <div><dt data-fr="Pour qui" data-en="For whom">Pour qui</dt><dd data-fr="Foyer fiscal imposable · projet locatif" data-en="Taxable household · rental project">Foyer fiscal imposable · projet locatif</dd></div>
+          <div><dt data-fr="Cadre" data-en="Framework">Cadre</dt><dd data-fr="Articles 199 undecies C · 244 quater W du CGI" data-en="Articles 199 undecies C · 244 quater W of the CGI">Articles 199 undecies C · 244 quater W du CGI</dd></div>
+        </dl>
+        <a href="contact.html?intent=fiscal" class="fin-path__cta" data-fr="Demander une étude fiscale" data-en="Request a tax study">Demander une étude fiscale</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ═══ DÉTAIL GIRARDIN — split éditorial ────────────── -->
+<section class="fin-girardin">
+  <div class="fin-girardin__visual reveal">
+    <picture>
+  <source srcset="dist/images/blog/Petit bourg - 50k - 778 m2/photos_drone/dji_fly_20260310_124626_138_1773161305444_photo_optimized.avif" type="image/avif">
+  <source srcset="dist/images/blog/Petit bourg - 50k - 778 m2/photos_drone/dji_fly_20260310_124626_138_1773161305444_photo_optimized.webp" type="image/webp">
+  <img src="images/blog/Petit bourg - 50k - 778 m2/photos_drone/dji_fly_20260310_124626_138_1773161305444_photo_optimized.jpg" alt="Terrain Petit-Bourg, Guadeloupe — étude pour un projet locatif outre-mer" loading="lazy" decoding="async"/>
+</picture>
+    <span class="fin-girardin__cap" data-fr="Petit-Bourg, Guadeloupe · Terrain de 778 m² à l'étude" data-en="Petit-Bourg, Guadeloupe · 778 m² plot under study">Petit-Bourg, Guadeloupe · Terrain de 778 m² à l'étude</span>
+  </div>
+  <div class="fin-girardin__text">
+    <span class="fin-girardin__lbl" data-fr="Optimisation outre-mer · en détail" data-en="Overseas optimisation · in detail">Optimisation outre-mer · en détail</span>
+    <h2 data-fr="Pourquoi l'outre-mer<br><em>change la donne</em>." data-en="Why overseas<br><em>changes the equation</em>.">Pourquoi l'outre-mer<br><em>change la donne</em>.</h2>
+    <p data-fr="Aux Antilles et en Guyane, le législateur a maintenu un cadre incitatif robuste pour soutenir la construction de logements neufs. Le dispositif central, dit <strong>Girardin logement social</strong> (article 199 undecies C du CGI), ouvre droit à une réduction d'impôt sur le revenu, plafonnée selon le revenu fiscal et la nature du programme." data-en="In the Antilles and Guiana, French legislators have maintained a robust incentive framework to support new housing construction. The central scheme, known as <strong>Girardin social housing</strong> (article 199 undecies C of the CGI), grants an income tax reduction, capped by household tax income and the nature of the programme.">Aux Antilles et en Guyane, le législateur a maintenu un cadre incitatif robuste pour soutenir la construction de logements neufs. Le dispositif central, dit <strong>Girardin logement social</strong> (article 199 undecies C du CGI), ouvre droit à une réduction d'impôt sur le revenu, plafonnée selon le revenu fiscal et la nature du programme.</p>
+    <p data-fr="L'habitat HKH coche les critères techniques attendus : structure neuve, normes CE, durée d'engagement locatif respectée. Le montage reste à étudier au cas par cas — le bénéfice réel dépend du revenu imposable, du territoire et de la durée de location prévue." data-en="HKH homes meet the expected technical criteria: new structure, CE standards, required rental commitment. The set-up still needs to be studied case by case — the actual benefit depends on taxable income, territory and planned rental duration.">L'habitat HKH coche les critères techniques attendus : structure neuve, normes CE, durée d'engagement locatif respectée. Le montage reste à étudier au cas par cas, le bénéfice réel dépend du revenu imposable, du territoire et de la durée de location prévue.</p>
+    <p data-fr="Aucun chiffre générique ne tient face à la diversité des situations. C'est pour cela que nous travaillons systématiquement avec un <strong>partenaire fiscal spécialisé</strong>, qui audite votre profil avant tout engagement." data-en="No generic figure holds up against the diversity of situations. That's why we systematically work with a <strong>specialised tax partner</strong>, who audits your profile before any commitment.">Aucun chiffre générique ne tient face à la diversité des situations. C'est pour cela que nous travaillons systématiquement avec un <strong>partenaire fiscal spécialisé</strong>, qui audite votre profil avant tout engagement.</p>
+  </div>
+</section>
+
+<!-- ═══ TROIS LEVIERS CUMULABLES ─────────────────────── -->
+<section class="fin-stack">
+  <div class="fin-stack__inner">
+    <header class="fin-stack__head reveal">
+      <div class="fin-stack__col-text">
+        <span class="fin-stack__lbl" data-fr="Trois leviers cumulables" data-en="Three combinable levers">Trois leviers cumulables</span>
+        <h2 data-fr="Trois dispositifs.<br><em>Un seul dossier.</em>" data-en="Three schemes.<br><em>One single file.</em>">Trois dispositifs.<br><em>Un seul dossier.</em></h2>
+      </div>
+      <p class="fin-stack__sub" data-fr="Pris isolément, chaque levier a son propre cadre. Combinés intelligemment et dans le respect des plafonds, ils donnent au montage outre-mer son efficience." data-en="Taken alone, each lever has its own framework. Combined intelligently and within the regulatory caps, they give the overseas set-up its efficiency.">Pris isolément, chaque levier a son propre cadre. Combinés intelligemment et dans le respect des plafonds, ils donnent au montage outre-mer son efficience.</p>
+    </header>
+
+    <div class="fin-stack__grid reveal">
+      <article class="fin-lever">
+        <span class="fin-lever__num">№ 01</span>
+        <h3 class="fin-lever__name">Girardin</h3>
+        <span class="fin-lever__ref" data-fr="Article 199 undecies C · CGI" data-en="Article 199 undecies C · CGI">Article 199 undecies C · CGI</span>
+        <p class="fin-lever__desc" data-fr="Réduction d'impôt sur le revenu pour l'investissement dans le logement social neuf outre-mer. Engagement locatif minimum de cinq années. Agrément fiscal obligatoire au-delà d'un certain seuil." data-en="Income tax reduction for investment in new overseas social housing. Minimum five-year rental commitment. Tax approval required beyond a certain threshold.">Réduction d'impôt sur le revenu pour l'investissement dans le logement social neuf outre-mer. Engagement locatif minimum de cinq années. Agrément fiscal obligatoire au-delà d'un certain seuil.</p>
+      </article>
+      <article class="fin-lever">
+        <span class="fin-lever__num">№ 02</span>
+        <h3 class="fin-lever__name">FEDER</h3>
+        <span class="fin-lever__ref" data-fr="Fonds européen · régions ultrapériphériques" data-en="European fund · outermost regions">Fonds européen · régions ultrapériphériques</span>
+        <p class="fin-lever__desc" data-fr="Cofinancement européen mobilisable sur certains projets ciblés (efficacité énergétique, développement territorial, attractivité touristique). Critères et enveloppes définis par chaque région." data-en="European co-financing available for certain targeted projects (energy efficiency, territorial development, tourism appeal). Criteria and envelopes defined by each region.">Cofinancement européen mobilisable sur certains projets ciblés (efficacité énergétique, développement territorial, attractivité touristique). Critères et enveloppes définis par chaque région.</p>
+      </article>
+      <article class="fin-lever">
+        <span class="fin-lever__num">№ 03</span>
+        <h3 class="fin-lever__name" data-fr="Crédit d'impôt outre-mer" data-en="Overseas tax credit">Crédit d'impôt outre-mer</h3>
+        <span class="fin-lever__ref" data-fr="Article 244 quater W · CGI" data-en="Article 244 quater W · CGI">Article 244 quater W · CGI</span>
+        <p class="fin-lever__desc" data-fr="Crédit d'impôt sur les investissements productifs neufs réalisés en outre-mer. S'applique à certaines opérations immobilières et industrielles, sous conditions d'éligibilité et de durée d'exploitation." data-en="Tax credit on new productive investments made overseas. Applies to certain real-estate and industrial operations, subject to eligibility and operating-duration conditions.">Crédit d'impôt sur les investissements productifs neufs réalisés en outre-mer. S'applique à certaines opérations immobilières et industrielles, sous conditions d'éligibilité et de durée d'exploitation.</p>
+      </article>
+    </div>
+
+    <p class="fin-stack__note reveal" data-fr="Aucun de ces leviers ne se déclenche automatiquement. Chacun suppose un dossier instruit, des justificatifs, et un montage cohérent avec votre situation fiscale réelle." data-en="None of these levers trigger automatically. Each requires a properly built file, supporting documents and a set-up consistent with your actual tax situation.">Aucun de ces leviers ne se déclenche automatiquement. Chacun suppose un dossier instruit, des justificatifs, et un montage cohérent avec votre situation fiscale réelle.</p>
+  </div>
+</section>
+
+<!-- ═══ MÉTHODE (4 ÉTAPES) ───────────────────────────── -->
+<section class="fin-method">
+  <div class="fin-method__inner">
+    <header class="fin-method__head reveal">
+      <span class="fin-method__lbl" data-fr="Notre méthode" data-en="Our method">Notre méthode</span>
+      <h2 data-fr="Du cadrage<br>à la <em>livraison</em>." data-en="From framing<br>to <em>delivery</em>.">Du cadrage<br>à la <em>livraison</em>.</h2>
+    </header>
+    <div class="fin-method__steps">
+      <article class="fin-step reveal">
+        <span class="fin-step__n" aria-hidden="true"></span>
+        <h3 class="fin-step__name" data-fr="Cadrage" data-en="Framing">Cadrage</h3>
+        <span class="fin-step__dur" data-fr="Premier échange · sans engagement" data-en="First conversation · no commitment">Premier échange · sans engagement</span>
+        <p class="fin-step__desc" data-fr="Nous écoutons votre projet, votre territoire, votre profil financier et fiscal. Nous identifions sans détour si HKH est pertinent pour vous, ou non." data-en="We listen to your project, territory, financial and tax profile. We identify, without detours, whether HKH fits your situation, or not.">Nous écoutons votre projet, votre territoire, votre profil financier et fiscal. Nous identifions sans détour si HKH est pertinent pour vous, ou non.</p>
+      </article>
+      <article class="fin-step reveal reveal-delay-1">
+        <span class="fin-step__n" aria-hidden="true"></span>
+        <h3 class="fin-step__name" data-fr="Étude" data-en="Study">Étude</h3>
+        <span class="fin-step__dur" data-fr="2 à 4 semaines selon le territoire" data-en="2 to 4 weeks per territory">2 à 4 semaines selon le territoire</span>
+        <p class="fin-step__desc" data-fr="Étude de site, simulation financière, étude fiscale par notre partenaire spécialisé. Aucun chiffre n'est avancé tant qu'il n'est pas étayé par votre dossier réel." data-en="Site study, financial simulation, tax study by our specialised partner. No figure is put forward until it is backed by your actual file.">Étude de site, simulation financière, étude fiscale par notre partenaire spécialisé. Aucun chiffre n'est avancé tant qu'il n'est pas étayé par votre dossier réel.</p>
+      </article>
+      <article class="fin-step reveal reveal-delay-2">
+        <span class="fin-step__n" aria-hidden="true"></span>
+        <h3 class="fin-step__name" data-fr="Structuration" data-en="Structuring">Structuration</h3>
+        <span class="fin-step__dur" data-fr="Validation des montages" data-en="Set-up validation">Validation des montages</span>
+        <p class="fin-step__desc" data-fr="Choix du chemin (direct, mensuel, fiscal ou cumul), instruction du dossier bancaire ou fiscal, demande d'agrément le cas échéant, signature des engagements." data-en="Choice of path (direct, monthly, fiscal or combined), bank or tax file processing, approval request if applicable, signing of commitments.">Choix du chemin (direct, mensuel, fiscal ou cumul), instruction du dossier bancaire ou fiscal, demande d'agrément le cas échéant, signature des engagements.</p>
+      </article>
+      <article class="fin-step reveal reveal-delay-3">
+        <span class="fin-step__n" aria-hidden="true"></span>
+        <h3 class="fin-step__name" data-fr="Livraison" data-en="Delivery">Livraison</h3>
+        <span class="fin-step__dur" data-fr="≤ 20 semaines de la commande à la pose" data-en="≤ 20 weeks from order to install">≤ 20 semaines de la commande à la pose</span>
+        <p class="fin-step__desc" data-fr="Fabrication CE, transport intégral, pose par grue, raccordements, mise en service. Au terme : un habitat prêt à vivre, conforme aux critères techniques exigés par les dispositifs activés." data-en="CE manufacturing, full transport, crane installation, connections, commissioning. The result: a home ready to live in, compliant with the technical criteria required by the active schemes.">Fabrication CE, transport intégral, pose par grue, raccordements, mise en service. Au terme : un habitat prêt à vivre, conforme aux critères techniques exigés par les dispositifs activés.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PARTENAIRES ──────────────────────────────────── -->
+<section class="fin-partners">
+  <div class="fin-partners__inner">
+    <header class="fin-partners__head reveal">
+      <span class="fin-partners__lbl" data-fr="Avec qui on travaille" data-en="Who we work with">Avec qui on travaille</span>
+      <h2 data-fr="Deux partenaires.<br><em>Un seul interlocuteur.</em>" data-en="Two partners.<br><em>One single contact.</em>">Deux partenaires.<br><em>Un seul interlocuteur.</em></h2>
+      <p data-fr="Nous orchestrons l'ensemble du parcours pour vous. Aucun va-et-vient à organiser entre acteurs, aucun arbitrage à porter seul." data-en="We orchestrate the entire path for you. No back-and-forth to coordinate between actors, no arbitration to carry alone.">Nous orchestrons l'ensemble du parcours pour vous. Aucun va-et-vient à organiser entre acteurs, aucun arbitrage à porter seul.</p>
+    </header>
+
+    <div class="fin-partners__grid">
+      <article class="fin-partner reveal">
+        <span class="fin-partner__num">№ 01</span>
+        <span class="fin-partner__role" data-fr="Conseil en investissement immobilier" data-en="Real-estate investment advisory">Conseil en investissement immobilier</span>
+        <h3 class="fin-partner__name">Charlemagne Investissement</h3>
+        <p class="fin-partner__desc" data-fr="Notre partenaire pour le financement mensuel et l'accompagnement des investisseurs locatifs aux Antilles françaises. Spécialiste reconnu du crédit immobilier outre-mer, il monte les dossiers bancaires et accompagne les bailleurs sur la durée du projet." data-en="Our partner for monthly financing and rental investor support across the French Antilles. A recognised specialist in overseas property lending, building the bank files and supporting landlords throughout the project lifecycle.">Notre partenaire pour le financement mensuel et l'accompagnement des investisseurs locatifs aux Antilles françaises. Spécialiste reconnu du crédit immobilier outre-mer, il monte les dossiers bancaires et accompagne les bailleurs sur la durée du projet.</p>
+      </article>
+      <article class="fin-partner reveal reveal-delay-1">
+        <span class="fin-partner__num">№ 02</span>
+        <span class="fin-partner__role" data-fr="Cabinet fiscal · spécialiste outre-mer" data-en="Tax firm · overseas specialist">Cabinet fiscal · spécialiste outre-mer</span>
+        <h3 class="fin-partner__name" data-fr="Partenaire fiscal spécialisé" data-en="Specialised tax partner">Partenaire fiscal spécialisé</h3>
+        <p class="fin-partner__desc" data-fr="Cabinet dédié au montage des dispositifs Girardin, FEDER et crédit d'impôt outre-mer. Audite votre profil, instruit le dossier d'agrément le cas échéant, sécurise la conformité avec la doctrine BOFiP. Présentation directe lorsque le projet entre en phase d'étude." data-en="Firm dedicated to the structuring of Girardin, FEDER and overseas tax credit schemes. Audits your profile, processes the approval file if needed, secures compliance with BOFiP doctrine. Direct introduction once the project enters the study phase.">Cabinet dédié au montage des dispositifs Girardin, FEDER et crédit d'impôt outre-mer. Audite votre profil, instruit le dossier d'agrément le cas échéant, sécurise la conformité avec la doctrine BOFiP. Présentation directe lorsque le projet entre en phase d'étude.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ENCADREMENT LÉGAL ────────────────────────────── -->
+<section class="fin-legal">
+  <div class="fin-legal__inner">
+    <header class="fin-legal__head reveal">
+      <span class="fin-legal__lbl" data-fr="Encadrement légal" data-en="Legal framework">Encadrement légal</span>
+      <h2 data-fr="Les références qui font foi." data-en="The references that hold authority.">Les références qui font foi.</h2>
+      <p data-fr="Tout ce qui est avancé sur cette page renvoie à des textes publics et à une doctrine fiscale opposable. Aucune mécanique privée, aucun arrangement officieux." data-en="Everything stated on this page refers to public legal texts and an opposable tax doctrine. No private mechanism, no off-record arrangement.">Tout ce qui est avancé sur cette page renvoie à des textes publics et à une doctrine fiscale opposable. Aucune mécanique privée, aucun arrangement officieux.</p>
+    </header>
+    <div class="fin-legal__grid">
+      <div class="fin-legal-item">
+        <span class="fin-legal-item__cat" data-fr="Girardin" data-en="Girardin">Girardin</span>
+        <span class="fin-legal-item__val" data-fr="Article 199 undecies C du Code général des impôts. Réduction d'impôt sur le revenu pour le logement social neuf outre-mer." data-en="Article 199 undecies C of the French General Tax Code. Income tax reduction for new overseas social housing.">Article 199 undecies C du Code général des impôts. Réduction d'impôt sur le revenu pour le logement social neuf outre-mer.</span>
+      </div>
+      <div class="fin-legal-item">
+        <span class="fin-legal-item__cat" data-fr="Crédit d'impôt" data-en="Tax credit">Crédit d'impôt</span>
+        <span class="fin-legal-item__val" data-fr="Article 244 quater W du Code général des impôts. Crédit d'impôt sur les investissements productifs neufs outre-mer." data-en="Article 244 quater W of the French General Tax Code. Tax credit on new productive investments overseas.">Article 244 quater W du Code général des impôts. Crédit d'impôt sur les investissements productifs neufs outre-mer.</span>
+      </div>
+      <div class="fin-legal-item">
+        <span class="fin-legal-item__cat" data-fr="Agrément" data-en="Approval">Agrément</span>
+        <span class="fin-legal-item__val" data-fr="Agrément fiscal de la Direction générale des finances publiques requis au-delà du seuil prévu par la loi pour les opérations Girardin logement social." data-en="Tax approval from the Direction générale des finances publiques required beyond the legal threshold for Girardin social housing operations.">Agrément fiscal de la Direction générale des finances publiques requis au-delà du seuil prévu par la loi pour les opérations Girardin logement social.</span>
+      </div>
+      <div class="fin-legal-item">
+        <span class="fin-legal-item__cat" data-fr="Doctrine" data-en="Doctrine">Doctrine</span>
+        <span class="fin-legal-item__val" data-fr="Bulletin officiel des finances publiques (BOFiP). Référentiel public utilisé pour cadrer chaque montage et arbitrer les zones d'interprétation." data-en="Bulletin officiel des finances publiques (BOFiP). Public reference used to frame each set-up and arbitrate interpretation zones.">Bulletin officiel des finances publiques (BOFiP). Référentiel public utilisé pour cadrer chaque montage et arbitrer les zones d'interprétation.</span>
+      </div>
+      <div class="fin-legal-item">
+        <span class="fin-legal-item__cat" data-fr="Plafonnement" data-en="Cap">Plafonnement</span>
+        <span class="fin-legal-item__val" data-fr="Plafonnement global des niches fiscales outre-mer relevé. La part de réduction effectivement utilisée dépend de votre revenu fiscal de référence." data-en="Higher overseas-specific cap on aggregated tax loopholes. The actual share of reduction used depends on your reference tax income.">Plafonnement global des niches fiscales outre-mer relevé. La part de réduction effectivement utilisée dépend de votre revenu fiscal de référence.</span>
+      </div>
+      <div class="fin-legal-item">
+        <span class="fin-legal-item__cat" data-fr="Engagement" data-en="Commitment">Engagement</span>
+        <span class="fin-legal-item__val" data-fr="Engagement locatif minimum imposé par le dispositif activé (cinq ans pour Girardin logement social, durées spécifiques pour les autres leviers)." data-en="Minimum rental commitment imposed by the activated scheme (five years for Girardin social housing, specific durations for the other levers).">Engagement locatif minimum imposé par le dispositif activé (cinq ans pour Girardin logement social, durées spécifiques pour les autres leviers).</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA FINAL DARK + 2 CHEMINS ───────────────────── -->
+<div class="home-cta">
+  <div class="home-cta__bg" aria-hidden="true"></div>
+  <div class="home-cta__inner">
+    <div class="home-cta__side">
+      <span class="home-cta__eyebrow reveal" data-fr="Allons plus loin" data-en="Let's go further">Allons plus loin</span>
+      <h2 class="reveal reveal-delay-1" data-fr="Une étude par projet,<br><em>jamais l'inverse</em>." data-en="One study per project,<br><em>never the other way</em>.">Une étude par projet,<br><em>jamais l'inverse</em>.</h2>
+      <p class="home-cta__lead reveal reveal-delay-2" data-fr="Aucune simulation générique ne remplace un audit personnalisé. Donnez-nous un cadre — territoire, projet, profil — nous construisons l'étude correspondante." data-en="No generic simulation replaces a personal audit. Give us a frame — territory, project, profile — we build the corresponding study.">Aucune simulation générique ne remplace un audit personnalisé. Donnez-nous un cadre, territoire, projet, profil, nous construisons l'étude correspondante.</p>
+    </div>
+    <div class="home-cta__blocks">
+      <a href="contact.html?intent=etude-fiscale" class="home-cta-block reveal reveal-delay-2">
+        <span class="home-cta-block__n">№ 01</span>
+        <span class="home-cta-block__body">
+          <span class="home-cta-block__label" data-fr="Investissement locatif · outre-mer" data-en="Rental investment · overseas">Investissement locatif · outre-mer</span>
+          <span class="home-cta-block__title" data-fr="Étudier <em>mon montage fiscal</em>" data-en="Study <em>my tax set-up</em>">Étudier <em>mon montage fiscal</em></span>
+        </span>
+        <span class="home-cta-block__arrow" data-fr="Prendre contact" data-en="Get in touch">Prendre contact</span>
+      </a>
+      <a href="contact.html?intent=financement" class="home-cta-block reveal reveal-delay-3">
+        <span class="home-cta-block__n">№ 02</span>
+        <span class="home-cta-block__body">
+          <span class="home-cta-block__label" data-fr="Achat direct ou financement mensuel" data-en="Direct purchase or monthly financing">Achat direct ou financement mensuel</span>
+          <span class="home-cta-block__title" data-fr="Démarrer <em>mon dossier</em>" data-en="Start <em>my file</em>">Démarrer <em>mon dossier</em></span>
+        </span>
+        <span class="home-cta-block__arrow" data-fr="Prendre contact" data-en="Get in touch">Prendre contact</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ───────────────────────────────────────── -->
+<div id="footer-placeholder"></div>
+<script>
+fetch('partials/footer-full.html')
+  .then(function(r){ if(!r.ok) throw new Error(); return r.text(); })
+  .then(function(h){
+    document.getElementById('footer-placeholder').innerHTML=h;
+    if(window.applyLang)window.applyLang(localStorage.getItem('hkh-lang')||'fr');
+  })
+  .catch(function(){
+    document.getElementById('footer-placeholder').innerHTML=
+      '<footer style="padding:2rem;text-align:center;font-size:.8rem;color:#6B6660">© Home Kit Home · contact@home-kit-home.com</footer>';
+  });
+</script>
+
+<script>
+/* ── Reveal on scroll ── */
+(function(){
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+})();
+</script>
+
+</body>
+</html>

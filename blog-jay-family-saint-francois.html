@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>HKH × Jay Family Properties — un village de standing à Saint-François — Le Journal HKH</title>
+<meta name="description" content="Reportage Le Journal HKH — un village de standing de six habitats à Saint-François, Guadeloupe, conçu avec Jay Family Properties. Dossier complet : architecture, méthode, rentabilité locative, fiscalité Girardin."/>
+<meta property="og:title" content="HKH × Jay Family Properties — Saint-François, Guadeloupe"/>
+<meta property="og:description" content="Village de standing six habitats · 2 000 m² · Défiscalisation Girardin · Investissement locatif premium"/>
+<meta property="og:image" content="images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/3.png"/>
+<meta property="og:type" content="article"/>
+<meta property="og:locale" content="fr_FR"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/></noscript>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="assets/css/animations.css"/>
+<style>
+/* ════════════════════════════════════════════════════════
+   DOSSIER LE JOURNAL HKH — article individuel éditorial
+   ════════════════════════════════════════════════════════ */
+
+/* ── Barre de progression lecture ─────────────────── */
+#read-progress{
+  position:fixed;top:0;left:0;height:2px;width:0;
+  background:var(--copper);z-index:9999;
+  transition:width .08s linear;pointer-events:none
+}
+
+/* ── Masthead éditorial (cohérent Le Journal) ────── */
+.doss-mast{
+  background:var(--paper);max-width:1340px;margin:0 auto;
+  padding:calc(var(--nav-h) + 3rem) 2.5rem 2.4rem;position:relative
+}
+.doss-mast__rule{
+  display:grid;grid-template-columns:auto 1fr auto;gap:2rem;align-items:center;
+  font-family:var(--sans);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--mid);padding-bottom:1.2rem;border-bottom:1px solid var(--dark)
+}
+.doss-mast__edition{color:var(--copper)}
+.doss-mast__divider{
+  width:100%;height:1px;
+  background:linear-gradient(to right,transparent,var(--cream-dk) 20%,var(--cream-dk) 80%,transparent)
+}
+.doss-mast__date{
+  font-family:var(--serif);font-style:italic;letter-spacing:.04em;
+  text-transform:none;font-size:.78rem;color:var(--mid)
+}
+.doss-mast__back{
+  display:inline-flex;align-items:center;gap:.9rem;margin-top:1.6rem;
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--mid);text-decoration:none;transition:color .3s ease
+}
+.doss-mast__back::before{
+  content:'';width:1.2rem;height:1px;background:var(--copper);
+  transition:width .3s ease
+}
+.doss-mast__back:hover{color:var(--copper)}
+.doss-mast__back:hover::before{width:1.6rem}
+
+.doss-mast__head{
+  display:grid;grid-template-columns:1.35fr 1fr;gap:4rem;align-items:end;
+  margin-top:3rem
+}
+.doss-mast__head-left{position:relative}
+.doss-mast__kicker{
+  display:inline-flex;align-items:center;gap:.9rem;margin-bottom:1.4rem;
+  font-family:var(--sans);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--copper)
+}
+.doss-mast__kicker::before{
+  content:'';width:1.6rem;height:1px;background:var(--copper)
+}
+.doss-mast__kicker em{
+  font-family:var(--serif);font-style:italic;font-size:.82rem;letter-spacing:0;
+  text-transform:none;color:var(--dark)
+}
+.doss-mast h1{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(2.4rem,5.6vw,4.4rem);
+  color:var(--dark);line-height:1.02;letter-spacing:-.025em;
+  margin:0 0 1.2rem
+}
+.doss-mast h1 em{font-style:italic;color:var(--copper)}
+.doss-mast__lead{
+  font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,1.5vw,1.22rem);
+  color:var(--mid);line-height:1.65;max-width:52ch;margin:0
+}
+
+.doss-mast__meta{
+  display:flex;flex-direction:column;gap:1.2rem;
+  padding-top:1.4rem;border-top:1px solid var(--cream-dk)
+}
+.doss-mast__meta-row{
+  display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:baseline
+}
+.doss-mast__meta-row dt{
+  font-family:var(--sans);font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--mid)
+}
+.doss-mast__meta-row dd{
+  font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--dark);margin:0
+}
+
+/* Numéro monumental — signature éditoriale */
+.doss-mast__numeral{
+  position:absolute;z-index:0;pointer-events:none;
+  right:2.5rem;bottom:-3.2rem;
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(10rem,18vw,17rem);line-height:.82;
+  color:var(--copper);opacity:.11;letter-spacing:-.055em
+}
+
+/* ── Photo hero panorama full-bleed ───────────────── */
+.doss-hero{
+  width:100%;height:72vh;min-height:460px;max-height:720px;
+  position:relative;overflow:hidden;background:#1A1A16
+}
+.doss-hero img{
+  width:100%;height:100%;object-fit:cover;
+  transform:scale(1.04);transition:transform 2.2s cubic-bezier(.2,.8,.2,1);display:block
+}
+.doss-hero.loaded img{transform:scale(1)}
+.doss-hero__caption{
+  max-width:1340px;margin:0 auto;padding:1rem 2.5rem 0;
+  display:flex;align-items:baseline;gap:.7rem;
+  font-family:var(--serif);font-style:italic;font-size:.78rem;
+  color:var(--mid);letter-spacing:.015em;opacity:.78;
+  background:var(--paper)
+}
+.doss-hero__caption::before{
+  content:'';width:1.4rem;height:1px;background:var(--copper);
+  flex-shrink:0;transform:translateY(-.25rem)
+}
+
+/* ── Corps éditorial ─────────────────────────────── */
+.doss-body{
+  max-width:720px;margin:0 auto;
+  padding:5rem 2.5rem 3rem;
+  font-family:var(--sans);font-weight:300;font-size:1rem;
+  color:var(--dark);line-height:1.85
+}
+.doss-body p{margin:0 0 1.5rem}
+.doss-body > p:first-of-type{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:1.18rem;color:var(--dark);line-height:1.68;margin-bottom:2rem
+}
+.doss-body > p:first-of-type::first-letter{
+  font-family:var(--serif);font-size:3.4em;float:left;line-height:.9;
+  margin:.05em .14em -.05em 0;color:var(--copper);font-weight:400;font-style:normal
+}
+.doss-body h2{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(1.7rem,2.6vw,2.2rem);
+  color:var(--dark);line-height:1.12;letter-spacing:-.015em;
+  margin:4rem 0 1.4rem;position:relative
+}
+.doss-body h2 .num{
+  display:block;font-style:italic;font-size:.9rem;
+  color:var(--copper);letter-spacing:.02em;margin-bottom:.8rem;
+  font-weight:400
+}
+
+/* ── Blockquote éditorial HKH ─────────────────────── */
+.doss-quote{
+  max-width:920px;margin:4.5rem auto;padding:0 2.5rem;
+  text-align:center
+}
+.doss-quote blockquote{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(1.3rem,2.4vw,1.75rem);
+  color:var(--dark);line-height:1.5;letter-spacing:-.005em;
+  margin:0 0 1.4rem;max-width:26ch;margin-left:auto;margin-right:auto
+}
+.doss-quote blockquote::before{content:'« ';color:var(--copper)}
+.doss-quote blockquote::after{content:' »';color:var(--copper)}
+.doss-quote__sig{
+  display:inline-flex;align-items:center;gap:.9rem;
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--mid)
+}
+.doss-quote__sig::before{
+  content:'';width:2.2rem;height:1px;background:var(--copper)
+}
+
+/* ── Stats strip 4 colonnes (cohérent homepage) ──── */
+.doss-stats{background:var(--dark);padding:5.5rem 2.5rem;position:relative;overflow:hidden}
+.doss-stats::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 55% at 12% 30%,rgba(184,115,51,.08) 0%,transparent 65%)
+}
+.doss-stats__inner{
+  max-width:1340px;margin:0 auto;position:relative;
+  display:grid;grid-template-columns:1fr 1px 1fr 1px 1fr 1px 1fr
+}
+.doss-stats__stat{padding:0 2rem;text-align:center}
+.doss-stats__sep{background:rgba(255,255,255,.12)}
+.doss-stats__val{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(2.4rem,4vw,3.6rem);
+  color:var(--white);line-height:1;letter-spacing:-.015em;margin-bottom:.6rem
+}
+.doss-stats__val em{font-style:italic;color:var(--copper)}
+.doss-stats__lbl{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(255,255,255,.45)
+}
+
+/* ── Split éditorial cream + photo ──────────────── */
+.doss-split{
+  max-width:1340px;margin:5.5rem auto;padding:0 2.5rem;
+  display:grid;grid-template-columns:55fr 45fr;gap:0;
+  background:var(--cream);align-items:stretch;min-height:460px
+}
+.doss-split--rev{direction:rtl}
+.doss-split--rev > *{direction:ltr}
+.doss-split__img{
+  overflow:hidden;position:relative;
+  transition:transform .9s cubic-bezier(.16,1,.3,1)
+}
+.doss-split__img img{
+  width:100%;height:100%;min-height:400px;object-fit:cover;display:block;
+  transition:transform 1.4s cubic-bezier(.2,.8,.2,1)
+}
+.doss-split:hover .doss-split__img img{transform:scale(1.025)}
+.doss-split__body{
+  padding:3.5rem 3rem;display:flex;flex-direction:column;justify-content:center;gap:1rem
+}
+.doss-split__lbl{
+  display:inline-flex;align-items:center;gap:.9rem;
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--copper);margin-bottom:.2rem
+}
+.doss-split__lbl::before{content:'';width:1.6rem;height:1px;background:var(--copper)}
+.doss-split__title{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(1.5rem,2.4vw,2rem);
+  color:var(--dark);line-height:1.12;letter-spacing:-.015em;margin:0
+}
+.doss-split__text{
+  font-family:var(--sans);font-weight:300;font-size:.92rem;
+  color:var(--mid);line-height:1.82;margin:0
+}
+
+/* ── Galeries éditoriales ────────────────────────── */
+.doss-gallery{
+  max-width:1340px;margin:5rem auto 2rem;padding:0 2.5rem
+}
+.doss-gallery--duo{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+.doss-gallery--trio{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.doss-gallery img{
+  width:100%;height:64vh;min-height:380px;max-height:560px;
+  object-fit:cover;display:block;
+  transition:transform 1s cubic-bezier(.16,1,.3,1)
+}
+.doss-gallery--trio img{height:54vh;min-height:320px;max-height:460px}
+.doss-gallery:hover img:not(:hover){filter:brightness(.88)}
+.doss-gallery img:hover{transform:scale(1.015)}
+.doss-gallery__caption{
+  max-width:1340px;margin:.9rem auto 0;padding:0 2.5rem;
+  display:flex;align-items:baseline;gap:.7rem;
+  font-family:var(--serif);font-style:italic;font-size:.78rem;
+  color:var(--mid);letter-spacing:.015em;opacity:.78
+}
+.doss-gallery__caption::before{
+  content:'';width:1.4rem;height:1px;background:var(--copper);
+  flex-shrink:0;transform:translateY(-.25rem)
+}
+
+/* ── Bloc partenaire (pas de border-left) ────────── */
+.doss-partner{
+  max-width:720px;margin:3.5rem auto;padding:2.4rem 2.6rem;
+  background:var(--cream);
+  display:grid;grid-template-columns:auto 1fr;gap:1.8rem;align-items:start
+}
+.doss-partner__init{
+  width:54px;height:54px;flex-shrink:0;background:var(--paper);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--copper);
+  border:1px solid rgba(184,115,51,.25)
+}
+.doss-partner__name{
+  display:inline-flex;align-items:center;gap:.8rem;
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--copper);margin-bottom:.7rem
+}
+.doss-partner__name::before{
+  content:'';width:.35rem;height:.35rem;background:var(--copper);border-radius:50%;
+  animation:dossPulse 2.4s ease-in-out infinite
+}
+@keyframes dossPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(184,115,51,.4)}
+  50%{box-shadow:0 0 0 4px rgba(184,115,51,0)}
+}
+.doss-partner__text{
+  font-family:var(--sans);font-weight:300;font-size:.92rem;
+  color:var(--dark);line-height:1.78;margin:0
+}
+.doss-partner__text em{font-family:var(--serif);font-style:italic;color:var(--mid)}
+
+/* ══════════════════════════════════════════════════
+   SECTION INVESTISSEMENT — bascule commerciale
+   ══════════════════════════════════════════════════ */
+.doss-invest{
+  background:var(--cream);padding:6.5rem 2.5rem 5.5rem
+}
+.doss-invest__inner{max-width:1100px;margin:0 auto}
+.doss-invest__head{max-width:640px;margin:0 auto 4rem;text-align:center}
+.doss-invest__lbl{
+  display:inline-flex;align-items:center;gap:.9rem;margin-bottom:1.2rem;
+  font-family:var(--sans);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--copper)
+}
+.doss-invest__lbl::before,.doss-invest__lbl::after{
+  content:'';width:1.6rem;height:1px;background:var(--copper)
+}
+.doss-invest__title{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(1.9rem,3vw,2.6rem);
+  color:var(--dark);line-height:1.1;letter-spacing:-.02em;margin:0 0 1.2rem
+}
+.doss-invest__title em{font-style:italic;color:var(--copper)}
+.doss-invest__intro{
+  font-family:var(--serif);font-style:italic;font-size:1.05rem;
+  color:var(--mid);line-height:1.65;margin:0
+}
+
+.doss-invest__grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:3rem;
+  border-top:1px solid rgba(44,44,40,.08);
+  border-bottom:1px solid rgba(44,44,40,.08);
+  padding:3.2rem 0;margin-bottom:3rem
+}
+.doss-invest__block-lbl{
+  font-family:var(--sans);font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--copper);margin-bottom:1.4rem;display:block
+}
+.doss-invest__big-val{
+  font-family:var(--serif);font-weight:400;font-style:italic;
+  font-size:clamp(3rem,5.5vw,4.4rem);
+  color:var(--dark);line-height:.95;letter-spacing:-.025em;margin:0 0 .7rem
+}
+.doss-invest__big-sub{
+  font-family:var(--sans);font-weight:300;font-size:.88rem;
+  color:var(--mid);line-height:1.65;margin:0 0 1.2rem
+}
+.doss-invest__note{
+  font-family:var(--serif);font-style:italic;font-size:.82rem;
+  color:var(--mid);line-height:1.6;margin:1rem 0 0;opacity:.75
+}
+
+.doss-invest__calc{margin:0 0 1.6rem}
+.doss-invest__calc-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:.8rem 0;border-bottom:1px solid rgba(44,44,40,.08);
+  font-family:var(--sans);font-size:.9rem
+}
+.doss-invest__calc-row:last-child{border-bottom:none}
+.doss-invest__calc-row span{color:var(--mid);font-weight:300}
+.doss-invest__calc-row strong{
+  color:var(--dark);font-weight:400;font-family:var(--serif);font-style:italic;font-size:1rem
+}
+
+.doss-invest__roi{margin-top:1.6rem;padding-top:1.4rem;border-top:1px solid rgba(184,115,51,.3)}
+.doss-invest__roi-lbl{
+  font-family:var(--sans);font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--copper);margin-bottom:.6rem;display:block
+}
+.doss-invest__roi-val{
+  font-family:var(--serif);font-weight:400;font-style:italic;
+  font-size:clamp(2.4rem,4vw,3.2rem);
+  color:var(--dark);line-height:1;letter-spacing:-.02em;margin:0 0 .7rem
+}
+.doss-invest__roi-val em{color:var(--copper);font-style:italic}
+.doss-invest__roi-sub{
+  font-family:var(--sans);font-weight:300;font-size:.78rem;
+  color:var(--mid);line-height:1.6;margin:0
+}
+
+/* ── Bloc intérêt rapide (email → être rappelé) ── */
+.doss-interest{
+  background:var(--paper);
+  padding:5rem 2.5rem;
+}
+.doss-interest__inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;
+}
+.doss-interest__lbl{
+  font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--copper);
+  display:inline-flex;align-items:center;gap:.9rem;
+  margin-bottom:1.2rem;
+}
+.doss-interest__lbl::before{
+  content:'';width:1.6rem;height:1px;background:var(--copper);
+}
+.doss-interest h2{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(1.8rem,3.4vw,2.6rem);
+  color:var(--dark);line-height:1.05;letter-spacing:-.02em;
+  margin:0 0 .8rem;
+}
+.doss-interest h2 em{font-style:italic;color:var(--copper);font-weight:400}
+.doss-interest__text{
+  font-family:var(--sans);font-size:.95rem;line-height:1.75;
+  color:var(--mid);margin:0;max-width:44ch;font-weight:300;
+}
+.doss-interest__form{
+  display:flex;align-items:center;gap:1.5rem;
+  border-bottom:1px solid rgba(44,44,40,.25);
+  padding-bottom:.2rem;
+  transition:border-color .3s ease;
+}
+.doss-interest__form:focus-within{border-bottom-color:var(--copper)}
+.doss-interest__form input[type="email"]{
+  flex:1;min-width:0;
+  background:transparent;border:none;padding:.9rem 0;
+  font-family:var(--sans);font-size:1rem;color:var(--dark);
+  outline:none;
+}
+.doss-interest__form input[type="email"]::placeholder{
+  color:rgba(44,44,40,.4);font-style:italic;
+}
+.doss-interest__form button{
+  background:transparent;border:none;cursor:pointer;
+  font-family:var(--sans);font-size:.68rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--dark);font-weight:400;
+  display:inline-flex;align-items:center;gap:.9rem;
+  padding:.9rem 0;white-space:nowrap;
+  transition:color .3s ease;
+}
+.doss-interest__form button::after{
+  content:'→';color:var(--copper);
+  transition:transform .3s cubic-bezier(.16,1,.3,1);
+}
+.doss-interest__form button:hover{color:var(--copper)}
+.doss-interest__form button:hover::after{transform:translateX(.4rem)}
+@media(max-width:900px){
+  .doss-interest__inner{grid-template-columns:1fr;gap:2.5rem;align-items:start}
+  .doss-interest{padding:4rem 1.5rem}
+}
+
+/* ── CTA final dark + photo overlay ──────────────── */
+.doss-cta{
+  padding:7rem 2.5rem;position:relative;overflow:hidden;
+  background:var(--dark);isolation:isolate
+}
+.doss-cta__bg{
+  position:absolute;inset:0;z-index:-1;
+  background-size:cover;background-position:center 60%;
+  background-image:url('images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/10.png');
+  opacity:.2;filter:grayscale(.2)
+}
+.doss-cta__bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to right,rgba(20,20,18,.88) 0%,rgba(20,20,18,.75) 55%,rgba(20,20,18,.6) 100%)
+}
+.doss-cta__inner{
+  max-width:1340px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center
+}
+.doss-cta__lbl{
+  display:inline-flex;align-items:center;gap:.9rem;margin-bottom:1.4rem;
+  font-family:var(--sans);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--copper)
+}
+.doss-cta__lbl::before{content:'';width:1.6rem;height:1px;background:var(--copper)}
+.doss-cta h2{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(2rem,3.6vw,2.8rem);
+  color:var(--white);line-height:1.08;letter-spacing:-.02em;margin:0
+}
+.doss-cta h2 em{font-style:italic;color:var(--copper)}
+.doss-cta__text{
+  font-family:var(--serif);font-style:italic;font-size:1.05rem;
+  color:rgba(255,255,255,.7);line-height:1.65;margin:0 0 2rem;max-width:42ch
+}
+.doss-cta__link{
+  display:inline-flex;align-items:center;gap:1rem;
+  font-family:var(--sans);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--white);text-decoration:none;
+  border-top:1px solid rgba(255,255,255,.25);padding-top:1rem;
+  transition:color .3s ease
+}
+.doss-cta__link::after{
+  content:'→';color:var(--copper);
+  transition:transform .35s cubic-bezier(.16,1,.3,1)
+}
+.doss-cta__link:hover{color:var(--copper)}
+.doss-cta__link:hover::after{transform:translateX(.4rem)}
+
+/* ── Nav bas éditorial ───────────────────────────── */
+.doss-nav{
+  max-width:1340px;margin:0 auto;padding:3rem 2.5rem;
+  display:flex;justify-content:space-between;align-items:center;gap:2rem;
+  border-top:1px solid var(--cream-dk)
+}
+.doss-nav a{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--mid);text-decoration:none;
+  display:inline-flex;align-items:center;gap:.8rem;
+  transition:color .3s ease
+}
+.doss-nav a:hover{color:var(--copper)}
+.doss-nav a em{font-family:var(--serif);font-style:italic;font-size:.82rem;letter-spacing:0;text-transform:none;color:var(--dark)}
+.doss-nav a:hover em{color:var(--copper)}
+
+/* ── Reveal helpers ──────────────────────────────── */
+body.js-ready .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease-out,transform .8s ease-out}
+body.js-ready .reveal.visible{opacity:1;transform:none}
+body.js-ready .reveal-img{opacity:0;transform:scale(1.02);transition:opacity 1s ease-out,transform 1.2s ease-out}
+body.js-ready .reveal-img.visible{opacity:1;transform:scale(1)}
+
+/* ── Responsive ──────────────────────────────────── */
+@media(max-width:1000px){
+  .doss-mast__head{grid-template-columns:1fr;gap:2.4rem}
+  .doss-mast__numeral{font-size:clamp(8rem,14vw,11rem);right:1.5rem;bottom:-2rem}
+  .doss-split{grid-template-columns:1fr;margin:3.5rem auto}
+  .doss-split--rev{direction:ltr}
+  .doss-split__img img{height:50vh;min-height:320px}
+  .doss-split__body{padding:2.6rem 2rem}
+  .doss-stats__inner{grid-template-columns:1fr 1fr}
+  .doss-stats__stat{padding:2rem 1rem}
+  .doss-stats__sep{display:none}
+  .doss-invest__grid{grid-template-columns:1fr;gap:2.5rem;padding:2.4rem 0}
+  .doss-cta__inner{grid-template-columns:1fr;gap:2.2rem}
+  .doss-gallery--duo,.doss-gallery--trio{grid-template-columns:1fr}
+  .doss-gallery img{height:55vh;min-height:320px}
+}
+@media(max-width:640px){
+  .doss-mast{padding:calc(var(--nav-h) + 2rem) 1.5rem 2rem}
+  .doss-mast__rule{grid-template-columns:1fr;gap:.6rem;text-align:left}
+  .doss-mast__rule .doss-mast__divider{display:none}
+  .doss-hero{height:55vh;min-height:320px}
+  .doss-hero__caption{padding:.9rem 1.5rem 0}
+  .doss-body{padding:3.5rem 1.5rem 2rem}
+  .doss-split{padding:0 1.5rem}
+  .doss-split__body{padding:2.2rem 1.5rem}
+  .doss-gallery{padding:0 1.5rem}
+  .doss-partner{padding:1.8rem;gap:1.2rem}
+  .doss-invest{padding:4.5rem 1.5rem 4rem}
+  .doss-cta{padding:4.5rem 1.5rem}
+  .doss-quote{margin:3rem auto;padding:0 1.5rem}
+  .doss-nav{padding:2rem 1.5rem;flex-direction:column;gap:1rem;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/nav.js"></script>
+
+<div id="read-progress"></div>
+
+<!-- ════ MASTHEAD ÉDITORIAL ════ -->
+<header class="doss-mast">
+  <div class="doss-mast__rule">
+    <span class="doss-mast__edition">Le Journal · Édition Nº 04</span>
+    <span class="doss-mast__divider"></span>
+    <span class="doss-mast__date">Janvier 2026 · Reportage</span>
+  </div>
+
+  <a href="blog.html" class="doss-mast__back" data-fr="Retour au Journal" data-en="Back to The Journal">Retour au Journal</a>
+
+  <div class="doss-mast__head">
+    <div class="doss-mast__head-left">
+      <span class="doss-mast__kicker">
+        <span data-fr="Partenariat" data-en="Partnership">Partenariat</span>
+        <em data-fr="Jay Family Properties × HKH" data-en="Jay Family Properties × HKH">Jay Family Properties × HKH</em>
+      </span>
+      <h1 data-fr="Six habitats sur 2 000 m² : la naissance d'un <em>village de standing</em>." data-en="Six residences on 2,000 m²: the making of a <em>boutique village</em>.">Six habitats sur 2 000 m² : la naissance d'un <em>village de standing</em>.</h1>
+      <p class="doss-mast__lead" data-fr="Un terrain plat de Saint-François en Guadeloupe, transformé en ensemble résidentiel d'exception avec piscines privées — sans chantier traditionnel, sans mois d'attente, sans compromis sur la matière." data-en="A flat plot in Saint-François, Guadeloupe, transformed into an exceptional residential ensemble with private pools — without a traditional construction site, without months of waiting, without compromise on materials.">Un terrain plat de Saint-François en Guadeloupe, transformé en ensemble résidentiel d'exception avec piscines privées — sans chantier traditionnel, sans mois d'attente, sans compromis sur la matière.</p>
+    </div>
+
+    <dl class="doss-mast__meta">
+      <div class="doss-mast__meta-row"><dt data-fr="Auteur" data-en="Author">Auteur</dt><dd>Benjamin Dupouy</dd></div>
+      <div class="doss-mast__meta-row"><dt data-fr="Lecture" data-en="Reading">Lecture</dt><dd data-fr="7 minutes" data-en="7 minutes">7 minutes</dd></div>
+      <div class="doss-mast__meta-row"><dt data-fr="Lieu" data-en="Location">Lieu</dt><dd>Saint-François · Guadeloupe</dd></div>
+      <div class="doss-mast__meta-row"><dt data-fr="Partenaire" data-en="Partner">Partenaire</dt><dd>Jay Family Properties</dd></div>
+    </dl>
+  </div>
+
+  <span class="doss-mast__numeral" aria-hidden="true">01</span>
+</header>
+
+<!-- ════ PHOTO HERO PANORAMA ════ -->
+<div class="doss-hero reveal-img" id="dossHero">
+  <picture>
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/3.avif" type="image/avif">
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/3.webp" type="image/webp">
+  <img src="images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/3.png" alt="Village de standing — Saint-François, Guadeloupe" fetchpriority="high"/>
+</picture>
+</div>
+<p class="doss-hero__caption" data-fr="Saint-François, Guadeloupe · Vue aérienne du projet en cours d'étude" data-en="Saint-François, Guadeloupe · Aerial view of the project under study">Saint-François, Guadeloupe · Vue aérienne du projet en cours d'étude</p>
+
+<!-- ════ CHAPEAU + INTRO ════ -->
+<article class="doss-body reveal">
+  <p data-fr="Certaines collaborations naissent d'une évidence partagée. Quand Jay Family Properties a identifié ce terrain de 2 000 m² à Saint-François, il était clair qu'une simple revente ne ferait pas honneur à son potentiel. L'idée s'est imposée d'elle-même : créer un village de standing entièrement dédié à la location premium, livré prêt à vivre, sans un seul jour de chantier traditionnel." data-en="Certain collaborations emerge from a shared evidence. When Jay Family Properties identified this 2,000 m² plot in Saint-François, it was clear that a simple resale would not do justice to its potential. The idea arose naturally: create a boutique village entirely dedicated to premium rental, delivered ready to live in, without a single day of traditional construction.">Certaines collaborations naissent d'une évidence partagée. Quand Jay Family Properties a identifié ce terrain de 2 000 m² à Saint-François, il était clair qu'une simple revente ne ferait pas honneur à son potentiel. L'idée s'est imposée d'elle-même : créer un village de standing entièrement dédié à la location premium, livré prêt à vivre, sans un seul jour de chantier traditionnel.</p>
+
+  <p data-fr="C'est dans ce contexte qu'est née la collaboration avec Home Kit Home. Dès les premières discussions, la vision était parfaitement alignée — proposer une expérience architecturale cohérente, à forte valeur patrimoniale, en tirant parti de la rapidité d'exécution et de la qualité structurelle qui définissent nos habitats." data-en="This is the context in which the collaboration with Home Kit Home was born. From the very first conversations, the vision was perfectly aligned — to offer a coherent architectural experience, with strong patrimonial value, leveraging the speed of execution and structural quality that define our residences.">C'est dans ce contexte qu'est née la collaboration avec Home Kit Home. Dès les premières discussions, la vision était parfaitement alignée — proposer une expérience architecturale cohérente, à forte valeur patrimoniale, en tirant parti de la rapidité d'exécution et de la qualité structurelle qui définissent nos habitats.</p>
+</article>
+
+<!-- ════ PULL QUOTE ÉDITORIAL ════ -->
+<div class="doss-quote reveal">
+  <blockquote data-fr="Un terrain brut à Saint-François transformé en village de six habitats premium avec piscines privées — sans un seul jour de maçonnerie sur site." data-en="A raw plot in Saint-François transformed into a village of six premium residences with private pools — without a single day of on-site masonry.">Un terrain brut à Saint-François transformé en village de six habitats premium avec piscines privées — sans un seul jour de maçonnerie sur site.</blockquote>
+  <span class="doss-quote__sig">Le Journal HKH · Reportage</span>
+</div>
+
+<!-- ════ STATS 4 COLONNES ════ -->
+<section class="doss-stats reveal">
+  <div class="doss-stats__inner">
+    <div class="doss-stats__stat">
+      <div class="doss-stats__val">2 000</div>
+      <div class="doss-stats__lbl" data-fr="m² de terrain" data-en="m² of land">m² de terrain</div>
+    </div>
+    <div class="doss-stats__sep"></div>
+    <div class="doss-stats__stat">
+      <div class="doss-stats__val">6</div>
+      <div class="doss-stats__lbl" data-fr="Habitats à piscines privées" data-en="Residences with private pools">Habitats à piscines privées</div>
+    </div>
+    <div class="doss-stats__sep"></div>
+    <div class="doss-stats__stat">
+      <div class="doss-stats__val"><em>~1,5</em> M€</div>
+      <div class="doss-stats__lbl" data-fr="Enveloppe projet" data-en="Project budget">Enveloppe projet</div>
+    </div>
+    <div class="doss-stats__sep"></div>
+    <div class="doss-stats__stat">
+      <div class="doss-stats__val"><em>39 %</em></div>
+      <div class="doss-stats__lbl" data-fr="Défiscalisation Girardin" data-en="Girardin tax relief">Défiscalisation Girardin</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ I — UN VILLAGE, UNE VISION ════ -->
+<article class="doss-body reveal">
+  <h2>
+    <span class="num">I · <em data-fr="Un village, une vision" data-en="A village, a vision">Un village, une vision</em></span>
+    <span data-fr="Pensé comme un ensemble, vécu comme un chez-soi." data-en="Conceived as a whole, lived as a home.">Pensé comme un ensemble, vécu comme un chez-soi.</span>
+  </h2>
+
+  <p data-fr="Le projet a été conçu comme un village de six habitats architecturaux, disposés en miroir de part et d'autre d'une allée centrale en bois massif. Chaque unité bénéficie de sa propre piscine privée, d'une terrasse en bois, d'un jardin tropical soigné. L'ensemble forme un resort cohérent doté d'une identité visuelle forte — l'atmosphère d'une villa, l'expérience d'un boutique-hôtel." data-en="The project was designed as a village of six architectural residences, arranged as mirrors on either side of a central solid-wood walkway. Each unit has its own private pool, a wooden terrace, a carefully tended tropical garden. Together they form a cohesive resort with a strong visual identity — the atmosphere of a villa, the experience of a boutique hotel.">Le projet a été conçu comme un village de six habitats architecturaux, disposés en miroir de part et d'autre d'une allée centrale en bois massif. Chaque unité bénéficie de sa propre piscine privée, d'une terrasse en bois, d'un jardin tropical soigné. L'ensemble forme un resort cohérent doté d'une identité visuelle forte — l'atmosphère d'une villa, l'expérience d'un boutique-hôtel.</p>
+
+  <p data-fr="La disposition a été étudiée pour préserver l'intimité entre chaque unité tout en créant une dynamique d'ensemble. De nuit, les balises lumineuses enchâssées dans la passerelle centrale, la végétation tropicale éclairée et les piscines turquoise composent un tableau que la construction traditionnelle n'aurait pas pu offrir dans ce délai et cette enveloppe." data-en="The layout was studied to preserve intimacy between each unit while creating a collective dynamic. At night, the light beacons embedded in the central walkway, the illuminated tropical vegetation and the turquoise pools compose a scene that traditional construction could not have offered within this timeframe and budget.">La disposition a été étudiée pour préserver l'intimité entre chaque unité tout en créant une dynamique d'ensemble. De nuit, les balises lumineuses enchâssées dans la passerelle centrale, la végétation tropicale éclairée et les piscines turquoise composent un tableau que la construction traditionnelle n'aurait pas pu offrir dans ce délai et cette enveloppe.</p>
+</article>
+
+<!-- ════ GALERIE DUO — JOUR / NUIT ════ -->
+<div class="doss-gallery reveal-img">
+  <div class="doss-gallery--duo">
+    <picture>
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/2.avif" type="image/avif">
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/2.webp" type="image/webp">
+  <img src="images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/2.png" alt="Vue aérienne de jour — six habitats et piscines" loading="lazy"/>
+</picture>
+    <picture>
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/1.avif" type="image/avif">
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/1.webp" type="image/webp">
+  <img src="images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/1.png" alt="Allée centrale illuminée de nuit" loading="lazy"/>
+</picture>
+  </div>
+</div>
+<p class="doss-gallery__caption" data-fr="Vue aérienne de jour · Allée centrale illuminée de nuit — Saint-François, Guadeloupe" data-en="Aerial view by day · Central walkway illuminated at night — Saint-François, Guadeloupe">Vue aérienne de jour · Allée centrale illuminée de nuit — Saint-François, Guadeloupe</p>
+
+<!-- ════ II — SPLIT UNITÉ & PISCINE ════ -->
+<section class="doss-split reveal">
+  <div class="doss-split__img">
+    <picture>
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/4.avif" type="image/avif">
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/4.webp" type="image/webp">
+  <img src="images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/4.png" alt="Habitat HKH avec piscine privée au crépuscule" loading="lazy"/>
+</picture>
+  </div>
+  <div class="doss-split__body">
+    <span class="doss-split__lbl" data-fr="II · L'habitat" data-en="II · The residence">II · L'habitat</span>
+    <h3 class="doss-split__title" data-fr="Chaque unité, une résidence à part entière." data-en="Each unit, a residence in its own right.">Chaque unité, une résidence à part entière.</h3>
+    <p class="doss-split__text" data-fr="Grande baie vitrée coulissante, terrasse en ipé, transat, piscine — chaque habitat est une expérience complète. La marque Home Kit Home est présente discrètement sur les menuiseries, rappel que la qualité commence dans les détails les plus fins." data-en="Large sliding glass doors, ipé terrace, lounger, pool — each residence is a complete experience. The Home Kit Home signature is discreetly present on the joinery, a reminder that quality begins in the finest details.">Grande baie vitrée coulissante, terrasse en ipé, transat, piscine — chaque habitat est une expérience complète. La marque Home Kit Home est présente discrètement sur les menuiseries, rappel que la qualité commence dans les détails les plus fins.</p>
+    <p class="doss-split__text" data-fr="La structure acier galvanisé anti-sismique garantit une durabilité supérieure au béton dans le contexte antillais, tout en permettant une pose sur pieux sans fondations traditionnelles." data-en="The anti-seismic galvanised steel structure guarantees durability superior to concrete in the Caribbean context, while enabling installation on piles without traditional foundations.">La structure acier galvanisé anti-sismique garantit une durabilité supérieure au béton dans le contexte antillais, tout en permettant une pose sur pieux sans fondations traditionnelles.</p>
+  </div>
+</section>
+
+<!-- ════ III — INTÉRIEURS ════ -->
+<article class="doss-body reveal">
+  <h2>
+    <span class="num">III · <em data-fr="Des intérieurs pensés pour la location premium" data-en="Interiors designed for premium rental">Des intérieurs pensés pour la location premium</em></span>
+    <span data-fr="La proposition de valeur se révèle pleinement à l'intérieur." data-en="The value proposition reveals itself fully inside.">La proposition de valeur se révèle pleinement à l'intérieur.</span>
+  </h2>
+
+  <p data-fr="Si l'impact architectural s'apprécie de l'extérieur, c'est à l'intérieur que la proposition de valeur se révèle pleinement. La cuisine ouverte sur la pièce de vie, baignée de lumière naturelle grâce à la baie coulissante pleine hauteur, s'inscrit dans une continuité parfaite avec la terrasse et le jardin tropical. Les volumes hauts, les matériaux chaleureux et la luminosité font oublier la surface — l'habitat respire." data-en="If the architectural impact is appreciated from the outside, it is indoors that the value proposition fully reveals itself. The open kitchen, bathed in natural light through the full-height sliding door, flows seamlessly into the terrace and tropical garden. The tall volumes, warm materials and luminosity make one forget the square metres — the residence breathes.">Si l'impact architectural s'apprécie de l'extérieur, c'est à l'intérieur que la proposition de valeur se révèle pleinement. La cuisine ouverte sur la pièce de vie, baignée de lumière naturelle grâce à la baie coulissante pleine hauteur, s'inscrit dans une continuité parfaite avec la terrasse et le jardin tropical. Les volumes hauts, les matériaux chaleureux et la luminosité font oublier la surface — l'habitat respire.</p>
+</article>
+
+<!-- ════ GALERIE TRIO — TERRASSE + CUISINE + SALON ════ -->
+<div class="doss-gallery reveal-img">
+  <div class="doss-gallery--trio">
+    <picture>
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/5.avif" type="image/avif">
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/5.webp" type="image/webp">
+  <img src="images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/5.jpeg" alt="Terrasse et piscine au coucher du soleil" loading="lazy"/>
+</picture>
+    <picture>
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/6.avif" type="image/avif">
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/6.webp" type="image/webp">
+  <img src="images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/6.png" alt="Cuisine ouverte — vue sur terrasse et jardin tropical" loading="lazy"/>
+</picture>
+    <picture>
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/8.avif" type="image/avif">
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/8.webp" type="image/webp">
+  <img src="images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/8.png" alt="Salon en soirée — vue sur piscine et végétation" loading="lazy"/>
+</picture>
+  </div>
+</div>
+<p class="doss-gallery__caption" data-fr="Terrasse & piscine · Cuisine ouverte sur le jardin · Salon en soirée face à la piscine" data-en="Terrace & pool · Open kitchen onto the garden · Evening living room facing the pool">Terrasse & piscine · Cuisine ouverte sur le jardin · Salon en soirée face à la piscine</p>
+
+<!-- ════ IV — SPLIT CHAMBRE ════ -->
+<section class="doss-split doss-split--rev reveal">
+  <div class="doss-split__img">
+    <picture>
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/9.avif" type="image/avif">
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/9.webp" type="image/webp">
+  <img src="images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/9.png" alt="Chambre avec vue directe sur la piscine et les palmiers" loading="lazy"/>
+</picture>
+  </div>
+  <div class="doss-split__body">
+    <span class="doss-split__lbl" data-fr="IV · La chambre" data-en="IV · The bedroom">IV · La chambre</span>
+    <h3 class="doss-split__title" data-fr="Se réveiller face à sa piscine." data-en="Waking up facing the pool.">Se réveiller face à sa piscine.</h3>
+    <p class="doss-split__text" data-fr="La chambre s'ouvre directement sur la terrasse et la piscine privée à travers une baie coulissante pleine largeur. Au crépuscule, le ciel rose sur les palmiers et le reflet de l'eau composent un tableau que nul hôtel cinq étoiles ne peut garantir — parce qu'ici, c'est votre espace, exclusif, sans voisins de palier." data-en="The bedroom opens directly onto the terrace and private pool through a full-width sliding door. At twilight, the pink sky on the palm trees and the water's reflection compose a scene no five-star hotel can guarantee — because here, it is your space, exclusive, without neighbours.">La chambre s'ouvre directement sur la terrasse et la piscine privée à travers une baie coulissante pleine largeur. Au crépuscule, le ciel rose sur les palmiers et le reflet de l'eau composent un tableau que nul hôtel cinq étoiles ne peut garantir — parce qu'ici, c'est votre espace, exclusif, sans voisins de palier.</p>
+    <p class="doss-split__text" data-fr="Suspensions en rotin, linge de maison haut de gamme, papier peint botanique — les finitions ont été choisies pour créer une expérience de séjour mémorable, facteur déterminant dans le positionnement tarifaire et les avis clients." data-en="Rattan pendants, premium linens, botanical wallpaper — the finishes have been selected to create a memorable stay, a determining factor in pricing and guest reviews.">Suspensions en rotin, linge de maison haut de gamme, papier peint botanique — les finitions ont été choisies pour créer une expérience de séjour mémorable, facteur déterminant dans le positionnement tarifaire et les avis clients.</p>
+  </div>
+</section>
+
+<!-- ════ V — SALLE DE BAIN ════ -->
+<article class="doss-body reveal">
+  <h2>
+    <span class="num">V · <em data-fr="La salle de bain comme argument de vente" data-en="The bathroom as a sales argument">La salle de bain comme argument de vente</em></span>
+    <span data-fr="L'espace qui décide souvent du choix d'un voyageur." data-en="The space that often decides a traveller's choice.">L'espace qui décide souvent du choix d'un voyageur.</span>
+  </h2>
+
+  <p data-fr="Dans l'immobilier de location premium, la salle de bain est souvent l'espace décisif dans le choix d'un voyageur et dans le niveau de note laissé. Ici, rien n'a été laissé au hasard : pierre naturelle travertin au sol et aux murs, douche à l'italienne avec parois acier noir, double vasque design sur meuble bois massif, robinetterie noire mate, luminaires pendants en verre ambré. Le résultat est à la hauteur des meilleures adresses antillaises." data-en="In premium rental property, the bathroom is often the decisive space in a traveller's choice and in the review score. Here, nothing has been left to chance: travertine natural stone on floor and walls, walk-in shower with black steel screens, designer double basin on solid wood vanity, matt black fittings, amber glass pendant lights. The result is on par with the finest Caribbean addresses.">Dans l'immobilier de location premium, la salle de bain est souvent l'espace décisif dans le choix d'un voyageur et dans le niveau de note laissé. Ici, rien n'a été laissé au hasard : pierre naturelle travertin au sol et aux murs, douche à l'italienne avec parois acier noir, double vasque design sur meuble bois massif, robinetterie noire mate, luminaires pendants en verre ambré. Le résultat est à la hauteur des meilleures adresses antillaises.</p>
+</article>
+
+<!-- ════ GALERIE DUO — SDB + NUIT ════ -->
+<div class="doss-gallery reveal-img">
+  <div class="doss-gallery--duo">
+    <picture>
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/7.avif" type="image/avif">
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/7.webp" type="image/webp">
+  <img src="images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/7.png" alt="Salle de bain — pierre naturelle, double vasque, douche italienne" loading="lazy"/>
+</picture>
+    <picture>
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/10.avif" type="image/avif">
+  <source srcset="dist/images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/10.webp" type="image/webp">
+  <img src="images/blog/Saint%20Fran%C3%A7ois%20-%20400k%20-%202000m2/Photos%20originales/10.png" alt="Vue aérienne nocturne — village illuminé sous le croissant de lune" loading="lazy"/>
+</picture>
+  </div>
+</div>
+<p class="doss-gallery__caption" data-fr="Salle de bain travertin & douche acier noir · Vue aérienne nocturne — six piscines illuminées" data-en="Travertine bathroom & black steel shower · Aerial night view — six illuminated pools">Salle de bain travertin & douche acier noir · Vue aérienne nocturne — six piscines illuminées</p>
+
+<!-- ════ VI — SAINT-FRANÇOIS + MÉTHODE HKH ════ -->
+<article class="doss-body reveal">
+  <h2>
+    <span class="num">VI · <em data-fr="Saint-François, la méthode HKH" data-en="Saint-François, the HKH method">Saint-François, la méthode HKH</em></span>
+    <span data-fr="Un emplacement, un process, un résultat." data-en="A location, a process, a result.">Un emplacement, un process, un résultat.</span>
+  </h2>
+
+  <p data-fr="Saint-François n'a pas été choisi par hasard. Cette commune du littoral est de la Grande-Terre concentre une clientèle touristique internationale, une demande locative saisonnière soutenue, et une image premium que peu de zones en Guadeloupe peuvent revendiquer. Proximité des plages, du golf, des marinas, des restaurants gastronomiques — tout concourt à faire de ce village une proposition locative à fort potentiel de rendement." data-en="Saint-François was not chosen by chance. This coastal town on the eastern side of Grande-Terre concentrates an international tourist clientele, sustained seasonal rental demand, and a premium image that few areas in Guadeloupe can claim. Proximity to beaches, golf, marinas and fine-dining restaurants — everything concurs to make this village a rental proposition with strong yield potential.">Saint-François n'a pas été choisi par hasard. Cette commune du littoral est de la Grande-Terre concentre une clientèle touristique internationale, une demande locative saisonnière soutenue, et une image premium que peu de zones en Guadeloupe peuvent revendiquer. Proximité des plages, du golf, des marinas, des restaurants gastronomiques — tout concourt à faire de ce village une proposition locative à fort potentiel de rendement.</p>
+
+  <p data-fr="Ce projet illustre concrètement ce que Home Kit Home apporte à ses partenaires immobiliers. En partant d'un terrain brut, nous avons réalisé l'étude d'implantation, les rendus architecturaux, l'estimation de rentabilité locative et la proposition commerciale complète — sans délais de permis de construire allongés, sans aléas de chantier, sans maçonnerie locale." data-en="This project concretely illustrates what Home Kit Home brings to its real estate partners. Starting from a raw plot, we carried out the site study, architectural renderings, rental profitability estimate and complete commercial proposal — without extended building permit delays, without on-site hazards, without local masonry.">Ce projet illustre concrètement ce que Home Kit Home apporte à ses partenaires immobiliers. En partant d'un terrain brut, nous avons réalisé l'étude d'implantation, les rendus architecturaux, l'estimation de rentabilité locative et la proposition commerciale complète — sans délais de permis de construire allongés, sans aléas de chantier, sans maçonnerie locale.</p>
+
+  <p data-fr="Les habitats sont posés sur pieux, livrés en monobloc depuis nos ateliers, installés par grue en quelques jours. La loi Girardin permet en outre une défiscalisation de 30 à 39 % sur ce type d'investissement en Guadeloupe, ce qui renforce considérablement l'attractivité du dossier pour les acquéreurs." data-en="The residences are installed on piles, delivered as single blocks from our workshops, set in place by crane in a few days. The Girardin tax law also enables 30 to 39% tax relief on this type of investment in Guadeloupe, considerably strengthening the attractiveness of the file for buyers.">Les habitats sont posés sur pieux, livrés en monobloc depuis nos ateliers, installés par grue en quelques jours. La loi Girardin permet en outre une défiscalisation de 30 à 39 % sur ce type d'investissement en Guadeloupe, ce qui renforce considérablement l'attractivité du dossier pour les acquéreurs.</p>
+
+  <div class="doss-partner">
+    <div class="doss-partner__init">JF</div>
+    <div>
+      <div class="doss-partner__name" data-fr="Jay Family Properties · Partenaire" data-en="Jay Family Properties · Partner">Jay Family Properties · Partenaire</div>
+      <p class="doss-partner__text" data-fr="<em>Agence immobilière partenaire</em> spécialisée sur les marchés premium de Guadeloupe. Jay Family Properties identifie les terrains à fort potentiel et collabore avec Home Kit Home pour y concevoir des propositions architecturales à haute valeur ajoutée, de l'étude de faisabilité à la livraison." data-en="<em>Premium real-estate agency</em> specialised in the Guadeloupe markets. Jay Family Properties identifies high-potential plots and collaborates with Home Kit Home to design high-added-value architectural proposals, from feasibility study to delivery."><em>Agence immobilière partenaire</em> spécialisée sur les marchés premium de Guadeloupe. Jay Family Properties identifie les terrains à fort potentiel et collabore avec Home Kit Home pour y concevoir des propositions architecturales à haute valeur ajoutée, de l'étude de faisabilité à la livraison.</p>
+    </div>
+  </div>
+
+  <p data-fr="Cette collaboration avec Jay Family Properties marque une étape dans la structuration de notre réseau partenaire aux Antilles. Elle démontre qu'une agence immobilière peut aller bien au-delà de la simple transaction — et proposer à ses clients une vision complète, de la parcelle à l'habitat livré prêt à vivre." data-en="This collaboration with Jay Family Properties marks a milestone in structuring our partner network in the Antilles. It demonstrates that a real estate agency can go far beyond the simple transaction — and offer its clients a complete vision, from the plot to the residence delivered ready to live in.">Cette collaboration avec Jay Family Properties marque une étape dans la structuration de notre réseau partenaire aux Antilles. Elle démontre qu'une agence immobilière peut aller bien au-delà de la simple transaction — et proposer à ses clients une vision complète, de la parcelle à l'habitat livré prêt à vivre.</p>
+</article>
+
+<!-- ════ SECTION INVESTISSEMENT — bascule commerciale ════ -->
+<section class="doss-invest reveal">
+  <div class="doss-invest__inner">
+    <div class="doss-invest__head">
+      <span class="doss-invest__lbl" data-fr="Synthèse financière" data-en="Financial summary">Synthèse financière</span>
+      <h2 class="doss-invest__title" data-fr="Un investissement <em>rentabilisé</em> en moins de 4 ans." data-en="An investment <em>profitable</em> in under 4 years.">Un investissement <em>rentabilisé</em> en moins de 4 ans.</h2>
+      <p class="doss-invest__intro" data-fr="Les chiffres parlent d'eux-mêmes. Les hypothèses détaillées se précisent lors d'un échange direct." data-en="The numbers speak for themselves. Detailed assumptions are clarified during a direct exchange.">Les chiffres parlent d'eux-mêmes. Les hypothèses détaillées se précisent lors d'un échange direct.</p>
+    </div>
+
+    <div class="doss-invest__grid">
+      <div>
+        <span class="doss-invest__block-lbl" data-fr="Enveloppe totale du projet" data-en="Total project budget">Enveloppe totale du projet</span>
+        <div class="doss-invest__big-val">~1,5 M€</div>
+        <p class="doss-invest__big-sub" data-fr="Terrain, résidences, fondations et aménagements inclus." data-en="Land, residences, foundations and fittings included.">Terrain, résidences, fondations et aménagements inclus.</p>
+        <p class="doss-invest__note" data-fr="Estimation globale. Le détail complet — VRD, configuration d'exploitation et arbitrages de finition — se discute lors d'un échange individualisé." data-en="Global estimate. The full breakdown — utilities, operating configuration and finish trade-offs — is discussed during a personalised exchange.">Estimation globale. Le détail complet — VRD, configuration d'exploitation et arbitrages de finition — se discute lors d'un échange individualisé.</p>
+      </div>
+
+      <div>
+        <span class="doss-invest__block-lbl" data-fr="Rentabilité estimée" data-en="Estimated profitability">Rentabilité estimée</span>
+        <div class="doss-invest__calc">
+          <div class="doss-invest__calc-row">
+            <span data-fr="6 habitats × 30 nuits × 190 €" data-en="6 residences × 30 nights × €190">6 habitats × 30 nuits × 190 €</span>
+            <strong>34 200 € / mois</strong>
+          </div>
+          <div class="doss-invest__calc-row">
+            <span data-fr="Revenu annuel brut estimé" data-en="Estimated gross annual revenue">Revenu annuel brut estimé</span>
+            <strong>410 400 € / an</strong>
+          </div>
+        </div>
+        <div class="doss-invest__roi">
+          <span class="doss-invest__roi-lbl" data-fr="Retour sur investissement estimé" data-en="Estimated return on investment">Retour sur investissement estimé</span>
+          <div class="doss-invest__roi-val"><em>~4</em> ans</div>
+          <p class="doss-invest__roi-sub" data-fr="Sur la base d'un taux d'occupation de 30 nuits par mois. Estimations indicatives, affinées lors d'un rendez-vous." data-en="Based on an occupancy rate of 30 nights per month. Indicative estimates, refined during a meeting.">Sur la base d'un taux d'occupation de 30 nuits par mois. Estimations indicatives, affinées lors d'un rendez-vous.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════ BLOC INTÉRÊT RAPIDE (être rappelé) ════ -->
+<section class="doss-interest">
+  <div class="doss-interest__inner">
+    <div>
+      <span class="doss-interest__lbl" data-fr="Ce projet vous intéresse" data-en="This project interests you">Ce projet vous intéresse</span>
+      <h2 data-fr="Laissez-nous un <em>mot</em>." data-en="Leave us <em>a word</em>.">Laissez-nous un <em>mot</em>.</h2>
+      <p class="doss-interest__text" data-fr="Indiquez votre email — nous vous rappelons personnellement pour en parler." data-en="Enter your email — we'll call you personally to discuss.">Indiquez votre email — nous vous rappelons personnellement pour en parler.</p>
+    </div>
+    <form class="doss-interest__form" action="contact.html" method="get">
+      <input type="hidden" name="project" value="saint-francois"/>
+      <input type="email" name="email" required data-fr="votre@email.com" data-en="your@email.com" placeholder="votre@email.com"/>
+      <button type="submit" data-fr="Être rappelé" data-en="Be called back">Être rappelé</button>
+    </form>
+  </div>
+</section>
+
+<!-- ════ NAV BAS ÉDITORIAL ════ -->
+<nav class="doss-nav">
+  <a href="blog.html"><span data-fr="← Le Journal" data-en="← The Journal">← Le Journal</span></a>
+  <a href="projets.html"><span data-fr="Le Cahier · Tous les projets →" data-en="The Notebook · All projects →">Le Cahier · Tous les projets →</span></a>
+</nav>
+
+<div id="footer-placeholder"></div>
+
+<script>
+/* ── Progression lecture ─────────────────────────── */
+(function(){
+  var bar = document.getElementById('read-progress');
+  function update(){
+    var total = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (total > 0 ? (window.scrollY / total * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  update();
+})();
+
+/* ── Hero zoom-out au chargement ─────────────────── */
+requestAnimationFrame(()=>document.getElementById('dossHero').classList.add('loaded'));
+
+/* ── Reveals au scroll ───────────────────────────── */
+(function(){
+  document.body.classList.add('js-ready');
+  var els = document.querySelectorAll('.reveal, .reveal-img');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.06, rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){ io.observe(el); });
+  setTimeout(function(){ els.forEach(function(el){ el.classList.add('visible'); }); }, 2000);
+})();
+
+/* ── Footer ──────────────────────────────────────── */
+fetch('partials/footer-simple.html')
+  .then(function(r){ if(!r.ok) throw new Error(); return r.text(); })
+  .then(function(h){
+    document.getElementById('footer-placeholder').innerHTML = h;
+    if(window.applyLang) window.applyLang(localStorage.getItem('hkh-lang') || 'fr');
+  })
+  .catch(function(){
+    document.getElementById('footer-placeholder').innerHTML =
+      '<footer style="padding:2rem;text-align:center;font-size:.8rem;color:#6B6660">© Home Kit Home — contact@home-kit-home.com</footer>';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+/* forms.css — Styles formulaire de contact
+   Utilisé par : contact.html
+   ─────────────────────────────────────── */
+.contact-form{display:flex;flex-direction:column;gap:1.2rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-grp{display:flex;flex-direction:column;gap:.45rem}
+.form-grp label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mid)}
+.form-grp input,
+.form-grp select,
+.form-grp textarea{
+  background:var(--white);
+  border:1px solid var(--cream-dk);
+  padding:.75rem 1rem;
+  font-family:var(--sans);
+  font-size:.9rem;
+  color:var(--dark);
+  outline:none;
+  transition:border-color .2s;
+  -webkit-appearance:none;
+  border-radius:0;
+}
+.form-grp select{
+  background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%237A736A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 1rem center;
+  padding-right:2.5rem;
+  cursor:pointer;
+}
+.form-grp input:focus,
+.form-grp select:focus,
+.form-grp textarea:focus{border-color:var(--copper)}
+.form-grp textarea{resize:vertical;min-height:120px}
+.form-success{display:none;background:rgba(184,115,51,.08);border:1px solid var(--copper);padding:1rem;font-size:.85rem;color:var(--copper)}
+
+@media(max-width:640px){
+  .form-row{grid-template-columns:1fr}
+}
