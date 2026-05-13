@@ -429,6 +429,16 @@ revealEls.forEach(el=>io.observe(el));
   var steps = Array.prototype.slice.call(document.querySelectorAll('.method__step'));
   if(!steps.length) return;
 
+  /* Mobile — stack statique calme, pas de transform/filter inline */
+  if(window.matchMedia('(max-width: 768px)').matches){
+    steps.forEach(function(s){
+      s.style.setProperty('--step-focus', 1);
+      s.style.transform = 'none';
+      s.style.filter    = 'none';
+    });
+    return;
+  }
+
   function easeOutQuad(t){ return 1 - (1 - t) * (1 - t); }
   function lerp(a, b, t){ return a + (b - a) * t; }
   function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
@@ -448,11 +458,11 @@ revealEls.forEach(el=>io.observe(el));
       var dist = clamp(Math.abs(stepCenterY - vcY) / (vh / 2), 0, 1);
       var e = easeOutQuad(dist);
       var sc  = lerp(1.05, 0.94, e);
-      var op  = lerp(1, 0.45, e);
       var bl  = lerp(0, 0.5, dist);
       step.style.transform = 'scale(' + sc + ')';
-      step.style.opacity   = op;
       step.style.filter    = 'blur(' + bl + 'px)';
+      /* Focus active step — 1 au centre, 0 aux bords */
+      step.style.setProperty('--step-focus', (1 - e).toFixed(3));
     });
   }
   window.addEventListener('scroll', function(){

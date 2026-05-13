@@ -756,7 +756,7 @@ ul{list-style:none}
   height:100%;
   display:block;
   object-fit:cover;
-  opacity:.12;
+  opacity:.20;
   will-change:transform;
   animation:methodKenBurns 20s ease-in-out infinite alternate;
 }
@@ -824,9 +824,8 @@ ul{list-style:none}
   position:relative;
   /* Zoom progressif — valeurs par défaut (fallback statique) */
   transform:scale(0.94);
-  opacity:.45;
   filter:blur(.5px);
-  will-change:transform,opacity,filter;
+  will-change:transform,filter;
 }
 .method__step:first-child{ padding-top:0; }
 .method__step:last-child{ padding-bottom:0; }
@@ -867,7 +866,7 @@ ul{list-style:none}
   position:absolute;
   width:1.5px;
   background:var(--copper);
-  opacity:.3;
+  opacity:calc(.10 + .75 * var(--step-focus, 0));
   top:0;
   bottom:0;
   transform:scaleY(var(--step-progress,0));
@@ -891,7 +890,7 @@ ul{list-style:none}
   font-size:clamp(5rem,10vw,8rem);
   line-height:.9;
   color:var(--paper);
-  opacity:.4;
+  opacity:calc(.20 + .80 * var(--step-focus, 0));
   letter-spacing:-.04em;
   position:relative;
   z-index:1;
@@ -905,6 +904,7 @@ ul{list-style:none}
   font-size:clamp(1.6rem,2.6vw,2.2rem);
   letter-spacing:-.015em;
   color:var(--paper);
+  opacity:calc(.35 + .65 * var(--step-focus, 0));
   margin:0 0 1.2rem;
   line-height:1.1;
 }
@@ -914,7 +914,7 @@ ul{list-style:none}
   font-size:clamp(.95rem,1.1vw,1.05rem);
   line-height:1.75;
   color:var(--paper);
-  opacity:.78;
+  opacity:calc(.35 + .65 * var(--step-focus, 0));
   margin:0;
   max-width:54ch;
 }
@@ -973,7 +973,6 @@ ul{list-style:none}
   .method__synth-rule{ width:60%; }
 }
 @media(prefers-reduced-motion:reduce){
-  .method__num{ opacity:.4; transform:none; transition:none; }
   .method__bg img{ animation:none; transform:none; }
   .method__step,
   .method__step::before{
@@ -982,7 +981,10 @@ ul{list-style:none}
     opacity:1 !important;
     filter:none !important;
   }
-  .method__step::before{ transform:scaleY(1) !important; }
+  .method__step::before{ transform:scaleY(1) !important; opacity:.5 !important; }
+  .method__num,
+  .method__step-title,
+  .method__step-desc{ opacity:1 !important; }
 }
 
 /* ════════════════════════════════
