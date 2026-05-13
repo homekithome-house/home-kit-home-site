@@ -901,7 +901,7 @@ ul{list-style:none}
   top:0;
   left:0;
   right:0;
-  height:60%; /* limite la zone aux ~60% supérieurs (zone du numéro, au-dessus du titre) */
+  height:75%; /* central allongé vers le titre "Pose", reste juste au-dessus */
   pointer-events:none;
   z-index:0; /* derrière le numéro (z-index:1) */
 }
@@ -923,15 +923,18 @@ ul{list-style:none}
 }
 .method__cable--left{
   top:50%; /* point de division — milieu vertical de la zone câbles */
-  height:50%; /* moitié inférieure de la zone */
-  transform:rotate(-18deg) scaleY(0);
+  /* height 61% de la zone : formule (50% / cos(35°)) = 61% pour que le
+     bottom du latéral pivoté tombe pile à la même hauteur Y que le bas
+     du trait central. Ligne d'accroche horizontale virtuelle. */
+  height:61%;
+  transform:rotate(-35deg) scaleY(0);
   transition-duration:800ms;
   transition-delay:600ms; /* jaillit quand le central a déjà parcouru sa moitié */
 }
 .method__cable--right{
   top:50%;
-  height:50%;
-  transform:rotate(18deg) scaleY(0);
+  height:61%;
+  transform:rotate(35deg) scaleY(0);
   transition-duration:800ms;
   transition-delay:600ms;
 }
@@ -941,11 +944,11 @@ ul{list-style:none}
 }
 .method__step.is-active .method__cable--left{
   opacity:.85;
-  transform:rotate(-18deg) scaleY(1);
+  transform:rotate(-35deg) scaleY(1);
 }
 .method__step.is-active .method__cable--right{
   opacity:.85;
-  transform:rotate(18deg) scaleY(1);
+  transform:rotate(35deg) scaleY(1);
 }
 
 /* Reveal one-shot piloté par IntersectionObserver léger.
@@ -1059,8 +1062,8 @@ ul{list-style:none}
   .method__step-desc{ opacity:1 !important; }
   /* Step 03 — 3 câbles statiques visibles, gardent leurs angles */
   .method__cable{ transform:scaleY(1) !important; opacity:.5 !important; transition:none !important; }
-  .method__cable--left{ transform:rotate(-18deg) scaleY(1) !important; }
-  .method__cable--right{ transform:rotate(18deg) scaleY(1) !important; }
+  .method__cable--left{ transform:rotate(-35deg) scaleY(1) !important; }
+  .method__cable--right{ transform:rotate(35deg) scaleY(1) !important; }
 }
 
 /* ════════════════════════════════
