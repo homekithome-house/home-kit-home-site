@@ -420,10 +420,11 @@ revealEls.forEach(el=>io.observe(el));
 })();
 </script>
 <script>
-/* ── Method scroll-driven fallback rAF ──────────────────
-   Active uniquement si CSS scroll-driven non supporté      */
+/* ── Method scroll-driven motion (rAF universel) ────────
+   Approche universelle Chrome/FF/Safari : pas de CSS @supports
+   scroll-driven (interprétation native instable selon contexte).
+   Le rAF coalescé écrit transform/opacity/filter inline + --step-progress. */
 (function(){
-  if(CSS && CSS.supports && CSS.supports('animation-timeline','view()')) return;
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var steps = Array.prototype.slice.call(document.querySelectorAll('.method__step'));
   if(!steps.length) return;

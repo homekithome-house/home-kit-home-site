@@ -841,6 +841,7 @@ ul{list-style:none}
 .method__step:nth-child(3){
   grid-template-columns:1fr;
   text-align:center;
+  justify-items:center;
 }
 
 /* Numéros par step */
@@ -878,34 +879,9 @@ ul{list-style:none}
 .method__step:nth-child(2)::before{ left:calc(87.5% - 0.75px); }
 .method__step:nth-child(3)::before{ left:calc(50% - 0.75px); }
 
-/* ── CSS scroll-driven primary ─────────────────── */
-@supports (animation-timeline: view()){
-  .method__step{
-    animation:methodStepZoom linear both;
-    animation-timeline:view();
-    animation-range:entry 0% exit 100%;
-    /* supprime les valeurs statiques — la keyframe prend le relais */
-    transform:none;
-    opacity:1;
-    filter:none;
-  }
-  @keyframes methodStepZoom{
-    0%  { transform:scale(.94); opacity:.45; filter:blur(.5px); }
-    35% { transform:scale(1.05); opacity:1; filter:blur(0); }
-    65% { transform:scale(1.05); opacity:1; filter:blur(0); }
-    100%{ transform:scale(.94); opacity:.45; filter:blur(.5px); }
-  }
-  .method__step::before{
-    animation:methodStepRule linear both;
-    animation-timeline:view();
-    animation-range:entry 0% exit 100%;
-    transform-origin:top center;
-  }
-  @keyframes methodStepRule{
-    from{ transform:scaleY(0); }
-    to  { transform:scaleY(1); }
-  }
-}
+/* Scroll-driven motion piloté par JS rAF (universel Chrome/FF/Safari).
+   Le rAF écrit transform/opacity/filter inline + set --step-progress.
+   Voir bloc <script> Method scroll-driven en bas de index.html. */
 
 /* ── Numéro ────────────────────────────────────── */
 .method__num{
