@@ -891,45 +891,61 @@ ul{list-style:none}
    (voir .method__cables) qui évoquent les élingues d'une grue de pose. */
 .method__step:nth-child(3)::before{ display:none; }
 
-/* ── Step 03 — Câbles de grue (3 traits convergents) ──── */
+/* ── Step 03 — Câbles de grue (3 traits convergents) ────
+   Anatomie correcte : le câble central descend du haut, se divise au
+   point milieu, les 2 latéraux jaillissent de ce point et s'écartent
+   vers le bas-côté pour "tenir" le bloc texte comme une charge.
+   Zone limitée à la moitié supérieure du step (au-dessus du titre). */
 .method__cables{
   position:absolute;
-  inset:0;
+  top:0;
+  left:0;
+  right:0;
+  height:60%; /* limite la zone aux ~60% supérieurs (zone du numéro, au-dessus du titre) */
   pointer-events:none;
   z-index:0; /* derrière le numéro (z-index:1) */
 }
 .method__cable{
   position:absolute;
-  top:0;
   left:calc(50% - 0.75px);
   width:1.5px;
   background:var(--copper);
   opacity:.1;
   transform-origin:top center;
-  transform:scaleY(0);
   transition:opacity 1200ms cubic-bezier(.16,1,.3,1),
              transform 1200ms cubic-bezier(.16,1,.3,1);
 }
-.method__cable--center{ height:100%; }
+.method__cable--center{
+  top:0;
+  height:100%;
+  transform:scaleY(0);
+  /* duration héritée du base : 1200ms, delay 0ms */
+}
 .method__cable--left{
-  height:80%;
-  transform:rotate(-5deg) scaleY(0);
-  transition-delay:150ms;
+  top:50%; /* point de division — milieu vertical de la zone câbles */
+  height:50%; /* moitié inférieure de la zone */
+  transform:rotate(-18deg) scaleY(0);
+  transition-duration:800ms;
+  transition-delay:600ms; /* jaillit quand le central a déjà parcouru sa moitié */
 }
 .method__cable--right{
-  height:80%;
-  transform:rotate(5deg) scaleY(0);
-  transition-delay:150ms;
+  top:50%;
+  height:50%;
+  transform:rotate(18deg) scaleY(0);
+  transition-duration:800ms;
+  transition-delay:600ms;
 }
-.method__step.is-active .method__cable{
+.method__step.is-active .method__cable--center{
   opacity:.85;
   transform:scaleY(1);
 }
 .method__step.is-active .method__cable--left{
-  transform:rotate(-5deg) scaleY(1);
+  opacity:.85;
+  transform:rotate(-18deg) scaleY(1);
 }
 .method__step.is-active .method__cable--right{
-  transform:rotate(5deg) scaleY(1);
+  opacity:.85;
+  transform:rotate(18deg) scaleY(1);
 }
 
 /* Reveal one-shot piloté par IntersectionObserver léger.
@@ -1043,8 +1059,8 @@ ul{list-style:none}
   .method__step-desc{ opacity:1 !important; }
   /* Step 03 — 3 câbles statiques visibles, gardent leurs angles */
   .method__cable{ transform:scaleY(1) !important; opacity:.5 !important; transition:none !important; }
-  .method__cable--left{ transform:rotate(-5deg) scaleY(1) !important; }
-  .method__cable--right{ transform:rotate(5deg) scaleY(1) !important; }
+  .method__cable--left{ transform:rotate(-18deg) scaleY(1) !important; }
+  .method__cable--right{ transform:rotate(18deg) scaleY(1) !important; }
 }
 
 /* ════════════════════════════════
