@@ -1,7 +1,8 @@
 .DS_Store
 .claude/
 .vscode/
-agent_docs/
+.agents/
+skills-lock.json
 fichiers/
 /Convertir images/
 /images/
