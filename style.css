@@ -923,18 +923,20 @@ ul{list-style:none}
 }
 .method__cable--left{
   top:70%; /* bifurcation SOUS le numéro 03, dans l'espace avant le titre */
-  /* height 37% de la zone : formule (30% / cos(35°)) = 36.6% pour que
+  /* height 42% de la zone : formule (30% / cos(45°)) = 42.4% pour que
      le bottom du latéral pivoté tombe pile à la même hauteur Y que le
-     bas du trait central. Ligne d'accroche horizontale virtuelle. */
-  height:37%;
-  transform:rotate(-35deg) scaleY(0);
+     bas du trait central. Ligne d'accroche horizontale virtuelle.
+     Angle ±45° = limite haute brief, V large maximal sous contrainte
+     d'alignement. */
+  height:42%;
+  transform:rotate(-45deg) scaleY(0);
   transition-duration:800ms;
   transition-delay:600ms; /* jaillit quand le central a déjà parcouru ~70% */
 }
 .method__cable--right{
   top:70%;
-  height:37%;
-  transform:rotate(35deg) scaleY(0);
+  height:42%;
+  transform:rotate(45deg) scaleY(0);
   transition-duration:800ms;
   transition-delay:600ms;
 }
@@ -944,11 +946,11 @@ ul{list-style:none}
 }
 .method__step.is-active .method__cable--left{
   opacity:.85;
-  transform:rotate(-35deg) scaleY(1);
+  transform:rotate(-45deg) scaleY(1);
 }
 .method__step.is-active .method__cable--right{
   opacity:.85;
-  transform:rotate(35deg) scaleY(1);
+  transform:rotate(45deg) scaleY(1);
 }
 
 /* Reveal one-shot piloté par IntersectionObserver léger.
@@ -1062,8 +1064,8 @@ ul{list-style:none}
   .method__step-desc{ opacity:1 !important; }
   /* Step 03 — 3 câbles statiques visibles, gardent leurs angles */
   .method__cable{ transform:scaleY(1) !important; opacity:.5 !important; transition:none !important; }
-  .method__cable--left{ transform:rotate(-35deg) scaleY(1) !important; }
-  .method__cable--right{ transform:rotate(35deg) scaleY(1) !important; }
+  .method__cable--left{ transform:rotate(-45deg) scaleY(1) !important; }
+  .method__cable--right{ transform:rotate(45deg) scaleY(1) !important; }
 }
 
 /* ════════════════════════════════
