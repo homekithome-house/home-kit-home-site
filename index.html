@@ -420,26 +420,44 @@ revealEls.forEach(el=>io.observe(el));
 })();
 </script>
 <script>
+/* ── Method scroll-driven fallback rAF ──────────────────
+   Active uniquement si CSS scroll-driven non supporté      */
 (function(){
-  if(!('IntersectionObserver' in window)) return;
-  var tl = document.querySelector('.method__timeline');
-  if(tl){
-    var ioTl = new IntersectionObserver(function(ents){
-      ents.forEach(function(e){
-        if(e.isIntersecting){ tl.classList.add('is-revealed'); ioTl.unobserve(tl); }
-      });
-    },{threshold:.18});
-    ioTl.observe(tl);
+  if(CSS && CSS.supports && CSS.supports('animation-timeline','view()')) return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var steps = Array.prototype.slice.call(document.querySelectorAll('.method__step'));
+  if(!steps.length) return;
+
+  function easeOutQuad(t){ return 1 - (1 - t) * (1 - t); }
+  function lerp(a, b, t){ return a + (b - a) * t; }
+  function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
+
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var vh = window.innerHeight;
+    var vcY = vh / 2;
+    steps.forEach(function(step){
+      var r = step.getBoundingClientRect();
+      var stepCenterY = r.top + r.height / 2;
+      /* Trait copper : progress 0→1 basé sur position viewport */
+      var progress = clamp((vh - r.top) / (vh + r.height), 0, 1);
+      step.style.setProperty('--step-progress', progress);
+      /* Zoom progressif */
+      var dist = clamp(Math.abs(stepCenterY - vcY) / (vh / 2), 0, 1);
+      var e = easeOutQuad(dist);
+      var sc  = lerp(1.05, 0.94, e);
+      var op  = lerp(1, 0.45, e);
+      var bl  = lerp(0, 0.5, dist);
+      step.style.transform = 'scale(' + sc + ')';
+      step.style.opacity   = op;
+      step.style.filter    = 'blur(' + bl + 'px)';
+    });
   }
-  var steps = document.querySelectorAll('.method__step');
-  if(steps.length){
-    var ioSt = new IntersectionObserver(function(ents){
-      ents.forEach(function(e){
-        if(e.isIntersecting){ e.target.classList.add('is-in'); ioSt.unobserve(e.target); }
-      });
-    },{threshold:.3});
-    steps.forEach(function(s){ ioSt.observe(s); });
-  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){ requestAnimationFrame(update); ticking = true; }
+  }, { passive: true });
+  update();
 })();
 </script>
 </body>
