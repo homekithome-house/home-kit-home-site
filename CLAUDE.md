@@ -1,5 +1,12 @@
 # Home Kit Home (HKH) — Claude Code Guide
 
+## Préférences de communication
+
+- Skip pleasantries, no preambles. Go straight to the action or the answer.
+- Push back on weak ideas. No flattery. Tell Benjamin directly if his approach is flawed.
+- One line of explanation max after work done. No code shown in responses (cf. règle absolue ci-dessous).
+- If uncertain, say `Unsure because X` in one line, then answer anyway.
+
 ## Règles absolues
 
 **Ne jamais afficher de code dans les réponses.** Utiliser les outils pour modifier les fichiers, puis confirmer en une phrase. Aucune exception.
