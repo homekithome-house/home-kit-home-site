@@ -233,6 +233,117 @@ ul{list-style:none}
   .hero__bg img{animation:none;transform:none}
 }
 
+/* Pass 4.7 γ : signature texte vertical marge droite (magazine architecture).
+   Pattern Aman/Wallpaper. Unique au Hero, devient signature distinctive de la home. */
+.hero__edition{
+  position:absolute;
+  top:50%;
+  right:clamp(1.6rem,2.4vw,2.4rem);
+  transform-origin:right center;
+  transform:rotate(-90deg) translateX(50%);
+  z-index:2;
+  font-family:var(--sans);
+  font-weight:300;
+  font-size:.66rem;
+  letter-spacing:.34em;
+  text-transform:uppercase;
+  color:var(--copper-lt);
+  opacity:0;
+  white-space:nowrap;
+  pointer-events:none;
+  animation:heroEditionIn 1.2s cubic-bezier(.16,1,.3,1) forwards;
+  animation-delay:1.4s;
+}
+@keyframes heroEditionIn{
+  from{ opacity:0; }
+  to{ opacity:.4; }
+}
+@media(max-width:900px){
+  .hero__edition{ display:none; }
+}
+
+/* Pass 4.7 γ : closure narrative Hero (pattern HKH closures).
+   Trait copper qui s'étend + incipit italic vers Collections — devient le scroll cue éditorial. */
+.hero__closure{
+  position:absolute;
+  left:clamp(2.5rem,6vw,6rem);
+  right:clamp(2.5rem,6vw,6rem);
+  bottom:clamp(2rem,4vh,3rem);
+  z-index:2;
+  display:flex;
+  align-items:center;
+  gap:clamp(1rem,2vw,1.6rem);
+  flex-wrap:wrap;
+}
+.hero__closure-rule{
+  display:block;
+  width:0;
+  height:1px;
+  background:var(--copper-lt);
+  opacity:.7;
+  flex-shrink:0;
+  transition:width 1600ms cubic-bezier(.16,1,.3,1);
+  animation:heroClosureRule 0s linear forwards;
+  animation-delay:1.6s;
+}
+@keyframes heroClosureRule{
+  to{ width:60px; }
+}
+.hero__closure-link{
+  font-family:var(--sans);
+  font-weight:300;
+  font-size:.78rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--paper);
+  text-decoration:none;
+  opacity:0;
+  transform:translateY(8px);
+  animation:heroClosureLink 1.1s cubic-bezier(.16,1,.3,1) forwards;
+  animation-delay:1.85s;
+  transition:color .3s ease, gap .3s ease;
+  position:relative;
+  padding-bottom:.4rem;
+}
+.hero__closure-link em{
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:400;
+  color:var(--copper-lt);
+  text-transform:none;
+  letter-spacing:.02em;
+  font-size:1.05em;
+  margin:0 .25em;
+}
+.hero__closure-link::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:1px;
+  background:var(--copper-lt);
+  opacity:.3;
+  transform:scaleX(0);
+  transform-origin:left center;
+  transition:transform 600ms cubic-bezier(.16,1,.3,1), opacity .3s ease;
+}
+.hero__closure-link:hover{ color:var(--copper-lt); }
+.hero__closure-link:hover::after{ transform:scaleX(1); opacity:.7; }
+@keyframes heroClosureLink{
+  to{ opacity:.85; transform:none; }
+}
+@media(max-width:768px){
+  .hero__closure{ left:1.5rem; right:1.5rem; bottom:1.5rem; }
+  .hero__closure-link{ font-size:.72rem; letter-spacing:.14em; }
+  .hero__closure-link em{ font-size:1em; }
+}
+@media(prefers-reduced-motion:reduce){
+  .hero__edition{ opacity:.4; animation:none; }
+  .hero__closure-rule{ width:60px; animation:none; transition:none; }
+  .hero__closure-link{ opacity:.85; transform:none; animation:none; }
+}
+
 
 /* ════════════════════════════════
    PARTENAIRES FONDATEURS (Le Cercle — index.html)

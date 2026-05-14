@@ -25,7 +25,7 @@
 </head>
 <body data-nav="hero">
 
-<!-- ── HERO ─────────────────────────────────────────── -->
+<!-- ── HERO — Pass 4.7 γ : signature texte vertical + closure narrative + reveal at scroll ─────── -->
 <section class="hero">
   <div class="hero__bg">
     <picture>
@@ -34,6 +34,7 @@
       <img src="dist/images/projet-home-kit-home.avif" alt="Projet Home Kit Home — habitat architectural premium clé en main" loading="eager" fetchpriority="high"/>
     </picture>
   </div>
+  <span class="hero__edition" aria-hidden="true">MAISON HKH · ÉDITION 2026</span>
   <div class="hero__content">
     <h1 class="hero__title" data-fr="<span class=&quot;hero__word&quot; style=&quot;--i:1&quot;>Livrée</span> <span class=&quot;hero__word&quot; style=&quot;--i:2&quot;>par</span> <span class=&quot;hero__word&quot; style=&quot;--i:3&quot;>grue.</span><br><span class=&quot;hero__word&quot; style=&quot;--i:4&quot;>Posée</span> <span class=&quot;hero__word&quot; style=&quot;--i:5&quot;>en</span> <span class=&quot;hero__word&quot; style=&quot;--i:6&quot;>un</span> <span class=&quot;hero__word&quot; style=&quot;--i:7&quot;>jour.</span><br><span class=&quot;hero__word&quot; style=&quot;--i:8&quot;>Habitée</span> <span class=&quot;hero__word&quot; style=&quot;--i:9&quot;>dès</span> <span class=&quot;hero__word&quot; style=&quot;--i:10&quot;>demain.</span>" data-en="<span class=&quot;hero__word&quot; style=&quot;--i:1&quot;>Lifted</span> <span class=&quot;hero__word&quot; style=&quot;--i:2&quot;>by</span> <span class=&quot;hero__word&quot; style=&quot;--i:3&quot;>crane.</span><br><span class=&quot;hero__word&quot; style=&quot;--i:4&quot;>Set</span> <span class=&quot;hero__word&quot; style=&quot;--i:5&quot;>in</span> <span class=&quot;hero__word&quot; style=&quot;--i:6&quot;>one</span> <span class=&quot;hero__word&quot; style=&quot;--i:7&quot;>day.</span><br><span class=&quot;hero__word&quot; style=&quot;--i:8&quot;>Lived</span> <span class=&quot;hero__word&quot; style=&quot;--i:9&quot;>in</span> <span class=&quot;hero__word&quot; style=&quot;--i:10&quot;>tomorrow.</span>"><span class="hero__word" style="--i:1">Livrée</span> <span class="hero__word" style="--i:2">par</span> <span class="hero__word" style="--i:3">grue.</span><br><span class="hero__word" style="--i:4">Posée</span> <span class="hero__word" style="--i:5">en</span> <span class="hero__word" style="--i:6">un</span> <span class="hero__word" style="--i:7">jour.</span><br><span class="hero__word" style="--i:8">Habitée</span> <span class="hero__word" style="--i:9">dès</span> <span class="hero__word" style="--i:10">demain.</span></h1>
     <p class="hero__girardin" data-fr="<span class=&quot;hero__girardin-rule&quot; aria-hidden=&quot;true&quot;></span><a href=&quot;investir.html&quot;>Éligible Girardin <em>· 39 %</em> de défiscalisation outre-mer <span class=&quot;hero__arrow&quot;>→</span></a>" data-en="<span class=&quot;hero__girardin-rule&quot; aria-hidden=&quot;true&quot;></span><a href=&quot;investir.html&quot;>Girardin-eligible <em>· 39 %</em> overseas tax exemption <span class=&quot;hero__arrow&quot;>→</span></a>"><span class="hero__girardin-rule" aria-hidden="true"></span><a href="investir.html">Éligible Girardin <em>· 39 %</em> de défiscalisation outre-mer <span class="hero__arrow">→</span></a></p>
@@ -42,11 +43,15 @@
       <a href="contact.html" class="editorial__link editorial__link--light" data-fr="Parler à HKH" data-en="Talk to HKH">Parler à HKH</a>
     </div>
   </div>
+  <div class="hero__closure">
+    <span class="hero__closure-rule" aria-hidden="true"></span>
+    <a href="#collections" class="hero__closure-link" data-fr="Trois familles. <em>Six manières d'habiter.</em> →" data-en="Three families. <em>Six ways to inhabit.</em> →">Trois familles. <em>Six manières d'habiter.</em> →</a>
+  </div>
 </section>
 
 
 <!-- ── COLLECTION — 3 blocs famille empilés ──────────────────── -->
-<section class="collections-spread">
+<section class="collections-spread" id="collections">
 
   <header class="collections-spread__intro">
     <span class="collections-spread__eyebrow" data-reveal-item data-fr="Trois familles" data-en="Three families">Trois familles</span>
@@ -726,16 +731,20 @@ revealEls.forEach(el=>io.observe(el));
 </script>
 <script>
 
-/* ── Parallaxe Hero subtle ──────────────────────── */
+/* ── Parallaxe Hero + reveal at scroll (Pass 4.7 γ) ──────────
+   En plus du parallax img, gère :
+   - opacity hero__content 1 → 0.88 sur scroll 0-500px (effet "seuil franchi")
+   - translateY hero__title -16px sur scroll 0-500px (parallax léger titre) */
 (function(){
   var img = document.querySelector('.hero__bg img');
-  if(!img) return;
+  var hero = document.querySelector('.hero');
+  var content = document.querySelector('.hero__content');
+  var title = document.querySelector('.hero__title');
+  if(!img || !hero) return;
   if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   var ticking = false;
   var maxShift = 80;
-  var hero = document.querySelector('.hero');
-  if(!hero) return;
 
   function update(){
     var y = window.scrollY || window.pageYOffset;
@@ -743,10 +752,18 @@ revealEls.forEach(el=>io.observe(el));
     if(y > heroH + 200) { ticking = false; return; }
     var shift = Math.min(maxShift, y * 0.22);
     img.style.transform = 'translate3d(0,' + shift + 'px,0) scale(1.06)';
+
+    if(content && title){
+      var ratio = Math.min(1, y / 500);
+      content.style.opacity = (1 - ratio * 0.12).toFixed(3);
+      title.style.transform = 'translate3d(0,' + (-ratio * 16).toFixed(1) + 'px,0)';
+    }
     ticking = false;
   }
 
   img.style.willChange = 'transform';
+  if(content) content.style.willChange = 'opacity';
+  if(title) title.style.willChange = 'transform';
 
   window.addEventListener('scroll', function(){
     if(!ticking){
