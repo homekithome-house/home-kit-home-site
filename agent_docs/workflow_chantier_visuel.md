@@ -24,6 +24,13 @@
 
 8. **Validation finale ou itération** : si OK chantier suivant, sinon brief ciblé sur le problème.
 
+9. **Validation perception visuelle (Pass 4.7+)** : après livraison technique, vérifier que CHAQUE dispositif est *senti*, pas juste présent. Score 5/5 technique ≠ 5/5 ressenti.
+   - Lisibilité minimale : font ≥ 13px sur fond image dark
+   - Opacity minimale copper sur dark : ≥ .55
+   - Delta perceptuel d'animation : ≥ 15% (ex. opacity scroll 1→.75 perceptible, 1→.88 trop subtil)
+   - Test : ouvrir la page, scroller normalement, identifier en 3 secondes chaque dispositif sans chercher
+   - Si un dispositif n'est pas senti → amplifier (taille, opacity, contraste, delta)
+
 ## Règles fixes
 
 - Toujours passer par taste-skill sur décisions visuelles importantes
