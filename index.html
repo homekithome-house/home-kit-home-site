@@ -17,7 +17,7 @@
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
   </noscript>
-  <link rel="stylesheet" href="style.css?v=terrain-statement-1"/>
+  <link rel="stylesheet" href="style.css?v=duo-manifest-1"/>
   <link rel="stylesheet" href="assets/css/animations.css"/>
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
@@ -357,28 +357,34 @@
   </div>
 </section>
 
-<!-- ── DEUX DESTINATIONS — orientation duale slim (pédagogique) ──────── -->
-<section class="duo" data-fp-reveal>
-  <div class="duo__inner">
-    <div class="duo__head">
-      <span class="duo__eyebrow" data-fr="Financer & Investir" data-en="Finance & Invest">Financer & Investir</span>
-      <h2 class="duo__h2" data-fr="Deux destinations, <em>une seule maison</em>." data-en="Two destinations, <em>one single home</em>.">Deux destinations, <em>une seule maison</em>.</h2>
-      <p class="duo__sub" data-fr="Deux portes d'entrée. La mécanique d'achat pour résider ou louer. L'optimisation fiscale pour les projets locatifs outre-mer." data-en="Two entry points. The purchase mechanics for residing or renting. The fiscal optimisation for overseas rental projects.">Deux portes d'entrée. La mécanique d'achat pour résider ou louer. L'optimisation fiscale pour les projets locatifs outre-mer.</p>
-    </div>
-    <div class="duo__paths">
-      <a href="financer.html" class="duo__path duo__path--finance">
-        <span class="duo__path-tag" data-fr="Mécanique d'achat" data-en="Purchase mechanics">Mécanique d'achat</span>
-        <span class="duo__path-name" data-fr="Financer mon habitat" data-en="Finance my home">Financer mon habitat</span>
-        <span class="duo__path-sig" data-fr="Achat direct ou crédit immobilier via notre partenaire Charlemagne Investissement." data-en="Direct purchase or mortgage through our partner Charlemagne Investissement.">Achat direct ou crédit immobilier via notre partenaire Charlemagne Investissement.</span>
-        <span class="duo__path-arrow" aria-hidden="true">→</span>
+<!-- ── DEUX DESTINATIONS — manifeste typographique vertical (refonte Niveau Method 2026-05-14) ──── -->
+<section class="duo" data-duo-reveal>
+  <header class="duo__head">
+    <span class="duo__eyebrow" data-fr="Financer & Investir" data-en="Finance & Invest">Financer & Investir</span>
+    <h2 class="duo__h2" data-fr="Une maison. <em>Deux destinations.</em>" data-en="One home. <em>Two destinations.</em>">Une maison. <em>Deux destinations.</em></h2>
+  </header>
+  <div class="duo__manifest">
+    <article class="duo__voie duo__voie--finance">
+      <a href="financer.html" class="duo__voie-link">
+        <span class="duo__voie-tag" data-fr="Pour résider" data-en="To reside">Pour résider</span>
+        <h3 class="duo__voie-word" data-fr="Financer." data-en="Finance.">Financer.</h3>
+        <p class="duo__voie-line" data-fr="Achat direct ou crédit immobilier via Charlemagne Investissement." data-en="Direct purchase or mortgage through Charlemagne Investissement.">Achat direct ou crédit immobilier via Charlemagne Investissement.</p>
+        <span class="duo__voie-cta" data-fr="La mécanique d'achat →" data-en="The purchase mechanics →">La mécanique d'achat →</span>
       </a>
-      <a href="investir.html" class="duo__path duo__path--invest">
-        <span class="duo__path-tag" data-fr="Investisseurs locatifs · Outre-mer" data-en="Rental investors · Overseas">Investisseurs locatifs · Outre-mer</span>
-        <span class="duo__path-name" data-fr="Investir en outre-mer" data-en="Invest overseas">Investir en outre-mer</span>
-        <span class="duo__path-sig" data-fr="Girardin, FEDER, crédit d'impôt outre-mer — trois leviers cumulables pour les projets locatifs neufs." data-en="Girardin, FEDER, overseas tax credit — three combinable schemes for new rental projects.">Girardin, FEDER, crédit d'impôt outre-mer — trois leviers cumulables pour les projets locatifs neufs.</span>
-        <span class="duo__path-arrow" aria-hidden="true">→</span>
+    </article>
+    <span class="duo__pivot" aria-hidden="true">ou</span>
+    <article class="duo__voie duo__voie--invest">
+      <a href="investir.html" class="duo__voie-link">
+        <span class="duo__voie-tag" data-fr="Pour rapporter" data-en="To return">Pour rapporter</span>
+        <h3 class="duo__voie-word" data-fr="Investir." data-en="Invest.">Investir.</h3>
+        <p class="duo__voie-line" data-fr="Girardin · FEDER · crédit d'impôt outre-mer — trois leviers cumulables." data-en="Girardin · FEDER · overseas tax credit — three combinable schemes.">Girardin · FEDER · crédit d'impôt outre-mer — trois leviers cumulables.</p>
+        <span class="duo__voie-cta" data-fr="Le levier locatif outre-mer →" data-en="The overseas rental scheme →">Le levier locatif outre-mer →</span>
       </a>
-    </div>
+    </article>
+  </div>
+  <div class="duo__closure" data-duo-closure>
+    <span class="duo__closure-rule" aria-hidden="true"></span>
+    <p class="duo__closure-line" data-fr="Vivre, ou louer. <em>Une seule maison, deux trajectoires.</em>" data-en="Live, or rent. <em>One home, two trajectories.</em>">Vivre, ou louer. <em>Une seule maison, deux trajectoires.</em></p>
   </div>
 </section>
 
@@ -537,7 +543,6 @@ revealEls.forEach(el=>io.observe(el));
     {trigger:'.fp-featured[data-fp-reveal]',children:['.fp-featured__eyebrow','.fp-featured__h2','.fp-featured__meta','.fp-featured__partner']},
     {trigger:'.fp-quote[data-fp-reveal]',children:['.fp-quote__rule','.fp-quote__text','.fp-quote__attr']},
     {trigger:'.fp-archive[data-fp-reveal]',children:['.fp-archive__eyebrow','.fp-archive__empty']},
-    {trigger:'.duo[data-fp-reveal]',children:['.duo__eyebrow','.duo__h2','.duo__sub','.duo__path--finance','.duo__path--invest'],stagger:240},
     {trigger:'.cercle-founder[data-fp-reveal]',children:['.cercle-founder__tag','.cercle-founder__num','.cercle-founder__name','.cercle-founder__signature','.cercle-founder__link'],stagger:280},
     {trigger:'.cercle-bridge[data-fp-reveal]',children:['.cercle-bridge__rule','.cercle-bridge__text']},
     {trigger:'.cercle-network[data-fp-reveal]',children:['.cercle-network__eyebrow','.cercle-network__empty']},
@@ -571,7 +576,7 @@ revealEls.forEach(el=>io.observe(el));
    IO threshold 0.4 + rootMargin -10%. Ajoute .is-revealed au conteneur ;
    le CSS gère stroke-dashoffset, opacity, translateY, width du trait, Ken Burns. ── */
 (function(){
-  var targets=document.querySelectorAll('.collections-spread__triptyque, .collections-spread__closure, [data-terrain-reveal], [data-terrain-closure]');
+  var targets=document.querySelectorAll('.collections-spread__triptyque, .collections-spread__closure, [data-terrain-reveal], [data-terrain-closure], [data-duo-reveal], [data-duo-closure]');
   if(!targets.length) return;
   if(!('IntersectionObserver' in window)){
     targets.forEach(function(el){ el.classList.add('is-revealed'); });
