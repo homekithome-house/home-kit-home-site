@@ -1,6 +1,10 @@
-# Workflow chantier visuel/UX — méthode HKH
+# Workflow chantier visuel/UX — méthode HKH (NIVEAU SECTION)
 
 À appliquer systématiquement sur chaque refonte de section ou ajout d'interactivité.
+
+> **Articulation** : ce document décrit la méthode au niveau **SECTION individuelle** (8 étapes).
+> Pour la méthode au niveau **PAGE entière** (récit global, cohérence inter-sections), voir `methode_niveau_method.md`.
+> Pendant la Phase 2 de `methode_niveau_method.md` (production section par section), on applique systématiquement ces 8 étapes.
 
 ## Étapes
 

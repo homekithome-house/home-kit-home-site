@@ -13,7 +13,9 @@
 
 **Avant toute création de page, refonte de section, ou choix de composition visuelle, lis `agent_docs/art_direction.md`.** ADN visuel HKH (référence iglucraft, anti-références, émotions cibles). Pas de production visuelle sans ce passage préalable.
 
-**Avant tout chantier visuel/UX, lis et applique `agent_docs/workflow_chantier_visuel.md`.** Méthode HKH en 8 étapes (cadrage → taste-skill → choix → brief court → plan → validation → livraison → itération) + règles fixes (jamais trancher sur direction visuelle, jamais brief > 40 lignes, toujours diagnostic via Claude in Chrome MCP).
+**Avant tout chantier visuel/UX au niveau SECTION, lis et applique `agent_docs/workflow_chantier_visuel.md`.** Méthode HKH en 8 étapes (cadrage → taste-skill → choix → brief court → plan → validation → livraison → itération) + règles fixes (jamais trancher sur direction visuelle, jamais brief > 40 lignes, toujours diagnostic via Claude in Chrome MCP).
+
+**Avant toute création/refonte/audit d'une PAGE entière, lis et applique OBLIGATOIREMENT `agent_docs/methode_niveau_method.md`.** Méthode HKH "Niveau Method" en 4 phases (récit global → audit checklist 5/5 → production section par section → cohérence inter-sections → polish technique). **5 ingrédients obligatoires par section** (signature visuelle distinctive · narrativité · reveal one-shot puissant · structure visuelle forte · closure narrative). **5 critères inter-sections** (récit global · rythme paper/dark narratif · signatures uniques · densité émotionnelle homogène · transitions soignées). **Règle absolue Benjamin : on ne déroge JAMAIS de cette méthode.** Le polish technique (smooth scroll, parallax, sticky) vient TOUJOURS en dernier (Phase 4) — il ne sauve jamais une page sage.
 
 **Vocabulaire de marque** : voir `agent_docs/brand_rules.md` (interdits, em-dash vs middot, ton éditorial vs commercial, ton catalogue 2026).
 
