@@ -395,6 +395,8 @@ ul{list-style:none}
     z-index:2;
     width:calc(100% + clamp(8rem, 20vw, 22rem));
     margin-right:clamp(-22rem, -20vw, -8rem);
+    font-size:clamp(3rem, 5.6vw, 5.8rem);
+    white-space:nowrap;
   }
 }
 
