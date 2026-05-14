@@ -200,11 +200,23 @@ ul{list-style:none}
 .hero__bg{position:absolute;inset:0;z-index:0;overflow:hidden}
 .hero__bg picture{display:block;width:100%;height:100%}
 .hero__bg img{width:100%;height:100%;object-fit:cover;object-position:center;will-change:transform;animation:heroKenBurns 18s linear infinite alternate}
-.hero__bg::after{content:'';position:absolute;left:0;right:0;bottom:0;height:40%;background:linear-gradient(to top,rgba(0,0,0,.5) 0%,transparent 100%);pointer-events:none;z-index:1}
+/* Pass 4.8 : gradient asymétrique bottom-left pour libérer la zone titre
+   tout en préservant la photo lisible à droite. Pas d'overlay general
+   qui tuerait le wow de la photo. */
+.hero__bg::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(135deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.4) 28%, rgba(0,0,0,.12) 55%, transparent 75%),
+    linear-gradient(to top, rgba(0,0,0,.45) 0%, transparent 50%);
+  pointer-events:none;
+  z-index:1;
+}
 .hero__content{position:absolute;left:clamp(2.5rem,6vw,6rem);bottom:8vh;z-index:2;max-width:720px;text-align:left}
-.hero__title{font-family:var(--serif);font-size:clamp(3rem,6vw,6.5rem);font-weight:400;color:var(--paper);line-height:1.02;letter-spacing:-.02em;margin:0 0 1.8rem}
+.hero__title{font-family:var(--serif);font-size:clamp(3rem,6vw,6.5rem);font-weight:400;color:var(--paper);line-height:1.02;letter-spacing:-.02em;margin:0 0 1.8rem;text-shadow:0 2px 24px rgba(0,0,0,.45)}
 .hero__word{display:inline-block;opacity:0;transform:translateY(24px);animation:heroWordIn .7s cubic-bezier(.16,1,.3,1) forwards;animation-delay:calc(var(--i) * 80ms)}
-.hero__girardin{display:flex;align-items:center;gap:1.2rem;font-family:var(--sans);font-weight:400;font-size:.82rem;letter-spacing:.04em;color:rgba(249,247,242,.85);line-height:1.6;margin:0 0 2.2rem;opacity:0;transform:translateY(36px);animation:heroSubIn .6s cubic-bezier(.16,1,.3,1) forwards;animation-delay:.85s}
+.hero__girardin{display:flex;align-items:center;gap:1.2rem;font-family:var(--sans);font-weight:400;font-size:.82rem;letter-spacing:.04em;color:rgba(249,247,242,.95);line-height:1.6;margin:0 0 2.2rem;opacity:0;transform:translateY(36px);animation:heroSubIn .6s cubic-bezier(.16,1,.3,1) forwards;animation-delay:.85s;text-shadow:0 1px 12px rgba(0,0,0,.55)}
 .hero__girardin-rule{display:block;width:36px;height:1px;background:var(--copper-lt);opacity:.7;flex-shrink:0}
 .hero__girardin a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .3s ease}
 .hero__girardin a:hover{border-bottom-color:rgba(249,247,242,.5)}
@@ -212,7 +224,7 @@ ul{list-style:none}
 .hero__girardin .hero__arrow{color:var(--copper-lt);margin-left:.35rem;display:inline-block;transition:transform .3s cubic-bezier(.16,1,.3,1)}
 .hero__girardin a:hover .hero__arrow{transform:translateX(.3rem)}
 .hero__actions{display:flex;gap:2.5rem;flex-wrap:wrap;align-items:center;opacity:0;transform:translateY(36px);animation:heroSubIn .6s cubic-bezier(.16,1,.3,1) forwards;animation-delay:.95s}
-.editorial__link.editorial__link--light{color:var(--paper);font-family:var(--sans);font-size:.78rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:1.2rem;transition:color .3s ease}
+.editorial__link.editorial__link--light{color:var(--paper);font-family:var(--sans);font-size:.78rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:1.2rem;transition:color .3s ease;text-shadow:0 1px 10px rgba(0,0,0,.5)}
 .editorial__link.editorial__link--light::after{content:'→';color:var(--copper-text-light);transition:transform .3s cubic-bezier(.16,1,.3,1)}
 .editorial__link.editorial__link--light:hover::after{transform:translateX(.4rem)}
 .editorial__link.editorial__link--light:hover{color:var(--copper-lt)}
@@ -279,6 +291,7 @@ ul{list-style:none}
   transition:color .3s ease, gap .3s ease;
   position:relative;
   padding-bottom:.4rem;
+  text-shadow:0 1px 10px rgba(0,0,0,.55);
 }
 .hero__closure-link em{
   font-family:var(--serif);
