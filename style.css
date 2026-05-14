@@ -818,22 +818,176 @@ ul{list-style:none}
 }
 .col-fam--signature .col-fam__discover{ color:var(--copper-lt); }
 
-/* CTA row de clôture */
-.col-fam__cta-row{
+/* ─── Triptyque architectural — 3 silhouettes SVG (signature visuelle Collections)
+   Pattern niveau Method : dispositif unique non-verbal qui porte l'intention
+   architecturale. Volumes nus stroke copper, ligne de sol commune, légendes minimales. ─── */
+.collections-spread__triptyque{
+  max-width:1200px;
+  margin:0 auto clamp(2rem,4vh,4rem);
+  padding:0 clamp(2rem,5vw,4rem);
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:clamp(2rem,5vw,5rem);
+  align-items:end;
+}
+.coll-vol{
+  margin:0;
   display:flex;
   flex-direction:column;
   align-items:center;
   gap:1.6rem;
-  padding-block:clamp(3rem,5vh,5rem) clamp(3rem,5vh,5rem);
-  background:var(--paper);
 }
-.col-fam__sep{
+.coll-vol__svg{
   display:block;
-  width:38%;
+  width:100%;
+  height:auto;
+  max-width:260px;
+  aspect-ratio:200/180;
+  overflow:visible;
+}
+.coll-vol__ground{
+  stroke:var(--copper);
+  stroke-width:1;
+  opacity:.4;
+  fill:none;
+  stroke-dasharray:100;
+  stroke-dashoffset:100;
+  transition:stroke-dashoffset 1200ms cubic-bezier(.16,1,.3,1);
+}
+.coll-vol__shape{
+  stroke:var(--copper);
+  stroke-width:1.5;
+  fill:none;
+  stroke-linejoin:miter;
+  stroke-linecap:square;
+  stroke-dasharray:100;
+  stroke-dashoffset:100;
+  transition:stroke-dashoffset 1600ms cubic-bezier(.16,1,.3,1);
+}
+.coll-vol__legend{
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+  opacity:0;
+  transform:translateY(8px);
+  transition:opacity 900ms cubic-bezier(.16,1,.3,1), transform 900ms cubic-bezier(.16,1,.3,1);
+}
+.coll-vol__name{
+  font-family:var(--sans);
+  font-size:.85rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--dark);
+}
+.coll-vol__tagline{
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:400;
+  font-size:1.05rem;
+  color:var(--copper);
+  letter-spacing:.005em;
+}
+
+/* Reveal one-shot — stagger ESSENCE → HORIZON → SIGNATURE */
+.collections-spread__triptyque.is-revealed .coll-vol--essence .coll-vol__ground{ stroke-dashoffset:0; transition-delay:0ms; }
+.collections-spread__triptyque.is-revealed .coll-vol--essence .coll-vol__shape{ stroke-dashoffset:0; transition-delay:200ms; }
+.collections-spread__triptyque.is-revealed .coll-vol--essence .coll-vol__legend{ opacity:1; transform:none; transition-delay:1200ms; }
+
+.collections-spread__triptyque.is-revealed .coll-vol--horizon .coll-vol__ground{ stroke-dashoffset:0; transition-delay:280ms; }
+.collections-spread__triptyque.is-revealed .coll-vol--horizon .coll-vol__shape{ stroke-dashoffset:0; transition-delay:480ms; }
+.collections-spread__triptyque.is-revealed .coll-vol--horizon .coll-vol__legend{ opacity:1; transform:none; transition-delay:1480ms; }
+
+.collections-spread__triptyque.is-revealed .coll-vol--signature .coll-vol__ground{ stroke-dashoffset:0; transition-delay:560ms; }
+.collections-spread__triptyque.is-revealed .coll-vol--signature .coll-vol__shape{ stroke-dashoffset:0; transition-delay:760ms; }
+.collections-spread__triptyque.is-revealed .coll-vol--signature .coll-vol__legend{ opacity:1; transform:none; transition-delay:1760ms; }
+
+@media (prefers-reduced-motion: reduce){
+  .coll-vol__shape,
+  .coll-vol__ground{ stroke-dashoffset:0; transition:none; }
+  .coll-vol__legend{ opacity:1; transform:none; transition:none; }
+}
+
+/* ─── Closure narrative Collections — trait copper s'étend + phrase em italic copper ─── */
+.collections-spread__closure{
+  max-width:1200px;
+  margin:0 auto;
+  padding:clamp(4rem,7vh,6rem) clamp(2rem,5vw,4rem) clamp(5rem,9vh,7rem);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1.8rem;
+}
+.collections-spread__closure-rule{
+  display:block;
+  width:0;
   max-width:420px;
   height:1px;
   background:var(--copper);
-  opacity:.22;
+  opacity:.4;
+  transition:width 1400ms cubic-bezier(.16,1,.3,1);
+}
+.collections-spread__closure.is-revealed .collections-spread__closure-rule{ width:38%; }
+.collections-spread__closure-line{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(1.4rem,2.2vw,1.9rem);
+  line-height:1.45;
+  color:var(--dark);
+  text-align:center;
+  max-width:30ch;
+  margin:0;
+  opacity:0;
+  transform:translateY(8px);
+  transition:opacity 1100ms cubic-bezier(.16,1,.3,1) 400ms, transform 1100ms cubic-bezier(.16,1,.3,1) 400ms;
+}
+.collections-spread__closure-line em{
+  font-style:italic;
+  color:var(--copper);
+}
+.collections-spread__closure.is-revealed .collections-spread__closure-line{ opacity:1; transform:none; }
+.collections-spread__closure-link{
+  margin-top:.4rem;
+  font-family:var(--sans);
+  font-size:.72rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--copper);
+  text-decoration:none;
+  position:relative;
+  padding-bottom:.4rem;
+  opacity:0;
+  transition:opacity 900ms cubic-bezier(.16,1,.3,1) 1000ms, color .3s ease;
+}
+.collections-spread__closure-link::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:1px;
+  background:var(--copper);
+  opacity:.3;
+  transition:opacity .3s ease;
+}
+.collections-spread__closure-link:hover::after{ opacity:.7; }
+.collections-spread__closure.is-revealed .collections-spread__closure-link{ opacity:.75; }
+.collections-spread__closure-link:hover{ opacity:1; }
+@media (prefers-reduced-motion: reduce){
+  .collections-spread__closure-rule{ width:38%; transition:none; }
+  .collections-spread__closure-line{ opacity:1; transform:none; transition:none; }
+  .collections-spread__closure-link{ opacity:.75; transition:color .3s ease; }
+}
+
+/* Responsive triptyque + closure */
+@media (max-width:760px){
+  .collections-spread__triptyque{
+    grid-template-columns:1fr;
+    gap:2.5rem;
+    margin-bottom:clamp(2rem,4vh,3rem);
+  }
+  .coll-vol__svg{ max-width:180px; }
+  .collections-spread__closure-line{ font-size:clamp(1.3rem,5vw,1.6rem); }
 }
 
 /* ─── Responsive — un seul breakpoint à 900px ─── */
