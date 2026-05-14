@@ -963,13 +963,31 @@ ul{list-style:none}
    Pattern niveau Method : dispositif unique non-verbal qui porte l'intention
    architecturale. Volumes nus stroke copper, ligne de sol commune, légendes minimales. ─── */
 .collections-spread__triptyque{
+  position:relative;
   max-width:1200px;
-  margin:0 auto clamp(2rem,4vh,4rem);
-  padding:0 clamp(2rem,5vw,4rem);
+  margin:0 auto clamp(6rem,11vh,10rem);
+  padding:0 clamp(2rem,5vw,4rem) clamp(3rem,5vh,4rem);
   display:grid;
   grid-template-columns:repeat(3, 1fr);
   gap:clamp(2rem,5vw,5rem);
   align-items:end;
+}
+.collections-spread__triptyque::after{
+  content:'';
+  position:absolute;
+  left:50%;
+  bottom:0;
+  transform:translateX(-50%) scaleX(0);
+  transform-origin:center;
+  width:80px;
+  height:1px;
+  background:var(--copper);
+  opacity:.3;
+  transition:transform 1400ms cubic-bezier(.16,1,.3,1) 1800ms;
+}
+.collections-spread__triptyque.is-revealed::after{ transform:translateX(-50%) scaleX(1); }
+@media (prefers-reduced-motion: reduce){
+  .collections-spread__triptyque::after{ transform:translateX(-50%) scaleX(1); transition:none; }
 }
 .coll-vol{
   margin:0;
@@ -1049,23 +1067,26 @@ ul{list-style:none}
   .coll-vol__legend{ opacity:1; transform:none; transition:none; }
 }
 
-/* ─── Closure narrative Collections — trait copper s'étend + phrase em italic copper ─── */
+/* ─── Closure narrative Collections — bandeau DARK pont BLOC 3 SIGNATURE → Method
+   Lève la bande flash paper entre BLOC 3 dark overlay et Method dark.
+   Pattern : full-bleed dark uniforme + trait copper-lt + phrase em italic copper-lt + lien copper-lt. ─── */
 .collections-spread__closure{
-  max-width:1200px;
-  margin:0 auto;
-  padding:clamp(4rem,7vh,6rem) clamp(2rem,5vw,4rem) clamp(5rem,9vh,7rem);
+  background:var(--dark);
+  padding:clamp(5rem,9vh,8rem) clamp(2rem,5vw,4rem);
   display:flex;
   flex-direction:column;
   align-items:center;
   gap:1.8rem;
+  margin:0;
+  max-width:none;
 }
 .collections-spread__closure-rule{
   display:block;
   width:0;
   max-width:420px;
   height:1px;
-  background:var(--copper);
-  opacity:.4;
+  background:var(--copper-lt);
+  opacity:.55;
   transition:width 1400ms cubic-bezier(.16,1,.3,1);
 }
 .collections-spread__closure.is-revealed .collections-spread__closure-rule{ width:38%; }
@@ -1074,9 +1095,9 @@ ul{list-style:none}
   font-weight:400;
   font-size:clamp(1.4rem,2.2vw,1.9rem);
   line-height:1.45;
-  color:var(--dark);
+  color:var(--paper);
   text-align:center;
-  max-width:30ch;
+  max-width:32ch;
   margin:0;
   opacity:0;
   transform:translateY(8px);
@@ -1084,16 +1105,16 @@ ul{list-style:none}
 }
 .collections-spread__closure-line em{
   font-style:italic;
-  color:var(--copper);
+  color:var(--copper-lt);
 }
 .collections-spread__closure.is-revealed .collections-spread__closure-line{ opacity:1; transform:none; }
 .collections-spread__closure-link{
   margin-top:.4rem;
   font-family:var(--sans);
-  font-size:.72rem;
+  font-size:.78rem;
   letter-spacing:.22em;
   text-transform:uppercase;
-  color:var(--copper);
+  color:var(--copper-lt);
   text-decoration:none;
   position:relative;
   padding-bottom:.4rem;
@@ -1107,12 +1128,12 @@ ul{list-style:none}
   bottom:0;
   width:100%;
   height:1px;
-  background:var(--copper);
-  opacity:.3;
+  background:var(--copper-lt);
+  opacity:.4;
   transition:opacity .3s ease;
 }
-.collections-spread__closure-link:hover::after{ opacity:.7; }
-.collections-spread__closure.is-revealed .collections-spread__closure-link{ opacity:.75; }
+.collections-spread__closure-link:hover::after{ opacity:.8; }
+.collections-spread__closure.is-revealed .collections-spread__closure-link{ opacity:.9; }
 .collections-spread__closure-link:hover{ opacity:1; }
 @media (prefers-reduced-motion: reduce){
   .collections-spread__closure-rule{ width:38%; transition:none; }
@@ -1623,27 +1644,52 @@ ul{list-style:none}
 .fp-featured .fp-featured__photo img{ transform:scale(1.06); }
 .fp-featured.col-revealed .fp-featured__photo img{ transform:scale(1); }
 
-/* Asymétrie miroir entre les 2 fp-featured (refonte Niveau Method 2026-05-14)
-   Lève la répétition mécanique : 1er ancré bottom-left, 2e ancré bottom-right. */
-.fp-featured:nth-of-type(2)::after{
-  background:linear-gradient(225deg, rgba(26,26,24,.7) 0%, rgba(26,26,24,.45) 30%, rgba(26,26,24,0) 55%);
+/* fp-featured--compact : 2e featured en format magazine spread compact
+   (hiérarchie narrative : 1er hero-card dominant = Saint-François,
+    2e split photo cadrée + texte = Petit-Bourg secondaire). */
+.fp-featured--compact{
+  display:grid;
+  grid-template-columns:55fr 45fr;
+  gap:clamp(2.5rem,5vw,5rem);
+  min-height:auto;
+  background:transparent;
+  align-items:center;
+  padding:0;
 }
-.fp-featured:nth-of-type(2) .fp-featured__caption{
-  top:1.4rem;
+.fp-featured--compact::after{ display:none; }
+.fp-featured--compact .fp-featured__photo{
+  position:relative;
+  inset:auto;
+  aspect-ratio:4/3;
+  width:100%;
+  height:auto;
+  overflow:hidden;
+}
+.fp-featured--compact .fp-featured__caption{
+  top:auto;
+  bottom:1.2rem;
   right:auto;
-  left:1.6rem;
+  left:1.4rem;
+  color:rgba(249,247,242,.7);
 }
-.fp-featured:nth-of-type(2) .fp-featured__text{
-  margin-left:auto;
-  text-align:right;
-  align-items:flex-end;
+.fp-featured--compact .fp-featured__text{
+  position:relative;
+  z-index:auto;
+  padding:0;
+  max-width:none;
+  display:flex;
+  flex-direction:column;
+  gap:.8rem;
 }
-@media (max-width:768px){
-  .fp-featured:nth-of-type(2)::after{
-    background:linear-gradient(135deg, rgba(26,26,24,.7) 0%, rgba(26,26,24,.45) 30%, rgba(26,26,24,0) 55%);
+.fp-featured--compact .fp-featured__h2{
+  font-size:clamp(1.6rem,2.6vw,2.2rem);
+  margin:.2rem 0 .4rem;
+}
+@media (max-width:900px){
+  .fp-featured--compact{
+    grid-template-columns:1fr;
+    gap:2rem;
   }
-  .fp-featured:nth-of-type(2) .fp-featured__caption{ right:1.6rem; left:auto; }
-  .fp-featured:nth-of-type(2) .fp-featured__text{ margin-left:0; text-align:left; align-items:flex-start; }
 }
 
 /* ─── Quote Milnes — intégrée en transition narrative ─── */
@@ -2184,61 +2230,21 @@ ul{list-style:none}
    NEWSLETTER — closing immersif photo dominante + dual CTA
    Pattern Aman closing : photo full-bleed dark + form underline + ligne contact
 ════════════════════════════════ */
+/* Lettre éditoriale sur dark uni — pattern 'closing letter' magazine archi.
+   Refonte 2026-05-14 #2 : pas de photo BG, fond dark uniforme, layout stack centered. */
 .newsletter{
-  position:relative;
   background:var(--dark);
-  min-height:min(78vh,640px);
-  overflow:hidden;
-  isolation:isolate;
-}
-.newsletter__photo{
-  position:absolute;
-  inset:0;
-  margin:0;
-  overflow:hidden;
-  z-index:1;
-}
-.newsletter__photo picture,
-.newsletter__photo img{
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center center;
-  transition:transform 22s ease-out;
-  transform:scale(1.06);
-}
-.newsletter.col-revealed .newsletter__photo img{ transform:scale(1); }
-/* Vignette légère pour densifier la photo en fond, sans masquer */
-.newsletter::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:radial-gradient(ellipse 130% 100% at 70% 60%, transparent 30%, rgba(26,26,24,.4) 100%);
-  pointer-events:none;
-  z-index:2;
+  padding:clamp(7rem,12vh,11rem) 0;
+  color:var(--paper);
 }
 .newsletter__inner{
-  position:relative;
-  z-index:3;
-  display:flex;
-  align-items:flex-end;
-  min-height:min(78vh,640px);
-  max-width:1280px;
+  max-width:780px;
   margin:0 auto;
-  padding:clamp(4rem,8vh,7rem) clamp(2rem,5vw,4rem);
-}
-
-/* Texte typographique direct sur photo dark (refonte Niveau Method 2026-05-14)
-   Lève l'anti-pattern AI Aman fallback (cartouche paper + trait copper top sur photo). */
-.newsletter__content{
-  position:relative;
+  padding:0 clamp(2rem,5vw,4rem);
   display:flex;
   flex-direction:column;
-  gap:1.3rem;
-  max-width:580px;
-  width:100%;
-  color:var(--paper);
+  align-items:flex-start;
+  gap:1.6rem;
 }
 .newsletter__eyebrow{
   display:inline-block;
@@ -2353,14 +2359,13 @@ ul{list-style:none}
 .newsletter[data-newsletter-reveal].is-revealed .newsletter__closure-rule{ width:80px; }
 .newsletter__contact-link{
   font-family:var(--sans);
-  font-size:.78rem;
-  letter-spacing:.22em;
+  font-size:.92rem;
+  letter-spacing:.18em;
   text-transform:uppercase;
-  color:var(--copper-lt);
+  color:var(--paper);
   text-decoration:none;
   position:relative;
-  padding-bottom:.4rem;
-  transition:color .3s ease;
+  padding-bottom:.5rem;
   opacity:0;
   transform:translateY(8px);
   transition:opacity 1000ms cubic-bezier(.16,1,.3,1) 600ms, transform 1000ms cubic-bezier(.16,1,.3,1) 600ms, color .3s ease;
@@ -2373,10 +2378,11 @@ ul{list-style:none}
   width:100%;
   height:1px;
   background:var(--copper-lt);
-  opacity:.3;
-  transition:opacity .3s ease;
+  opacity:.6;
+  transition:opacity .3s ease, background .3s ease;
 }
-.newsletter__contact-link:hover::after{ opacity:.7; }
+.newsletter__contact-link:hover{ color:var(--copper-lt); }
+.newsletter__contact-link:hover::after{ opacity:1; }
 .newsletter[data-newsletter-reveal].is-revealed .newsletter__contact-link{
   opacity:1;
   transform:none;
@@ -2396,20 +2402,13 @@ ul{list-style:none}
 .newsletter[data-newsletter-reveal].is-revealed .newsletter__desc{ opacity:.85; transform:none; transition-delay:380ms; }
 .newsletter[data-newsletter-reveal].is-revealed .newsletter__form{ opacity:1; transform:none; transition-delay:560ms; }
 
-.newsletter[data-newsletter-reveal].is-revealed .newsletter__photo img{ transform:scale(1); }
-
 @media (max-width:900px){
-  .newsletter{ min-height:min(85vh,680px); }
-  .newsletter__inner{
-    min-height:min(85vh,680px);
-    padding:clamp(3rem,8vh,5rem) 1.5rem clamp(3rem,6vh,4rem);
-  }
-  .newsletter__content{ max-width:none; }
+  .newsletter{ padding:clamp(5rem,9vh,7rem) 0; }
+  .newsletter__inner{ padding:0 1.5rem; }
   .newsletter__h2{ font-size:clamp(1.9rem,7vw,2.6rem); }
 }
 
 @media (prefers-reduced-motion: reduce){
-  .newsletter__photo img{ transform:none; transition:none; }
   .newsletter__eyebrow,
   .newsletter__h2,
   .newsletter__desc,

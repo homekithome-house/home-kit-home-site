@@ -7,7 +7,7 @@
   <meta name="description" content="Home Kit Home conçoit et livre des habitats architecturaux premium, clé en main, pour les Antilles françaises, la Guyane, la Caraïbe et le monde entier."/>
   <meta property="og:title" content="Home Kit Home — Habitats architecturaux prêts à vivre"/>
   <meta property="og:description" content="Home Kit Home conçoit et livre des habitats architecturaux premium, clé en main, pour les Antilles françaises, la Guyane, la Caraïbe et le monde entier."/>
-  <meta property="og:image" content="dist/images/landing-top-slide-img-1.avif"/>
+  <meta property="og:image" content="dist/images/projet-home-kit-home.avif"/>
   <meta property="og:type" content="website"/>
   <meta property="og:locale" content="fr_FR"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -17,7 +17,7 @@
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
   </noscript>
-  <link rel="stylesheet" href="style.css?v=newsletter-immersive-1"/>
+  <link rel="stylesheet" href="style.css?v=fixes-pass-2"/>
   <link rel="stylesheet" href="assets/css/animations.css"/>
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
@@ -29,9 +29,9 @@
 <section class="hero">
   <div class="hero__bg">
     <picture>
-      <source srcset="dist/images/habitats/signature/gemini_generated_image_40854a40854a4085-1.avif" type="image/avif">
-      <source srcset="dist/images/habitats/signature/gemini_generated_image_40854a40854a4085-1.webp" type="image/webp">
-      <img src="dist/images/habitats/signature/gemini_generated_image_40854a40854a4085-1.avif" alt="Habitat SIGNATURE — bardage aluminium blanc, baie panoramique" width="2400" height="2400" loading="eager" fetchpriority="high"/>
+      <source srcset="dist/images/projet-home-kit-home.avif" type="image/avif">
+      <source srcset="dist/images/projet-home-kit-home.webp" type="image/webp">
+      <img src="dist/images/projet-home-kit-home.avif" alt="Projet Home Kit Home — habitat architectural premium clé en main" loading="eager" fetchpriority="high"/>
     </picture>
   </div>
   <div class="hero__content">
@@ -323,7 +323,7 @@
         </div>
       </article>
 
-      <article class="fp-featured" data-fp-reveal>
+      <article class="fp-featured fp-featured--compact" data-fp-reveal>
         <figure class="fp-featured__photo">
           <picture>
             <source srcset="dist/images/blog/petit-bourg-50k-778-m2/16.avif" type="image/avif">
@@ -438,30 +438,21 @@
   </div>
 </section>
 
-<!-- ── NEWSLETTER — closing immersif typographique sur photo (refonte Niveau Method 2026-05-14)
-     Lève l'anti-pattern AI Aman fallback (cartouche paper + trait copper top sur photo dark) ──────── -->
+<!-- ── NEWSLETTER — lettre éditoriale sur fond dark uni (refonte Niveau Method 2026-05-14 #2)
+     Lève le pattern AI texte sur photo dark. Style 'lettre signée HKH' minimaliste. ──────── -->
 <section class="newsletter" data-newsletter-reveal>
-  <figure class="newsletter__photo">
-    <picture>
-      <source srcset="dist/images/blog/saint-francois-400k-2000m2/photos-originales/10.avif" type="image/avif">
-      <source srcset="dist/images/blog/saint-francois-400k-2000m2/photos-originales/10.webp" type="image/webp">
-      <img src="dist/images/blog/saint-francois-400k-2000m2/photos-originales/10.avif" alt="Vue aérienne nuit du village locatif Saint-François éclairé — habitats HORIZON T avec piscines individuelles" loading="lazy" decoding="async"/>
-    </picture>
-  </figure>
   <div class="newsletter__inner">
-    <div class="newsletter__content">
-      <span class="newsletter__eyebrow" data-fr="Suivez nos installations" data-en="Follow our installations">Suivez nos installations</span>
-      <h2 class="newsletter__h2" data-fr="Chaque habitat livré, <em>raconté.</em>" data-en="Every delivered home, <em>documented.</em>">Chaque habitat livré, <em>raconté.</em></h2>
-      <p class="newsletter__desc" data-fr="Une lettre par mois — photos de pose, avancement des projets, premiers retours d'habitants." data-en="One letter per month — installation photos, project updates, first feedback from residents.">Une lettre par mois — photos de pose, avancement des projets, premiers retours d'habitants.</p>
-      <form class="newsletter__form" id="newsletter-form" novalidate>
-        <input type="email" id="newsletter-email" data-fr="votre@email.com" data-en="your@email.com" placeholder="votre@email.com" required/>
-        <button type="submit" data-fr="S'inscrire" data-en="Subscribe">S'inscrire</button>
-      </form>
-      <p class="newsletter__msg" id="newsletter-msg" aria-live="polite"></p>
-      <div class="newsletter__closure">
-        <span class="newsletter__closure-rule" aria-hidden="true"></span>
-        <a href="contact.html" class="newsletter__contact-link" data-fr="Ou parlez directement à HKH →" data-en="Or speak with HKH directly →">Ou parlez directement à HKH →</a>
-      </div>
+    <span class="newsletter__eyebrow" data-fr="Suivez nos installations" data-en="Follow our installations">Suivez nos installations</span>
+    <h2 class="newsletter__h2" data-fr="Chaque habitat livré, <em>raconté.</em>" data-en="Every delivered home, <em>documented.</em>">Chaque habitat livré, <em>raconté.</em></h2>
+    <p class="newsletter__desc" data-fr="Une lettre par mois — photos de pose, avancement des projets, premiers retours d'habitants." data-en="One letter per month — installation photos, project updates, first feedback from residents.">Une lettre par mois — photos de pose, avancement des projets, premiers retours d'habitants.</p>
+    <form class="newsletter__form" id="newsletter-form" novalidate>
+      <input type="email" id="newsletter-email" data-fr="votre@email.com" data-en="your@email.com" placeholder="votre@email.com" required/>
+      <button type="submit" data-fr="S'inscrire" data-en="Subscribe">S'inscrire</button>
+    </form>
+    <p class="newsletter__msg" id="newsletter-msg" aria-live="polite"></p>
+    <div class="newsletter__closure">
+      <span class="newsletter__closure-rule" aria-hidden="true"></span>
+      <a href="contact.html" class="newsletter__contact-link" data-fr="Ou parlez directement à HKH →" data-en="Or speak with HKH directly →">Ou parlez directement à HKH →</a>
     </div>
   </div>
 </section>
