@@ -184,12 +184,13 @@ ul{list-style:none}
 .hero__girardin .hero__arrow{color:var(--copper-lt);margin-left:.35rem;display:inline-block;transition:transform .3s cubic-bezier(.16,1,.3,1)}
 .hero__girardin a:hover .hero__arrow{transform:translateX(.3rem)}
 .hero__actions{display:flex;gap:2.5rem;flex-wrap:wrap;align-items:center;opacity:0;transform:translateY(36px);animation:heroSubIn .6s cubic-bezier(.16,1,.3,1) forwards;animation-delay:.95s}
-.editorial__link--light{color:var(--paper);font-family:var(--sans);font-size:.78rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:1.2rem;transition:color .3s ease}
-.editorial__link--light::after{content:'→';color:var(--copper-text-light);transition:transform .3s cubic-bezier(.16,1,.3,1)}
-.editorial__link--light:hover::after{transform:translateX(.4rem)}
+.editorial__link.editorial__link--light{color:var(--paper);font-family:var(--sans);font-size:.78rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:1.2rem;transition:color .3s ease}
+.editorial__link.editorial__link--light::after{content:'→';color:var(--copper-text-light);transition:transform .3s cubic-bezier(.16,1,.3,1)}
+.editorial__link.editorial__link--light:hover::after{transform:translateX(.4rem)}
+.editorial__link.editorial__link--light:hover{color:var(--copper-lt)}
 .hero__photo-credit{position:absolute;bottom:clamp(1.5rem,3vh,2rem);right:clamp(2rem,4vw,3rem);z-index:2;font-family:var(--sans);font-size:.72rem;font-weight:400;letter-spacing:.08em;color:var(--copper-text-light);opacity:.7;margin:0;pointer-events:none}
-@keyframes heroWordIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@keyframes heroSubIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes heroWordIn{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:translateY(0)}}
+@keyframes heroSubIn{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:translateY(0)}}
 @keyframes heroKenBurns{from{transform:scale(1)}to{transform:scale(1.04)}}
 @media(max-width:768px){
   .hero__content{left:1.5rem;right:1.5rem;bottom:6vh;max-width:none}
