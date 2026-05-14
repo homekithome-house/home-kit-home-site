@@ -178,9 +178,29 @@ Une fois toutes les sections en 5/5, vérifier les 5 critères inter-sections :
 
 ### Phase 4 — Polish technique (1-2h, EN DERNIER)
 
-Smooth scroll, parallax léger, sticky scroll, micro-interactions hover, Ken Burns affiné, performance Lighthouse.
-
 **Règle absolue** : Phase 4 ne commence JAMAIS si Phase 0-3 ne sont pas validées. Le polish technique ne sauve pas une page sage.
+
+**5 dispositifs obligatoires Phase 4** (issus de la home HKH 2026-05-14) :
+
+**A. Reveals amplifiés** — translateY 36px (pas 16px) + transition 1400ms cubic-bezier(.16,1,.3,1) (pas 1100ms) sur toutes les sections refondues. Le 16px/1100ms = sage AI ; le 36px/1400ms = cinétique perceptible. Respect `prefers-reduced-motion`.
+
+**B. Parallax universel sections dark BG** — wrapper enlarged top/bottom -12 à -14% sur `.method__bg`, `.newsletter__bg` ou équivalents. JS IIFE qui calcule ratio (centre section vs centre viewport), applique translate3d ±70-80px. Ken Burns CSS reste sur l'img (sans conflit). Throttled via requestAnimationFrame.
+
+**C. Sticky scroll magazine spread** — sur la section "preuves sociales" (ex. Premiers projets) : 1er article sticky `top:8vh; z-index:0`, articles/quotes/archives suivants `position:relative; z-index:1+; background:var(--dark)` pour couvrir au passage. Désactiver sticky en mobile (`@media max-width:900px → position:relative`).
+
+**D. Hover trail underline copper** — sur CTAs premium (`.duo__voie-cta`, `.terrain__closure-link`, etc.) : `::before` base `width:100%; opacity:.3` (visible au repos) + `::after` trail `transform:scaleX(0)` `transform-origin:left center` → `scaleX(1)` au hover, transition 600ms cubic-bezier(.16,1,.3,1). Aligner `transform-origin:right` quand le bloc est aligné à droite.
+
+**E. Smooth scroll JS lerp** — remplacer `html{scroll-behavior:smooth}` (CSS natif rigide) par un Lenis-light vanilla : lerp 0.085-0.095, intercept wheel/keyboard/anchor clicks, `requestAnimationFrame` loop, `window.scrollTo(0, current)`. Skip si `prefers-reduced-motion` ou `pointer:coarse` (mobile = scroll natif). Force `scrollBehavior='auto'` pendant activation pour ne pas doubler le smoothing.
+
+**Anti-patterns Phase 4 à BANNIR** :
+- Polish > 5 dispositifs distincts (sur-engineering)
+- Parallax > 100px (sensation lag)
+- Sticky > 1 section (cumul = chaos vertical)
+- Hover scale > 1.03 (AI tell générique)
+- Lerp < 0.05 ou > 0.15 (trop lent ou trop sec)
+- Smooth scroll JS sur mobile/touch (casse pull-to-refresh, sensation native)
+
+**Validation Phase 4 livrée** : Benjamin scroll la page et VOIT la différence vs Phase 3. Si Benjamin dit "je vois pas trop le changement", c'est qu'on est resté en sobre — relancer A→E intégral.
 
 ---
 
