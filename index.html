@@ -403,7 +403,7 @@
     <div class="cercle-founders">
       <span class="cercle-founders__thread" aria-hidden="true"></span>
 
-      <article class="cercle-founder" data-reveal-item>
+      <article class="cercle-founder" data-reveal-item data-reveal-margin="-25">
         <span class="cercle-founder__marker" aria-hidden="true"></span>
         <div class="cercle-founder__body">
           <span class="cercle-founder__tag" data-fr="Agence immobilière · Antilles" data-en="Real estate agency · Antilles">Agence immobilière · Antilles</span>
@@ -412,7 +412,7 @@
         </div>
       </article>
 
-      <article class="cercle-founder" data-reveal-item data-reveal-delay="220">
+      <article class="cercle-founder" data-reveal-item data-reveal-delay="220" data-reveal-margin="-25">
         <span class="cercle-founder__marker" aria-hidden="true"></span>
         <div class="cercle-founder__body">
           <span class="cercle-founder__tag" data-fr="Conseil en investissement" data-en="Investment advisory">Conseil en investissement</span>
@@ -594,9 +594,9 @@ revealEls.forEach(el=>io.observe(el));
 
 /* ── Reveal one-shot PAR ÉLÉMENT (pattern Aman/Stripe)
    Pour chaque [data-reveal-item], on observe individuellement.
-   Si data-reveal-delay="X" présent, applique style.transitionDelay = X ms.
-   CSS générique : opacity 0 + translateY(36) → is-revealed = opacity 1 + translateY 0.
-   IO threshold:0, rootMargin -10% (trigger quand l'élément entre franchement). ── */
+   data-reveal-delay="X" → transitionDelay X ms
+   data-reveal-margin="-25" → rootMargin custom (trigger plus tardif/précoce)
+   CSS générique : opacity 0 + translateY(36) → is-revealed = opacity 1 + translateY 0. ── */
 (function(){
   var items=document.querySelectorAll('[data-reveal-item]');
   if(!items.length) return;
@@ -604,22 +604,35 @@ revealEls.forEach(el=>io.observe(el));
     items.forEach(function(el){ el.classList.add('is-revealed'); });
     return;
   }
-  // Pré-appliquer le delay inline si data-reveal-delay
+  function reveal(e){
+    if(e.isIntersecting){
+      e.target.classList.add('is-revealed');
+      e._io.unobserve(e.target);
+    }
+  }
+  // Pool d'IO par valeur de rootMargin
+  var ioPool={};
+  function getIO(marginPct){
+    var key='m'+marginPct;
+    if(!ioPool[key]){
+      ioPool[key]=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){
+            e.target.classList.add('is-revealed');
+            ioPool[key].unobserve(e.target);
+          }
+        });
+      },{threshold:0,rootMargin:'0px 0px '+marginPct+'% 0px'});
+    }
+    return ioPool[key];
+  }
   items.forEach(function(el){
     var d=parseInt(el.getAttribute('data-reveal-delay')||'0',10);
-    if(d>0){
-      el.style.transitionDelay=d+'ms,'+d+'ms';
-    }
+    if(d>0) el.style.transitionDelay=d+'ms,'+d+'ms';
+    var m=el.getAttribute('data-reveal-margin');
+    var margin=(m!==null) ? parseInt(m,10) : -10;
+    getIO(margin).observe(el);
   });
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        e.target.classList.add('is-revealed');
-        io.unobserve(e.target);
-      }
-    });
-  },{threshold:0,rootMargin:'0px 0px -10% 0px'});
-  items.forEach(function(el){ io.observe(el); });
 })();
 
 /* ── Collections — toggle inline minimaliste (pattern iglucraft)
