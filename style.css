@@ -233,35 +233,9 @@ ul{list-style:none}
   .hero__bg img{animation:none;transform:none}
 }
 
-/* Pass 4.7 γ : signature texte vertical marge droite (magazine architecture).
-   Pattern Aman/Wallpaper. Unique au Hero, devient signature distinctive de la home. */
-.hero__edition{
-  position:absolute;
-  top:50%;
-  right:clamp(2rem,3vw,3rem);
-  transform-origin:right center;
-  transform:rotate(-90deg) translateX(50%);
-  z-index:2;
-  font-family:var(--sans);
-  font-weight:400;
-  font-size:.82rem;
-  letter-spacing:.36em;
-  text-transform:uppercase;
-  color:var(--copper-lt);
-  opacity:0;
-  white-space:nowrap;
-  pointer-events:none;
-  text-shadow:0 1px 12px rgba(0,0,0,.5);
-  animation:heroEditionIn 1.2s cubic-bezier(.16,1,.3,1) forwards;
-  animation-delay:1.4s;
-}
-@keyframes heroEditionIn{
-  from{ opacity:0; }
-  to{ opacity:.62; }
-}
-@media(max-width:900px){
-  .hero__edition{ display:none; }
-}
+/* Pass 4.8 : retrait du texte vertical "ÉDITION 2026" (gimmick magazine
+   plaqué sans légitimité narrative). Photo dépouillée + titre cinétique +
+   closure suffisent. La photo EST la signature secondaire. */
 
 /* Pass 4.7 γ : closure narrative Hero (pattern HKH closures).
    Trait copper qui s'étend + incipit italic vers Collections — devient le scroll cue éditorial. */
@@ -340,7 +314,6 @@ ul{list-style:none}
   .hero__closure-link em{ font-size:1em; }
 }
 @media(prefers-reduced-motion:reduce){
-  .hero__edition{ opacity:.4; animation:none; }
   .hero__closure-rule{ width:60px; animation:none; transition:none; }
   .hero__closure-link{ opacity:.85; transform:none; animation:none; }
 }
