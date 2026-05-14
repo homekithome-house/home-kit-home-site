@@ -49,9 +49,9 @@
 <section class="collections-spread">
 
   <header class="collections-spread__intro">
-    <span class="collections-spread__eyebrow" data-fr="Trois familles" data-en="Three families">Trois familles</span>
-    <h2 class="collections-spread__h2" data-fr="Trois architectures,<br/>une même exigence." data-en="Three architectures,<br/>one shared standard.">Trois architectures,<br/>une même exigence.</h2>
-    <p class="collections-spread__sub" data-fr="ESSENCE choisit l'essentiel. HORIZON cherche le contemporain juste. SIGNATURE accomplit l'habitat complet." data-en="ESSENCE chooses the essential. HORIZON seeks contemporary balance. SIGNATURE accomplishes the complete home.">ESSENCE choisit l'essentiel. HORIZON cherche le contemporain juste. SIGNATURE accomplit l'habitat complet.</p>
+    <span class="collections-spread__eyebrow" data-reveal-item data-fr="Trois familles" data-en="Three families">Trois familles</span>
+    <h2 class="collections-spread__h2" data-reveal-item data-reveal-delay="200" data-fr="Trois architectures,<br/>une même exigence." data-en="Three architectures,<br/>one shared standard.">Trois architectures,<br/>une même exigence.</h2>
+    <p class="collections-spread__sub" data-reveal-item data-reveal-delay="400" data-fr="ESSENCE choisit l'essentiel. HORIZON cherche le contemporain juste. SIGNATURE accomplit l'habitat complet." data-en="ESSENCE chooses the essential. HORIZON seeks contemporary balance. SIGNATURE accomplishes the complete home.">ESSENCE choisit l'essentiel. HORIZON cherche le contemporain juste. SIGNATURE accomplit l'habitat complet.</p>
   </header>
 
   <!-- TRIPTYQUE SVG — 3 silhouettes architecturales (signature visuelle Collections) -->
@@ -88,40 +88,40 @@
     </figure>
   </div>
 
-  <!-- BLOC 1 — ESSENCE : asymétrique 65 / 35, photo gauche -->
+  <!-- BLOC 1 — ESSENCE+ priorité (default active) puis ESSENCE : asymétrique 65 / 35, photo gauche -->
   <article class="col-fam col-fam--essence" data-collections-swap>
     <div class="col-fam__inner">
       <figure class="col-fam__photo">
         <picture>
-          <source srcset="dist/images/habitats/essence/unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa.avif" type="image/avif">
-          <source srcset="dist/images/habitats/essence/unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa.webp" type="image/webp">
-          <img src="dist/images/habitats/essence/unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa.avif" alt="Intérieur ESSENCE — studio HKH baigné de lumière naturelle" loading="lazy" decoding="async"/>
+          <source srcset="dist/images/habitats/essence-plus/essence-plus-zenith.avif" type="image/avif">
+          <source srcset="dist/images/habitats/essence-plus/essence-plus-zenith.webp" type="image/webp">
+          <img src="dist/images/habitats/essence-plus/essence-plus-zenith.avif" alt="ESSENCE+ finition Zénith — studio HKH avec kitchenette intégrée" loading="lazy" decoding="async"/>
         </picture>
         <figcaption class="col-fam__caption" data-fr="Projection architecturale" data-en="Architectural rendering">Projection architecturale</figcaption>
       </figure>
       <div class="col-fam__text">
-        <span class="col-fam__eyebrow" data-fr="ESSENCE" data-en="ESSENCE">ESSENCE</span>
-        <h3 class="col-fam__h2" data-fr="Le studio compact" data-en="The compact studio">Le studio compact</h3>
-        <div class="col-fam__toggle" role="tablist" aria-label="Variantes ESSENCE">
+        <span class="col-fam__eyebrow" data-reveal-item data-fr="ESSENCE+" data-en="ESSENCE+">ESSENCE+</span>
+        <h3 class="col-fam__h2" data-reveal-item data-reveal-delay="180" data-fr="Le studio compact" data-en="The compact studio">Le studio compact</h3>
+        <div class="col-fam__toggle" data-reveal-item data-reveal-delay="320" role="tablist" aria-label="Variantes ESSENCE">
           <button type="button" class="col-toggle col-toggle--active" role="tab" aria-pressed="true" aria-selected="true"
+                  data-href="residence-essence-plus.html"
+                  data-fr-tagline="Avec kitchenette intégrée" data-en-tagline="With integrated kitchenette"
+                  data-fr-specs="20 m² · 2 pers · ▲ toit 2 pans" data-en-specs="20 m² · 2 people · ▲ pitched roof"
+                  data-img-avif="dist/images/habitats/essence-plus/essence-plus-zenith.avif"
+                  data-img-webp="dist/images/habitats/essence-plus/essence-plus-zenith.webp">ESSENCE+</button>
+          <span class="col-fam__toggle-sep" aria-hidden="true">·</span>
+          <button type="button" class="col-toggle" role="tab" aria-pressed="false" aria-selected="false"
                   data-href="residence-essence.html"
                   data-fr-tagline="Sans cuisine" data-en-tagline="Without kitchen"
                   data-fr-specs="20 m² · 2 pers · ▲ toit 2 pans" data-en-specs="20 m² · 2 people · ▲ pitched roof"
                   data-img-avif="dist/images/habitats/essence/unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa.avif"
                   data-img-webp="dist/images/habitats/essence/unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa.webp">ESSENCE</button>
-          <span class="col-fam__toggle-sep" aria-hidden="true">·</span>
-          <button type="button" class="col-toggle" role="tab" aria-pressed="false" aria-selected="false"
-                  data-href="residence-essence-plus.html"
-                  data-fr-tagline="Avec kitchenette intégrée" data-en-tagline="With integrated kitchenette"
-                  data-fr-specs="20 m² · 2 pers · ▲ toit 2 pans" data-en-specs="20 m² · 2 people · ▲ pitched roof"
-                  data-img-avif="dist/images/habitats/essence/unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa.avif"
-                  data-img-webp="dist/images/habitats/essence/unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa.webp">ESSENCE+</button>
         </div>
-        <p class="col-fam__variant-tagline" data-slot="tagline" data-fr="Sans cuisine" data-en="Without kitchen">Sans cuisine</p>
-        <p class="col-fam__specs" data-slot="specs" data-fr="20 m² · 2 pers · ▲ toit 2 pans" data-en="20 m² · 2 people · ▲ pitched roof">20 m² · 2 pers · ▲ toit 2 pans</p>
-        <p class="col-fam__finitions" data-fr="Zénith · Pinède · Pure · Linéa" data-en="Zénith · Pinède · Pure · Linéa">Zénith · Pinède · Pure · Linéa</p>
-        <p class="col-fam__desc" data-fr="L'essentiel d'un habitat HKH, dans une empreinte minimale. Intérieur baigné de lumière naturelle." data-en="The essence of an HKH home in a minimal footprint. An interior bathed in natural light.">L'essentiel d'un habitat HKH, dans une empreinte minimale. Intérieur baigné de lumière naturelle.</p>
-        <a class="col-fam__discover editorial__link" data-slot="href" href="residence-essence.html" data-fr="Découvrir la résidence" data-en="Discover the residence">Découvrir la résidence</a>
+        <p class="col-fam__variant-tagline" data-reveal-item data-reveal-delay="420" data-slot="tagline" data-fr="Avec kitchenette intégrée" data-en="With integrated kitchenette">Avec kitchenette intégrée</p>
+        <p class="col-fam__specs" data-reveal-item data-reveal-delay="500" data-slot="specs" data-fr="20 m² · 2 pers · ▲ toit 2 pans" data-en="20 m² · 2 people · ▲ pitched roof">20 m² · 2 pers · ▲ toit 2 pans</p>
+        <p class="col-fam__finitions" data-reveal-item data-reveal-delay="580" data-fr="Zénith · Pinède · Pure · Linéa" data-en="Zénith · Pinède · Pure · Linéa">Zénith · Pinède · Pure · Linéa</p>
+        <p class="col-fam__desc" data-reveal-item data-reveal-delay="700" data-fr="L'essentiel d'un habitat HKH avec kitchenette intégrée. Intérieur baigné de lumière naturelle." data-en="The essence of an HKH home with integrated kitchenette. An interior bathed in natural light.">L'essentiel d'un habitat HKH avec kitchenette intégrée. Intérieur baigné de lumière naturelle.</p>
+        <a class="col-fam__discover editorial__link" data-reveal-item data-reveal-delay="820" data-slot="href" href="residence-essence-plus.html" data-fr="Découvrir la résidence" data-en="Discover the residence">Découvrir la résidence</a>
       </div>
     </div>
   </article>
@@ -131,16 +131,16 @@
     <div class="col-fam__inner">
       <figure class="col-fam__photo">
         <picture>
-          <source srcset="dist/images/habitats/horizon/gemini_generated_image_esp0jdesp0jdesp0.avif" type="image/avif">
-          <source srcset="dist/images/habitats/horizon/gemini_generated_image_esp0jdesp0jdesp0.webp" type="image/webp">
-          <img src="dist/images/habitats/horizon/gemini_generated_image_esp0jdesp0jdesp0.avif" alt="HORIZON finition Pure en contexte tropical — vue extérieure" loading="lazy" decoding="async"/>
+          <source srcset="dist/images/blog/vous-voyez-un-terrain-perdu/9.avif" type="image/avif">
+          <source srcset="dist/images/blog/vous-voyez-un-terrain-perdu/9.webp" type="image/webp">
+          <img src="dist/images/blog/vous-voyez-un-terrain-perdu/9.avif" alt="HORIZON T avec terrasse intégrée en contexte tropical — vue extérieure" loading="lazy" decoding="async"/>
         </picture>
         <figcaption class="col-fam__caption" data-fr="Projection architecturale" data-en="Architectural rendering">Projection architecturale</figcaption>
       </figure>
       <div class="col-fam__text">
-        <span class="col-fam__eyebrow" data-fr="HORIZON" data-en="HORIZON">HORIZON</span>
-        <h3 class="col-fam__h2" data-fr="L'essentiel contemporain" data-en="The contemporary essential">L'essentiel contemporain</h3>
-        <div class="col-fam__toggle" role="tablist" aria-label="Variantes HORIZON">
+        <span class="col-fam__eyebrow" data-reveal-item data-fr="HORIZON" data-en="HORIZON">HORIZON</span>
+        <h3 class="col-fam__h2" data-reveal-item data-reveal-delay="180" data-fr="L'essentiel contemporain" data-en="The contemporary essential">L'essentiel contemporain</h3>
+        <div class="col-fam__toggle" data-reveal-item data-reveal-delay="320" role="tablist" aria-label="Variantes HORIZON">
           <button type="button" class="col-toggle" role="tab" aria-pressed="false" aria-selected="false"
                   data-href="residence-horizon.html"
                   data-fr-tagline="Volume entièrement équipé" data-en-tagline="Fully equipped volume"
@@ -152,14 +152,14 @@
                   data-href="residence-horizon-t.html"
                   data-fr-tagline="Avec terrasse intégrée" data-en-tagline="With integrated terrace"
                   data-fr-specs="46 m² · 2 pers · ▲ toit 2 pans" data-en-specs="46 m² · 2 people · ▲ pitched roof"
-                  data-img-avif="dist/images/habitats/horizon/gemini_generated_image_esp0jdesp0jdesp0.avif"
-                  data-img-webp="dist/images/habitats/horizon/gemini_generated_image_esp0jdesp0jdesp0.webp">HORIZON T</button>
+                  data-img-avif="dist/images/blog/vous-voyez-un-terrain-perdu/9.avif"
+                  data-img-webp="dist/images/blog/vous-voyez-un-terrain-perdu/9.webp">HORIZON T</button>
         </div>
-        <p class="col-fam__variant-tagline" data-slot="tagline" data-fr="Avec terrasse intégrée" data-en="With integrated terrace">Avec terrasse intégrée</p>
-        <p class="col-fam__specs" data-slot="specs" data-fr="46 m² · 2 pers · ▲ toit 2 pans" data-en="46 m² · 2 people · ▲ pitched roof">46 m² · 2 pers · ▲ toit 2 pans</p>
-        <p class="col-fam__finitions" data-fr="Zénith · Pinède · Pure · Linéa · +Pano" data-en="Zénith · Pinède · Pure · Linéa · +Pano">Zénith · Pinède · Pure · Linéa · +Pano</p>
-        <p class="col-fam__desc" data-fr="Volumes harmonieux, lumière naturelle. La version résidentielle ou avec terrasse." data-en="Harmonious volumes, natural light. The residential version or the one with a terrace.">Volumes harmonieux, lumière naturelle. La version résidentielle ou avec terrasse.</p>
-        <a class="col-fam__discover editorial__link" data-slot="href" href="residence-horizon-t.html" data-fr="Découvrir la résidence" data-en="Discover the residence">Découvrir la résidence</a>
+        <p class="col-fam__variant-tagline" data-reveal-item data-reveal-delay="420" data-slot="tagline" data-fr="Avec terrasse intégrée" data-en="With integrated terrace">Avec terrasse intégrée</p>
+        <p class="col-fam__specs" data-reveal-item data-reveal-delay="500" data-slot="specs" data-fr="46 m² · 2 pers · ▲ toit 2 pans" data-en="46 m² · 2 people · ▲ pitched roof">46 m² · 2 pers · ▲ toit 2 pans</p>
+        <p class="col-fam__finitions" data-reveal-item data-reveal-delay="580" data-fr="Zénith · Pinède · Pure · Linéa · +Pano" data-en="Zénith · Pinède · Pure · Linéa · +Pano">Zénith · Pinède · Pure · Linéa · +Pano</p>
+        <p class="col-fam__desc" data-reveal-item data-reveal-delay="700" data-fr="Volumes harmonieux, lumière naturelle. La version résidentielle ou avec terrasse." data-en="Harmonious volumes, natural light. The residential version or the one with a terrace.">Volumes harmonieux, lumière naturelle. La version résidentielle ou avec terrasse.</p>
+        <a class="col-fam__discover editorial__link" data-reveal-item data-reveal-delay="820" data-slot="href" href="residence-horizon-t.html" data-fr="Découvrir la résidence" data-en="Discover the residence">Découvrir la résidence</a>
       </div>
     </div>
   </article>
@@ -169,35 +169,35 @@
     <div class="col-fam__inner">
       <figure class="col-fam__photo">
         <picture>
-          <source srcset="dist/images/habitats/signature/gemini_generated_image_aiows5aiows5aiow.avif" type="image/avif">
-          <source srcset="dist/images/habitats/signature/gemini_generated_image_aiows5aiows5aiow.webp" type="image/webp">
-          <img src="dist/images/habitats/signature/gemini_generated_image_aiows5aiows5aiow.avif" alt="SIGNATURE finition Pinède en contexte tropical — vue extérieure" loading="lazy" decoding="async"/>
+          <source srcset="dist/images/blog/petit-bourg-50k-778-m2/5.avif" type="image/avif">
+          <source srcset="dist/images/blog/petit-bourg-50k-778-m2/5.webp" type="image/webp">
+          <img src="dist/images/blog/petit-bourg-50k-778-m2/5.avif" alt="SIGNATURE avec terrasse et transats au coucher de soleil — extérieur" loading="lazy" decoding="async"/>
         </picture>
         <figcaption class="col-fam__caption" data-fr="Projection architecturale" data-en="Architectural rendering">Projection architecturale</figcaption>
       </figure>
       <div class="col-fam__text">
-        <span class="col-fam__eyebrow" data-fr="SIGNATURE" data-en="SIGNATURE">SIGNATURE</span>
-        <h3 class="col-fam__h2" data-fr="L'habitat signature" data-en="The signature home">L'habitat signature</h3>
-        <div class="col-fam__toggle" role="tablist" aria-label="Variantes SIGNATURE">
+        <span class="col-fam__eyebrow" data-reveal-item data-fr="SIGNATURE" data-en="SIGNATURE">SIGNATURE</span>
+        <h3 class="col-fam__h2" data-reveal-item data-reveal-delay="180" data-fr="L'habitat signature" data-en="The signature home">L'habitat signature</h3>
+        <div class="col-fam__toggle" data-reveal-item data-reveal-delay="320" role="tablist" aria-label="Variantes SIGNATURE">
           <button type="button" class="col-toggle col-toggle--active" role="tab" aria-pressed="true" aria-selected="true"
                   data-href="residence-signature.html"
                   data-fr-tagline="1 chambre · résidentiel" data-en-tagline="1 bedroom · residential"
                   data-fr-specs="46 m² · jusqu'à 4 pers · ▲ toit 2 pans" data-en-specs="46 m² · up to 4 people · ▲ pitched roof"
-                  data-img-avif="dist/images/habitats/signature/gemini_generated_image_aiows5aiows5aiow.avif"
-                  data-img-webp="dist/images/habitats/signature/gemini_generated_image_aiows5aiows5aiow.webp">SIGNATURE</button>
+                  data-img-avif="dist/images/blog/petit-bourg-50k-778-m2/5.avif"
+                  data-img-webp="dist/images/blog/petit-bourg-50k-778-m2/5.webp">SIGNATURE</button>
           <span class="col-fam__toggle-sep" aria-hidden="true">·</span>
           <button type="button" class="col-toggle" role="tab" aria-pressed="false" aria-selected="false"
                   data-href="residence-signature-duo.html"
                   data-fr-tagline="2 chambres · familial" data-en-tagline="2 bedrooms · family"
                   data-fr-specs="46 m² · jusqu'à 4 pers · ▲ toit 2 pans" data-en-specs="46 m² · up to 4 people · ▲ pitched roof"
-                  data-img-avif="dist/images/habitats/signature/gemini_generated_image_aiows5aiows5aiow.avif"
-                  data-img-webp="dist/images/habitats/signature/gemini_generated_image_aiows5aiows5aiow.webp">SIGNATURE DUO</button>
+                  data-img-avif="dist/images/blog/petit-bourg-50k-778-m2/5.avif"
+                  data-img-webp="dist/images/blog/petit-bourg-50k-778-m2/5.webp">SIGNATURE DUO</button>
         </div>
-        <p class="col-fam__variant-tagline" data-slot="tagline" data-fr="1 chambre · résidentiel" data-en="1 bedroom · residential">1 chambre · résidentiel</p>
-        <p class="col-fam__specs" data-slot="specs" data-fr="46 m² · jusqu'à 4 pers · ▲ toit 2 pans" data-en="46 m² · up to 4 people · ▲ pitched roof">46 m² · jusqu'à 4 pers · ▲ toit 2 pans</p>
-        <p class="col-fam__finitions" data-fr="Zénith · Pinède · Pure · Linéa · +Pano" data-en="Zénith · Pinède · Pure · Linéa · +Pano">Zénith · Pinède · Pure · Linéa · +Pano</p>
-        <p class="col-fam__desc" data-fr="Le modèle résidentiel par excellence. Familial ou couple." data-en="The residential model par excellence. Family or couple.">Le modèle résidentiel par excellence. Familial ou couple.</p>
-        <a class="col-fam__discover editorial__link" data-slot="href" href="residence-signature.html" data-fr="Découvrir la résidence" data-en="Discover the residence">Découvrir la résidence</a>
+        <p class="col-fam__variant-tagline" data-reveal-item data-reveal-delay="420" data-slot="tagline" data-fr="1 chambre · résidentiel" data-en="1 bedroom · residential">1 chambre · résidentiel</p>
+        <p class="col-fam__specs" data-reveal-item data-reveal-delay="500" data-slot="specs" data-fr="46 m² · jusqu'à 4 pers · ▲ toit 2 pans" data-en="46 m² · up to 4 people · ▲ pitched roof">46 m² · jusqu'à 4 pers · ▲ toit 2 pans</p>
+        <p class="col-fam__finitions" data-reveal-item data-reveal-delay="580" data-fr="Zénith · Pinède · Pure · Linéa · +Pano" data-en="Zénith · Pinède · Pure · Linéa · +Pano">Zénith · Pinède · Pure · Linéa · +Pano</p>
+        <p class="col-fam__desc" data-reveal-item data-reveal-delay="700" data-fr="Le modèle résidentiel par excellence. Familial ou couple." data-en="The residential model par excellence. Family or couple.">Le modèle résidentiel par excellence. Familial ou couple.</p>
+        <a class="col-fam__discover editorial__link" data-reveal-item data-reveal-delay="820" data-slot="href" href="residence-signature.html" data-fr="Découvrir la résidence" data-en="Discover the residence">Découvrir la résidence</a>
       </div>
     </div>
   </article>
@@ -298,10 +298,10 @@
 <!-- ── PREMIERS PROJETS — TERRAIN PAR TERRAIN (dark) ─────── -->
 <section class="field-projects">
   <div class="field-projects__inner">
-    <header class="field-projects__hdr reveal">
-      <span class="field-projects__eyebrow" data-fr="Premiers projets" data-en="First projects">Premiers projets</span>
-      <h2 class="field-projects__title" data-fr="Déjà en mouvement,<br>terrain par terrain." data-en="Already in motion,<br>field by field.">Déjà en mouvement,<br>terrain par terrain.</h2>
-      <p class="field-projects__sub" data-fr="HKH n'est pas un concept. Premières livraisons 2026." data-en="HKH is not a concept. First deliveries 2026.">HKH n'est pas un concept. Premières livraisons 2026.</p>
+    <header class="field-projects__hdr">
+      <span class="field-projects__eyebrow" data-reveal-item data-fr="Premiers projets" data-en="First projects">Premiers projets</span>
+      <h2 class="field-projects__title" data-reveal-item data-reveal-delay="200" data-fr="Déjà en mouvement,<br>terrain par terrain." data-en="Already in motion,<br>field by field.">Déjà en mouvement,<br>terrain par terrain.</h2>
+      <p class="field-projects__sub" data-reveal-item data-reveal-delay="400" data-fr="HKH n'est pas un concept. Premières livraisons 2026." data-en="HKH is not a concept. First deliveries 2026.">HKH n'est pas un concept. Premières livraisons 2026.</p>
     </header>
 
     <div class="fp-featured-list">
@@ -337,6 +337,7 @@
           <h3 class="fp-featured__h2" data-fr="6 habitats HORIZON T<br>en village locatif" data-en="6 HORIZON T residences<br>in a rental village">6 habitats HORIZON T<br>en village locatif</h3>
           <p class="fp-featured__meta" data-fr="2 000 m² · Projet en cours" data-en="2,000 m² · Project in development">2 000 m² · Projet en cours</p>
           <p class="fp-featured__partner" data-fr="Avec <em>Jay Family Properties</em>" data-en="With <em>Jay Family Properties</em>">Avec <em>Jay Family Properties</em></p>
+          <a href="blog-jay-family-saint-francois.html" class="fp-featured__cta editorial__link editorial__link--light" data-fr="Lire l'article" data-en="Read the article">Lire l'article</a>
         </div>
       </article>
 
@@ -424,14 +425,14 @@
 
     <div class="cercle-bridge" data-cercle-bridge>
       <span class="cercle-bridge__rule" aria-hidden="true"></span>
-      <p class="cercle-bridge__text" data-fr="Le Cercle s'élargit <em>avec chaque projet.</em>" data-en="The Circle grows <em>with each project.</em>">Le Cercle s'élargit <em>avec chaque projet.</em></p>
+      <p class="cercle-bridge__text" data-reveal-item data-reveal-delay="200" data-fr="Le Cercle s'élargit <em>avec chaque projet.</em>" data-en="The Circle grows <em>with each project.</em>">Le Cercle s'élargit <em>avec chaque projet.</em></p>
     </div>
 
     <section class="cercle-network">
       <header class="cercle-network__head">
-        <span class="cercle-network__eyebrow" data-fr="Réseau opérationnel" data-en="Operational network">Réseau opérationnel</span>
+        <span class="cercle-network__eyebrow" data-reveal-item data-fr="Réseau opérationnel" data-en="Operational network">Réseau opérationnel</span>
       </header>
-      <p class="cercle-network__empty" data-fr="Le réseau se construit avec les premières livraisons. Agences, notaires et bureaux d'étude rejoindront cette liste." data-en="The network builds with the first deliveries. Agencies, notaries and engineering offices will join this list.">Le réseau se construit avec les premières livraisons. Agences, notaires et bureaux d'étude rejoindront cette liste.</p>
+      <p class="cercle-network__empty" data-reveal-item data-reveal-delay="200" data-fr="Le réseau se construit avec les premières livraisons. Agences, notaires et bureaux d'étude rejoindront cette liste." data-en="The network builds with the first deliveries. Agencies, notaries and engineering offices will join this list.">Le réseau se construit avec les premières livraisons. Agences, notaires et bureaux d'étude rejoindront cette liste.</p>
     </section>
   </div>
 </section>
@@ -536,8 +537,11 @@ revealEls.forEach(el=>io.observe(el));
 (function(){
   if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var scopes=[
-    {trigger:'.collections-spread__intro',children:['.collections-spread__eyebrow','.collections-spread__h2','.collections-spread__sub']},
-    {trigger:'.col-fam[data-collections-swap]',children:['.col-fam__eyebrow','.col-fam__h2','.col-fam__toggle','.col-fam__variant-tagline','.col-fam__specs','.col-fam__finitions','.col-fam__desc','.col-fam__discover']},
+    /* Collections intro + fam : enfants MIGRÉS vers data-reveal-item Pass 4.5.
+       On garde uniquement le trigger pour ajouter .col-revealed au wrapper
+       (Ken Burns photo via .col-fam.col-revealed .col-fam__photo img). */
+    {trigger:'.collections-spread__intro',children:[]},
+    {trigger:'.col-fam[data-collections-swap]',children:[]},
     {trigger:'.col-fam__cta-row',children:['.col-fam__sep','.editorial__link']},
     {trigger:'.fp-featured[data-fp-reveal]',children:['.fp-featured__eyebrow','.fp-featured__h2','.fp-featured__meta','.fp-featured__partner']},
     {trigger:'.fp-quote[data-fp-reveal]',children:['.fp-quote__rule','.fp-quote__text','.fp-quote__attr']},

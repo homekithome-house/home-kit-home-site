@@ -17,6 +17,8 @@
 
 **Avant toute création/refonte/audit d'une PAGE entière, lis et applique OBLIGATOIREMENT `agent_docs/methode_niveau_method.md`.** Méthode HKH "Niveau Method" en 4 phases (récit global → audit checklist 5/5 → production section par section → cohérence inter-sections → polish technique). **5 ingrédients obligatoires par section** (signature visuelle distinctive · narrativité · reveal one-shot puissant · structure visuelle forte · closure narrative). **5 critères inter-sections** (récit global · rythme paper/dark narratif · signatures uniques · densité émotionnelle homogène · transitions soignées). **Règle absolue Benjamin : on ne déroge JAMAIS de cette méthode.** Le polish technique (smooth scroll, parallax, sticky) vient TOUJOURS en dernier (Phase 4) — il ne sauve jamais une page sage.
 
+**Avant toute animation, reveal, parallax, sticky, hover ou trait décoratif, lis et applique OBLIGATOIREMENT `agent_docs/animations_system.md`.** Système Pass 4.5 livré (2026-05-14) : pattern `data-reveal-item` + IO par élément, traits closure animés (width 0→X), parallax wrappers enlarged, sticky magazine spread, hover trail underline, smooth scroll lerp. Pattern visuel **répété par section** (pas scroll-driven global = AI tell). Snippets copy-paste ready dans le doc.
+
 **Vocabulaire de marque** : voir `agent_docs/brand_rules.md` (interdits, em-dash vs middot, ton éditorial vs commercial, ton catalogue 2026).
 
 **Validation systématique** (images, i18n, Lighthouse) : voir `agent_docs/architecture.md` § Validation systématique.
@@ -52,6 +54,7 @@ Lit `/images/`, écrit AVIF q65 + WebP q80 dans `/dist/images/` (miroir, max 120
 
 ## Pour aller plus loin — `agent_docs/`
 
+- `animations_system.md` — **lecture obligatoire avant toute animation** (data-reveal-item, traits closure, parallax, sticky, hover trail, smooth scroll lerp, snippets copy-paste)
 - `art_direction.md` — **lecture obligatoire avant toute production visuelle** (référence iglucraft, anti-Aman, émotions cibles, anti-patterns)
 - `architecture.md` — organisation des pages, partials, `nav.js` injecteur unique, assets/data, validation systématique
 - `components.md` — inventaire des composants réutilisables (nav, footer, hero, cartes produit, fiches résidence)
