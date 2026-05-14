@@ -484,9 +484,32 @@ ul{list-style:none}
 }
 /* Photo cross-fade lors d'un swap variante — pattern iglucraft, lent */
 .col-fam__photo picture,
-.col-fam__photo img{ transition:opacity .35s ease-out; }
+.col-fam__photo img{ transition:opacity .35s ease-out, transform 20s ease-out; }
 .col-fam__photo--swapping picture,
 .col-fam__photo--swapping img{ opacity:0; }
+
+/* ─── Cascade reveal one-shot (4B) — pattern iglucraft :
+   opacity-only sur texte + Ken Burns dominant sur photo.
+   Verdict taste-skill : aucune translation verticale sur texte,
+   la photo est le seul élément vivant. ─── */
+.col-reveal{
+  opacity:0;
+  transition:opacity 1500ms cubic-bezier(.16,1,.3,1);
+}
+.col-reveal-trigger.col-revealed .col-reveal{
+  opacity:1;
+}
+/* Ken Burns subtil zoom-out sur photos collections — scale(1.08) → scale(1.0) sur 20s */
+.col-fam[data-collections-swap] .col-fam__photo img{
+  transform:scale(1.08);
+}
+.col-fam[data-collections-swap].col-revealed .col-fam__photo img{
+  transform:scale(1);
+}
+@media (prefers-reduced-motion: reduce){
+  .col-reveal{ opacity:1; transition:none; }
+  .col-fam[data-collections-swap] .col-fam__photo img{ transform:none; transition:opacity .35s ease-out; }
+}
 @media (prefers-reduced-motion: reduce){
   .col-fam__photo picture,
   .col-fam__photo img{ transition:none; }

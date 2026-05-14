@@ -17,7 +17,7 @@
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
   </noscript>
-  <link rel="stylesheet" href="style.css?v=toggleC2"/>
+  <link rel="stylesheet" href="style.css?v=reveal4B"/>
   <link rel="stylesheet" href="assets/css/animations.css"/>
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
@@ -421,6 +421,40 @@ revealEls.forEach(el=>io.observe(el));
       btn.textContent=lang==='en'?'Subscribe':'S\'inscrire';
     });
   });
+})();
+
+/* ── Collections 4B — cascade reveal one-shot (Option C taste-skill)
+   Opacity-only sur texte (220ms stagger, 1500ms durée cubic-bezier .16,1,.3,1)
+   + Ken Burns 1.08 → 1.0 sur 20s sur photo. Le texte n'est pas un évènement,
+   la photo l'est. ── */
+(function(){
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var scopes=[
+    {trigger:'.collections-spread__intro',children:['.collections-spread__eyebrow','.collections-spread__h2','.collections-spread__sub']},
+    {trigger:'.col-fam[data-collections-swap]',children:['.col-fam__eyebrow','.col-fam__h2','.col-fam__toggle','.col-fam__variant-tagline','.col-fam__specs','.col-fam__finitions','.col-fam__desc','.col-fam__discover']},
+    {trigger:'.col-fam__cta-row',children:['.col-fam__sep','.editorial__link']}
+  ];
+  scopes.forEach(function(scope){
+    document.querySelectorAll(scope.trigger).forEach(function(parent){
+      parent.classList.add('col-reveal-trigger');
+      scope.children.forEach(function(sel,i){
+        var el=parent.querySelector(sel);
+        if(el){
+          el.classList.add('col-reveal');
+          el.style.transitionDelay=(i*220)+'ms';
+        }
+      });
+    });
+  });
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('col-revealed');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.3,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.col-reveal-trigger').forEach(function(el){io.observe(el);});
 })();
 
 /* ── Collections — toggle inline minimaliste (pattern iglucraft)
