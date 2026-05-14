@@ -215,18 +215,165 @@ ul{list-style:none}
 .founders__head h2 em{font-style:italic;color:var(--copper)}
 .founders__sub{font-family:var(--serif);font-style:italic;font-size:clamp(1rem,1.4vw,1.15rem);color:var(--mid);line-height:1.6;max-width:38ch;margin:0;padding-bottom:.4rem}
 
-.founders__grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
-.founder-card{display:flex;flex-direction:column;gap:1.6rem;padding:3rem 2.6rem;background:var(--cream);text-decoration:none;color:inherit;position:relative;transition:padding-left .4s cubic-bezier(.16,1,.3,1),background .4s ease}
-.founder-card:hover{padding-left:3.4rem;background:var(--cream-dk)}
-.founder-card__num{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--copper);line-height:1;letter-spacing:-.02em}
-.founder-card__body{display:flex;flex-direction:column;gap:.9rem}
-.founder-card__tag{font-family:var(--sans);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--copper);font-weight:400}
-.founder-card__name{font-family:var(--serif);font-weight:400;font-size:clamp(1.5rem,2.2vw,2rem);color:var(--dark);letter-spacing:-.015em;line-height:1.1;margin:0}
-.founder-card__desc{font-family:var(--sans);font-weight:300;font-size:.95rem;line-height:1.75;color:var(--mid);margin:0;max-width:42ch}
-.founder-card__arrow{font-family:var(--sans);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--dark);font-weight:400;display:inline-flex;align-items:center;gap:1rem;margin-top:.4rem;transition:color .3s ease}
-.founder-card__arrow::after{content:'→';color:var(--copper);transition:transform .35s cubic-bezier(.16,1,.3,1)}
-.founder-card:hover .founder-card__arrow{color:var(--copper)}
-.founder-card:hover .founder-card__arrow::after{transform:translateX(.5rem)}
+
+/* ─── Le Cercle — Fondateurs monumentaux + Réseau typographique (Option A taste-skill) ─── */
+.cercle-founders{
+  display:flex;
+  flex-direction:column;
+  margin-top:clamp(3rem,5vh,5rem);
+}
+.cercle-founder{
+  display:grid;
+  grid-template-columns:minmax(180px,38%) 1fr;
+  gap:clamp(2rem,5vw,5rem);
+  align-items:center;
+  min-height:min(48vh,360px);
+  padding-block:clamp(3rem,5vh,5rem);
+}
+.cercle-founder + .cercle-founder{
+  border-top:1px solid rgba(184,115,51,.18);
+}
+/* Alternance logo droite sur le 2e fondateur — rythme éditorial */
+.cercle-founder:nth-child(2n){
+  grid-template-columns:1fr minmax(180px,38%);
+}
+.cercle-founder:nth-child(2n) .cercle-founder__logo{ order:2; }
+.cercle-founder:nth-child(2n) .cercle-founder__text{ order:1; }
+.cercle-founder__logo{
+  margin:0;
+  padding:1rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.cercle-founder__logo picture,
+.cercle-founder__logo img{
+  display:block;
+  width:100%;
+  max-width:280px;
+  max-height:120px;
+  height:auto;
+  object-fit:contain;
+  opacity:.92;
+}
+.cercle-founder__text{
+  display:flex;
+  flex-direction:column;
+  gap:.9rem;
+  max-width:52ch;
+}
+.cercle-founder__tag{
+  font-family:var(--sans);
+  font-size:.72rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--copper);
+}
+.cercle-founder__name{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(1.6rem,2.4vw,2.2rem);
+  line-height:1.15;
+  letter-spacing:-.01em;
+  color:var(--dark);
+  margin:.1rem 0 .4rem;
+}
+.cercle-founder__desc{
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:400;
+  font-size:1.05rem;
+  line-height:1.55;
+  color:rgba(44,44,40,.75);
+  max-width:44ch;
+  margin:0 0 .4rem;
+}
+.cercle-founder__link{
+  align-self:flex-start;
+}
+
+/* Bridge éditorial entre fondateurs et réseau */
+.cercle-bridge{
+  max-width:720px;
+  margin:clamp(4rem,6vh,6rem) auto;
+  text-align:center;
+  padding:0 1.5rem;
+}
+.cercle-bridge__rule{
+  display:block;
+  width:60px;
+  height:1px;
+  background:var(--copper);
+  opacity:.6;
+  margin:0 auto 1.6rem;
+}
+.cercle-bridge__text{
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(1.1rem,1.5vw,1.3rem);
+  line-height:1.5;
+  color:rgba(44,44,40,.7);
+  margin:0;
+}
+
+/* Réseau opérationnel — typographique pur, scale indéfiniment */
+.cercle-network{
+  border-top:1px solid rgba(184,115,51,.15);
+  padding-top:clamp(3rem,5vh,4rem);
+  margin-top:clamp(3rem,5vh,5rem);
+}
+.cercle-network__head{ margin-bottom:1.8rem; }
+.cercle-network__eyebrow{
+  display:inline-block;
+  font-family:var(--sans);
+  font-size:.72rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--copper);
+}
+.cercle-network__empty{
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(1.05rem,1.4vw,1.2rem);
+  line-height:1.55;
+  color:rgba(44,44,40,.6);
+  max-width:56ch;
+  margin:0;
+}
+/* Lignes réseau futures — pattern grid */
+.cercle-network__row{
+  display:grid;
+  grid-template-columns:2fr 2fr 1fr 1fr auto;
+  gap:clamp(1rem,2vw,2rem);
+  align-items:baseline;
+  padding:1.2rem 0;
+  border-bottom:1px solid rgba(184,115,51,.12);
+  color:rgba(44,44,40,.78);
+  text-decoration:none;
+  transition:color .3s ease;
+}
+.cercle-network__row:hover{ color:var(--dark); }
+.cercle-network__row > *{ font-family:var(--sans); font-size:.88rem; margin:0; }
+.cercle-network__row [data-network-name]{ color:var(--copper); letter-spacing:.1em; text-transform:uppercase; font-size:.78rem; }
+.cercle-network__row .cercle-network__arrow{ color:var(--copper); transition:transform .3s ease-out; }
+.cercle-network__row:hover .cercle-network__arrow{ transform:translateX(4px); }
+
+@media(max-width:900px){
+  .cercle-founder,
+  .cercle-founder:nth-child(2n){
+    grid-template-columns:1fr;
+    gap:1.6rem;
+    min-height:auto;
+  }
+  .cercle-founder:nth-child(2n) .cercle-founder__logo,
+  .cercle-founder:nth-child(2n) .cercle-founder__text{ order:0; }
+  .cercle-founder__logo{ padding:0; justify-content:flex-start; }
+  .cercle-founder__logo img{ max-height:80px; }
+  .cercle-founder__text{ max-width:none; }
+  .cercle-network__row{ grid-template-columns:1fr; gap:.3rem; padding:1.4rem 0; }
+}
 
 /* ════════════════════════════════
    LIEN ÉDITORIAL (utilisé sur toutes les pages)
