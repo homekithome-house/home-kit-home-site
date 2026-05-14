@@ -17,7 +17,7 @@
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
   </noscript>
-  <link rel="stylesheet" href="style.css?v=terrain-cartouche"/>
+  <link rel="stylesheet" href="style.css?v=terrain-split"/>
   <link rel="stylesheet" href="assets/css/animations.css"/>
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
@@ -224,33 +224,29 @@
   </div>
 </section>
 
-<!-- ── TERRAIN — orientation duale photo immersive (Option δ taste-skill) ──── -->
+<!-- ── TERRAIN — split éditorial strict 50/50 photo bloc + texte paper (anti-slop) ──── -->
 <section class="terrain" data-fp-reveal>
-  <figure class="terrain__photo">
-    <picture>
-      <source srcset="dist/images/blog/saint-francois-400k-2000m2/photos_drone/dji_fly_20260311_115924_181_1773244842802_photo_optimized.avif" type="image/avif">
-      <source srcset="dist/images/blog/saint-francois-400k-2000m2/photos_drone/dji_fly_20260311_115924_181_1773244842802_photo_optimized.webp" type="image/webp">
-      <img src="dist/images/blog/saint-francois-400k-2000m2/photos_drone/dji_fly_20260311_115924_181_1773244842802_photo_optimized.avif" alt="Vue aérienne d'un terrain tropical 2 000 m² à Saint-François, Guadeloupe — territoire d'implantation HKH" loading="lazy" decoding="async"/>
-    </picture>
-  </figure>
   <div class="terrain__inner">
-    <div class="terrain__card">
-      <div class="terrain__cols">
-        <div class="terrain__col terrain__col--avez">
-          <span class="terrain__eyebrow" data-fr="Vous avez un terrain" data-en="You have land">Vous avez un terrain</span>
-          <h3 class="terrain__h3" data-fr="Votre terrain devient un actif locatif." data-en="Your land becomes a rental asset.">Votre terrain devient un actif locatif.</h3>
-          <p class="terrain__sub" data-fr="Étude de potentiel locatif · cumul Girardin et FEDER · accompagnement par notre partenaire fiscal." data-en="Rental potential study · cumulative Girardin and FEDER schemes · support via our tax partner.">Étude de potentiel locatif · cumul Girardin et FEDER · accompagnement par notre partenaire fiscal.</p>
-        </div>
-        <span class="terrain__divider" aria-hidden="true"></span>
-        <div class="terrain__col terrain__col--cherchez">
-          <span class="terrain__eyebrow" data-fr="Vous cherchez un terrain" data-en="You're looking for land">Vous cherchez un terrain</span>
-          <h3 class="terrain__h3" data-fr="Nous identifions le terrain pour vous." data-en="We find the land for you.">Nous identifions le terrain pour vous.</h3>
-          <p class="terrain__sub" data-fr="Réseau d'agences France · Antilles · Guyane — sélection selon votre projet et votre budget." data-en="Network of agencies France · Antilles · Guiana — selection based on your project and budget.">Réseau d'agences France · Antilles · Guyane — sélection selon votre projet et votre budget.</p>
-        </div>
+    <figure class="terrain__photo">
+      <picture>
+        <source srcset="dist/images/blog/saint-francois-400k-2000m2/photos_drone/dji_fly_20260311_115924_181_1773244842802_photo_optimized.avif" type="image/avif">
+        <source srcset="dist/images/blog/saint-francois-400k-2000m2/photos_drone/dji_fly_20260311_115924_181_1773244842802_photo_optimized.webp" type="image/webp">
+        <img src="dist/images/blog/saint-francois-400k-2000m2/photos_drone/dji_fly_20260311_115924_181_1773244842802_photo_optimized.avif" alt="Vue aérienne d'un terrain tropical 2 000 m² à Saint-François, Guadeloupe — territoire d'implantation HKH" loading="lazy" decoding="async"/>
+      </picture>
+      <figcaption class="terrain__caption" data-fr="Saint-François · 2 000 m²" data-en="Saint-François · 2,000 m²">Saint-François · 2 000 m²</figcaption>
+    </figure>
+    <div class="terrain__body">
+      <div class="terrain__col terrain__col--avez">
+        <span class="terrain__eyebrow" data-fr="Vous avez un terrain" data-en="You have land">Vous avez un terrain</span>
+        <h3 class="terrain__h3" data-fr="Votre terrain devient un actif locatif." data-en="Your land becomes a rental asset.">Votre terrain devient un actif locatif.</h3>
+        <p class="terrain__sub" data-fr="Étude de potentiel locatif · cumul Girardin et FEDER · accompagnement par notre partenaire fiscal." data-en="Rental potential study · cumulative Girardin and FEDER schemes · support via our tax partner.">Étude de potentiel locatif · cumul Girardin et FEDER · accompagnement par notre partenaire fiscal.</p>
       </div>
-      <div class="terrain__cta">
-        <a href="contact.html" class="terrain__link" data-fr="Parler de votre projet →" data-en="Discuss your project →">Parler de votre projet →</a>
+      <div class="terrain__col terrain__col--cherchez">
+        <span class="terrain__eyebrow" data-fr="Vous cherchez un terrain" data-en="You're looking for land">Vous cherchez un terrain</span>
+        <h3 class="terrain__h3" data-fr="Nous identifions le terrain pour vous." data-en="We find the land for you.">Nous identifions le terrain pour vous.</h3>
+        <p class="terrain__sub" data-fr="Réseau d'agences France · Antilles · Guyane — sélection selon votre projet et votre budget." data-en="Network of agencies France · Antilles · Guiana — selection based on your project and budget.">Réseau d'agences France · Antilles · Guyane — sélection selon votre projet et votre budget.</p>
       </div>
+      <a href="contact.html" class="terrain__link" data-fr="Parler de votre projet" data-en="Discuss your project">Parler de votre projet</a>
     </div>
   </div>
 </section>
@@ -494,7 +490,7 @@ revealEls.forEach(el=>io.observe(el));
     {trigger:'.collections-spread__intro',children:['.collections-spread__eyebrow','.collections-spread__h2','.collections-spread__sub']},
     {trigger:'.col-fam[data-collections-swap]',children:['.col-fam__eyebrow','.col-fam__h2','.col-fam__toggle','.col-fam__variant-tagline','.col-fam__specs','.col-fam__finitions','.col-fam__desc','.col-fam__discover']},
     {trigger:'.col-fam__cta-row',children:['.col-fam__sep','.editorial__link']},
-    {trigger:'.terrain[data-fp-reveal]',children:['.terrain__col--avez .terrain__eyebrow','.terrain__col--avez .terrain__h3','.terrain__col--avez .terrain__sub','.terrain__divider','.terrain__col--cherchez .terrain__eyebrow','.terrain__col--cherchez .terrain__h3','.terrain__col--cherchez .terrain__sub','.terrain__cta'],stagger:200},
+    {trigger:'.terrain[data-fp-reveal]',children:['.terrain__photo','.terrain__col--avez','.terrain__col--cherchez','.terrain__link'],stagger:220},
     {trigger:'.fp-featured[data-fp-reveal]',children:['.fp-featured__eyebrow','.fp-featured__h2','.fp-featured__meta','.fp-featured__partner']},
     {trigger:'.fp-quote[data-fp-reveal]',children:['.fp-quote__rule','.fp-quote__text','.fp-quote__attr']},
     {trigger:'.fp-archive[data-fp-reveal]',children:['.fp-archive__eyebrow','.fp-archive__empty']},
