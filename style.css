@@ -994,12 +994,12 @@ ul{list-style:none}
   transform:scale(1.05);
 }
 .terrain.col-revealed .terrain__photo img{ transform:scale(1); }
-/* Overlay diagonal léger — photo JOUR claire suffit, pas besoin de dark écrasant */
+/* Vignette légère sur photo — densifie sans masquer (cartouche porte le texte) */
 .terrain::after{
   content:'';
   position:absolute;
   inset:0;
-  background:linear-gradient(135deg, rgba(26,26,24,.7) 0%, rgba(26,26,24,.5) 35%, rgba(26,26,24,.35) 70%, rgba(26,26,24,.55) 100%);
+  background:radial-gradient(ellipse 120% 100% at 30% 50%, transparent 35%, rgba(26,26,24,.45) 100%);
   pointer-events:none;
   z-index:2;
 }
@@ -1007,15 +1007,38 @@ ul{list-style:none}
   position:relative;
   z-index:3;
   display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:clamp(2.5rem,5vh,4rem);
+  align-items:center;
   min-height:min(72vh,580px);
   max-width:1280px;
   margin:0 auto;
   padding:clamp(4rem,8vh,7rem) clamp(2rem,5vw,4rem);
-  color:var(--paper);
 }
+
+/* Cartouche dark posé sur la photo — variante distinctive vs Newsletter cartouche paper */
+.terrain__card{
+  position:relative;
+  background:rgba(26,26,24,.92);
+  backdrop-filter:blur(2px);
+  -webkit-backdrop-filter:blur(2px);
+  padding:clamp(2.4rem,3.5vw,3.4rem);
+  max-width:1100px;
+  width:100%;
+  color:var(--paper);
+  display:flex;
+  flex-direction:column;
+  gap:clamp(2rem,3vh,2.6rem);
+}
+/* Trait copper signature top-left (signature distinctive HKH cartouche) */
+.terrain__card::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:60px;
+  height:2px;
+  background:var(--copper-lt);
+}
+
 .terrain__cols{
   display:grid;
   grid-template-columns:1fr 1px 1fr;
@@ -1027,35 +1050,31 @@ ul{list-style:none}
   width:1px;
   height:100%;
   min-height:140px;
-  background:var(--copper-lt);
-  opacity:.45;
+  background:rgba(184,115,51,.4);
   align-self:stretch;
   justify-self:center;
 }
 .terrain__col{
   display:flex;
   flex-direction:column;
-  gap:1.1rem;
+  gap:1rem;
   max-width:44ch;
 }
-.terrain__col--cherchez{ margin-left:0; }
 .terrain__eyebrow{
   font-family:var(--sans);
   font-size:.72rem;
   letter-spacing:.22em;
   text-transform:uppercase;
   color:var(--copper-lt);
-  text-shadow:0 1px 8px rgba(0,0,0,.5);
 }
 .terrain__h3{
   font-family:var(--serif);
   font-weight:400;
-  font-size:clamp(1.8rem,3vw,2.6rem);
+  font-size:clamp(1.7rem,2.8vw,2.4rem);
   letter-spacing:-.015em;
   line-height:1.2;
   color:var(--paper);
   margin:.2rem 0 0;
-  text-shadow:0 1px 16px rgba(0,0,0,.45);
 }
 .terrain__sub{
   font-family:var(--serif);
@@ -1063,16 +1082,18 @@ ul{list-style:none}
   font-weight:400;
   font-size:1rem;
   line-height:1.55;
-  color:rgba(249,247,242,.82);
+  color:rgba(249,247,242,.78);
   max-width:42ch;
   margin:.4rem 0 0;
-  text-shadow:0 1px 10px rgba(0,0,0,.5);
 }
 
 .terrain__cta{
   display:flex;
-  justify-content:center;
-  padding-top:.4rem;
+  justify-content:flex-start;
+  padding-top:.2rem;
+  border-top:1px solid rgba(249,247,242,.12);
+  margin-top:.4rem;
+  padding-top:1.4rem;
 }
 .terrain__link{
   font-family:var(--sans);
@@ -1084,7 +1105,6 @@ ul{list-style:none}
   position:relative;
   padding-bottom:.55rem;
   transition:color .3s ease;
-  text-shadow:0 1px 8px rgba(0,0,0,.5);
 }
 .terrain__link::after{
   content:'';
@@ -1100,15 +1120,16 @@ ul{list-style:none}
 .terrain__link:hover::after{ width:100%; }
 
 @media (max-width:900px){
-  .terrain{ min-height:min(82vh,640px); }
-  .terrain__inner{ min-height:min(82vh,640px); padding:clamp(3rem,8vh,5rem) 1.5rem; }
-  .terrain__cols{ grid-template-columns:1fr; gap:2rem; }
+  .terrain{ min-height:auto; }
+  .terrain__inner{ min-height:auto; padding:clamp(3rem,6vh,4rem) 1.2rem; }
+  .terrain__card{ padding:clamp(1.8rem,5vw,2.4rem); gap:1.8rem; }
+  .terrain__cols{ grid-template-columns:1fr; gap:1.8rem; }
   .terrain__divider{
     width:60px;
     height:1px;
     min-height:0;
     justify-self:start;
-    margin:.4rem 0;
+    background:rgba(184,115,51,.3);
   }
   .terrain__col{ max-width:none; }
 }
