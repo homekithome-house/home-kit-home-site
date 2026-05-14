@@ -383,6 +383,21 @@ ul{list-style:none}
 .col-fam--horizon .col-fam__photo{ order:2; }
 .col-fam--horizon .col-fam__text{ order:1; }
 
+/* ─── Overlap H2 HORIZON — pattern éditorial magazine (4C)
+   Le H2 déborde de 12-15% de sa colonne vers la zone photo.
+   Box étendu réellement (margin-right négatif + width calc),
+   z-index 2 pour passer au-dessus de la photo. ─── */
+@media (min-width:901px){
+  .col-fam--horizon .col-fam__inner{ overflow:visible; }
+  .col-fam--horizon .col-fam__text{ position:relative; }
+  .col-fam--horizon .col-fam__h2{
+    position:relative;
+    z-index:2;
+    width:calc(100% + clamp(8rem, 20vw, 22rem));
+    margin-right:clamp(-22rem, -20vw, -8rem);
+  }
+}
+
 /* SIGNATURE — full-bleed + overlay éditorial bas */
 .col-fam--signature .col-fam__inner{
   position:relative;
