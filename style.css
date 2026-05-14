@@ -966,113 +966,157 @@ ul{list-style:none}
 }
 
 /* ════════════════════════════════
-   TERRAIN BANNER
+   TERRAIN — orientation duale photo immersive (Option δ taste-skill)
+   Pattern Aman territory : photo full-bleed + 2 cols texte overlay + CTA pied
 ════════════════════════════════ */
-.terrain-banner{
-  background:var(--cream);
-  padding:6rem 4vw;
+.terrain{
   position:relative;
+  min-height:min(72vh,580px);
   overflow:hidden;
-  border-top:1px solid var(--cream-dk);
-  border-bottom:1px solid var(--cream-dk);
+  isolation:isolate;
+  background:var(--dark2);
 }
-.terrain-banner::before{
-  content:'';
+.terrain__photo{
   position:absolute;
   inset:0;
-  background:radial-gradient(ellipse 55% 70% at 0% 50%, rgba(184,115,51,.04) 0%, transparent 60%),
-             radial-gradient(ellipse 45% 60% at 100% 50%, rgba(184,115,51,.03) 0%, transparent 60%);
-  pointer-events:none;
-}
-.terrain-banner__content{
-  display:grid;
-  grid-template-columns:1fr 1px 1fr;
-  gap:0;
-  max-width:1160px;
-  margin:0 auto 3rem;
-  position:relative;
-  z-index:1;
-}
-.terrain-banner__divider{
-  background:var(--cream-dk);
-  margin:0 3.5rem;
-}
-.terrain-banner__col{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  text-align:left;
-  gap:1.4rem;
-  padding:0 2rem;
-}
-.terrain-banner__col:first-child{padding-left:0}
-.terrain-banner__col:last-child{padding-right:0}
-.terrain-banner__lbl{
-  font-family:'Jost',system-ui,sans-serif;
-  font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;
-  color:var(--copper);font-weight:400;
-}
-.terrain-banner__col h3{
-  font-family:var(--serif);
-  font-size:clamp(1.9rem,3.2vw,3rem);
-  color:var(--dark);
-  font-weight:400;
-  line-height:1.15;
-  letter-spacing:-.02em;
   margin:0;
-}
-.terrain-banner__sub{
-  font-family:var(--sans);font-weight:300;font-size:.88rem;
-  color:var(--mid);line-height:1.7;margin:1.1rem 0 0;
-  max-width:46ch;letter-spacing:.005em;
-}
-.terrain-banner__col p{
-  font-family:var(--sans);
-  font-weight:300;
-  font-size:.9rem;
-  line-height:1.75;
-  color:var(--mid);
-  margin:0;
-  max-width:36ch;
-}
-.terrain-banner__visual{
-  width:100%;
-  height:52vh;
-  min-height:300px;
   overflow:hidden;
-  margin-bottom:4rem;
-  position:relative;
   z-index:1;
 }
-.terrain-banner__visual img{
+.terrain__photo picture,
+.terrain__photo img{
+  display:block;
   width:100%;
   height:100%;
   object-fit:cover;
-  object-position:center 60%;
-  display:block;
+  object-position:center center;
+  transition:transform 18s ease-out;
+  transform:scale(1.05);
 }
-.terrain-banner__cta{
-  text-align:center;
+.terrain.col-revealed .terrain__photo img{ transform:scale(1); }
+/* Overlay diagonal léger — photo JOUR claire suffit, pas besoin de dark écrasant */
+.terrain::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg, rgba(26,26,24,.7) 0%, rgba(26,26,24,.5) 35%, rgba(26,26,24,.35) 70%, rgba(26,26,24,.55) 100%);
+  pointer-events:none;
+  z-index:2;
+}
+.terrain__inner{
   position:relative;
-  z-index:1;
+  z-index:3;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:clamp(2.5rem,5vh,4rem);
+  min-height:min(72vh,580px);
+  max-width:1280px;
+  margin:0 auto;
+  padding:clamp(4rem,8vh,7rem) clamp(2rem,5vw,4rem);
+  color:var(--paper);
 }
-.terrain-banner__link{
-  font-family:'Jost',system-ui,sans-serif;
-  font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--dark);font-weight:400;text-decoration:none;
-  display:inline-flex;align-items:center;gap:1.2rem;
+.terrain__cols{
+  display:grid;
+  grid-template-columns:1fr 1px 1fr;
+  gap:clamp(2rem,4vw,4rem);
+  align-items:start;
+}
+.terrain__divider{
+  display:block;
+  width:1px;
+  height:100%;
+  min-height:140px;
+  background:var(--copper-lt);
+  opacity:.45;
+  align-self:stretch;
+  justify-self:center;
+}
+.terrain__col{
+  display:flex;
+  flex-direction:column;
+  gap:1.1rem;
+  max-width:44ch;
+}
+.terrain__col--cherchez{ margin-left:0; }
+.terrain__eyebrow{
+  font-family:var(--sans);
+  font-size:.72rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--copper-lt);
+  text-shadow:0 1px 8px rgba(0,0,0,.5);
+}
+.terrain__h3{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(1.8rem,3vw,2.6rem);
+  letter-spacing:-.015em;
+  line-height:1.2;
+  color:var(--paper);
+  margin:.2rem 0 0;
+  text-shadow:0 1px 16px rgba(0,0,0,.45);
+}
+.terrain__sub{
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:400;
+  font-size:1rem;
+  line-height:1.55;
+  color:rgba(249,247,242,.82);
+  max-width:42ch;
+  margin:.4rem 0 0;
+  text-shadow:0 1px 10px rgba(0,0,0,.5);
+}
+
+.terrain__cta{
+  display:flex;
+  justify-content:center;
+  padding-top:.4rem;
+}
+.terrain__link{
+  font-family:var(--sans);
+  font-size:.78rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--paper);
+  text-decoration:none;
+  position:relative;
+  padding-bottom:.55rem;
   transition:color .3s ease;
+  text-shadow:0 1px 8px rgba(0,0,0,.5);
 }
-.terrain-banner__link::after{content:'→';color:var(--copper);font-size:.9rem;letter-spacing:0;line-height:1;transition:transform .3s ease}
-.terrain-banner__link:hover{color:var(--copper)}
-.terrain-banner__link:hover::after{transform:translateX(.4rem)}
-@media(max-width:768px){
-  .terrain-banner__content{grid-template-columns:1fr;gap:3rem}
-  .terrain-banner__divider{display:none}
-  .terrain-banner__col{padding:0}
-  .terrain-banner__col:first-child{padding-left:0}
-  .terrain-banner__visual{height:36vh;min-height:200px}
+.terrain__link::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:1.8rem;
+  height:1px;
+  background:var(--copper-lt);
+  transition:width .35s cubic-bezier(.16,1,.3,1);
 }
+.terrain__link:hover{ color:var(--copper-lt); }
+.terrain__link:hover::after{ width:100%; }
+
+@media (max-width:900px){
+  .terrain{ min-height:min(82vh,640px); }
+  .terrain__inner{ min-height:min(82vh,640px); padding:clamp(3rem,8vh,5rem) 1.5rem; }
+  .terrain__cols{ grid-template-columns:1fr; gap:2rem; }
+  .terrain__divider{
+    width:60px;
+    height:1px;
+    min-height:0;
+    justify-self:start;
+    margin:.4rem 0;
+  }
+  .terrain__col{ max-width:none; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .terrain__photo img{ transform:none; transition:none; }
+}
+
 
 /* ════════════════════════════════
    PREUVE TERRAIN + TÉMOIGNAGE (index.html)
