@@ -17,7 +17,7 @@
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
   </noscript>
-  <link rel="stylesheet" href="style.css?v=cercle-A1"/>
+  <link rel="stylesheet" href="style.css?v=newsletter-A"/>
   <link rel="stylesheet" href="assets/css/animations.css"/>
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
@@ -362,17 +362,29 @@
   </div>
 </section>
 
-<!-- ── NEWSLETTER ────────────────────────────────────── -->
-<section class="newsletter">
+<!-- ── NEWSLETTER — closing immersif photo dominante + dual CTA ──────── -->
+<section class="newsletter" data-fp-reveal>
+  <figure class="newsletter__photo">
+    <picture>
+      <source srcset="dist/images/blog/saint-francois-400k-2000m2/photos-originales/10.avif" type="image/avif">
+      <source srcset="dist/images/blog/saint-francois-400k-2000m2/photos-originales/10.webp" type="image/webp">
+      <img src="dist/images/blog/saint-francois-400k-2000m2/photos-originales/10.avif" alt="Vue aérienne nuit du village locatif Saint-François éclairé — habitats HORIZON T avec piscines individuelles" loading="lazy" decoding="async"/>
+    </picture>
+  </figure>
   <div class="newsletter__inner">
-    <span class="label reveal" data-fr="Suivez nos installations" data-en="Follow our installations">Suivez nos installations</span>
-    <h2 class="reveal reveal-delay-1" data-fr="Chaque habitat livré, raconté" data-en="Every delivered home, documented">Chaque habitat livré, raconté</h2>
-    <p class="newsletter__desc reveal reveal-delay-2" data-fr="Une lettre par mois — photos de pose, avancement des projets, premiers retours d'habitants." data-en="One letter per month — installation photos, project updates, first feedback from residents.">Une lettre par mois — photos de pose, avancement des projets, premiers retours d'habitants.</p>
-    <form class="newsletter__form reveal reveal-delay-3" id="newsletter-form" novalidate>
-      <input type="email" id="newsletter-email" data-fr="votre@email.com" data-en="your@email.com" placeholder="votre@email.com" required/>
-      <button type="submit" data-fr="S'inscrire" data-en="Subscribe">S'inscrire</button>
-    </form>
-    <p class="newsletter__msg" id="newsletter-msg" aria-live="polite"></p>
+    <div class="newsletter__content">
+      <span class="newsletter__eyebrow" data-fr="Suivez nos installations" data-en="Follow our installations">Suivez nos installations</span>
+      <h2 class="newsletter__h2" data-fr="Chaque habitat livré, raconté." data-en="Every delivered home, documented.">Chaque habitat livré, raconté.</h2>
+      <p class="newsletter__desc" data-fr="Une lettre par mois — photos de pose, avancement des projets, premiers retours d'habitants." data-en="One letter per month — installation photos, project updates, first feedback from residents.">Une lettre par mois — photos de pose, avancement des projets, premiers retours d'habitants.</p>
+      <form class="newsletter__form" id="newsletter-form" novalidate>
+        <input type="email" id="newsletter-email" data-fr="votre@email.com" data-en="your@email.com" placeholder="votre@email.com" required/>
+        <button type="submit" data-fr="S'inscrire" data-en="Subscribe">S'inscrire</button>
+      </form>
+      <p class="newsletter__msg" id="newsletter-msg" aria-live="polite"></p>
+      <p class="newsletter__bridge">
+        <a href="contact.html" class="newsletter__contact-link" data-fr="Ou parlez directement à HKH →" data-en="Or speak with HKH directly →">Ou parlez directement à HKH →</a>
+      </p>
+    </div>
   </div>
 </section>
 
@@ -458,7 +470,8 @@ revealEls.forEach(el=>io.observe(el));
     {trigger:'.fp-archive[data-fp-reveal]',children:['.fp-archive__eyebrow','.fp-archive__empty']},
     {trigger:'.cercle-founder[data-fp-reveal]',children:['.cercle-founder__tag','.cercle-founder__num','.cercle-founder__name','.cercle-founder__signature','.cercle-founder__link'],stagger:280},
     {trigger:'.cercle-bridge[data-fp-reveal]',children:['.cercle-bridge__rule','.cercle-bridge__text']},
-    {trigger:'.cercle-network[data-fp-reveal]',children:['.cercle-network__eyebrow','.cercle-network__empty']}
+    {trigger:'.cercle-network[data-fp-reveal]',children:['.cercle-network__eyebrow','.cercle-network__empty']},
+    {trigger:'.newsletter[data-fp-reveal]',children:['.newsletter__eyebrow','.newsletter__h2','.newsletter__desc','.newsletter__form','.newsletter__bridge'],stagger:240}
   ];
   scopes.forEach(function(scope){
     var stagger = scope.stagger || 220;
