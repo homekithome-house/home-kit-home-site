@@ -33,6 +33,27 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);font-weight:300;color:var(--dark);background:var(--paper);overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+
+/* ════════════════════════════════
+   Reveal-item générique (pattern Aman/Stripe — IO par élément)
+   HTML : data-reveal-item (+ optionnel data-reveal-delay="180")
+   JS : IIFE dans index.html observe chaque élément, ajoute .is-revealed
+   Le delay est appliqué via inline style par le JS (depuis data-reveal-delay ms).
+════════════════════════════════ */
+[data-reveal-item]{
+  opacity:0;
+  transform:translateY(36px);
+  transition:opacity 1400ms cubic-bezier(.16,1,.3,1), transform 1400ms cubic-bezier(.16,1,.3,1);
+  will-change:opacity, transform;
+}
+[data-reveal-item].is-revealed{
+  opacity:1;
+  transform:none;
+}
+@media (prefers-reduced-motion: reduce){
+  [data-reveal-item]{ opacity:1; transform:none; transition:none; }
+}
+
 img{display:block;width:100%;height:100%;object-fit:cover}
 a{text-decoration:none;color:inherit}
 ul{list-style:none}
@@ -394,20 +415,9 @@ ul{list-style:none}
 }
 .duo__closure.is-revealed .duo__closure-line{ opacity:1; transform:none; }
 
-/* Reveal cascade */
-.duo__head .duo__eyebrow,
-.duo__head .duo__h2,
-.duo__voie,
-.duo__pivot{
-  opacity:0;
-  transform:translateY(36px);
-  transition:opacity 1400ms cubic-bezier(.16,1,.3,1), transform 1400ms cubic-bezier(.16,1,.3,1);
-}
-.duo[data-duo-reveal].is-revealed .duo__head .duo__eyebrow{ opacity:1; transform:none; transition-delay:0ms; }
-.duo[data-duo-reveal].is-revealed .duo__head .duo__h2{ opacity:1; transform:none; transition-delay:180ms; }
-.duo[data-duo-reveal].is-revealed .duo__voie--finance{ opacity:1; transform:none; transition-delay:400ms; }
-.duo[data-duo-reveal].is-revealed .duo__pivot{ opacity:.55; transform:none; transition-delay:600ms; }
-.duo[data-duo-reveal].is-revealed .duo__voie--invest{ opacity:1; transform:none; transition-delay:800ms; }
+/* Reveal cascade — MIGRÉ Pass 4 → data-reveal-item dans index.html (IO par élément) */
+/* Override : pivot reste semi-transparent même révélé (signature design) */
+.duo__pivot[data-reveal-item].is-revealed{ opacity:.55; }
 
 @media (max-width:900px){
   .duo__voie--finance,
@@ -419,12 +429,8 @@ ul{list-style:none}
 }
 
 @media (prefers-reduced-motion: reduce){
-  .duo__head .duo__eyebrow,
-  .duo__head .duo__h2,
-  .duo__voie,
-  .duo__pivot,
   .duo__closure-line{ opacity:1; transform:none; transition:none; }
-  .duo__pivot{ opacity:.55; }
+  .duo__pivot[data-reveal-item]{ opacity:.55; }
   .duo__closure-rule{ width:38%; transition:none; }
   .duo__voie-word{ transition:none; }
 }
@@ -438,22 +444,7 @@ ul{list-style:none}
 .founders__head h2 em{font-style:italic;color:var(--copper)}
 .founders__sub{font-family:var(--serif);font-style:italic;font-size:clamp(1rem,1.4vw,1.15rem);color:var(--mid);line-height:1.6;max-width:38ch;margin:0;padding-bottom:.4rem}
 
-/* Head cascade reveal — Pass 3 fix : staggers manquants */
-.founders__lbl,
-.founders__head h2,
-.founders__sub{
-  opacity:0;
-  transform:translateY(36px);
-  transition:opacity 1400ms cubic-bezier(.16,1,.3,1), transform 1400ms cubic-bezier(.16,1,.3,1);
-}
-.founders[data-cercle-reveal].is-revealed .founders__lbl{ opacity:1; transform:none; transition-delay:0ms; }
-.founders[data-cercle-reveal].is-revealed .founders__head h2{ opacity:1; transform:none; transition-delay:200ms; }
-.founders[data-cercle-reveal].is-revealed .founders__sub{ opacity:1; transform:none; transition-delay:420ms; }
-@media (prefers-reduced-motion: reduce){
-  .founders__lbl,
-  .founders__head h2,
-  .founders__sub{ opacity:1; transform:none; transition:none; }
-}
+/* Head cascade reveal — MIGRÉ Pass 4 → data-reveal-item dans index.html (IO par élément) */
 
 
 /* ─── Le Cercle — Fil rouge vertical copper continu + 2 fondateurs (refonte Niveau Method 2026-05-14)
@@ -571,27 +562,11 @@ ul{list-style:none}
 .cercle-founder__link:hover{ color:var(--copper); }
 .cercle-founder__link:hover::after{ opacity:.7; }
 
-/* Reveal cards body */
-.cercle-founder__body{
-  opacity:0;
-  transform:translateY(36px);
-  transition:opacity 1400ms cubic-bezier(.16,1,.3,1), transform 1400ms cubic-bezier(.16,1,.3,1);
-}
-.founders[data-cercle-reveal].is-revealed .cercle-founder:nth-child(2) .cercle-founder__body{
-  opacity:1;
-  transform:none;
-  transition-delay:1100ms;
-}
-.founders[data-cercle-reveal].is-revealed .cercle-founder:nth-child(3) .cercle-founder__body{
-  opacity:1;
-  transform:none;
-  transition-delay:1600ms;
-}
+/* Reveal cards body — MIGRÉ Pass 4 → data-reveal-item sur .cercle-founder (article) */
 
 @media (prefers-reduced-motion: reduce){
   .cercle-founders__thread{ transform:scaleY(1); transition:none; }
   .cercle-founder__marker{ opacity:1; transform:none; transition:none; }
-  .cercle-founder__body{ opacity:1; transform:none; transition:none; }
 }
 
 /* Bridge éditorial entre fondateurs et réseau */
@@ -1514,18 +1489,7 @@ ul{list-style:none}
 .terrain__closure.is-revealed .terrain__closure-link{ opacity:.75; }
 .terrain__closure-link:hover{ opacity:1; }
 
-/* Reveal statement + 2 voies (cascade) */
-.terrain__statement-wrap .terrain__eyebrow,
-.terrain__statement-wrap .terrain__statement,
-.terrain__voie{
-  opacity:0;
-  transform:translateY(36px);
-  transition:opacity 1400ms cubic-bezier(.16,1,.3,1), transform 1400ms cubic-bezier(.16,1,.3,1);
-}
-.terrain[data-terrain-reveal].is-revealed .terrain__statement-wrap .terrain__eyebrow{ opacity:1; transform:none; transition-delay:0ms; }
-.terrain[data-terrain-reveal].is-revealed .terrain__statement-wrap .terrain__statement{ opacity:1; transform:none; transition-delay:180ms; }
-.terrain[data-terrain-reveal].is-revealed .terrain__voie--avez{ opacity:1; transform:none; transition-delay:380ms; }
-.terrain[data-terrain-reveal].is-revealed .terrain__voie--cherchez{ opacity:1; transform:none; transition-delay:660ms; }
+/* Reveal statement + 2 voies — MIGRÉ Pass 4 → data-reveal-item dans index.html (IO par élément) */
 
 @media (max-width:900px){
   .terrain__inner{ grid-template-columns:1fr; gap:2.5rem; }
@@ -1537,9 +1501,6 @@ ul{list-style:none}
 
 @media (prefers-reduced-motion: reduce){
   .terrain__photo img{ transform:none; transition:none; }
-  .terrain__statement-wrap .terrain__eyebrow,
-  .terrain__statement-wrap .terrain__statement,
-  .terrain__voie,
   .terrain__closure-line,
   .terrain__closure-link{ opacity:1; transform:none; transition:none; }
   .terrain__closure-rule{ width:38%; transition:none; }
@@ -2467,9 +2428,7 @@ ul{list-style:none}
   text-decoration:none;
   position:relative;
   padding-bottom:.5rem;
-  opacity:0;
-  transform:translateY(8px);
-  transition:opacity 1000ms cubic-bezier(.16,1,.3,1) 600ms, transform 1000ms cubic-bezier(.16,1,.3,1) 600ms, color .3s ease;
+  transition:color .3s ease;
 }
 .newsletter__contact-link::after{
   content:'';
@@ -2484,24 +2443,10 @@ ul{list-style:none}
 }
 .newsletter__contact-link:hover{ color:var(--copper-lt); }
 .newsletter__contact-link:hover::after{ opacity:1; }
-.newsletter[data-newsletter-reveal].is-revealed .newsletter__contact-link{
-  opacity:1;
-  transform:none;
-}
 
-/* Reveal cascade */
-.newsletter__eyebrow,
-.newsletter__h2,
-.newsletter__desc,
-.newsletter__form{
-  opacity:0;
-  transform:translateY(36px);
-  transition:opacity 1400ms cubic-bezier(.16,1,.3,1), transform 1400ms cubic-bezier(.16,1,.3,1);
-}
-.newsletter[data-newsletter-reveal].is-revealed .newsletter__eyebrow{ opacity:1; transform:none; transition-delay:0ms; }
-.newsletter[data-newsletter-reveal].is-revealed .newsletter__h2{ opacity:1; transform:none; transition-delay:180ms; }
-.newsletter[data-newsletter-reveal].is-revealed .newsletter__desc{ opacity:.85; transform:none; transition-delay:380ms; }
-.newsletter[data-newsletter-reveal].is-revealed .newsletter__form{ opacity:1; transform:none; transition-delay:560ms; }
+/* Reveal cascade — MIGRÉ Pass 4 → data-reveal-item dans index.html (IO par élément) */
+/* Override : desc reste opacity .85 même révélée (lecture confortable) */
+.newsletter__desc[data-reveal-item].is-revealed{ opacity:.85; }
 
 @media (max-width:900px){
   .newsletter{ padding:clamp(5rem,9vh,7rem) 0; }
@@ -2510,12 +2455,7 @@ ul{list-style:none}
 }
 
 @media (prefers-reduced-motion: reduce){
-  .newsletter__eyebrow,
-  .newsletter__h2,
-  .newsletter__desc,
-  .newsletter__form,
-  .newsletter__contact-link{ opacity:1; transform:none; transition:none; }
-  .newsletter__desc{ opacity:.85; }
+  .newsletter__desc[data-reveal-item]{ opacity:.85; }
   .newsletter__closure-rule{ width:80px; transition:none; }
 }
 

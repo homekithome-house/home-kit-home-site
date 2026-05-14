@@ -182,7 +182,7 @@ Une fois toutes les sections en 5/5, vérifier les 5 critères inter-sections :
 
 **5 dispositifs obligatoires Phase 4** (issus de la home HKH 2026-05-14) :
 
-**A. Reveals amplifiés** — translateY 36px (pas 16px) + transition 1400ms cubic-bezier(.16,1,.3,1) (pas 1100ms) sur toutes les sections refondues. Le 16px/1100ms = sage AI ; le 36px/1400ms = cinétique perceptible. Respect `prefers-reduced-motion`.
+**A. Reveals amplifiés — IO par ÉLÉMENT (pattern Aman/Stripe)** — pattern `[data-reveal-item]` sur chaque élément à animer (eyebrow, h2, voies, etc.) + optionnel `data-reveal-delay="180"`. CSS générique en tête de `style.css` (opacity 0 + translateY 36px + transition 1400ms cubic-bezier(.16,1,.3,1)). JS IIFE dans `index.html` observe chaque élément individuellement (IO threshold:0 rootMargin -10%) et ajoute `.is-revealed` quand il entre dans le viewport. Chaque élément trigger indépendamment → cascade naturelle au scroll, plus de cas spéciaux par hauteur de section. Garde le pattern `data-*-reveal` (section-level) pour les dispositifs section-wide : threads, markers, closures-rule width, photos Ken Burns scale. Respect `prefers-reduced-motion`.
 
 **B. Parallax universel sections dark BG** — wrapper enlarged top/bottom -12 à -14% sur `.method__bg`, `.newsletter__bg` ou équivalents. JS IIFE qui calcule ratio (centre section vs centre viewport), applique translate3d ±70-80px. Ken Burns CSS reste sur l'img (sans conflit). Throttled via requestAnimationFrame.
 
