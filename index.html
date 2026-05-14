@@ -17,7 +17,7 @@
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
   </noscript>
-  <link rel="stylesheet" href="style.css?v=coll-triptyque-1"/>
+  <link rel="stylesheet" href="style.css?v=terrain-statement-1"/>
   <link rel="stylesheet" href="assets/css/animations.css"/>
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
@@ -260,9 +260,25 @@
   </div>
 </section>
 
-<!-- ── TERRAIN — split éditorial strict 50/50 photo bloc + texte paper (anti-slop) ──── -->
-<section class="terrain" data-fp-reveal>
+<!-- ── TERRAIN — statement éditorial + diptyque asymétrique 35/65 (refonte Niveau Method 2026-05-14) ──── -->
+<section class="terrain" data-terrain-reveal>
+  <header class="terrain__statement-wrap">
+    <span class="terrain__eyebrow" data-fr="Et votre terrain" data-en="And your land">Et votre terrain</span>
+    <h2 class="terrain__statement" data-fr="Le terrain n'est pas un <em>obstacle.</em>" data-en="The land is not an <em>obstacle.</em>">Le terrain n'est pas un <em>obstacle.</em></h2>
+  </header>
   <div class="terrain__inner">
+    <div class="terrain__body">
+      <article class="terrain__voie terrain__voie--avez">
+        <span class="terrain__voie-tag" data-fr="Vous l'avez" data-en="You have it">Vous l'avez</span>
+        <h3 class="terrain__voie-h3" data-fr="Votre terrain devient un actif locatif." data-en="Your land becomes a rental asset.">Votre terrain devient un actif locatif.</h3>
+        <p class="terrain__voie-sub" data-fr="Étude de potentiel locatif · cumul Girardin + FEDER · accompagnement par notre partenaire fiscal." data-en="Rental potential study · cumulative Girardin + FEDER · support via our tax partner.">Étude de potentiel locatif · cumul Girardin + FEDER · accompagnement par notre partenaire fiscal.</p>
+      </article>
+      <article class="terrain__voie terrain__voie--cherchez">
+        <span class="terrain__voie-tag" data-fr="Vous le cherchez" data-en="You're looking for it">Vous le cherchez</span>
+        <h3 class="terrain__voie-h3" data-fr="Nous identifions le terrain pour vous." data-en="We find the land for you.">Nous identifions le terrain pour vous.</h3>
+        <p class="terrain__voie-sub" data-fr="Réseau d'agences France · Antilles · Guyane — sélection selon votre projet et votre budget." data-en="Network of agencies France · Antilles · Guiana — selection based on your project and budget.">Réseau d'agences France · Antilles · Guyane — sélection selon votre projet et votre budget.</p>
+      </article>
+    </div>
     <figure class="terrain__photo">
       <picture>
         <source srcset="dist/images/blog/saint-francois-400k-2000m2/photos_drone/dji_fly_20260311_115924_181_1773244842802_photo_optimized.avif" type="image/avif">
@@ -271,19 +287,11 @@
       </picture>
       <figcaption class="terrain__caption" data-fr="Saint-François · 2 000 m²" data-en="Saint-François · 2,000 m²">Saint-François · 2 000 m²</figcaption>
     </figure>
-    <div class="terrain__body">
-      <div class="terrain__col terrain__col--avez">
-        <span class="terrain__eyebrow" data-fr="Vous avez un terrain" data-en="You have land">Vous avez un terrain</span>
-        <h3 class="terrain__h3" data-fr="Votre terrain devient un actif locatif." data-en="Your land becomes a rental asset.">Votre terrain devient un actif locatif.</h3>
-        <p class="terrain__sub" data-fr="Étude de potentiel locatif · cumul Girardin et FEDER · accompagnement par notre partenaire fiscal." data-en="Rental potential study · cumulative Girardin and FEDER schemes · support via our tax partner.">Étude de potentiel locatif · cumul Girardin et FEDER · accompagnement par notre partenaire fiscal.</p>
-      </div>
-      <div class="terrain__col terrain__col--cherchez">
-        <span class="terrain__eyebrow" data-fr="Vous cherchez un terrain" data-en="You're looking for land">Vous cherchez un terrain</span>
-        <h3 class="terrain__h3" data-fr="Nous identifions le terrain pour vous." data-en="We find the land for you.">Nous identifions le terrain pour vous.</h3>
-        <p class="terrain__sub" data-fr="Réseau d'agences France · Antilles · Guyane — sélection selon votre projet et votre budget." data-en="Network of agencies France · Antilles · Guiana — selection based on your project and budget.">Réseau d'agences France · Antilles · Guyane — sélection selon votre projet et votre budget.</p>
-      </div>
-      <a href="contact.html" class="terrain__link" data-fr="Parler de votre projet" data-en="Discuss your project">Parler de votre projet</a>
-    </div>
+  </div>
+  <div class="terrain__closure" data-terrain-closure>
+    <span class="terrain__closure-rule" aria-hidden="true"></span>
+    <p class="terrain__closure-line" data-fr="Que vous l'ayez ou que vous le cherchiez — <em>HKH absorbe la question.</em>" data-en="Whether you have it or you're looking — <em>HKH absorbs the question.</em>">Que vous l'ayez ou que vous le cherchiez — <em>HKH absorbe la question.</em></p>
+    <a href="contact.html" class="terrain__closure-link" data-fr="Parlons-en →" data-en="Let's talk →">Parlons-en →</a>
   </div>
 </section>
 
@@ -526,7 +534,6 @@ revealEls.forEach(el=>io.observe(el));
     {trigger:'.collections-spread__intro',children:['.collections-spread__eyebrow','.collections-spread__h2','.collections-spread__sub']},
     {trigger:'.col-fam[data-collections-swap]',children:['.col-fam__eyebrow','.col-fam__h2','.col-fam__toggle','.col-fam__variant-tagline','.col-fam__specs','.col-fam__finitions','.col-fam__desc','.col-fam__discover']},
     {trigger:'.col-fam__cta-row',children:['.col-fam__sep','.editorial__link']},
-    {trigger:'.terrain[data-fp-reveal]',children:['.terrain__photo','.terrain__col--avez','.terrain__col--cherchez','.terrain__link'],stagger:220},
     {trigger:'.fp-featured[data-fp-reveal]',children:['.fp-featured__eyebrow','.fp-featured__h2','.fp-featured__meta','.fp-featured__partner']},
     {trigger:'.fp-quote[data-fp-reveal]',children:['.fp-quote__rule','.fp-quote__text','.fp-quote__attr']},
     {trigger:'.fp-archive[data-fp-reveal]',children:['.fp-archive__eyebrow','.fp-archive__empty']},
@@ -560,11 +567,11 @@ revealEls.forEach(el=>io.observe(el));
   document.querySelectorAll('.col-reveal-trigger').forEach(function(el){io.observe(el);});
 })();
 
-/* ── Collections — triptyque SVG + closure : reveal one-shot stroke-dash
-   Pattern niveau Method : IO threshold 0.4 + rootMargin -10%. Ajoute .is-revealed
-   au conteneur, le CSS gère stroke-dashoffset, opacity, translateY et width du trait. ── */
+/* ── Collections + Terrain — reveal one-shot Niveau Method
+   IO threshold 0.4 + rootMargin -10%. Ajoute .is-revealed au conteneur ;
+   le CSS gère stroke-dashoffset, opacity, translateY, width du trait, Ken Burns. ── */
 (function(){
-  var targets=document.querySelectorAll('.collections-spread__triptyque, .collections-spread__closure');
+  var targets=document.querySelectorAll('.collections-spread__triptyque, .collections-spread__closure, [data-terrain-reveal], [data-terrain-closure]');
   if(!targets.length) return;
   if(!('IntersectionObserver' in window)){
     targets.forEach(function(el){ el.classList.add('is-revealed'); });
@@ -577,7 +584,7 @@ revealEls.forEach(el=>io.observe(el));
         io.unobserve(e.target);
       }
     });
-  },{threshold:.4,rootMargin:'0px 0px -10% 0px'});
+  },{threshold:.15,rootMargin:'0px 0px -8% 0px'});
   targets.forEach(function(el){ io.observe(el); });
 })();
 

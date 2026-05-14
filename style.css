@@ -1120,30 +1120,106 @@ ul{list-style:none}
 }
 
 /* ════════════════════════════════
-   TERRAIN — split éditorial strict 50/50 photo bloc + texte paper
-   Anti-slop : pas de cartouche sur photo, pattern Wallpaper Magazine pur
+   TERRAIN — statement éditorial + asymétrie 35/65 (refonte Niveau Method 2026-05-14)
+   Lève l'anti-pattern 50/50 strict. Signature : affirmation monumentale + emphasis italic copper récurrent.
 ════════════════════════════════ */
 .terrain{
   background:var(--paper);
-  padding:clamp(5rem,9vh,8rem) 0;
+  padding:clamp(6rem,10vh,9rem) 0;
 }
+
+/* Statement header — affirmation éditoriale monumentale */
+.terrain__statement-wrap{
+  max-width:1280px;
+  margin:0 auto clamp(4rem,7vh,6rem);
+  padding:0 clamp(2rem,5vw,4rem);
+}
+.terrain__eyebrow{
+  display:block;
+  font-family:var(--sans);
+  font-size:.78rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--copper);
+  margin-bottom:1.4rem;
+}
+.terrain__statement{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(2.6rem,4.6vw,4.4rem);
+  letter-spacing:-.015em;
+  line-height:1.1;
+  color:var(--dark);
+  margin:0;
+  max-width:24ch;
+}
+.terrain__statement em{
+  font-style:italic;
+  color:var(--copper);
+}
+
+/* Diptyque asymétrique 35/65 — bloc texte gauche, photo droite dominante */
 .terrain__inner{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:clamp(2.5rem,5vw,5rem);
+  grid-template-columns:35fr 65fr;
+  gap:clamp(3rem,6vw,6rem);
   max-width:1280px;
   margin:0 auto;
   padding:0 clamp(2rem,5vw,4rem);
   align-items:stretch;
 }
-/* Photo bloc gauche — bloc visuel à part, pas un fond */
+.terrain__body{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:clamp(2.5rem,4vh,3.5rem);
+}
+.terrain__voie{
+  display:flex;
+  flex-direction:column;
+  gap:.7rem;
+  max-width:42ch;
+}
+.terrain__voie + .terrain__voie{
+  padding-top:clamp(2.5rem,4vh,3.5rem);
+  border-top:1px solid rgba(184,115,51,.2);
+}
+.terrain__voie-tag{
+  font-family:var(--sans);
+  font-size:.72rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--copper);
+}
+.terrain__voie-h3{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(1.5rem,2.3vw,1.95rem);
+  letter-spacing:-.012em;
+  line-height:1.25;
+  color:var(--dark);
+  margin:.1rem 0 0;
+}
+.terrain__voie-sub{
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:400;
+  font-size:1rem;
+  line-height:1.55;
+  color:rgba(44,44,40,.72);
+  max-width:38ch;
+  margin:.2rem 0 0;
+}
+
+/* Photo droite dominante — preuve Saint-François */
 .terrain__photo{
   margin:0;
   overflow:hidden;
   background:var(--cream);
   position:relative;
   aspect-ratio:4/5;
-  max-height:560px;
+  max-height:640px;
+  min-height:420px;
 }
 .terrain__photo picture,
 .terrain__photo img{
@@ -1153,15 +1229,15 @@ ul{list-style:none}
   object-fit:cover;
   object-position:center center;
   transition:transform 18s ease-out;
-  transform:scale(1.05);
+  transform:scale(1.06);
 }
-.terrain.col-revealed .terrain__photo img{ transform:scale(1); }
+.terrain[data-terrain-reveal].is-revealed .terrain__photo img{ transform:scale(1); }
 .terrain__caption{
   position:absolute;
   bottom:1.2rem;
   left:1.4rem;
   font-family:var(--sans);
-  font-size:.7rem;
+  font-size:.72rem;
   letter-spacing:.18em;
   text-transform:uppercase;
   color:var(--paper);
@@ -1169,86 +1245,101 @@ ul{list-style:none}
   pointer-events:none;
 }
 
-/* Bloc texte droit — sur paper plein, pas de cartouche */
-.terrain__body{
+/* Closure narrative — trait copper s'étend + phrase em italic + lien discret */
+.terrain__closure{
+  max-width:1280px;
+  margin:clamp(5rem,8vh,7rem) auto 0;
+  padding:0 clamp(2rem,5vw,4rem);
   display:flex;
   flex-direction:column;
-  justify-content:center;
-  gap:0;
-  padding:clamp(.5rem,2vh,2rem) 0;
+  align-items:center;
+  gap:1.8rem;
 }
-.terrain__col{
-  padding:1.8rem 0;
-  border-top:1px solid rgba(184,115,51,.2);
-  display:flex;
-  flex-direction:column;
-  gap:.7rem;
-  max-width:48ch;
+.terrain__closure-rule{
+  display:block;
+  width:0;
+  max-width:420px;
+  height:1px;
+  background:var(--copper);
+  opacity:.4;
+  transition:width 1400ms cubic-bezier(.16,1,.3,1);
 }
-.terrain__col:first-child{
-  border-top:none;
-  padding-top:0;
+.terrain__closure.is-revealed .terrain__closure-rule{ width:38%; }
+.terrain__closure-line{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(1.25rem,1.9vw,1.65rem);
+  line-height:1.45;
+  color:var(--dark);
+  text-align:center;
+  max-width:42ch;
+  margin:0;
+  opacity:0;
+  transform:translateY(8px);
+  transition:opacity 1100ms cubic-bezier(.16,1,.3,1) 400ms, transform 1100ms cubic-bezier(.16,1,.3,1) 400ms;
 }
-.terrain__eyebrow{
+.terrain__closure-line em{
+  font-style:italic;
+  color:var(--copper);
+}
+.terrain__closure.is-revealed .terrain__closure-line{ opacity:1; transform:none; }
+.terrain__closure-link{
+  margin-top:.4rem;
   font-family:var(--sans);
   font-size:.72rem;
   letter-spacing:.22em;
   text-transform:uppercase;
   color:var(--copper);
-}
-.terrain__h3{
-  font-family:var(--serif);
-  font-weight:400;
-  font-size:clamp(1.6rem,2.6vw,2.2rem);
-  letter-spacing:-.015em;
-  line-height:1.2;
-  color:var(--dark);
-  margin:.1rem 0 0;
-}
-.terrain__sub{
-  font-family:var(--serif);
-  font-style:italic;
-  font-weight:400;
-  font-size:1rem;
-  line-height:1.55;
-  color:rgba(44,44,40,.72);
-  max-width:44ch;
-  margin:.2rem 0 0;
-}
-.terrain__link{
-  align-self:flex-start;
-  margin-top:1.8rem;
-  font-family:var(--sans);
-  font-size:.78rem;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  color:var(--dark);
   text-decoration:none;
   position:relative;
-  padding-bottom:.55rem;
-  transition:color .3s ease;
+  padding-bottom:.4rem;
+  opacity:0;
+  transition:opacity 900ms cubic-bezier(.16,1,.3,1) 1000ms, color .3s ease;
 }
-.terrain__link::after{
+.terrain__closure-link::after{
   content:'';
   position:absolute;
   left:0;
   bottom:0;
-  width:1.8rem;
+  width:100%;
   height:1px;
   background:var(--copper);
-  transition:width .35s cubic-bezier(.16,1,.3,1);
+  opacity:.3;
+  transition:opacity .3s ease;
 }
-.terrain__link:hover{ color:var(--copper); }
-.terrain__link:hover::after{ width:100%; }
+.terrain__closure-link:hover::after{ opacity:.7; }
+.terrain__closure.is-revealed .terrain__closure-link{ opacity:.75; }
+.terrain__closure-link:hover{ opacity:1; }
+
+/* Reveal statement + 2 voies (cascade) */
+.terrain__statement-wrap .terrain__eyebrow,
+.terrain__statement-wrap .terrain__statement,
+.terrain__voie{
+  opacity:0;
+  transform:translateY(16px);
+  transition:opacity 1100ms cubic-bezier(.16,1,.3,1), transform 1100ms cubic-bezier(.16,1,.3,1);
+}
+.terrain[data-terrain-reveal].is-revealed .terrain__statement-wrap .terrain__eyebrow{ opacity:1; transform:none; transition-delay:0ms; }
+.terrain[data-terrain-reveal].is-revealed .terrain__statement-wrap .terrain__statement{ opacity:1; transform:none; transition-delay:180ms; }
+.terrain[data-terrain-reveal].is-revealed .terrain__voie--avez{ opacity:1; transform:none; transition-delay:380ms; }
+.terrain[data-terrain-reveal].is-revealed .terrain__voie--cherchez{ opacity:1; transform:none; transition-delay:660ms; }
 
 @media (max-width:900px){
-  .terrain__inner{ grid-template-columns:1fr; gap:2rem; }
-  .terrain__photo{ aspect-ratio:4/3; max-height:none; }
-  .terrain__body{ padding:0; }
+  .terrain__inner{ grid-template-columns:1fr; gap:2.5rem; }
+  .terrain__photo{ aspect-ratio:4/3; max-height:none; min-height:auto; order:2; }
+  .terrain__body{ order:1; }
+  .terrain__statement{ font-size:clamp(2.2rem,7vw,3.4rem); max-width:none; }
+  .terrain__closure-line{ font-size:clamp(1.15rem,4.5vw,1.4rem); }
 }
 
 @media (prefers-reduced-motion: reduce){
   .terrain__photo img{ transform:none; transition:none; }
+  .terrain__statement-wrap .terrain__eyebrow,
+  .terrain__statement-wrap .terrain__statement,
+  .terrain__voie,
+  .terrain__closure-line,
+  .terrain__closure-link{ opacity:1; transform:none; transition:none; }
+  .terrain__closure-rule{ width:38%; transition:none; }
 }
 
 
