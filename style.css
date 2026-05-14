@@ -420,134 +420,71 @@ ul{list-style:none}
 .col-fam--signature .col-fam__finitions{ color:rgba(249,247,242,.65); text-shadow:0 1px 10px rgba(0,0,0,.45); }
 .col-fam--signature .col-fam__desc{ color:rgba(249,247,242,.85); text-shadow:0 1px 12px rgba(0,0,0,.5); }
 
-/* Variantes — listing éditorial empilé (PAS de carte produit) */
-/* Base : stack vertical normal (mobile + SIGNATURE override en grille 2 col) */
-.col-fam__variants{
+/* Toggle inline minimaliste — pattern iglucraft : 2 noms séparés par middot,
+   trait copper 1px sous l'actif, inactif opacity .45. Pas de boîte, pas de
+   pill, pas de barre glissante. */
+.col-fam__toggle{
   display:flex;
-  flex-direction:column;
-  gap:0;
+  align-items:baseline;
+  gap:.9rem;
+  margin:0 0 1.4rem;
 }
-.col-var{
-  display:block;
-  width:100%;
-  text-align:left;
+.col-toggle{
   background:transparent;
-  color:inherit;
   border:0;
-  font:inherit;
-  cursor:pointer;
-  padding:1.5rem 0;
-  border-top:1px solid rgba(184,115,51,.18);
-  transition:transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s ease, border-color .3s ease;
-}
-.col-var:last-child{ border-bottom:1px solid rgba(184,115,51,.18); }
-
-/* ─── Stack offset — ESSENCE & HORIZON uniquement (desktop ≥901px) ─── */
-@media (min-width:901px){
-  .col-fam--essence .col-fam__variants,
-  .col-fam--horizon .col-fam__variants{
-    display:grid;
-    grid-template-areas:'stack';
-    position:relative;
-    padding-right:18px;
-    padding-bottom:18px;
-  }
-  .col-fam--essence .col-fam__variants .col-var,
-  .col-fam--horizon .col-fam__variants .col-var{
-    grid-area:stack;
-    background:var(--paper);
-    padding:1.5rem 1.2rem;
-    border-top:1px solid rgba(184,115,51,.22);
-    border-bottom:1px solid rgba(184,115,51,.22);
-    will-change:transform;
-  }
-  /* Active (devant) — border top+bottom copper, pas de side borders */
-  .col-fam--essence .col-fam__variants .col-var--active,
-  .col-fam--horizon .col-fam__variants .col-var--active{
-    transform:translate(0,0);
-    z-index:2;
-    border-top:1px solid rgba(184,115,51,.22);
-    border-bottom:1px solid rgba(184,115,51,.22);
-    border-right:0;
-    border-left:0;
-  }
-  /* Inactive (derrière) — feuille glissée, seul l'angle droite+bas dépasse */
-  .col-fam--essence .col-fam__variants .col-var:not(.col-var--active),
-  .col-fam--horizon .col-fam__variants .col-var:not(.col-var--active){
-    transform:translate(15px,15px);
-    z-index:1;
-    border-top:1px solid transparent;
-    border-left:0;
-    border-bottom:3px solid rgba(184,115,51,.4);
-    border-right:3px solid rgba(184,115,51,.4);
-  }
-  /* Reduced motion : pas de translation, swap z-index instantané */
-  @media (prefers-reduced-motion: reduce){
-    .col-fam--essence .col-var,
-    .col-fam--horizon .col-var{ transition:none; }
-    .col-fam--essence .col-var:not(.col-var--active),
-    .col-fam--horizon .col-var:not(.col-var--active){
-      transform:none;
-      opacity:.45;
-      border-right:0;
-      border-bottom:1px solid rgba(184,115,51,.22);
-      border-top:1px solid rgba(184,115,51,.22);
-    }
-  }
-}
-.col-var__name{
-  display:block;
+  padding:.3rem 0 .55rem;
   font-family:var(--sans);
-  font-size:.78rem;
+  font-size:.85rem;
   letter-spacing:.22em;
   text-transform:uppercase;
-  color:var(--copper);
-  margin-bottom:.55rem;
-}
-.col-var__tagline{
-  display:block;
-  font-family:var(--serif);
-  font-weight:400;
-  font-size:1.35rem;
-  line-height:1.2;
-  color:var(--dark);
-  margin:0 0 .5rem;
-}
-.col-var__meta{
-  display:block;
-  font-family:var(--sans);
-  font-size:.82rem;
-  letter-spacing:.04em;
-  color:rgba(44,44,40,.55);
-  margin:0 0 .9rem;
-}
-.col-var__cta{
+  color:rgba(44,44,40,.45);
+  cursor:pointer;
   position:relative;
-  display:inline-block;
-  font-family:var(--sans);
-  font-size:.78rem;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:var(--copper);
-  padding-bottom:.45rem;
+  transition:color .35s ease;
 }
-.col-var__cta::after{
+.col-toggle::after{
   content:'';
   position:absolute;
   left:0;
   bottom:0;
-  width:1.6rem;
+  width:2.4rem;
   height:1px;
   background:var(--copper);
-  transition:width .3s ease-out;
+  opacity:0;
+  transition:opacity .35s ease;
 }
-.col-var:hover .col-var__cta::after{ width:100%; }
-.col-var--active .col-var__cta::after{ width:100%; }
-.col-var:focus-visible{ outline:2px solid var(--copper); outline-offset:4px; }
+.col-toggle--active{
+  color:var(--dark);
+}
+.col-toggle--active::after{ opacity:1; }
+.col-toggle:hover{ color:var(--dark); }
+.col-toggle:focus-visible{ outline:2px solid var(--copper); outline-offset:4px; }
+.col-fam__toggle-sep{
+  font-family:var(--sans);
+  font-size:.85rem;
+  color:rgba(44,44,40,.35);
+  user-select:none;
+}
 
-/* Photo cross-fade lors d'un swap variante */
+/* Tagline variante — italique serif sous le H2 */
+.col-fam__variant-tagline{
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:400;
+  font-size:1.1rem;
+  line-height:1.4;
+  color:rgba(44,44,40,.78);
+  margin:0 0 1.4rem;
+}
+
+/* CTA discover — un seul lien éditorial qui se met à jour au swap */
+.col-fam__discover{
+  align-self:flex-start;
+  margin-top:.4rem;
+}
+/* Photo cross-fade lors d'un swap variante — pattern iglucraft, lent */
 .col-fam__photo picture,
-.col-fam__photo img{ transition:opacity .2s ease; }
+.col-fam__photo img{ transition:opacity .35s ease-out; }
 .col-fam__photo--swapping picture,
 .col-fam__photo--swapping img{ opacity:0; }
 @media (prefers-reduced-motion: reduce){
@@ -557,33 +494,22 @@ ul{list-style:none}
   .col-fam__photo--swapping img{ opacity:1; }
 }
 
-/* SIGNATURE — variantes 2 colonnes desktop, séparées par 1px copper, alignement bas */
-.col-fam--signature .col-fam__variants{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:0;
-  border-top:1px solid rgba(249,247,242,.22);
-  margin-top:.6rem;
-  align-items:end;
+/* SIGNATURE — toggle dans overlay sombre, couleurs paper/copper-lt */
+.col-fam--signature .col-toggle{
+  color:rgba(249,247,242,.45);
+  text-shadow:0 1px 8px rgba(0,0,0,.55);
 }
-.col-fam--signature .col-var{
-  border-top:none;
-  padding:1.6rem clamp(1.5rem,2.5vw,2.5rem) 0 0;
-  height:100%;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
+.col-fam--signature .col-toggle--active,
+.col-fam--signature .col-toggle:hover{
+  color:var(--paper);
 }
-.col-fam--signature .col-var:last-child{
-  border-bottom:none;
-  border-left:1px solid rgba(249,247,242,.22);
-  padding:1.6rem 0 0 clamp(1.5rem,2.5vw,2.5rem);
+.col-fam--signature .col-toggle::after{ background:var(--copper-lt); }
+.col-fam--signature .col-fam__toggle-sep{ color:rgba(249,247,242,.4); }
+.col-fam--signature .col-fam__variant-tagline{
+  color:rgba(249,247,242,.85);
+  text-shadow:0 1px 10px rgba(0,0,0,.5);
 }
-.col-fam--signature .col-var__name,
-.col-fam--signature .col-var__cta{ color:var(--copper-lt); }
-.col-fam--signature .col-var__cta::after{ background:var(--copper-lt); }
-.col-fam--signature .col-var__tagline{ color:var(--paper); }
-.col-fam--signature .col-var__meta{ color:rgba(249,247,242,.6); }
+.col-fam--signature .col-fam__discover{ color:var(--copper-lt); }
 
 /* CTA row de clôture */
 .col-fam__cta-row{
@@ -660,33 +586,20 @@ ul{list-style:none}
   .col-fam--signature .col-fam__finitions{ color:rgba(44,44,40,.55); }
   .col-fam--signature .col-fam__desc{ color:rgba(44,44,40,.75); }
 
-  /* Variantes SIGNATURE : stack vertical, trait copper horizontal entre */
-  .col-fam--signature .col-fam__variants{
-    display:flex;
-    flex-direction:column;
-    border-top:1px solid rgba(184,115,51,.18);
-    margin-top:0;
+  /* Toggle SIGNATURE en mobile : couleurs paper-foncé (fond paper) */
+  .col-fam--signature .col-toggle{
+    color:rgba(44,44,40,.45);
+    text-shadow:none;
   }
-  .col-fam--signature .col-var{
-    height:auto;
-    display:block;
-    padding:1.5rem 0;
-    border-top:none;
+  .col-fam--signature .col-toggle--active,
+  .col-fam--signature .col-toggle:hover{ color:var(--dark); }
+  .col-fam--signature .col-toggle::after{ background:var(--copper); }
+  .col-fam--signature .col-fam__toggle-sep{ color:rgba(44,44,40,.35); }
+  .col-fam--signature .col-fam__variant-tagline{
+    color:rgba(44,44,40,.78);
+    text-shadow:none;
   }
-  .col-fam--signature .col-var:last-child{
-    border-top:1px solid rgba(184,115,51,.18);
-    border-left:none;
-    border-bottom:1px solid rgba(184,115,51,.18);
-    padding:1.5rem 0;
-  }
-  .col-fam--signature .col-var:first-child{
-    border-top:none;
-  }
-  .col-fam--signature .col-var__name,
-  .col-fam--signature .col-var__cta{ color:var(--copper); }
-  .col-fam--signature .col-var__cta::after{ background:var(--copper); }
-  .col-fam--signature .col-var__tagline{ color:var(--dark); }
-  .col-fam--signature .col-var__meta{ color:rgba(44,44,40,.55); }
+  .col-fam--signature .col-fam__discover{ color:var(--copper); }
 }
 @media(max-width:1024px){
   .founders{padding:5rem 1.5rem}

@@ -17,7 +17,7 @@
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
   </noscript>
-  <link rel="stylesheet" href="style.css?v=spread4D"/>
+  <link rel="stylesheet" href="style.css?v=toggleC1"/>
   <link rel="stylesheet" href="assets/css/animations.css"/>
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
@@ -68,23 +68,26 @@
       <div class="col-fam__text">
         <span class="col-fam__eyebrow" data-fr="ESSENCE" data-en="ESSENCE">ESSENCE</span>
         <h3 class="col-fam__h2" data-fr="Le studio compact" data-en="The compact studio">Le studio compact</h3>
-        <p class="col-fam__specs" data-fr="20 m² · 2 pers · ▲ toit 2 pans" data-en="20 m² · 2 people · ▲ pitched roof">20 m² · 2 pers · ▲ toit 2 pans</p>
+        <div class="col-fam__toggle" role="tablist" aria-label="Variantes ESSENCE">
+          <button type="button" class="col-toggle col-toggle--active" role="tab" aria-pressed="true" aria-selected="true"
+                  data-href="residence-essence.html"
+                  data-fr-tagline="Sans cuisine" data-en-tagline="Without kitchen"
+                  data-fr-specs="20 m² · 2 pers · ▲ toit 2 pans" data-en-specs="20 m² · 2 people · ▲ pitched roof"
+                  data-img-avif="dist/images/habitats/essence/unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa.avif"
+                  data-img-webp="dist/images/habitats/essence/unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa.webp">ESSENCE</button>
+          <span class="col-fam__toggle-sep" aria-hidden="true">·</span>
+          <button type="button" class="col-toggle" role="tab" aria-pressed="false" aria-selected="false"
+                  data-href="residence-essence-plus.html"
+                  data-fr-tagline="Avec kitchenette intégrée" data-en-tagline="With integrated kitchenette"
+                  data-fr-specs="20 m² · 2 pers · ▲ toit 2 pans" data-en-specs="20 m² · 2 people · ▲ pitched roof"
+                  data-img-avif="dist/images/habitats/essence/unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa.avif"
+                  data-img-webp="dist/images/habitats/essence/unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa.webp">ESSENCE+</button>
+        </div>
+        <p class="col-fam__variant-tagline" data-slot="tagline" data-fr="Sans cuisine" data-en="Without kitchen">Sans cuisine</p>
+        <p class="col-fam__specs" data-slot="specs" data-fr="20 m² · 2 pers · ▲ toit 2 pans" data-en="20 m² · 2 people · ▲ pitched roof">20 m² · 2 pers · ▲ toit 2 pans</p>
         <p class="col-fam__finitions" data-fr="Zénith · Pinède · Pure · Linéa" data-en="Zénith · Pinède · Pure · Linéa">Zénith · Pinède · Pure · Linéa</p>
         <p class="col-fam__desc" data-fr="L'essentiel d'un habitat HKH, dans une empreinte minimale. Intérieur baigné de lumière naturelle." data-en="The essence of an HKH home in a minimal footprint. An interior bathed in natural light.">L'essentiel d'un habitat HKH, dans une empreinte minimale. Intérieur baigné de lumière naturelle.</p>
-        <div class="col-fam__variants" role="tablist" aria-label="Variantes ESSENCE">
-          <button type="button" class="col-var col-var--active" role="tab" aria-pressed="true" aria-selected="true" data-href="residence-essence.html" data-img-avif="dist/images/habitats/essence/unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa.avif" data-img-webp="dist/images/habitats/essence/unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa.webp">
-            <span class="col-var__name" data-fr="ESSENCE" data-en="ESSENCE">ESSENCE</span>
-            <span class="col-var__tagline" data-fr="Studio sans cuisine" data-en="Studio without kitchen">Studio sans cuisine</span>
-            <span class="col-var__meta" data-fr="20 m² · 2 pers" data-en="20 m² · 2 people">20 m² · 2 pers</span>
-            <span class="col-var__cta" data-fr="Découvrir →" data-en="Discover →">Découvrir →</span>
-          </button>
-          <button type="button" class="col-var" role="tab" aria-pressed="false" aria-selected="false" data-href="residence-essence-plus.html" data-img-avif="dist/images/habitats/essence/unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa.avif" data-img-webp="dist/images/habitats/essence/unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa.webp">
-            <span class="col-var__name" data-fr="ESSENCE+" data-en="ESSENCE+">ESSENCE+</span>
-            <span class="col-var__tagline" data-fr="Studio avec kitchenette" data-en="Studio with kitchenette">Studio avec kitchenette</span>
-            <span class="col-var__meta" data-fr="20 m² · 2 pers" data-en="20 m² · 2 people">20 m² · 2 pers</span>
-            <span class="col-var__cta" data-fr="Découvrir →" data-en="Discover →">Découvrir →</span>
-          </button>
-        </div>
+        <a class="col-fam__discover editorial__link" data-slot="href" href="residence-essence.html" data-fr="Découvrir la résidence" data-en="Discover the residence">Découvrir la résidence</a>
       </div>
     </div>
   </article>
@@ -103,23 +106,26 @@
       <div class="col-fam__text">
         <span class="col-fam__eyebrow" data-fr="HORIZON" data-en="HORIZON">HORIZON</span>
         <h3 class="col-fam__h2" data-fr="L'essentiel contemporain" data-en="The contemporary essential">L'essentiel contemporain</h3>
-        <p class="col-fam__specs" data-fr="36 m² · 2 pers · ▲ toit 2 pans ou ▬ toit plat" data-en="36 m² · 2 people · ▲ pitched or ▬ flat roof">36 m² · 2 pers · ▲ toit 2 pans ou ▬ toit plat</p>
+        <div class="col-fam__toggle" role="tablist" aria-label="Variantes HORIZON">
+          <button type="button" class="col-toggle col-toggle--active" role="tab" aria-pressed="true" aria-selected="true"
+                  data-href="residence-horizon.html"
+                  data-fr-tagline="Volume entièrement équipé" data-en-tagline="Fully equipped volume"
+                  data-fr-specs="36 m² · 2 pers · ▲ toit 2 pans ou ▬ toit plat" data-en-specs="36 m² · 2 people · ▲ pitched or ▬ flat roof"
+                  data-img-avif="dist/images/habitats/horizon/gemini_generated_image_esp0jdesp0jdesp0.avif"
+                  data-img-webp="dist/images/habitats/horizon/gemini_generated_image_esp0jdesp0jdesp0.webp">HORIZON</button>
+          <span class="col-fam__toggle-sep" aria-hidden="true">·</span>
+          <button type="button" class="col-toggle" role="tab" aria-pressed="false" aria-selected="false"
+                  data-href="residence-horizon-t.html"
+                  data-fr-tagline="Avec terrasse intégrée" data-en-tagline="With integrated terrace"
+                  data-fr-specs="46 m² · 2 pers · ▲ toit 2 pans" data-en-specs="46 m² · 2 people · ▲ pitched roof"
+                  data-img-avif="dist/images/habitats/horizon/gemini_generated_image_esp0jdesp0jdesp0.avif"
+                  data-img-webp="dist/images/habitats/horizon/gemini_generated_image_esp0jdesp0jdesp0.webp">HORIZON T</button>
+        </div>
+        <p class="col-fam__variant-tagline" data-slot="tagline" data-fr="Volume entièrement équipé" data-en="Fully equipped volume">Volume entièrement équipé</p>
+        <p class="col-fam__specs" data-slot="specs" data-fr="36 m² · 2 pers · ▲ toit 2 pans ou ▬ toit plat" data-en="36 m² · 2 people · ▲ pitched or ▬ flat roof">36 m² · 2 pers · ▲ toit 2 pans ou ▬ toit plat</p>
         <p class="col-fam__finitions" data-fr="Zénith · Pinède · Pure · Linéa · +Pano" data-en="Zénith · Pinède · Pure · Linéa · +Pano">Zénith · Pinède · Pure · Linéa · +Pano</p>
         <p class="col-fam__desc" data-fr="Volumes harmonieux, lumière naturelle. La version résidentielle ou avec terrasse." data-en="Harmonious volumes, natural light. The residential version or the one with a terrace.">Volumes harmonieux, lumière naturelle. La version résidentielle ou avec terrasse.</p>
-        <div class="col-fam__variants" role="tablist" aria-label="Variantes HORIZON">
-          <button type="button" class="col-var col-var--active" role="tab" aria-pressed="true" aria-selected="true" data-href="residence-horizon.html" data-img-avif="dist/images/habitats/horizon/gemini_generated_image_esp0jdesp0jdesp0.avif" data-img-webp="dist/images/habitats/horizon/gemini_generated_image_esp0jdesp0jdesp0.webp">
-            <span class="col-var__name" data-fr="HORIZON" data-en="HORIZON">HORIZON</span>
-            <span class="col-var__tagline" data-fr="Volume entièrement équipé" data-en="Fully equipped volume">Volume entièrement équipé</span>
-            <span class="col-var__meta" data-fr="36 m² · toit 2 pans ou plat" data-en="36 m² · pitched or flat roof">36 m² · toit 2 pans ou plat</span>
-            <span class="col-var__cta" data-fr="Découvrir →" data-en="Discover →">Découvrir →</span>
-          </button>
-          <button type="button" class="col-var" role="tab" aria-pressed="false" aria-selected="false" data-href="residence-horizon-t.html" data-img-avif="dist/images/habitats/horizon/gemini_generated_image_esp0jdesp0jdesp0.avif" data-img-webp="dist/images/habitats/horizon/gemini_generated_image_esp0jdesp0jdesp0.webp">
-            <span class="col-var__name" data-fr="HORIZON T" data-en="HORIZON T">HORIZON T</span>
-            <span class="col-var__tagline" data-fr="Avec terrasse intégrée" data-en="With integrated terrace">Avec terrasse intégrée</span>
-            <span class="col-var__meta" data-fr="46 m² · ▲ toit 2 pans" data-en="46 m² · ▲ pitched roof">46 m² · ▲ toit 2 pans</span>
-            <span class="col-var__cta" data-fr="Découvrir →" data-en="Discover →">Découvrir →</span>
-          </button>
-        </div>
+        <a class="col-fam__discover editorial__link" data-slot="href" href="residence-horizon.html" data-fr="Découvrir la résidence" data-en="Discover the residence">Découvrir la résidence</a>
       </div>
     </div>
   </article>
@@ -138,23 +144,26 @@
       <div class="col-fam__text">
         <span class="col-fam__eyebrow" data-fr="SIGNATURE" data-en="SIGNATURE">SIGNATURE</span>
         <h3 class="col-fam__h2" data-fr="L'habitat signature" data-en="The signature home">L'habitat signature</h3>
-        <p class="col-fam__specs" data-fr="46 m² · jusqu'à 4 pers · ▲ toit 2 pans" data-en="46 m² · up to 4 people · ▲ pitched roof">46 m² · jusqu'à 4 pers · ▲ toit 2 pans</p>
+        <div class="col-fam__toggle" role="tablist" aria-label="Variantes SIGNATURE">
+          <button type="button" class="col-toggle col-toggle--active" role="tab" aria-pressed="true" aria-selected="true"
+                  data-href="residence-signature.html"
+                  data-fr-tagline="1 chambre · résidentiel" data-en-tagline="1 bedroom · residential"
+                  data-fr-specs="46 m² · jusqu'à 2 pers · ▲ toit 2 pans" data-en-specs="46 m² · up to 2 people · ▲ pitched roof"
+                  data-img-avif="dist/images/habitats/signature/gemini_generated_image_aiows5aiows5aiow.avif"
+                  data-img-webp="dist/images/habitats/signature/gemini_generated_image_aiows5aiows5aiow.webp">SIGNATURE</button>
+          <span class="col-fam__toggle-sep" aria-hidden="true">·</span>
+          <button type="button" class="col-toggle" role="tab" aria-pressed="false" aria-selected="false"
+                  data-href="residence-signature-duo.html"
+                  data-fr-tagline="2 chambres · familial" data-en-tagline="2 bedrooms · family"
+                  data-fr-specs="46 m² · jusqu'à 4 pers · ▲ toit 2 pans" data-en-specs="46 m² · up to 4 people · ▲ pitched roof"
+                  data-img-avif="dist/images/habitats/signature/gemini_generated_image_aiows5aiows5aiow.avif"
+                  data-img-webp="dist/images/habitats/signature/gemini_generated_image_aiows5aiows5aiow.webp">SIGNATURE DUO</button>
+        </div>
+        <p class="col-fam__variant-tagline" data-slot="tagline" data-fr="1 chambre · résidentiel" data-en="1 bedroom · residential">1 chambre · résidentiel</p>
+        <p class="col-fam__specs" data-slot="specs" data-fr="46 m² · jusqu'à 2 pers · ▲ toit 2 pans" data-en="46 m² · up to 2 people · ▲ pitched roof">46 m² · jusqu'à 2 pers · ▲ toit 2 pans</p>
         <p class="col-fam__finitions" data-fr="Zénith · Pinède · Pure · Linéa · +Pano" data-en="Zénith · Pinède · Pure · Linéa · +Pano">Zénith · Pinède · Pure · Linéa · +Pano</p>
         <p class="col-fam__desc" data-fr="Le modèle résidentiel par excellence. Familial ou couple." data-en="The residential model par excellence. Family or couple.">Le modèle résidentiel par excellence. Familial ou couple.</p>
-        <div class="col-fam__variants" role="tablist" aria-label="Variantes SIGNATURE">
-          <button type="button" class="col-var col-var--active" role="tab" aria-pressed="true" aria-selected="true" data-href="residence-signature.html" data-img-avif="dist/images/habitats/signature/gemini_generated_image_aiows5aiows5aiow.avif" data-img-webp="dist/images/habitats/signature/gemini_generated_image_aiows5aiows5aiow.webp">
-            <span class="col-var__name" data-fr="SIGNATURE" data-en="SIGNATURE">SIGNATURE</span>
-            <span class="col-var__tagline" data-fr="1 chambre" data-en="1 bedroom">1 chambre</span>
-            <span class="col-var__meta" data-fr="46 m² · résidentiel" data-en="46 m² · residential">46 m² · résidentiel</span>
-            <span class="col-var__cta" data-fr="Découvrir →" data-en="Discover →">Découvrir →</span>
-          </button>
-          <button type="button" class="col-var" role="tab" aria-pressed="false" aria-selected="false" data-href="residence-signature-duo.html" data-img-avif="dist/images/habitats/signature/gemini_generated_image_aiows5aiows5aiow.avif" data-img-webp="dist/images/habitats/signature/gemini_generated_image_aiows5aiows5aiow.webp">
-            <span class="col-var__name" data-fr="SIGNATURE DUO" data-en="SIGNATURE DUO">SIGNATURE DUO</span>
-            <span class="col-var__tagline" data-fr="2 chambres" data-en="2 bedrooms">2 chambres</span>
-            <span class="col-var__meta" data-fr="46 m² · familial" data-en="46 m² · family">46 m² · familial</span>
-            <span class="col-var__cta" data-fr="Découvrir →" data-en="Discover →">Découvrir →</span>
-          </button>
-        </div>
+        <a class="col-fam__discover editorial__link" data-slot="href" href="residence-signature.html" data-fr="Découvrir la résidence" data-en="Discover the residence">Découvrir la résidence</a>
       </div>
     </div>
   </article>
@@ -414,37 +423,55 @@ revealEls.forEach(el=>io.observe(el));
   });
 })();
 
-/* ── Collections 4D — swap variante + cross-fade photo ── */
+/* ── Collections — toggle inline minimaliste (pattern iglucraft)
+   Swap photo cross-fade lent + maj des slots [data-slot] depuis data-* du toggle. */
 (function(){
-  var hasHover = window.matchMedia && window.matchMedia('(hover: hover)').matches;
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var fams = document.querySelectorAll('.col-fam[data-collections-swap]');
+
+  function currentLang(){
+    return (localStorage.getItem('hkh-lang') === 'en') ? 'en' : 'fr';
+  }
+
   fams.forEach(function(fam){
     var picture = fam.querySelector('.col-fam__photo picture');
     var photoWrap = fam.querySelector('.col-fam__photo');
     var img = picture ? picture.querySelector('img') : null;
     var sources = picture ? picture.querySelectorAll('source') : [];
-    var variants = fam.querySelectorAll('.col-var');
-    if(!picture || !img || variants.length < 2) return;
+    var toggles = fam.querySelectorAll('.col-toggle');
+    var taglineEl = fam.querySelector('[data-slot="tagline"]');
+    var specsEl = fam.querySelector('[data-slot="specs"]');
+    var hrefEl = fam.querySelector('[data-slot="href"]');
+    if(!picture || !img || toggles.length < 2) return;
 
-    function activate(btn, fromClick){
-      if(btn.classList.contains('col-var--active')){
-        // Click sur la variante déjà active → naviguer
-        if(fromClick){
-          var href = btn.getAttribute('data-href');
-          if(href) window.location.href = href;
-        }
-        return;
-      }
-      variants.forEach(function(v){
-        var active = (v === btn);
-        v.classList.toggle('col-var--active', active);
-        v.setAttribute('aria-pressed', active ? 'true' : 'false');
-        v.setAttribute('aria-selected', active ? 'true' : 'false');
+    function applySlot(el, fr, en){
+      if(!el) return;
+      el.setAttribute('data-fr', fr || '');
+      el.setAttribute('data-en', en || '');
+      var lang = currentLang();
+      el.textContent = (lang === 'en' && en) ? en : fr;
+    }
+
+    function activate(btn){
+      if(btn.classList.contains('col-toggle--active')) return;
+      toggles.forEach(function(t){
+        var active = (t === btn);
+        t.classList.toggle('col-toggle--active', active);
+        t.setAttribute('aria-pressed', active ? 'true' : 'false');
+        t.setAttribute('aria-selected', active ? 'true' : 'false');
       });
+      var fr = btn.getAttribute('data-fr-tagline');
+      var en = btn.getAttribute('data-en-tagline');
+      applySlot(taglineEl, fr, en);
+      var sfr = btn.getAttribute('data-fr-specs');
+      var sen = btn.getAttribute('data-en-specs');
+      applySlot(specsEl, sfr, sen);
+      var href = btn.getAttribute('data-href');
+      if(hrefEl && href) hrefEl.setAttribute('href', href);
+
       var avif = btn.getAttribute('data-img-avif');
       var webp = btn.getAttribute('data-img-webp');
-      if(!avif || !img) return;
+      if(!avif) return;
       if(reduceMotion){
         if(sources[0]) sources[0].srcset = avif;
         if(sources[1]) sources[1].srcset = webp;
@@ -459,15 +486,11 @@ revealEls.forEach(el=>io.observe(el));
         requestAnimationFrame(function(){
           photoWrap.classList.remove('col-fam__photo--swapping');
         });
-      }, 200);
+      }, 350);
     }
 
-    variants.forEach(function(btn){
-      btn.addEventListener('click', function(){ activate(btn, true); });
-      if(hasHover){
-        btn.addEventListener('mouseenter', function(){ activate(btn, false); });
-      }
-      btn.addEventListener('focus', function(){ activate(btn, false); });
+    toggles.forEach(function(btn){
+      btn.addEventListener('click', function(){ activate(btn); });
     });
   });
 })();
