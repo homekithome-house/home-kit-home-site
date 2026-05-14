@@ -311,6 +311,18 @@ Le catalogue actuel (20 à 46 m²) a vocation à s'étendre par **assemblage de 
 
 ## Dette visuelle à corriger
 
+### Photos distinctes par variante (Collections home — sous-chantier 4D)
+
+Le mécanisme de **swap photo principale au hover/clic d'une variante** est en place sur `index.html` (3 familles ESSENCE/HORIZON/SIGNATURE). En attendant les rendus distincts par variante, **les deux variantes d'une même famille pointent vers la même photo** (placeholder identique). À fournir :
+
+| Famille | Variante 1 (active par défaut) | Variante 2 |
+|---|---|---|
+| ESSENCE | `essence/unwatermarked_..._8xoavn...` (en place, intérieur lumineux) | **ESSENCE+ — rendu distinct attendu** (idéalement intérieur avec kitchenette intégrée visible) |
+| HORIZON | `horizon/gemini_..._esp0jd...` (en place, extérieur Pure tropical) | **HORIZON T — rendu distinct attendu** (extérieur avec terrasse intégrée) |
+| SIGNATURE | `signature/gemini_..._aiows5...` (en place, extérieur Pinède tropical) | **SIGNATURE DUO — rendu distinct attendu** (extérieur 2 chambres ou intérieur familial) |
+
+Une fois les rendus disponibles : push dans `/images/habitats/{famille}/`, `rtk node "Convertir images/convert-images.js"`, puis mettre à jour les `data-img-avif` et `data-img-webp` sur le 2ᵉ `<button class="col-var">` de chaque famille dans `index.html`.
+
 ### Rendus extérieurs manquants
 
 **ESSENCE** : aucun rendu extérieur architectural 3/4 en contexte tropical disponible dans `/dist/images/habitats/essence/`. Actuellement remplacé par l'intérieur `unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa` sur la home (section Collections). La description du bloc ESSENCE a été adaptée pour assumer narrativement l'angle intérieur.

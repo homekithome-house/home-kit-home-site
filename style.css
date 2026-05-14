@@ -421,6 +421,7 @@ ul{list-style:none}
 .col-fam--signature .col-fam__desc{ color:rgba(249,247,242,.85); text-shadow:0 1px 12px rgba(0,0,0,.5); }
 
 /* Variantes — listing éditorial empilé (PAS de carte produit) */
+/* Base : stack vertical normal (mobile + SIGNATURE override en grille 2 col) */
 .col-fam__variants{
   display:flex;
   flex-direction:column;
@@ -428,13 +429,72 @@ ul{list-style:none}
 }
 .col-var{
   display:block;
-  text-decoration:none;
+  width:100%;
+  text-align:left;
+  background:transparent;
   color:inherit;
+  border:0;
+  font:inherit;
+  cursor:pointer;
   padding:1.5rem 0;
   border-top:1px solid rgba(184,115,51,.18);
-  transition:transform .3s ease-out;
+  transition:transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s ease, border-color .3s ease;
 }
 .col-var:last-child{ border-bottom:1px solid rgba(184,115,51,.18); }
+
+/* ─── Stack offset — ESSENCE & HORIZON uniquement (desktop ≥901px) ─── */
+@media (min-width:901px){
+  .col-fam--essence .col-fam__variants,
+  .col-fam--horizon .col-fam__variants{
+    display:grid;
+    grid-template-areas:'stack';
+    position:relative;
+    padding-right:18px;
+    padding-bottom:18px;
+  }
+  .col-fam--essence .col-fam__variants .col-var,
+  .col-fam--horizon .col-fam__variants .col-var{
+    grid-area:stack;
+    background:var(--paper);
+    padding:1.5rem 1.2rem;
+    border-top:1px solid rgba(184,115,51,.22);
+    border-bottom:1px solid rgba(184,115,51,.22);
+    will-change:transform;
+  }
+  /* Active (devant) — border top+bottom copper, pas de side borders */
+  .col-fam--essence .col-fam__variants .col-var--active,
+  .col-fam--horizon .col-fam__variants .col-var--active{
+    transform:translate(0,0);
+    z-index:2;
+    border-top:1px solid rgba(184,115,51,.22);
+    border-bottom:1px solid rgba(184,115,51,.22);
+    border-right:0;
+    border-left:0;
+  }
+  /* Inactive (derrière) — feuille glissée, seul l'angle droite+bas dépasse */
+  .col-fam--essence .col-fam__variants .col-var:not(.col-var--active),
+  .col-fam--horizon .col-fam__variants .col-var:not(.col-var--active){
+    transform:translate(15px,15px);
+    z-index:1;
+    border-top:1px solid transparent;
+    border-left:0;
+    border-bottom:3px solid rgba(184,115,51,.4);
+    border-right:3px solid rgba(184,115,51,.4);
+  }
+  /* Reduced motion : pas de translation, swap z-index instantané */
+  @media (prefers-reduced-motion: reduce){
+    .col-fam--essence .col-var,
+    .col-fam--horizon .col-var{ transition:none; }
+    .col-fam--essence .col-var:not(.col-var--active),
+    .col-fam--horizon .col-var:not(.col-var--active){
+      transform:none;
+      opacity:.45;
+      border-right:0;
+      border-bottom:1px solid rgba(184,115,51,.22);
+      border-top:1px solid rgba(184,115,51,.22);
+    }
+  }
+}
 .col-var__name{
   display:block;
   font-family:var(--sans);
@@ -445,6 +505,7 @@ ul{list-style:none}
   margin-bottom:.55rem;
 }
 .col-var__tagline{
+  display:block;
   font-family:var(--serif);
   font-weight:400;
   font-size:1.35rem;
@@ -453,6 +514,7 @@ ul{list-style:none}
   margin:0 0 .5rem;
 }
 .col-var__meta{
+  display:block;
   font-family:var(--sans);
   font-size:.82rem;
   letter-spacing:.04em;
@@ -479,9 +541,21 @@ ul{list-style:none}
   background:var(--copper);
   transition:width .3s ease-out;
 }
-.col-var:hover{ transform:translateY(-1px); }
 .col-var:hover .col-var__cta::after{ width:100%; }
+.col-var--active .col-var__cta::after{ width:100%; }
 .col-var:focus-visible{ outline:2px solid var(--copper); outline-offset:4px; }
+
+/* Photo cross-fade lors d'un swap variante */
+.col-fam__photo picture,
+.col-fam__photo img{ transition:opacity .2s ease; }
+.col-fam__photo--swapping picture,
+.col-fam__photo--swapping img{ opacity:0; }
+@media (prefers-reduced-motion: reduce){
+  .col-fam__photo picture,
+  .col-fam__photo img{ transition:none; }
+  .col-fam__photo--swapping picture,
+  .col-fam__photo--swapping img{ opacity:1; }
+}
 
 /* SIGNATURE — variantes 2 colonnes desktop, séparées par 1px copper, alignement bas */
 .col-fam--signature .col-fam__variants{
