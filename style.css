@@ -241,47 +241,69 @@ ul{list-style:none}
 ════════════════════════════════ */
 /* Showroom — layout galerie : une famille par ligne, identité à gauche, modèles à droite */
 /* ════════════════════════════════
-   COLLECTION — 3 blocs famille empilés (refonte 2026-05-12)
-   Namespace: .family-block*
+   COLLECTIONS SPREAD — 3 layouts magazine (refonte 4A 2026-05-14)
+   Namespace: .collections-spread, .col-fam, .col-var
+   4A = structure + contenu UNIQUEMENT. Pas d'anim, pas d'overlap, pas de Ken Burns.
 ════════════════════════════════ */
-.collection{
+.collections-spread{
   background:var(--paper);
   padding-block:clamp(6rem,10vh,10rem) 0;
 }
-.family-block{
-  width:100%;
-  background:var(--paper);
+
+/* En-tête de section */
+.collections-spread__intro{
+  max-width:1200px;
+  margin:0 auto clamp(5rem,9vh,8rem);
+  padding:0 clamp(2rem,5vw,4rem);
 }
-.family-block + .family-block{
-  margin-top:clamp(6rem,10vh,10rem);
+.collections-spread__eyebrow{
+  display:block;
+  font-family:var(--sans);
+  font-size:.78rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--copper);
+  margin-bottom:1.4rem;
 }
-.family-block__inner{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:0;
-  min-height:70vh;
-  align-items:stretch;
+.collections-spread__h2{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(2.8rem,5vw,5rem);
+  letter-spacing:-.02em;
+  line-height:1.05;
+  color:var(--dark);
+  margin:0 0 1.6rem;
 }
-.family-block--alt .family-block__inner{
-  direction:rtl;
+.collections-spread__sub{
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(1.05rem,1.3vw,1.2rem);
+  line-height:1.55;
+  color:rgba(44,44,40,.7);
+  max-width:50ch;
+  margin:0;
 }
-.family-block--alt .family-block__inner > *{
-  direction:ltr;
-}
-.family-block__media{
+
+/* Bloc famille — base */
+.col-fam{ width:100%; background:var(--paper); }
+.col-fam + .col-fam{ margin-top:clamp(6rem,10vh,10rem); }
+
+.col-fam__photo{
   position:relative;
   overflow:hidden;
   background:var(--cream);
+  margin:0;
 }
-.family-block__media picture,
-.family-block__media img{
+.col-fam__photo picture,
+.col-fam__photo img{
   display:block;
   width:100%;
   height:100%;
   object-fit:cover;
   object-position:center;
 }
-.family-block__caption{
+.col-fam__caption{
   position:absolute;
   right:1.6rem;
   bottom:1.4rem;
@@ -293,86 +315,212 @@ ul{list-style:none}
   text-shadow:0 1px 2px rgba(0,0,0,.35);
   pointer-events:none;
 }
-.family-block__body{
+.col-fam__text{
   display:flex;
   flex-direction:column;
   justify-content:center;
-  padding:clamp(3rem,8vh,6rem) clamp(2.5rem,6vw,6rem);
-  background:var(--paper);
+  padding:clamp(2.5rem,5vw,5rem);
 }
-.family-block__eyebrow{
+.col-fam__eyebrow{
   font-family:var(--sans);
-  font-size:.78rem;
-  letter-spacing:.18em;
+  font-size:.85rem;
+  letter-spacing:.22em;
   text-transform:uppercase;
   color:var(--copper);
-  margin-bottom:1.4rem;
-  opacity:0;
-  transform:translateY(8px);
-  transition:opacity .7s ease-out,transform .7s ease-out;
+  margin-bottom:1.3rem;
 }
-.family-block__title{
+.col-fam__h2{
   font-family:var(--serif);
   font-weight:400;
-  font-size:clamp(2.8rem,5vw,5rem);
+  font-size:clamp(2.6rem,4.5vw,4.5rem);
   letter-spacing:-.02em;
-  line-height:1.04;
+  line-height:1.05;
   color:var(--dark);
-  margin:0 0 1.6rem;
-  opacity:0;
-  transform:translateY(12px);
-  transition:opacity .8s ease-out .12s,transform .8s ease-out .12s;
+  margin:0 0 1.4rem;
 }
-.family-block__meta{
+.col-fam__specs{
   font-family:var(--sans);
   font-size:.95rem;
   letter-spacing:.04em;
+  color:rgba(184,115,51,.7);
+  margin:0 0 .7rem;
+}
+.col-fam__finitions{
+  font-family:var(--sans);
+  font-size:.85rem;
+  letter-spacing:.04em;
   color:rgba(44,44,40,.55);
   margin:0 0 1.8rem;
-  opacity:0;
-  transform:translateY(8px);
-  transition:opacity .7s ease-out .24s,transform .7s ease-out .24s;
 }
-.family-block__desc{
+.col-fam__desc{
   font-family:var(--serif);
+  font-style:italic;
   font-weight:400;
   font-size:1.05rem;
   line-height:1.55;
   color:rgba(44,44,40,.75);
-  max-width:38ch;
+  max-width:32ch;
   margin:0 0 2.4rem;
-  opacity:0;
-  transform:translateY(8px);
-  transition:opacity .7s ease-out .36s,transform .7s ease-out .36s;
-}
-.family-block__links{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:1rem;
-  opacity:0;
-  transform:translateY(8px);
-  transition:opacity .7s ease-out .48s,transform .7s ease-out .48s;
-}
-.family-block.reveal.visible .family-block__eyebrow,
-.family-block.reveal.visible .family-block__title,
-.family-block.reveal.visible .family-block__meta,
-.family-block.reveal.visible .family-block__desc,
-.family-block.reveal.visible .family-block__links{
-  opacity:1;
-  transform:translateY(0);
 }
 
-/* Lien global "Voir tous les habitats" */
-.family-block__cta-row{
+/* ESSENCE — asymétrique 65 / 35 (photo gauche) */
+.col-fam--essence .col-fam__inner{
+  display:grid;
+  grid-template-columns:65% 35%;
+  gap:0;
+  min-height:min(85vh,700px);
+  align-items:stretch;
+}
+
+/* HORIZON — split 50/50 (photo droite via order) */
+.col-fam--horizon .col-fam__inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  min-height:min(85vh,700px);
+  align-items:stretch;
+}
+.col-fam--horizon .col-fam__photo{ order:2; }
+.col-fam--horizon .col-fam__text{ order:1; }
+
+/* SIGNATURE — full-bleed + overlay éditorial bas */
+.col-fam--signature .col-fam__inner{
+  position:relative;
+  min-height:min(90vh,800px);
+}
+.col-fam--signature .col-fam__photo{
+  position:absolute;
+  inset:0;
+}
+.col-fam--signature .col-fam__photo::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(26,26,24,.82) 0%, rgba(26,26,24,.62) 40%, rgba(26,26,24,.3) 70%, transparent 92%);
+  pointer-events:none;
+}
+.col-fam--signature .col-fam__caption{
+  top:1.4rem;
+  bottom:auto;
+  right:1.6rem;
+}
+.col-fam--signature .col-fam__text{
+  position:relative;
+  z-index:1;
+  justify-content:flex-end;
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 clamp(2rem,5vw,4rem) clamp(4rem,8vh,6rem);
+  min-height:min(90vh,800px);
+  color:var(--paper);
+}
+.col-fam--signature .col-fam__h2{ color:var(--paper); text-shadow:0 1px 24px rgba(0,0,0,.45); }
+.col-fam--signature .col-fam__eyebrow{ color:var(--copper-lt); text-shadow:0 1px 10px rgba(0,0,0,.6); }
+.col-fam--signature .col-fam__specs{ color:rgba(249,247,242,.78); text-shadow:0 1px 10px rgba(0,0,0,.45); }
+.col-fam--signature .col-fam__finitions{ color:rgba(249,247,242,.65); text-shadow:0 1px 10px rgba(0,0,0,.45); }
+.col-fam--signature .col-fam__desc{ color:rgba(249,247,242,.85); text-shadow:0 1px 12px rgba(0,0,0,.5); }
+
+/* Variantes — listing éditorial empilé (PAS de carte produit) */
+.col-fam__variants{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+.col-var{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  padding:1.5rem 0;
+  border-top:1px solid rgba(184,115,51,.18);
+  transition:transform .3s ease-out;
+}
+.col-var:last-child{ border-bottom:1px solid rgba(184,115,51,.18); }
+.col-var__name{
+  display:block;
+  font-family:var(--sans);
+  font-size:.78rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--copper);
+  margin-bottom:.55rem;
+}
+.col-var__tagline{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:1.35rem;
+  line-height:1.2;
+  color:var(--dark);
+  margin:0 0 .5rem;
+}
+.col-var__meta{
+  font-family:var(--sans);
+  font-size:.82rem;
+  letter-spacing:.04em;
+  color:rgba(44,44,40,.55);
+  margin:0 0 .9rem;
+}
+.col-var__cta{
+  position:relative;
+  display:inline-block;
+  font-family:var(--sans);
+  font-size:.78rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--copper);
+  padding-bottom:.45rem;
+}
+.col-var__cta::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:1.6rem;
+  height:1px;
+  background:var(--copper);
+  transition:width .3s ease-out;
+}
+.col-var:hover{ transform:translateY(-1px); }
+.col-var:hover .col-var__cta::after{ width:100%; }
+.col-var:focus-visible{ outline:2px solid var(--copper); outline-offset:4px; }
+
+/* SIGNATURE — variantes 2 colonnes desktop, séparées par 1px copper, alignement bas */
+.col-fam--signature .col-fam__variants{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  border-top:1px solid rgba(249,247,242,.22);
+  margin-top:.6rem;
+  align-items:end;
+}
+.col-fam--signature .col-var{
+  border-top:none;
+  padding:1.6rem clamp(1.5rem,2.5vw,2.5rem) 0 0;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.col-fam--signature .col-var:last-child{
+  border-bottom:none;
+  border-left:1px solid rgba(249,247,242,.22);
+  padding:1.6rem 0 0 clamp(1.5rem,2.5vw,2.5rem);
+}
+.col-fam--signature .col-var__name,
+.col-fam--signature .col-var__cta{ color:var(--copper-lt); }
+.col-fam--signature .col-var__cta::after{ background:var(--copper-lt); }
+.col-fam--signature .col-var__tagline{ color:var(--paper); }
+.col-fam--signature .col-var__meta{ color:rgba(249,247,242,.6); }
+
+/* CTA row de clôture */
+.col-fam__cta-row{
   display:flex;
   flex-direction:column;
   align-items:center;
-  padding-block:clamp(4rem,6vh,6rem) clamp(5rem,7vh,7rem);
-  background:var(--paper);
   gap:2rem;
+  padding-block:clamp(4rem,7vh,7rem) clamp(5rem,8vh,8rem);
+  background:var(--paper);
 }
-.family-block__sep{
+.col-fam__sep{
   display:block;
   width:38%;
   max-width:420px;
@@ -381,28 +529,90 @@ ul{list-style:none}
   opacity:.22;
 }
 
-@media(max-width:1024px){
-  .family-block + .family-block{
-    margin-top:clamp(4rem,8vh,7rem);
-  }
-  .family-block__inner{
-    grid-template-columns:1fr;
+/* ─── Responsive — un seul breakpoint à 900px ─── */
+@media (max-width:900px){
+  .col-fam + .col-fam{ margin-top:clamp(4rem,8vh,7rem); }
+
+  /* ESSENCE & HORIZON : stack vertical, photo en haut */
+  .col-fam--essence .col-fam__inner,
+  .col-fam--horizon .col-fam__inner{
+    display:flex;
+    flex-direction:column;
     min-height:auto;
   }
-  .family-block--alt .family-block__inner{
-    direction:ltr;
-  }
-  .family-block__media{
+  .col-fam--horizon .col-fam__photo{ order:0; }
+  .col-fam--horizon .col-fam__text{ order:0; }
+  .col-fam--essence .col-fam__photo,
+  .col-fam--horizon .col-fam__photo{
     aspect-ratio:4/3;
     width:100%;
     height:auto;
   }
-  .family-block__body{
+  .col-fam__text{ padding:clamp(2rem,5vw,2.5rem); }
+  .col-fam__h2{ font-size:clamp(2.2rem,7vw,3.4rem); }
+
+  /* SIGNATURE mobile : photo en haut, texte sur fond paper, H2 reste monumental */
+  .col-fam--signature .col-fam__inner{
+    display:flex;
+    flex-direction:column;
+    position:static;
+    min-height:auto;
+  }
+  .col-fam--signature .col-fam__photo{
+    position:relative;
+    inset:auto;
+    aspect-ratio:4/3;
+    width:100%;
+    height:auto;
+  }
+  .col-fam--signature .col-fam__photo::after{ display:none; }
+  .col-fam--signature .col-fam__caption{ top:auto; bottom:1.4rem; }
+  .col-fam--signature .col-fam__text{
+    position:static;
+    min-height:auto;
+    max-width:none;
+    margin:0;
     padding:clamp(2rem,5vw,2.5rem);
+    background:var(--paper);
+    color:var(--dark);
+    justify-content:flex-start;
   }
-  .family-block__title{
-    font-size:clamp(2.2rem,7vw,3.4rem);
+  /* H2 SIGNATURE reste monumental même en mobile — règle Benjamin */
+  .col-fam--signature .col-fam__h2{
+    color:var(--dark);
+    font-size:clamp(2.6rem,8vw,4rem);
   }
+  .col-fam--signature .col-fam__specs{ color:rgba(184,115,51,.7); }
+  .col-fam--signature .col-fam__finitions{ color:rgba(44,44,40,.55); }
+  .col-fam--signature .col-fam__desc{ color:rgba(44,44,40,.75); }
+
+  /* Variantes SIGNATURE : stack vertical, trait copper horizontal entre */
+  .col-fam--signature .col-fam__variants{
+    display:flex;
+    flex-direction:column;
+    border-top:1px solid rgba(184,115,51,.18);
+    margin-top:0;
+  }
+  .col-fam--signature .col-var{
+    height:auto;
+    display:block;
+    padding:1.5rem 0;
+    border-top:none;
+  }
+  .col-fam--signature .col-var:last-child{
+    border-top:1px solid rgba(184,115,51,.18);
+    border-left:none;
+    border-bottom:1px solid rgba(184,115,51,.18);
+    padding:1.5rem 0;
+  }
+  .col-fam--signature .col-var:first-child{
+    border-top:none;
+  }
+  .col-fam--signature .col-var__name,
+  .col-fam--signature .col-var__cta{ color:var(--copper); }
+  .col-fam--signature .col-var__cta::after{ background:var(--copper); }
+  .col-fam--signature .col-var__tagline{ color:var(--dark); }
+  .col-fam--signature .col-var__meta{ color:rgba(44,44,40,.55); }
 }
 @media(max-width:1024px){
   .founders{padding:5rem 1.5rem}

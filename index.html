@@ -17,7 +17,7 @@
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap"/>
   </noscript>
-  <link rel="stylesheet" href="style.css?v=cranesV3"/>
+  <link rel="stylesheet" href="style.css?v=spread4A"/>
   <link rel="stylesheet" href="assets/css/animations.css"/>
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
@@ -46,83 +46,122 @@
 
 
 <!-- ── COLLECTION — 3 blocs famille empilés ──────────────────── -->
-<section class="collection">
+<section class="collections-spread">
 
-  <!-- BLOC 1 — ESSENCE (photo gauche, texte droite) -->
-  <article class="family-block reveal">
-    <div class="family-block__inner">
-      <div class="family-block__media">
+  <header class="collections-spread__intro">
+    <span class="collections-spread__eyebrow" data-fr="Nos habitats" data-en="Our residences">Nos habitats</span>
+    <h2 class="collections-spread__h2" data-fr="Six habitats, trois familles." data-en="Six residences, three families.">Six habitats,<br/>trois familles.</h2>
+    <p class="collections-spread__sub" data-fr="Du studio compact à l'habitat familial. Chaque famille décline deux variantes selon l'usage." data-en="From the compact studio to the family home. Each family comes in two variants suited to different uses.">Du studio compact à l'habitat familial. Chaque famille décline deux variantes selon l'usage.</p>
+  </header>
+
+  <!-- BLOC 1 — ESSENCE : asymétrique 65 / 35, photo gauche -->
+  <article class="col-fam col-fam--essence">
+    <div class="col-fam__inner">
+      <figure class="col-fam__photo">
         <picture>
           <source srcset="dist/images/habitats/essence/unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa.avif" type="image/avif">
           <source srcset="dist/images/habitats/essence/unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa.webp" type="image/webp">
           <img src="dist/images/habitats/essence/unwatermarked_gemini_generated_image_8xoavn8xoavn8xoa.avif" alt="Intérieur ESSENCE — studio HKH baigné de lumière naturelle" loading="lazy" decoding="async"/>
         </picture>
-        <span class="family-block__caption" data-fr="Projection architecturale" data-en="Architectural rendering">Projection architecturale</span>
-      </div>
-      <div class="family-block__body">
-        <span class="family-block__eyebrow" data-fr="ESSENCE" data-en="ESSENCE">ESSENCE</span>
-        <h2 class="family-block__title" data-fr="Le studio compact" data-en="The compact studio">Le studio compact</h2>
-        <p class="family-block__meta" data-fr="20 m² · 2 personnes · toit 2 pans" data-en="20 m² · 2 people · pitched roof">20 m² · 2 personnes · toit 2 pans</p>
-        <p class="family-block__desc" data-fr="L'essentiel d'un habitat HKH, dans une empreinte minimale. Intérieur baigné de lumière naturelle, prolongé sur l'extérieur par une baie pleine hauteur." data-en="The essence of an HKH home in a minimal footprint. An interior bathed in natural light, extended outside through a full-height bay window.">L'essentiel d'un habitat HKH, dans une empreinte minimale. Intérieur baigné de lumière naturelle, prolongé sur l'extérieur par une baie pleine hauteur.</p>
-        <div class="family-block__links">
-          <a href="residence-essence.html" class="editorial__link" data-fr="ESSENCE · sans cuisine" data-en="ESSENCE · without kitchen">ESSENCE · sans cuisine</a>
-          <a href="residence-essence-plus.html" class="editorial__link" data-fr="ESSENCE+ · avec kitchenette" data-en="ESSENCE+ · with kitchenette">ESSENCE+ · avec kitchenette</a>
+        <figcaption class="col-fam__caption" data-fr="Projection architecturale" data-en="Architectural rendering">Projection architecturale</figcaption>
+      </figure>
+      <div class="col-fam__text">
+        <span class="col-fam__eyebrow" data-fr="ESSENCE" data-en="ESSENCE">ESSENCE</span>
+        <h3 class="col-fam__h2" data-fr="Le studio compact" data-en="The compact studio">Le studio compact</h3>
+        <p class="col-fam__specs" data-fr="20 m² · 2 pers · ▲ toit 2 pans" data-en="20 m² · 2 people · ▲ pitched roof">20 m² · 2 pers · ▲ toit 2 pans</p>
+        <p class="col-fam__finitions" data-fr="Zénith · Pinède · Pure · Linéa" data-en="Zénith · Pinède · Pure · Linéa">Zénith · Pinède · Pure · Linéa</p>
+        <p class="col-fam__desc" data-fr="L'essentiel d'un habitat HKH, dans une empreinte minimale. Intérieur baigné de lumière naturelle." data-en="The essence of an HKH home in a minimal footprint. An interior bathed in natural light.">L'essentiel d'un habitat HKH, dans une empreinte minimale. Intérieur baigné de lumière naturelle.</p>
+        <div class="col-fam__variants">
+          <a href="residence-essence.html" class="col-var">
+            <span class="col-var__name" data-fr="ESSENCE" data-en="ESSENCE">ESSENCE</span>
+            <p class="col-var__tagline" data-fr="Studio sans cuisine" data-en="Studio without kitchen">Studio sans cuisine</p>
+            <p class="col-var__meta" data-fr="20 m² · 2 pers" data-en="20 m² · 2 people">20 m² · 2 pers</p>
+            <span class="col-var__cta" data-fr="Découvrir →" data-en="Discover →">Découvrir →</span>
+          </a>
+          <a href="residence-essence-plus.html" class="col-var">
+            <span class="col-var__name" data-fr="ESSENCE+" data-en="ESSENCE+">ESSENCE+</span>
+            <p class="col-var__tagline" data-fr="Studio avec kitchenette" data-en="Studio with kitchenette">Studio avec kitchenette</p>
+            <p class="col-var__meta" data-fr="20 m² · 2 pers" data-en="20 m² · 2 people">20 m² · 2 pers</p>
+            <span class="col-var__cta" data-fr="Découvrir →" data-en="Discover →">Découvrir →</span>
+          </a>
         </div>
       </div>
     </div>
   </article>
 
-  <!-- BLOC 2 — HORIZON (photo droite, texte gauche) -->
-  <article class="family-block family-block--alt reveal">
-    <div class="family-block__inner">
-      <div class="family-block__media">
+  <!-- BLOC 2 — HORIZON : split 50/50, photo droite -->
+  <article class="col-fam col-fam--horizon">
+    <div class="col-fam__inner">
+      <figure class="col-fam__photo">
         <picture>
           <source srcset="dist/images/habitats/horizon/gemini_generated_image_esp0jdesp0jdesp0.avif" type="image/avif">
           <source srcset="dist/images/habitats/horizon/gemini_generated_image_esp0jdesp0jdesp0.webp" type="image/webp">
           <img src="dist/images/habitats/horizon/gemini_generated_image_esp0jdesp0jdesp0.avif" alt="HORIZON finition Pure en contexte tropical — vue extérieure" loading="lazy" decoding="async"/>
         </picture>
-        <span class="family-block__caption" data-fr="Projection architecturale" data-en="Architectural rendering">Projection architecturale</span>
-      </div>
-      <div class="family-block__body">
-        <span class="family-block__eyebrow" data-fr="HORIZON" data-en="HORIZON">HORIZON</span>
-        <h2 class="family-block__title" data-fr="L'essentiel contemporain" data-en="The contemporary essential">L'essentiel contemporain</h2>
-        <p class="family-block__meta" data-fr="36 m² · 2 personnes · toit plat ou 2 pans" data-en="36 m² · 2 people · flat or pitched roof">36 m² · 2 personnes · toit plat ou 2 pans</p>
-        <p class="family-block__desc" data-fr="Volumes harmonieux, lumière naturelle. La version résidentielle ou la version terrasse, selon votre projet." data-en="Harmonious volumes, natural light. The residential version or the terrace version, depending on your project.">Volumes harmonieux, lumière naturelle. La version résidentielle ou la version terrasse, selon votre projet.</p>
-        <div class="family-block__links">
-          <a href="residence-horizon.html" class="editorial__link" data-fr="HORIZON · entièrement équipé" data-en="HORIZON · fully equipped">HORIZON · entièrement équipé</a>
-          <a href="residence-horizon-t.html" class="editorial__link" data-fr="HORIZON T · avec terrasse intégrée" data-en="HORIZON T · with integrated terrace">HORIZON T · avec terrasse intégrée</a>
+        <figcaption class="col-fam__caption" data-fr="Projection architecturale" data-en="Architectural rendering">Projection architecturale</figcaption>
+      </figure>
+      <div class="col-fam__text">
+        <span class="col-fam__eyebrow" data-fr="HORIZON" data-en="HORIZON">HORIZON</span>
+        <h3 class="col-fam__h2" data-fr="L'essentiel contemporain" data-en="The contemporary essential">L'essentiel contemporain</h3>
+        <p class="col-fam__specs" data-fr="36 m² · 2 pers · ▲ toit 2 pans ou ▬ toit plat" data-en="36 m² · 2 people · ▲ pitched or ▬ flat roof">36 m² · 2 pers · ▲ toit 2 pans ou ▬ toit plat</p>
+        <p class="col-fam__finitions" data-fr="Zénith · Pinède · Pure · Linéa · +Pano" data-en="Zénith · Pinède · Pure · Linéa · +Pano">Zénith · Pinède · Pure · Linéa · +Pano</p>
+        <p class="col-fam__desc" data-fr="Volumes harmonieux, lumière naturelle. La version résidentielle ou avec terrasse." data-en="Harmonious volumes, natural light. The residential version or the one with a terrace.">Volumes harmonieux, lumière naturelle. La version résidentielle ou avec terrasse.</p>
+        <div class="col-fam__variants">
+          <a href="residence-horizon.html" class="col-var">
+            <span class="col-var__name" data-fr="HORIZON" data-en="HORIZON">HORIZON</span>
+            <p class="col-var__tagline" data-fr="Volume entièrement équipé" data-en="Fully equipped volume">Volume entièrement équipé</p>
+            <p class="col-var__meta" data-fr="36 m² · toit 2 pans ou plat" data-en="36 m² · pitched or flat roof">36 m² · toit 2 pans ou plat</p>
+            <span class="col-var__cta" data-fr="Découvrir →" data-en="Discover →">Découvrir →</span>
+          </a>
+          <a href="residence-horizon-t.html" class="col-var">
+            <span class="col-var__name" data-fr="HORIZON T" data-en="HORIZON T">HORIZON T</span>
+            <p class="col-var__tagline" data-fr="Avec terrasse intégrée" data-en="With integrated terrace">Avec terrasse intégrée</p>
+            <p class="col-var__meta" data-fr="46 m² · ▲ toit 2 pans" data-en="46 m² · ▲ pitched roof">46 m² · ▲ toit 2 pans</p>
+            <span class="col-var__cta" data-fr="Découvrir →" data-en="Discover →">Découvrir →</span>
+          </a>
         </div>
       </div>
     </div>
   </article>
 
-  <!-- BLOC 3 — SIGNATURE (photo gauche, texte droite) -->
-  <article class="family-block reveal">
-    <div class="family-block__inner">
-      <div class="family-block__media">
+  <!-- BLOC 3 — SIGNATURE : photo full-bleed + overlay éditorial bas -->
+  <article class="col-fam col-fam--signature">
+    <div class="col-fam__inner">
+      <figure class="col-fam__photo">
         <picture>
           <source srcset="dist/images/habitats/signature/gemini_generated_image_aiows5aiows5aiow.avif" type="image/avif">
           <source srcset="dist/images/habitats/signature/gemini_generated_image_aiows5aiows5aiow.webp" type="image/webp">
           <img src="dist/images/habitats/signature/gemini_generated_image_aiows5aiows5aiow.avif" alt="SIGNATURE finition Pinède en contexte tropical — vue extérieure" loading="lazy" decoding="async"/>
         </picture>
-        <span class="family-block__caption" data-fr="Projection architecturale" data-en="Architectural rendering">Projection architecturale</span>
-      </div>
-      <div class="family-block__body">
-        <span class="family-block__eyebrow" data-fr="SIGNATURE" data-en="SIGNATURE">SIGNATURE</span>
-        <h2 class="family-block__title" data-fr="L'habitat signature" data-en="The signature home">L'habitat signature</h2>
-        <p class="family-block__meta" data-fr="46 m² · jusqu'à 4 personnes · 1 ou 2 chambres" data-en="46 m² · up to 4 people · 1 or 2 bedrooms">46 m² · jusqu'à 4 personnes · 1 ou 2 chambres</p>
-        <p class="family-block__desc" data-fr="Le modèle résidentiel par excellence. Familial ou couple, résidence ou locatif premium." data-en="The residential model par excellence. Family or couple, primary residence or premium rental.">Le modèle résidentiel par excellence. Familial ou couple, résidence ou locatif premium.</p>
-        <div class="family-block__links">
-          <a href="residence-signature.html" class="editorial__link" data-fr="SIGNATURE · 1 chambre" data-en="SIGNATURE · 1 bedroom">SIGNATURE · 1 chambre</a>
-          <a href="residence-signature-duo.html" class="editorial__link" data-fr="SIGNATURE DUO · 2 chambres" data-en="SIGNATURE DUO · 2 bedrooms">SIGNATURE DUO · 2 chambres</a>
+        <figcaption class="col-fam__caption" data-fr="Projection architecturale" data-en="Architectural rendering">Projection architecturale</figcaption>
+      </figure>
+      <div class="col-fam__text">
+        <span class="col-fam__eyebrow" data-fr="SIGNATURE" data-en="SIGNATURE">SIGNATURE</span>
+        <h3 class="col-fam__h2" data-fr="L'habitat signature" data-en="The signature home">L'habitat signature</h3>
+        <p class="col-fam__specs" data-fr="46 m² · jusqu'à 4 pers · ▲ toit 2 pans" data-en="46 m² · up to 4 people · ▲ pitched roof">46 m² · jusqu'à 4 pers · ▲ toit 2 pans</p>
+        <p class="col-fam__finitions" data-fr="Zénith · Pinède · Pure · Linéa · +Pano" data-en="Zénith · Pinède · Pure · Linéa · +Pano">Zénith · Pinède · Pure · Linéa · +Pano</p>
+        <p class="col-fam__desc" data-fr="Le modèle résidentiel par excellence. Familial ou couple." data-en="The residential model par excellence. Family or couple.">Le modèle résidentiel par excellence. Familial ou couple.</p>
+        <div class="col-fam__variants">
+          <a href="residence-signature.html" class="col-var">
+            <span class="col-var__name" data-fr="SIGNATURE" data-en="SIGNATURE">SIGNATURE</span>
+            <p class="col-var__tagline" data-fr="1 chambre" data-en="1 bedroom">1 chambre</p>
+            <p class="col-var__meta" data-fr="46 m² · résidentiel" data-en="46 m² · residential">46 m² · résidentiel</p>
+            <span class="col-var__cta" data-fr="Découvrir →" data-en="Discover →">Découvrir →</span>
+          </a>
+          <a href="residence-signature-duo.html" class="col-var">
+            <span class="col-var__name" data-fr="SIGNATURE DUO" data-en="SIGNATURE DUO">SIGNATURE DUO</span>
+            <p class="col-var__tagline" data-fr="2 chambres" data-en="2 bedrooms">2 chambres</p>
+            <p class="col-var__meta" data-fr="46 m² · familial" data-en="46 m² · family">46 m² · familial</p>
+            <span class="col-var__cta" data-fr="Découvrir →" data-en="Discover →">Découvrir →</span>
+          </a>
         </div>
       </div>
     </div>
   </article>
 
-  <div class="family-block__cta-row reveal">
-    <span class="family-block__sep" aria-hidden="true"></span>
-    <a href="habitats.html" class="editorial__link" data-fr="Voir tous les habitats" data-en="See all residences">Voir tous les habitats</a>
+  <div class="col-fam__cta-row">
+    <span class="col-fam__sep" aria-hidden="true"></span>
+    <a href="habitats.html" class="editorial__link" data-fr="Voir les 6 habitats en détail" data-en="See all six residences in detail">Voir les 6 habitats en détail</a>
   </div>
 </section>
 
